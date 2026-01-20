@@ -83,6 +83,24 @@
             color: var(--orange);
         }
 
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: var(--orange);
+            color: var(--white) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.2);
+        }
+
         /* Main Content */
         .booking-container {
             max-width: 1200px;
@@ -196,10 +214,13 @@
                 <span class="first-word">Right</span> <span class="second-word">Track</span>
             </a>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="../index.html#team">Team</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#partnerships">Partnerships</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../index.html#join-team" class="nav-cta" style="background: var(--navy); margin-right: 10px;">Join Team</a></li>
+                <li><a href="booking.html" class="nav-cta">Book Online</a></li>
             </ul>
         </nav>
     </header>
