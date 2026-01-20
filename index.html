@@ -1,0 +1,2939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Track | Physiotherapy & Performance Centre Cyprus</title>
+    <meta name="description" content="Evidence-based physiotherapy, sports performance, and clinical Pilates in Cyprus. GESY-registered provider in Nicosia and Limassol.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --orange: #FF6B35;
+            --white: #ffffff;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --text-dark: #212529;
+            --text-gray: #6C757D;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.5rem 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text .first-word {
+            color: var(--navy);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .logo-text .second-word {
+            color: var(--orange);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: var(--orange);
+            color: var(--white) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.2);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--light-gray);
+            color: var(--text-dark);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        .lang-btn.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            gap: 4px;
+        }
+
+        .dropdown-toggle:hover {
+            color: var(--orange);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: -50px;
+            background: var(--white);
+            list-style: none;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            min-width: 300px;
+            padding: 12px 0;
+            z-index: 1001;
+            border: 1px solid var(--light-gray);
+            animation: slideDown 0.2s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 24px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--off-white);
+            color: var(--orange);
+            padding-left: 28px;
+        }
+
+        /* Hero Section - Revolut-inspired */
+        .hero {
+            background: var(--white);
+            padding: 120px 40px 100px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--orange);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 540px;
+        }
+
+        .hero-visual {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f4f 100%);
+            height: 500px;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--orange);
+            border-radius: 50%;
+            opacity: 0.15;
+            top: -100px;
+            right: -100px;
+        }
+
+        .hero-visual img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--orange);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--navy);
+            padding: 80px 40px;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
+            background: var(--navy);
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--orange);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--orange);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .stat-number span {
+            color: var(--orange);
+        }
+
+        .stat-label {
+            font-size: 1.05rem;
+            color: var(--white);
+            font-weight: 500;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Feature Section */
+        .feature-section {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .feature-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .feature-container:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-container.reverse {
+            direction: rtl;
+        }
+
+        .feature-container.reverse > * {
+            direction: ltr;
+        }
+
+        .feature-text h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+        }
+
+        .feature-text h2 span {
+            color: var(--orange);
+        }
+
+        .feature-text p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .feature-list li {
+            padding: 1rem 0;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--light-gray);
+            font-weight: 500;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-visual {
+            background: var(--off-white);
+            height: 450px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        /* Services Grid - Revolut Cards Style */
+        .services {
+            background: var(--off-white);
+            padding: 120px 40px;
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            letter-spacing: -1.5px;
+        }
+
+        .section-header h2 span {
+            color: var(--orange);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--orange), #ff8a5b);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 16px rgba(255, 107, 53, 0.3);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--orange);
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card li {
+            padding: 0.6rem 0;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .service-card li:last-child {
+            border-bottom: none;
+        }
+
+        .service-price {
+            background: var(--off-white);
+            padding: 16px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.95rem;
+        }
+
+        .service-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 107, 53, 0.05));
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            color: var(--orange);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-cta {
+            display: inline-block;
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .service-cta:hover {
+            color: var(--navy);
+            transform: translateX(4px);
+        }
+
+        /* Service Configurator */
+        .service-configurator {
+            max-width: 1400px;
+            margin: 80px auto 0;
+            padding: 60px 40px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 2px solid var(--light-gray);
+        }
+
+        .service-configurator h3 {
+            font-size: 2rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .service-configurator > p {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .configurator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        .config-step label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .config-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .config-btn {
+            padding: 14px 20px;
+            border: 2px solid var(--light-gray);
+            background: var(--white);
+            border-radius: 10px;
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .config-btn:hover {
+            border-color: var(--orange);
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .config-btn.active {
+            border-color: var(--orange);
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .config-result {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(10, 22, 40, 0.05));
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .config-result p {
+            font-size: 1.1rem;
+            color: var(--navy);
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .configurator-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .config-result {
+                grid-column: 1;
+            }
+
+            .service-configurator {
+                padding: 40px 20px;
+            }
+
+            .service-configurator h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* CTA Banner - Revolut Style */
+        .cta-banner {
+            background: var(--navy);
+            padding: 120px 40px;
+        }
+
+        .cta-banner-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .cta-banner-content {
+            text-align: left;
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .cta-banner h2 span {
+            color: var(--orange);
+        }
+
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-banner-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-banner-image img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .cta-banner .btn-primary {
+            background: var(--orange);
+        }
+
+        .cta-banner .btn-primary:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .cta-banner .btn-secondary {
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .cta-banner .btn-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* Team Section - Minimalist */
+        .team {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .team-grid {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .team-row {
+            display: grid;
+            gap: 40px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .team-photo {
+            width: 220px;
+            min-width: 220px;
+            overflow: hidden;
+            background: var(--light-gray);
+        }
+
+        .team-photo.charalambos-photo {
+            width: 278px;
+            min-width: 278px;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .team-photo img {
+            transform: scale(1.08);
+        }
+
+        .team-content {
+            padding: 30px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .team-member h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member h3 a {
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .team-member h3 a:hover {
+            color: var(--orange);
+        }
+
+        .team-member .role {
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .team-member p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .team-member a[href*="profile"] {
+            display: inline-block;
+            margin-top: 1.2rem;
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .team-member a[href*="profile"]:hover {
+            transform: translateX(5px);
+        }
+
+        .team-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: var(--off-white);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .stat-badge .icon {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid var(--orange);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .availability-badge::before {
+            content: '';
+            font-weight: 700;
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .blog-grid {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, var(--off-white), var(--light-gray));
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-image:has(img[src*="blog-"]) {
+            background: none;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-date {
+            color: var(--orange);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .blog-card h3 {
+            color: var(--navy);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-card h3 a {
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .blog-card h3 a:hover {
+            color: var(--orange);
+        }
+
+        .blog-excerpt {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .blog-read-more {
+            color: var(--orange);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s;
+        }
+
+        .blog-read-more:hover {
+            gap: 12px;
+        }
+
+        .blog-read-more::after {
+            content: '→';
+            font-size: 1.2rem;
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .partners-container {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px 0 30px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .partners-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .partners-container::-webkit-scrollbar-track {
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        .partners-container::-webkit-scrollbar-thumb {
+            background: var(--orange);
+            border-radius: 10px;
+        }
+
+        .partners-container::-webkit-scrollbar-thumb:hover {
+            background: var(--navy);
+        }
+
+        .partner-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            min-width: 320px;
+            max-width: 320px;
+            scroll-snap-align: start;
+            border: 2px solid var(--light-gray);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--orange);
+        }
+
+        .partner-logo {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .partner-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .partner-description {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Join Team Section */
+        .join-team {
+            padding: 120px 40px;
+            background: var(--off-white);
+        }
+
+        .join-team-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: stretch;
+        }
+
+        .join-team-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .join-team-image {
+            width: 100%;
+            height: 450px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .join-team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .join-team-text h3 {
+            font-size: 2rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .join-team-text h3 span {
+            color: var(--orange);
+        }
+
+        .join-team-text p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .join-team-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            color: var(--navy);
+        }
+
+        .benefit-item::before {
+            content: '';
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .join-team-form {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .join-team-form h3 {
+            font-size: 1.8rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 18px;
+            border: 2px dashed var(--light-gray);
+            border-radius: 8px;
+            background: var(--off-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .file-upload-label:hover {
+            border-color: var(--orange);
+            background: var(--white);
+            color: var(--orange);
+        }
+
+        .file-upload-label::before {
+            content: '📎';
+            font-size: 1.2rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px 36px;
+            background: var(--orange);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 40px;
+            background: var(--off-white);
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px 0 30px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .testimonials-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .testimonials-container::-webkit-scrollbar-track {
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        .testimonials-container::-webkit-scrollbar-thumb {
+            background: var(--orange);
+            border-radius: 10px;
+        }
+
+        .testimonials-container::-webkit-scrollbar-thumb:hover {
+            background: var(--navy);
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 380px;
+            max-width: 380px;
+            scroll-snap-align: start;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 4px;
+            color: var(--orange);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 2px solid var(--off-white);
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-info h4 {
+            color: var(--navy);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        /* Partnerships Section */
+        .partnerships {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .partnerships-container {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px 0 30px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .partnerships-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .partnerships-container::-webkit-scrollbar-track {
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        .partnerships-container::-webkit-scrollbar-thumb {
+            background: var(--orange);
+            border-radius: 10px;
+        }
+
+        .partnerships-container::-webkit-scrollbar-thumb:hover {
+            background: var(--navy);
+        }
+
+        .partnership-card {
+            background: var(--off-white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+            display: flex;
+            flex-direction: column;
+            min-width: 380px;
+            max-width: 380px;
+            scroll-snap-align: start;
+        }
+
+        .partnership-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--orange);
+        }
+
+        .partnership-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .partnership-logo {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(10, 22, 40, 0.03));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .partnership-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .partnership-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(10, 22, 40, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .partnership-info {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .partnership-info h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .partnership-info > p:first-of-type {
+            color: var(--orange);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .partnership-description {
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .partnership-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .partnership-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(255, 107, 53, 0.05));
+            color: var(--orange);
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--off-white);
+            padding: 120px 40px;
+        }
+
+        .contact-grid {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .contact-item a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Contact Info Grid */
+        .contact-info-grid {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px;
+        }
+
+        .contact-info-block h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .contact-info-block p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info-block a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-block a:hover {
+            color: var(--navy);
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .contact-cta .btn {
+            padding: 16px 50px;
+            font-size: 1.05rem;
+        }
+
+        /* Footer - Minimal */
+        footer {
+            background: var(--white);
+            border-top: 1px solid var(--light-gray);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .feature-container,
+            .services-grid,
+            .team-grid,
+            .join-team-container,
+            .cta-banner-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .contact-grid,
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .feature-text h2,
+            .section-header h2,
+            .cta-banner h2 {
+                font-size: 2.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .join-team-image {
+                height: 400px;
+            }
+
+            .join-team-form {
+                padding: 40px;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .feature-section {
+                padding: 80px 20px;
+            }
+
+            .services,
+            .team,
+            .contact,
+            .join-team {
+                padding: 80px 20px;
+            }
+
+            .join-team-image {
+                height: 300px;
+            }
+
+            .join-team-form {
+                padding: 30px 20px;
+            }
+
+            .join-team-text h3 {
+                font-size: 1.8rem;
+            }
+
+            .join-team-form h3 {
+                font-size: 1.5rem;
+            }
+
+            .partnerships,
+            .testimonials {
+                padding: 80px 20px;
+            }
+
+            .partnerships-container {
+                padding: 10px 20px 30px 20px;
+            }
+
+            .partnership-card {
+                min-width: 280px;
+                max-width: 280px;
+                padding: 25px;
+            }
+
+            .partnership-image {
+                height: 200px;
+            }
+
+            .partnership-info {
+                padding: 20px;
+            }
+
+            .partnership-info h3 {
+                font-size: 1.3rem;
+            }
+
+            .testimonials-container {
+                padding: 10px 20px 30px 20px;
+            }
+
+            .testimonial-card {
+                min-width: 280px;
+                max-width: 280px;
+                padding: 25px;
+            }
+
+            .service-configurator {
+                margin: 60px auto 0;
+                padding: 40px 20px;
+            }
+
+            .configurator-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .service-configurator h3 {
+                font-size: 1.5rem;
+            }
+
+            .feature-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .feature-container.reverse {
+                flex-direction: column;
+            }
+
+            .cta-banner-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .cta-banner-image {
+                display: none;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="assets/images/logos/logo-icon.png" alt="Right Track Logo">
+                <div class="logo-text">
+                    <span class="first-word">Right</span>
+                    <span class="second-word">Track</span>
+                </div>
+            </a>
+            <ul>
+                <li><a href="#team" data-i18n="nav.team">Team</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="#partnerships" data-i18n="nav.partnerships">Partnerships</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">Check Yourself ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="child-development-checker.html">Is My Child on Track?</a></li>
+                        <li><a href="posture-movement-assessment.html">Posture & Movement</a></li>
+                    </ul>
+                </li>
+                <li><a href="#join-team" class="nav-cta" style="background: var(--navy); margin-right: 10px;" data-i18n="nav.joinTeam">Join Team</a></li>
+                <li><a href="pages/booking.html" class="nav-cta" data-i18n="nav.bookOnline">Book Online</a></li>
+                <li class="language-switcher">
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="ru" onclick="setLanguage('ru')">RU</button>
+                    <button class="lang-btn" data-lang="el" onclick="setLanguage('el')">ΕΛ</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Get back on the <span class="highlight">right track</span></h1>
+                <p>Evidence-based physiotherapy and sports performance in Cyprus. From injury to return-to-play with measurable results.</p>
+                <div class="cta-buttons">
+                    <a href="pages/booking.html" class="btn btn-primary">Book Online Appointment</a>
+                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                Right Track Performance
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">Athletic</div>
+                <div class="stat-label">Performance-Driven Approach</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">GESY</div>
+                <div class="stat-label">Registered Provider</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Personalized</div>
+                <div class="stat-label">Tailored Treatment Plans</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Modern</div>
+                <div class="stat-label">State-of-the-Art Facility</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Section 1 -->
+    <section class="feature-section">
+        <div class="feature-container">
+            <div class="feature-text">
+                <h2>Athlete-centred <span>rehabilitation</span></h2>
+                <p>Right Track delivers evidence-based, athlete-centred physiotherapy with integrated performance protocols, ensuring measurable progress from injury to return-to-play.</p>
+                <p>We combine hands-on personalized treatment, structured progress tracking, and a modern, motivating environment while being GESY-integrated for accessibility.</p>
+                <ul class="feature-list">
+                    <li>Baseline testing and objective measures</li>
+                    <li>Structured progress tracking</li>
+                    <li>Return-to-play protocols</li>
+                    <li>Performance optimization</li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                Performance Tracking
+            </div>
+        </div>
+
+        <div class="feature-container reverse">
+            <div class="feature-text">
+                <h2>Clinical <span>Pilates</span> that works</h2>
+                <p>Physio-led mat Pilates combining clinical expertise with dynamic, athletic training. Small group sessions designed for measurable results.</p>
+                <p>Integration with rehabilitation goals ensures every movement serves a purpose in your recovery and performance journey.</p>
+            </div>
+            <div class="feature-visual">
+                Clinical Pilates
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our <span>Services</span></h2>
+            <p>Personalized rehabilitation and performance solutions. From injury recovery to peak athletic performance—we'll get you where you need to be.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Physiotherapy -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Physiotherapy</h3>
+                <p>Evidence-based treatment for injury recovery, pain management, and functional restoration. GESY-registered for accessibility.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Sports Rehab</span>
+                    <span class="highlight-tag">Post-Surgery</span>
+                    <span class="highlight-tag">Homecare</span>
+                </div>
+                <ul>
+                    <li>MSK & Sports Rehabilitation</li>
+                    <li>Neurological Rehab</li>
+                    <li>Post-operative Recovery</li>
+                    <li>Homecare Physiotherapy</li>
+                </ul>
+                <div class="service-price">GESY & Private Options</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Learn More →</a>
+            </div>
+
+            <!-- Clinical Pilates -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Clinical Pilates</h3>
+                <p>Physio-led mat Pilates combining therapeutic principles with dynamic movement. Small groups, big results.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Core Strength</span>
+                    <span class="highlight-tag">Flexibility</span>
+                    <span class="highlight-tag">Rehab Integration</span>
+                </div>
+                <ul>
+                    <li>Small group sessions (max 8)</li>
+                    <li>Dynamic, athletic approach</li>
+                    <li>Integration with rehab goals</li>
+                    <li>Measurable progress tracking</li>
+                </ul>
+                <div class="service-price">From €80/month</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Book Trial →</a>
+            </div>
+
+            <!-- Kids' Physiotherapy -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Kids' Physiotherapy</h3>
+                <p>Specialized assessment and treatment for children's developmental and postural needs. Family education included.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Posture Check</span>
+                    <span class="highlight-tag">Family Ed</span>
+                    <span class="highlight-tag">Play-Based</span>
+                </div>
+                <ul>
+                    <li>Scoliosis screening & treatment</li>
+                    <li>Posture & movement assessment</li>
+                    <li>Developmental support</li>
+                    <li>Family education & home plans</li>
+                </ul>
+                <div class="service-price">Customized Packages</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Get Assessment →</a>
+            </div>
+
+            <!-- Ergotherapy -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Occupational Therapy</h3>
+                <p>Help with daily activities, hand function, and independence. Tailored to real-world needs and goals.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Hand Therapy</span>
+                    <span class="highlight-tag">ADL Training</span>
+                    <span class="highlight-tag">Independence</span>
+                </div>
+                <ul>
+                    <li>Activities of Daily Living training</li>
+                    <li>Hand therapy & function</li>
+                    <li>Ergonomic assessment</li>
+                    <li>Functional independence goals</li>
+                </ul>
+                <div class="service-price">€30/session</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Inquire →</a>
+            </div>
+
+            <!-- Performance Training -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Performance Training</h3>
+                <p>Sport-specific strength, conditioning, and power development. For athletes serious about results.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Strength & Power</span>
+                    <span class="highlight-tag">Return-to-Sport</span>
+                    <span class="highlight-tag">Conditioning</span>
+                </div>
+                <ul>
+                    <li>Sport-specific programming</li>
+                    <li>Return-to-play protocols</li>
+                    <li>Gym access & guidance</li>
+                    <li>Performance monitoring</li>
+                </ul>
+                <div class="service-price">From €250/month</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Start Training →</a>
+            </div>
+
+            <!-- Football Programs -->
+            <div class="service-card">
+                <div class="service-icon">⚽</div>
+                <h3>Football Academy Programs</h3>
+                <p>Partnership programs with elite clubs for injury prevention and performance optimization at the highest level.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Elite Clubs</span>
+                    <span class="highlight-tag">Prevention</span>
+                    <span class="highlight-tag">Performance</span>
+                </div>
+                <ul>
+                    <li>Doxa Katokopias FC partnership</li>
+                    <li>PAEC club collaborations</li>
+                    <li>Injury prevention programs</li>
+                    <li>Elite performance optimization</li>
+                </ul>
+                <div class="service-price">Academy Rates</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Partner With Us →</a>
+            </div>
+        </div>
+
+        <!-- Service Configurator -->
+        <div class="service-configurator">
+            <h3>Find Your Right Track</h3>
+            <p>Not sure which service is right for you? Answer a few quick questions.</p>
+
+            <div class="configurator-container">
+                <div class="config-step">
+                    <label>What's your primary goal?</label>
+                    <div class="config-options">
+                        <button class="config-btn" onclick="updateConfigurator('goal', 'recover')">Recover from injury</button>
+                        <button class="config-btn" onclick="updateConfigurator('goal', 'improve')">Improve fitness</button>
+                        <button class="config-btn" onclick="updateConfigurator('goal', 'perform')">Enhance performance</button>
+                        <button class="config-btn" onclick="updateConfigurator('goal', 'child')">Child development</button>
+                    </div>
+                </div>
+
+                <div class="config-step">
+                    <label>Preferred setting?</label>
+                    <div class="config-options">
+                        <button class="config-btn" onclick="updateConfigurator('setting', 'clinic')">In-clinic</button>
+                        <button class="config-btn" onclick="updateConfigurator('setting', 'group')">Group sessions</button>
+                        <button class="config-btn" onclick="updateConfigurator('setting', 'home')">At home</button>
+                    </div>
+                </div>
+
+                <div class="config-result">
+                    <p id="configResult">Select options above to discover your ideal service →</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>What our <span>clients say</span></h2>
+            <p>Real stories from patients and athletes we've helped</p>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"Antonis helped me recover from a serious knee injury. His expertise in sports rehabilitation got me back on the field faster than I thought possible. Highly recommend Right Track!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AG</div>
+                    <div class="testimonial-info">
+                        <h4>Andreas G.</h4>
+                        <p>Professional Footballer - Nicosia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"The clinical Pilates sessions have transformed my core strength and posture. Alice is incredibly knowledgeable and makes every session challenging yet enjoyable."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MP</div>
+                    <div class="testimonial-info">
+                        <h4>Maria P.</h4>
+                        <p>Pilates Client - Nicosia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"Niki's work with my son has been amazing. She uses play-based therapy that keeps him engaged while developing essential skills. We've seen incredible progress!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SC</div>
+                    <div class="testimonial-info">
+                        <h4>Sofia C.</h4>
+                        <p>Parent - Latsia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"After my ACL surgery, Right Track's structured rehab program got me back to training. The progress tracking kept me motivated throughout the recovery."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">NK</div>
+                    <div class="testimonial-info">
+                        <h4>Nikos K.</h4>
+                        <p>Basketball Player - Nicosia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"The performance training program helped me improve my speed and agility. Charalambos creates personalized plans that really work."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">EP</div>
+                    <div class="testimonial-info">
+                        <h4>Elena P.</h4>
+                        <p>Amateur Athlete - Engomi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"Marilena's approach to treating my chronic back pain was life-changing. She took time to understand my lifestyle and created a plan that fits my schedule."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">GS</div>
+                    <div class="testimonial-info">
+                        <h4>George S.</h4>
+                        <p>Office Worker - Strovolos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"The team at Right Track helped my daughter with her posture issues. The kids' physiotherapy program is excellent and she actually enjoys her sessions!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AT</div>
+                    <div class="testimonial-info">
+                        <h4>Anna T.</h4>
+                        <p>Parent - Lakatamia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"Professional, modern facility with expert therapists. The GESY integration made quality physiotherapy accessible. Highly recommend for anyone serious about recovery."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">DM</div>
+                    <div class="testimonial-info">
+                        <h4>Dimitris M.</h4>
+                        <p>Rehabilitation Patient - Nicosia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"The clinical Pilates has improved my flexibility and strength dramatically. Small groups mean personalized attention. Best investment in my health this year!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">LH</div>
+                    <div class="testimonial-info">
+                        <h4>Laura H.</h4>
+                        <p>Pilates Client - Limassol</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"Coming back from a shoulder injury seemed impossible until I started treatment here. The personalized rehab program and constant encouragement made all the difference."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">PM</div>
+                    <div class="testimonial-info">
+                        <h4>Petros M.</h4>
+                        <p>Volleyball Player - Nicosia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"The ergotherapy sessions have significantly improved my hand function after my accident. I can now perform daily tasks I thought I'd never do again. Truly grateful!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MK</div>
+                    <div class="testimonial-info">
+                        <h4>Maria K.</h4>
+                        <p>Hand Therapy Patient - Deftera</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"As a runner dealing with persistent knee pain, I was skeptical about physiotherapy. Right Track proved me wrong. Their evidence-based approach got me back to running pain-free!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">CS</div>
+                    <div class="testimonial-info">
+                        <h4>Christina S.</h4>
+                        <p>Marathon Runner - Nicosia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"My teenage son's scoliosis treatment has been excellent. The team is professional, patient, and really understands how to work with adolescents. Highly recommend their kids' program!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">KP</div>
+                    <div class="testimonial-info">
+                        <h4>Kyriakos P.</h4>
+                        <p>Parent - Kaimakli</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"The post-operative care I received was outstanding. From the initial assessment to full recovery, every step was carefully planned and executed. I'm back to my active lifestyle thanks to this team!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AP</div>
+                    <div class="testimonial-info">
+                        <h4>Andreas P.</h4>
+                        <p>Post-Op Patient - Limassol</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"Antonis comes to my home in Agios Dometios for physiotherapy sessions. It's so convenient and the treatment is excellent. I feel stronger and more mobile every week!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MK</div>
+                    <div class="testimonial-info">
+                        <h4>Mr. Kleopas</h4>
+                        <p>Homecare Patient - Agios Dometios</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"The homecare service is a game-changer for me. Antonis brings professional physiotherapy right to my door in Anthoupoli. His expertise and dedication make all the difference in my recovery."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MN</div>
+                    <div class="testimonial-info">
+                        <h4>Mr. Nikos</h4>
+                        <p>Homecare Patient - Anthoupoli</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"Having Antonis visit me at home in Palouriotissa has been wonderful. The personalized care and attention in the comfort of my own home makes therapy so much easier and effective."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MA</div>
+                    <div class="testimonial-info">
+                        <h4>Ms. Antonitsa</h4>
+                        <p>Homecare Patient - Palouriotissa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="testimonial-text">"Right Track's homecare physiotherapy in Strovolos is exceptional. Antonis is professional, knowledgeable, and truly cares about my progress. I highly recommend their home services!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MA</div>
+                    <div class="testimonial-info">
+                        <h4>Mr. Andreas</h4>
+                        <p>Homecare Patient - Strovolos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="partnerships" id="partnerships">
+        <div class="section-header">
+            <h2>Our <span>Partnerships</span></h2>
+            <p>Trusted by elite football clubs and organizations across Cyprus</p>
+        </div>
+
+        <div class="partnerships-container">
+            <div class="partnership-card">
+                <div class="partnership-logo">
+                    <img src="LakatamiaFC.png" alt="Lakatamia F.C. Women">
+                </div>
+                <div class="partnership-info">
+                    <h3>Lakatamia F.C. Women</h3>
+                    <p>Elite women's football team</p>
+                    <p class="partnership-description">Right Track provides comprehensive sports physiotherapy support to Lakatamia F.C. Women, focusing on injury prevention, performance optimization, and rapid recovery protocols for elite female athletes.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-logo">
+                    <img src="doxa-katokopias-fc-logo-png_seeklogo-306373.png" alt="Doxa Katokopias FC">
+                </div>
+                <div class="partnership-info">
+                    <h3>Doxa Katokopias FC</h3>
+                    <p>Professional football club partnership</p>
+                    <p class="partnership-description">Long-term partnership providing integrated physiotherapy, strength & conditioning, and return-to-play protocols for professional players.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-placeholder">🏫</div>
+                <div class="partnership-info">
+                    <h3>Frederick University</h3>
+                    <p>Clinical practice supervision & education</p>
+                    <p class="partnership-description">Antonis Petri serves as Clinical Practice Supervisor, training the next generation of healthcare professionals with evidence-based rehabilitation and clinical excellence.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-placeholder">⚽</div>
+                <div class="partnership-info">
+                    <h3>PAEEK Kyrenia</h3>
+                    <p>Professional football club partnership</p>
+                    <p class="partnership-description">Providing comprehensive sports physiotherapy services, performance optimization, and injury prevention protocols for professional football players.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-placeholder">🥊</div>
+                <div class="partnership-info">
+                    <h3>Muay Thai Warriors</h3>
+                    <p>Combat sports performance & recovery</p>
+                    <p class="partnership-description">Performance training and injury prevention specialized for combat athletes, including conditioning, recovery protocols, and movement optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-banner-container">
+            <div class="cta-banner-content">
+                <h2>Ready to start your <span>journey?</span></h2>
+                <p>Book your free 15-minute consultation today and take the first step toward recovery and peak performance.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:righttrackphysio@gmail.com" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="cta-banner-image">
+                <img src="assets/images/logos/logo-icon.png" alt="Right Track Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="section-header">
+            <h2>Latest from our <span>blog</span></h2>
+            <p>Expert insights on recovery, performance, and wellness</p>
+        </div>
+
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="AP_FU_team.jpg" alt="Antonis Petri - Clinical Practice Supervisor at Frederick University">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">November 3, 2024</span>
+                    <h3><a href="antonis-fu-article.html">Bridging Academia and Clinical Practice: Antonis Petri's Role at Frederick University</a></h3>
+                    <p class="blog-excerpt">Discover how our Clinical Practice Supervisor is shaping the next generation of healthcare professionals through evidence-based teaching and real-world clinical experience.</p>
+                    <a href="antonis-fu-article.html" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-1.jpg" alt="Understanding ACL Recovery">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">January 15, 2025</span>
+                    <h3><a href="#">Understanding ACL Recovery: A Complete Guide</a></h3>
+                    <p class="blog-excerpt">Learn about the phases of ACL recovery, what to expect during rehabilitation, and how to optimize your return to sport safely and effectively.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-2.jpg" alt="Benefits of Clinical Pilates">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">January 8, 2025</span>
+                    <h3><a href="#">The Benefits of Clinical Pilates for Rehabilitation</a></h3>
+                    <p class="blog-excerpt">Discover how physio-led Pilates can accelerate recovery, improve core strength, and prevent future injuries through controlled movement patterns.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-3.jpg" alt="Youth Athletic Development">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 28, 2024</span>
+                    <h3><a href="#">Youth Athletic Development: Building Foundations</a></h3>
+                    <p class="blog-excerpt">Essential principles for developing young athletes safely, focusing on movement quality, injury prevention, and long-term performance goals.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-4.jpg" alt="Latest Physiotherapy Research Trends 2024-2025">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">November 2024</span>
+                    <h3><a href="physiotherapy-research-trends-2024.html">Latest Physiotherapy Research Trends 2024-2025: Evidence-Based Innovations</a></h3>
+                    <p class="blog-excerpt">Explore cutting-edge research transforming physical therapy practice—AI integration, holistic pain management, preventive care, and sports neurorehabilitation innovations discussed by leading professionals.</p>
+                    <a href="physiotherapy-research-trends-2024.html" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-4.jpg" alt="Managing Chronic Pain">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 20, 2024</span>
+                    <h3><a href="#">Managing Chronic Pain Through Movement</a></h3>
+                    <p class="blog-excerpt">Evidence-based approaches to chronic pain management, including therapeutic exercise, manual therapy, and lifestyle modifications.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-5.jpg" alt="Pediatric Occupational Therapy">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">November 2024</span>
+                    <h3><a href="pediatric-occupational-therapy.html">Pediatric Occupational Therapy: Evidence-Based Approaches to Child Development</a></h3>
+                    <p class="blog-excerpt">Discover how occupational therapy supports children's functional independence, motor skill development, and sensory integration through evidence-driven interventions grounded in latest research.</p>
+                    <a href="pediatric-occupational-therapy.html" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-5.jpg" alt="Occupational Therapy for Children">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 12, 2024</span>
+                    <h3><a href="#">How Occupational Therapy Helps Children Thrive</a></h3>
+                    <p class="blog-excerpt">Exploring how OT supports children's development through play-based interventions, sensory integration, and skill-building activities.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-6.jpg" alt="Post-Operative Recovery">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 5, 2024</span>
+                    <h3><a href="#">Post-Operative Recovery: What to Expect</a></h3>
+                    <p class="blog-excerpt">A comprehensive guide to post-surgical rehabilitation, including timeline expectations, key milestones, and tips for optimal recovery.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="section-header">
+            <h2>Meet our <span>team</span></h2>
+            <p>Expert clinicians dedicated to your recovery and performance</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-row">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="assets/images/team/tony-photo.jpg" alt="Antonis Petri">
+                    </div>
+                    <div class="team-content">
+                        <h3>Antonis Petri</h3>
+                        <div class="team-stats">
+                            <span class="stat-badge"><span class="icon">♥</span> 350+ patients helped</span>
+                            <span class="availability-badge">In-clinic</span>
+                            <span class="availability-badge">Homecare</span>
+                            <span class="availability-badge">Pitch-side</span>
+                        </div>
+                        <p class="role">Co-Founder & Lead Clinician</p>
+                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                        <a href="pages/tony-profile.html">View Full Profile →</a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo charalambos-photo">
+                        <img src="assets/images/team/charalambos-photo.jpg" alt="Charalambos Gregoriou">
+                    </div>
+                    <div class="team-content">
+                        <h3>Charalambos Gregoriou</h3>
+                        <div class="team-stats">
+                            <span class="stat-badge"><span class="icon">♥</span> 150+ patients helped</span>
+                            <span class="availability-badge">In-clinic</span>
+                            <span class="availability-badge">Pitch-side</span>
+                        </div>
+                        <p class="role">Co-Founder & Clinical Director</p>
+                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="assets/images/team/tony-photo.jpg" alt="Niki Vronti">
+                    </div>
+                    <div class="team-content">
+                        <h3>Niki Vronti</h3>
+                        <div class="team-stats">
+                            <span class="stat-badge"><span class="icon">♥</span> 400+ children helped</span>
+                            <span class="availability-badge">In-clinic</span>
+                            <span class="availability-badge">Homecare</span>
+                        </div>
+                        <p class="role">Pediatric Occupational Therapist</p>
+                        <p>Specialized in pediatric occupational therapy, helping children develop essential life skills, motor coordination, and independence through play-based therapeutic interventions.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="assets/images/team/tony-photo.jpg" alt="Alice Kazanjian">
+                    </div>
+                    <div class="team-content">
+                        <h3>Alice Kazanjian</h3>
+                        <div class="team-stats">
+                            <span class="stat-badge"><span class="icon">♥</span> 600+ clients helped</span>
+                            <span class="availability-badge">In-clinic</span>
+                            <span class="availability-badge">Homecare</span>
+                        </div>
+                        <p class="role">Clinical Pilates Instructor</p>
+                        <p>Certified clinical Pilates instructor specializing in physio-led mat Pilates, rehabilitation-focused movement, and athletic conditioning for improved strength and mobility.</p>
+                        
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="assets/images/team/marilena-photo.jpeg" alt="Marilena Petri">
+                    </div>
+                    <div class="team-content">
+                        <h3>Marilena Petri</h3>
+                        <div class="team-stats">
+                            <span class="stat-badge"><span class="icon">♥</span> 50+ patients helped</span>
+                            <span class="availability-badge">In-clinic</span>
+                            <span class="availability-badge">Pitch-side</span>
+                        </div>
+                        <p class="role">Physiotherapist</p>
+                        <p>Experienced physiotherapist specializing in musculoskeletal rehabilitation, post-operative recovery, and personalized treatment plans for restoring mobility and reducing pain.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Team Section -->
+    <section class="join-team" id="join-team">
+        <div class="section-header">
+            <h2>Build something <span>meaningful</span></h2>
+            <p>We're looking for dedicated clinicians who want to grow with our team and help us serve our community better.</p>
+        </div>
+
+        <div class="join-team-container">
+            <!-- Left Side: Image and Text -->
+            <div class="join-team-content">
+                <div class="join-team-image">
+                    <img src="assets/images/team/antonis-office.jpg" alt="Antonis at Right Track">
+                </div>
+                <div class="join-team-text">
+                    <h3>Let's build something meaningful together</h3>
+                    <p>We built Right Track as a true rehabilitation center where clinicians do their best work. Your expertise is valued, your voice matters, and your success is our success.</p>
+                    <p>We're looking for passionate professionals who genuinely care about their patients and want to work in an environment that supports both clinical excellence and personal fulfillment. When our clients win, we all win.</p>
+
+                    <div class="join-team-benefits">
+                        <div class="benefit-item">Clinical autonomy with world-class facilities and collaborative support</div>
+                        <div class="benefit-item">Work with inspiring athletes, families, and patients who fuel your passion</div>
+                        <div class="benefit-item">Grow alongside a team that deeply cares about clinical excellence</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="join-team-form">
+                <h3>Let's talk</h3>
+                <form action="mailto:righttrackphysio@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="position">Position of Interest</label>
+                        <input type="text" id="position" name="position" placeholder="e.g., Physiotherapist, OT, Pilates Instructor">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Brief Message (Optional)</label>
+                        <textarea id="message" name="message" placeholder="Tell us about yourself and why you'd like to join Right Track..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cv">Attach CV/Resume *</label>
+                        <div class="file-upload">
+                            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                            <label for="cv" class="file-upload-label">
+                                Choose File (PDF, DOC, DOCX)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Get in <span>touch</span></h2>
+            <p>We're here to help you start your journey to better health</p>
+        </div>
+
+        <div class="contact-info-grid">
+            <div class="contact-info-block">
+                <h3>Location</h3>
+                <p>Tseriou 32<br>Strovolos 2042<br>Nicosia, Cyprus</p>
+                <a href="https://www.google.com/maps?q=Right+Track,+Tseriou+32,+Strovolos+2042" target="_blank">View on Maps</a>
+            </div>
+            <div class="contact-info-block">
+                <h3>Contact</h3>
+                <p><a href="tel:+35799126824">+357 99 126 824</a></p>
+                <p><a href="mailto:righttrackphysio@gmail.com">righttrackphysio@gmail.com</a></p>
+            </div>
+            <div class="contact-info-block">
+                <h3>Hours</h3>
+                <p>Mon - Fri: 8:00 AM - 8:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p>
+            </div>
+        </div>
+
+        <div class="contact-cta">
+            <a href="mailto:righttrackphysio@gmail.com" class="btn btn-primary">Book Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Right Track Rehabilitation & Performance Centre. All rights reserved.</p>
+            <p>GESY-Registered Physiotherapy Provider | Nicosia, Cyprus</p>
+            <p>Email: <a href="mailto:righttrackphysio@gmail.com">righttrackphysio@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Service Configurator Logic
+        let configuratorState = {
+            goal: null,
+            setting: null
+        };
+
+        function updateConfigurator(type, value) {
+            // Update state
+            configuratorState[type] = value;
+
+            // Remove active class from all buttons in this step
+            const buttons = document.querySelectorAll(`.config-btn[onclick*="'${type}'"]`);
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Generate recommendation if both selections made
+            if (configuratorState.goal && configuratorState.setting) {
+                generateRecommendation();
+            }
+        }
+
+        function generateRecommendation() {
+            const { goal, setting } = configuratorState;
+            let recommendation = '';
+
+            // Logic to match goal + setting to service
+            if (goal === 'recover') {
+                if (setting === 'clinic') {
+                    recommendation = '<strong>Physiotherapy</strong> - Evidence-based treatment for injury recovery, pain management, and functional restoration. Book your assessment with one of our specialists today.';
+                } else if (setting === 'home') {
+                    recommendation = '<strong>Homecare Physiotherapy</strong> - Convenient, personalized treatment in your own home. Perfect for recovery after surgery or injury. Book a home visit →';
+                } else if (setting === 'group') {
+                    recommendation = '<strong>Clinical Pilates</strong> - Therapeutic movement in small group sessions. Ideal for injury recovery combined with strength building. Book your trial →';
+                }
+            } else if (goal === 'improve') {
+                if (setting === 'clinic' || setting === 'group') {
+                    recommendation = '<strong>Clinical Pilates</strong> - Transform your core strength, posture, and flexibility. Small group sessions combine therapeutic precision with motivating community. Book your trial →';
+                } else if (setting === 'home') {
+                    recommendation = '<strong>Homecare Pilates</strong> - One-on-one sessions tailored to your fitness goals and schedule. Get stronger and improve flexibility at home. Book a session →';
+                }
+            } else if (goal === 'perform') {
+                if (setting === 'clinic' || setting === 'group') {
+                    recommendation = '<strong>Performance Training</strong> - Sport-specific conditioning and movement optimization. Enhance speed, agility, and athletic performance. Start training →';
+                } else if (setting === 'home') {
+                    recommendation = '<strong>Home Performance Program</strong> - Personalized training program designed for your sport. Professional guidance in your own space. Get your plan →';
+                }
+            } else if (goal === 'child') {
+                recommendation = '<strong>Kids\' Physiotherapy</strong> - Play-based therapy supporting growth, development, and movement skills. Expert care for children from infancy to adolescence. Get assessment →';
+            }
+
+            // Update result display
+            const resultElement = document.getElementById('configResult');
+            if (resultElement) {
+                resultElement.innerHTML = recommendation;
+            }
+        }
+    </script>
+
+    <!-- Language Switcher Script -->
+    <script src="assets/js/translations.js"></script>
+</body>
+</html>

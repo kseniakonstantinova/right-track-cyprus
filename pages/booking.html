@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Booking | Right Track Physiotherapy Cyprus</title>
+    <meta name="description" content="Book your physiotherapy appointment online. Quick, easy, and convenient scheduling for our Nicosia and Limassol locations.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --orange: #FF6B35;
+            --white: #ffffff;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --text-dark: #212529;
+            --text-gray: #6C757D;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--off-white);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.5rem 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .logo .first-word {
+            color: var(--navy);
+        }
+
+        .logo .second-word {
+            color: var(--orange);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+        /* Main Content */
+        .booking-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+        }
+
+        .booking-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .booking-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .booking-header p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Booking Widget Container */
+        .booking-widget {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .booking-widget-placeholder {
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        .booking-widget-placeholder h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Info Section */
+        .booking-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .info-card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .info-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .info-card li {
+            color: var(--text-gray);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .info-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .booking-header h1 {
+                font-size: 2rem;
+            }
+
+            .booking-widget {
+                padding: 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="first-word">Right</span> <span class="second-word">Track</span>
+            </a>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="booking-container">
+            <div class="booking-header">
+                <h1>Book Your Appointment Online</h1>
+                <p>Choose your preferred time, therapist, and service. Easy, quick, and convenient scheduling for all our locations.</p>
+            </div>
+
+            <div class="booking-widget">
+                <!-- SimplyBook.me widget will be inserted here -->
+                <div class="booking-widget-placeholder">
+                    <h3>Booking Widget Coming Soon</h3>
+                    <p>Insert your SimplyBook.me widget code here.</p>
+                    <p style="margin-top: 20px; color: var(--text-gray);">
+                        To integrate the booking system:<br>
+                        1. Register at <a href="https://simplybook.me" target="_blank" style="color: var(--orange);">SimplyBook.me</a><br>
+                        2. Get your widget code from Settings → Integrations<br>
+                        3. Replace this placeholder with your widget code
+                    </p>
+                </div>
+
+                <!-- Example: Paste your SimplyBook.me iframe code here -->
+                <!-- <iframe src="YOUR_SIMPLYBOOK_URL" width="100%" height="600" frameborder="0"></iframe> -->
+            </div>
+
+            <div class="booking-info">
+                <div class="info-card">
+                    <h3>📍 Our Locations</h3>
+                    <ul>
+                        <li><strong>Nicosia Clinic</strong><br>Address details here</li>
+                        <li><strong>Limassol Clinic</strong><br>Address details here</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>⏰ Working Hours</h3>
+                    <ul>
+                        <li><strong>Monday - Friday:</strong> 8:00 AM - 8:00 PM</li>
+                        <li><strong>Saturday:</strong> 9:00 AM - 3:00 PM</li>
+                        <li><strong>Sunday:</strong> Closed</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>💳 Accepted Payment</h3>
+                    <ul>
+                        <li>GESY (Γεσύ) - Registered Provider</li>
+                        <li>Private Insurance</li>
+                        <li>Credit/Debit Cards</li>
+                        <li>Cash</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

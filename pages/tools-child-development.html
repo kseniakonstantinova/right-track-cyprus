@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is My Child on Track? - Developmental Milestone Checker</title>
+    <meta name="description" content="Free tool to check if your child is meeting developmental milestones. Get insights and personalized guidance.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --orange: #FF6B35;
+            --white: #ffffff;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --text-dark: #212529;
+            --text-gray: #6C757D;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--off-white);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        .back-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--orange);
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Header Section */
+        .tool-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .tool-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        /* Milestone Checklist */
+        .milestone-section {
+            margin-bottom: 40px;
+        }
+
+        .milestone-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        .milestone-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--off-white);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            align-items: center;
+        }
+
+        .milestone-item:hover {
+            background: #f0f0f0;
+        }
+
+        .milestone-text {
+            flex: 1;
+        }
+
+        .milestone-text strong {
+            display: block;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .milestone-text small {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .milestone-slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 100%;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        .slider-track {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            order: 1;
+        }
+
+        .milestone-item input[type="range"] {
+            display: none;
+        }
+
+        .milestone-value {
+            font-weight: 700;
+            color: var(--orange);
+            font-size: 1.4rem;
+            min-width: 40px;
+            text-align: center;
+            letter-spacing: -0.5px;
+            order: 2;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .slider-labels span {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 6px;
+            background: var(--light-gray);
+            color: var(--text-gray);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            user-select: none;
+            min-width: 35px;
+        }
+
+        .slider-labels span:hover {
+            background: #e0e0e0;
+        }
+
+        .slider-labels span.active {
+            background: var(--orange);
+            color: var(--white);
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        button {
+            flex: 1;
+            padding: 16px 32px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: var(--light-gray);
+            color: var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: #ddd;
+        }
+
+        /* Results Section - Hidden initially */
+        .results-section {
+            display: none;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .results-header h2 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .results-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Main Status Gauge */
+        .status-gauge {
+            background: linear-gradient(135deg, var(--off-white) 0%, rgba(255, 107, 53, 0.03) 100%);
+            padding: 40px;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 107, 53, 0.15);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gauge-title {
+            font-size: 1rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .gauge-bar-container {
+            background: var(--light-gray);
+            height: 16px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+        }
+
+        .gauge-bar-segment {
+            flex: 1;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .gauge-bar-segment.on-track {
+            background: var(--success);
+        }
+
+        .gauge-bar-segment.developing {
+            background: var(--warning);
+        }
+
+        .gauge-bar-segment.monitor {
+            background: var(--danger);
+        }
+
+        .gauge-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        /* Result Cards - Redesigned */
+        .result-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px;
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+
+        .result-card.on-track {
+            border-color: rgba(40, 167, 69, 0.25);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.1);
+        }
+
+        .result-card.on-track::before {
+            background: var(--success);
+        }
+
+        .result-card.developing {
+            border-color: rgba(255, 193, 7, 0.25);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.1);
+        }
+
+        .result-card.developing::before {
+            background: var(--warning);
+        }
+
+        .result-card.monitor {
+            border-color: rgba(220, 53, 69, 0.25);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.1);
+        }
+
+        .result-card.monitor::before {
+            background: var(--danger);
+        }
+
+        .result-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .result-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .result-stat {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .result-total {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .result-percentage {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .result-card.on-track .result-number,
+        .result-card.on-track .result-percentage {
+            color: var(--success);
+        }
+
+        .result-card.developing .result-number,
+        .result-card.developing .result-percentage {
+            color: var(--warning);
+        }
+
+        .result-card.monitor .result-number,
+        .result-card.monitor .result-percentage {
+            color: var(--danger);
+        }
+
+        .result-label {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .result-description {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        .summary-overview {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(10, 22, 40, 0.03));
+            border-left: 4px solid var(--orange);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .summary-overview h3 {
+            color: var(--navy);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .summary-overview p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .summary-overview p:last-child {
+            margin-bottom: 0;
+        }
+
+        .progress-bar-container {
+            margin-top: 20px;
+        }
+
+        .progress-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar-label span:first-child {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .progress-bar-label span:last-child {
+            color: var(--text-gray);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--orange), var(--navy));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        /* Insight Box */
+        .insight-box {
+            background: rgba(255, 107, 53, 0.05);
+            border-left: 4px solid var(--orange);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .insight-box h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .insight-box p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .insight-section {
+            margin-bottom: 40px;
+        }
+
+        /* Recommendations */
+        .recommendations {
+            margin-top: 40px;
+        }
+
+        .recommendations h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .recommendation-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: var(--off-white);
+            border-radius: 8px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .recommendation-item strong {
+            display: block;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .recommendation-item p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            border-top: 1px solid var(--light-gray);
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .tool-header h1 {
+                font-size: 2rem;
+            }
+
+            .results-summary {
+                gap: 20px;
+            }
+
+            .gauge-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .status-gauge {
+                padding: 30px 20px;
+            }
+
+            .result-card {
+                padding: 20px;
+            }
+
+            .result-number {
+                font-size: 2rem;
+            }
+
+            .result-icon {
+                font-size: 1.8rem;
+            }
+
+            .summary-overview {
+                padding: 20px;
+            }
+
+            .summary-overview h3 {
+                font-size: 1.15rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .form-section, .results-section {
+                padding: 25px;
+            }
+
+            .recommendation-item {
+                padding: 15px;
+            }
+
+            .recommendations h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Right<span>Track</span></a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Tool Header -->
+        <section class="tool-header">
+            <h1>Is My Child on <span style="color: var(--orange);">Track</span>?</h1>
+            <p>A simple guide to help you understand if your child is meeting developmental milestones. This tool is designed to provide insights, not diagnoses. We're here to support your child's development journey.</p>
+        </section>
+
+        <!-- Form Section -->
+        <section id="formSection" class="form-section">
+            <div class="form-group">
+                <label for="childAge">How old is your child?</label>
+                <select id="childAge" required>
+                    <option value="">Select your child's age</option>
+                    <option value="0-3m">0-3 months</option>
+                    <option value="3-6m">3-6 months</option>
+                    <option value="6-9m">6-9 months</option>
+                    <option value="9-12m">9-12 months</option>
+                    <option value="1-1.5y">1-1.5 years</option>
+                    <option value="1.5-2y">1.5-2 years</option>
+                    <option value="2-3y">2-3 years</option>
+                    <option value="3-4y">3-4 years</option>
+                    <option value="4-5y">4-5 years</option>
+                    <option value="5-6y">5-6 years</option>
+                    <option value="6-7y">6-7 years</option>
+                    <option value="7-8y">7-8 years</option>
+                    <option value="8-10y">8-10 years</option>
+                    <option value="10-12y">10-12 years</option>
+                    <option value="12-14y">12-14 years</option>
+                    <option value="14-17y">14-17 years</option>
+                </select>
+            </div>
+
+            <!-- Milestones will be dynamically inserted here -->
+            <div id="milestonesContainer"></div>
+
+            <div class="button-group">
+                <button type="button" class="btn-secondary" onclick="resetForm()">Reset</button>
+                <button type="button" class="btn-primary" onclick="calculateResults()">Get My Results</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section">
+            <div class="results-header">
+                <h2>Your Child's Development Summary</h2>
+                <p>Based on your responses, here's a personalized overview.</p>
+            </div>
+
+            <div class="results-summary">
+                <div class="status-gauge">
+                    <div class="gauge-title">Overall Development Status</div>
+                    <div class="gauge-bar-container" id="gaugeBarContainer">
+                        <div class="gauge-bar-segment on-track" style="width: 0%"></div>
+                        <div class="gauge-bar-segment developing" style="width: 0%"></div>
+                        <div class="gauge-bar-segment monitor" style="width: 0%"></div>
+                    </div>
+                    <div class="gauge-stats">
+                        <div id="onTrackCard" class="result-card on-track">
+                            <div class="result-icon"></div>
+                            <div class="result-stat">
+                                <div class="result-number">0</div>
+                                <div class="result-total">/ <span id="totalMilestones">0</span></div>
+                            </div>
+                            <div class="result-percentage">0%</div>
+                            <div class="result-label">On Track</div>
+                            <div class="result-description">Milestones being met</div>
+                        </div>
+                        <div id="developingCard" class="result-card developing">
+                            <div class="result-icon"></div>
+                            <div class="result-stat">
+                                <div class="result-number">0</div>
+                                <div class="result-total">/ <span id="totalMilestones2">0</span></div>
+                            </div>
+                            <div class="result-percentage">0%</div>
+                            <div class="result-label">Developing</div>
+                            <div class="result-description">Skills in progress</div>
+                        </div>
+                        <div id="monitorCard" class="result-card monitor">
+                            <div class="result-icon"></div>
+                            <div class="result-stat">
+                                <div class="result-number">0</div>
+                                <div class="result-total">/ <span id="totalMilestones3">0</span></div>
+                            </div>
+                            <div class="result-percentage">0%</div>
+                            <div class="result-label">Worth Monitoring</div>
+                            <div class="result-description">Areas for support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="summaryOverviewContainer"></div>
+
+            <div id="insightBoxContainer"></div>
+
+            <div id="recommendationsContainer"></div>
+
+            <div class="button-group" style="margin-top: 40px;">
+                <button type="button" class="btn-secondary" onclick="goBackToForm()">Take Assessment Again</button>
+                <button type="button" class="btn-primary" onclick="contactUsScroll()">Learn More About Support</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Right Track Rehabilitation & Performance Centre. All rights reserved.</p>
+        <p>GESY-Registered Physiotherapy Provider | Nicosia, Cyprus</p>
+        <p>Email: <a href="mailto:righttrackphysio@gmail.com">righttrackphysio@gmail.com</a></p>
+    </footer>
+
+    <script>
+        // Milestone data by age group
+        const milestones = {
+            '0-3m': {
+                title: '0-3 Months',
+                items: [
+                    { id: 'm1', text: 'Fixes gaze on caregiver\'s face', category: 'social' },
+                    { id: 'm2', text: 'Begins to follow objects with eyes', category: 'sensory' },
+                    { id: 'm3', text: 'Responds to sounds and voices', category: 'communication' },
+                    { id: 'm4', text: 'Lifts head slightly when lying on tummy', category: 'motor' },
+                    { id: 'm5', text: 'Brings hands to mouth', category: 'motor' },
+                    { id: 'm6', text: 'Makes cooing sounds', category: 'communication' }
+                ]
+            },
+            '3-6m': {
+                title: '3-6 Months',
+                items: [
+                    { id: 'm1', text: 'Holds head steady', category: 'motor' },
+                    { id: 'm2', text: 'Grasps objects placed in hand', category: 'motor' },
+                    { id: 'm3', text: 'Smiles socially and responsively', category: 'social' },
+                    { id: 'm4', text: 'Begins to laugh out loud', category: 'social' },
+                    { id: 'm5', text: 'Reaches for objects', category: 'motor' },
+                    { id: 'm6', text: 'Tracks moving objects with eyes', category: 'sensory' }
+                ]
+            },
+            '6-9m': {
+                title: '6-9 Months',
+                items: [
+                    { id: 'm1', text: 'Rolls both ways (front to back, back to front)', category: 'motor' },
+                    { id: 'm2', text: 'Sits without support', category: 'motor' },
+                    { id: 'm3', text: 'Babbles with consonants ("da", "ba", "ga")', category: 'communication' },
+                    { id: 'm4', text: 'Shows stranger anxiety', category: 'social' },
+                    { id: 'm5', text: 'Transfers objects hand to hand', category: 'motor' },
+                    { id: 'm6', text: 'Begins to crawl or scoot', category: 'motor' }
+                ]
+            },
+            '9-12m': {
+                title: '9-12 Months',
+                items: [
+                    { id: 'm1', text: 'Crawls well', category: 'motor' },
+                    { id: 'm2', text: 'Stands holding on to furniture', category: 'motor' },
+                    { id: 'm3', text: 'Says first words like "mama" or "dada"', category: 'communication' },
+                    { id: 'm4', text: 'Waves bye-bye and plays peek-a-boo', category: 'social' },
+                    { id: 'm5', text: 'Responds to their name', category: 'communication' },
+                    { id: 'm6', text: 'Uses pincer grasp (thumb and finger)', category: 'motor' }
+                ]
+            },
+            '1-1.5y': {
+                title: '1-1.5 Years',
+                items: [
+                    { id: 'm1', text: 'Takes first steps independently', category: 'motor' },
+                    { id: 'm2', text: 'Says 3-10 words', category: 'communication' },
+                    { id: 'm3', text: 'Points to pictures or objects', category: 'communication' },
+                    { id: 'm4', text: 'Enjoys dancing and clapping', category: 'social' },
+                    { id: 'm5', text: 'Follows simple commands like "give me"', category: 'communication' },
+                    { id: 'm6', text: 'Scribbles with crayons', category: 'motor' }
+                ]
+            },
+            '1.5-2y': {
+                title: '1.5-2 Years',
+                items: [
+                    { id: 'm1', text: 'Walks and runs with occasional falls', category: 'motor' },
+                    { id: 'm2', text: 'Says 20-50 words', category: 'communication' },
+                    { id: 'm3', text: 'Uses two-word combinations ("mama go")', category: 'communication' },
+                    { id: 'm4', text: 'Kicks a ball', category: 'motor' },
+                    { id: 'm5', text: 'Follows two-step instructions', category: 'cognitive' },
+                    { id: 'm6', text: 'Shows affection for familiar people', category: 'social' }
+                ]
+            },
+            '2-3y': {
+                title: '2-3 Years',
+                items: [
+                    { id: 'm1', text: 'Runs and jumps', category: 'motor' },
+                    { id: 'm2', text: 'Climbs stairs with one hand held', category: 'motor' },
+                    { id: 'm3', text: 'Uses 50+ words and short sentences', category: 'communication' },
+                    { id: 'm4', text: 'Plays alongside other children', category: 'social' },
+                    { id: 'm5', text: 'Builds tower with 6-8 blocks', category: 'motor' },
+                    { id: 'm6', text: 'Understands simple questions', category: 'cognitive' }
+                ]
+            },
+            '3-4y': {
+                title: '3-4 Years',
+                items: [
+                    { id: 'm1', text: 'Climbs stairs alternating feet', category: 'motor' },
+                    { id: 'm2', text: 'Throws and catches a ball', category: 'motor' },
+                    { id: 'm3', text: 'Speaks in sentences with 4+ words', category: 'communication' },
+                    { id: 'm4', text: 'Asks many "why" questions', category: 'cognitive' },
+                    { id: 'm5', text: 'Engages in pretend play', category: 'social' },
+                    { id: 'm6', text: 'Draws circles and simple shapes', category: 'motor' }
+                ]
+            },
+            '4-5y': {
+                title: '4-5 Years',
+                items: [
+                    { id: 'm1', text: 'Hops on one foot', category: 'motor' },
+                    { id: 'm2', text: 'Pedals a tricycle', category: 'motor' },
+                    { id: 'm3', text: 'Speaks clearly most of the time', category: 'communication' },
+                    { id: 'm4', text: 'Tells simple stories', category: 'communication' },
+                    { id: 'm5', text: 'Knows letters and numbers', category: 'cognitive' },
+                    { id: 'm6', text: 'Cooperates and plays with other children', category: 'social' }
+                ]
+            },
+            '5-6y': {
+                title: '5-6 Years',
+                items: [
+                    { id: 'm1', text: 'Skips and balances on one foot for 5+ seconds', category: 'motor' },
+                    { id: 'm2', text: 'Reads simple words and rhyming books', category: 'cognitive' },
+                    { id: 'm3', text: 'Uses complex sentences with proper grammar', category: 'communication' },
+                    { id: 'm4', text: 'Writes own name', category: 'motor' },
+                    { id: 'm5', text: 'Forms friendships and shows empathy', category: 'social' },
+                    { id: 'm6', text: 'Counts to 20 and understands basic math', category: 'cognitive' }
+                ]
+            },
+            '6-7y': {
+                title: '6-7 Years',
+                items: [
+                    { id: 'm1', text: 'Draws more detailed pictures', category: 'motor' },
+                    { id: 'm2', text: 'Reads at grade level with fluency', category: 'cognitive' },
+                    { id: 'm3', text: 'Writes simple sentences and stories', category: 'motor' },
+                    { id: 'm4', text: 'Participates in team games and sports', category: 'social' },
+                    { id: 'm5', text: 'Understands time concepts (days, seasons)', category: 'cognitive' },
+                    { id: 'm6', text: 'Shows responsibility and follows rules', category: 'social' }
+                ]
+            },
+            '7-8y': {
+                title: '7-8 Years',
+                items: [
+                    { id: 'm1', text: 'Demonstrates improved coordination and balance', category: 'motor' },
+                    { id: 'm2', text: 'Reads for pleasure and comprehension', category: 'cognitive' },
+                    { id: 'm3', text: 'Writes organized thoughts and ideas', category: 'motor' },
+                    { id: 'm4', text: 'Develops close friendships', category: 'social' },
+                    { id: 'm5', text: 'Solves more complex problems and puzzles', category: 'cognitive' },
+                    { id: 'm6', text: 'Understands right and wrong', category: 'social' }
+                ]
+            },
+            '8-10y': {
+                title: '8-10 Years',
+                items: [
+                    { id: 'm1', text: 'Participates actively in organized sports', category: 'motor' },
+                    { id: 'm2', text: 'Reads with proficiency and expression', category: 'cognitive' },
+                    { id: 'm3', text: 'Writes essays and creative stories', category: 'motor' },
+                    { id: 'm4', text: 'Has a strong peer group and friendships', category: 'social' },
+                    { id: 'm5', text: 'Applies logical thinking to problems', category: 'cognitive' },
+                    { id: 'm6', text: 'Takes on responsibilities and chores', category: 'social' }
+                ]
+            },
+            '10-12y': {
+                title: '10-12 Years',
+                items: [
+                    { id: 'm1', text: 'Has good fine and gross motor control', category: 'motor' },
+                    { id: 'm2', text: 'Reads complex texts with understanding', category: 'cognitive' },
+                    { id: 'm3', text: 'Writes well-organized reports and essays', category: 'motor' },
+                    { id: 'm4', text: 'Navigates peer relationships and group dynamics', category: 'social' },
+                    { id: 'm5', text: 'Shows independent thinking and decision-making', category: 'cognitive' },
+                    { id: 'm6', text: 'Shows concern for fairness and morality', category: 'social' }
+                ]
+            },
+            '12-14y': {
+                title: '12-14 Years',
+                items: [
+                    { id: 'm1', text: 'Physical development aligned with puberty', category: 'motor' },
+                    { id: 'm2', text: 'Reads and analyzes complex material', category: 'cognitive' },
+                    { id: 'm3', text: 'Writes persuasive and analytical essays', category: 'motor' },
+                    { id: 'm4', text: 'Develops personal identity and independence', category: 'social' },
+                    { id: 'm5', text: 'Thinks abstractly and reasons logically', category: 'cognitive' },
+                    { id: 'm6', text: 'Values friendships and begins romantic interest', category: 'social' }
+                ]
+            },
+            '14-17y': {
+                title: '14-17 Years',
+                items: [
+                    { id: 'm1', text: 'Physical development near or at adult levels', category: 'motor' },
+                    { id: 'm2', text: 'Reads and interprets sophisticated texts', category: 'cognitive' },
+                    { id: 'm3', text: 'Writes with style and complex arguments', category: 'motor' },
+                    { id: 'm4', text: 'Forms mature relationships and shows autonomy', category: 'social' },
+                    { id: 'm5', text: 'Engages in abstract thinking and future planning', category: 'cognitive' },
+                    { id: 'm6', text: 'Develops personal values and moral judgment', category: 'social' }
+                ]
+            }
+        };
+
+        // Initialize form on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('childAge').addEventListener('change', loadMilestones);
+        });
+
+        function loadMilestones() {
+            const age = document.getElementById('childAge').value;
+            const container = document.getElementById('milestonesContainer');
+
+            if (!age) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const ageData = milestones[age];
+            let html = `<div class="milestone-section"><h3 class="milestone-title">${ageData.title} Developmental Milestones</h3>`;
+
+            ageData.items.forEach(item => {
+                html += `
+                    <div class="milestone-item">
+                        <div class="milestone-text">
+                            <strong>${item.text}</strong>
+                            <small>${capitalize(item.category)} development</small>
+                        </div>
+                        <div class="milestone-slider-container">
+                            <div class="slider-wrapper">
+                                <div class="slider-track">
+                                    <input type="range" id="${item.id}" name="milestone" min="1" max="5" value="3">
+                                    <div class="slider-labels">
+                                        <span>1</span>
+                                        <span>2</span>
+                                        <span>3</span>
+                                        <span>4</span>
+                                        <span>5</span>
+                                    </div>
+                                </div>
+                                <span class="milestone-value">3</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+
+            // Add event listeners to number buttons
+            document.querySelectorAll('.slider-labels span').forEach(button => {
+                button.addEventListener('click', function() {
+                    const value = this.textContent;
+                    const container = this.closest('.slider-track');
+                    const slider = container.querySelector('input[type="range"]');
+                    const valueDisplay = container.closest('.slider-wrapper').querySelector('.milestone-value');
+
+                    // Update slider value
+                    slider.value = value;
+                    valueDisplay.textContent = value;
+
+                    // Update active button
+                    container.querySelectorAll('.slider-labels span').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+
+                // Set initial active state
+                if (button.textContent === '3') {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        function calculateResults() {
+            const sliders = document.querySelectorAll('input[type="range"][name="milestone"]');
+            const total = sliders.length;
+
+            // Categorize based on slider values (1-5 scale)
+            // 5 = On Track, 3-4 = Developing, 1-2 = Worth Monitoring
+            let onTrack = 0;
+            let developing = 0;
+            let monitor = 0;
+            let totalScore = 0;
+
+            sliders.forEach(slider => {
+                const value = parseInt(slider.value);
+                totalScore += value;
+
+                if (value === 5) {
+                    onTrack++;
+                } else if (value === 3 || value === 4) {
+                    developing++;
+                } else {
+                    monitor++;
+                }
+            });
+
+            // Calculate percentages
+            const onTrackPercentage = Math.round((onTrack / total) * 100);
+            const developingPercentage = Math.round((developing / total) * 100);
+            const monitorPercentage = Math.round((monitor / total) * 100);
+
+            // Update result cards
+            document.querySelector('#onTrackCard .result-number').textContent = onTrack;
+            document.querySelector('#onTrackCard .result-percentage').textContent = onTrackPercentage + '%';
+            document.querySelectorAll('#totalMilestones, #totalMilestones2, #totalMilestones3').forEach(el => {
+                el.textContent = total;
+            });
+
+            document.querySelector('#developingCard .result-number').textContent = developing;
+            document.querySelector('#developingCard .result-percentage').textContent = developingPercentage + '%';
+
+            document.querySelector('#monitorCard .result-number').textContent = monitor;
+            document.querySelector('#monitorCard .result-percentage').textContent = monitorPercentage + '%';
+
+            // Update gauge bar segments
+            const gaugeSegments = document.querySelectorAll('.gauge-bar-segment');
+            gaugeSegments[0].style.width = onTrackPercentage + '%';
+            gaugeSegments[1].style.width = developingPercentage + '%';
+            gaugeSegments[2].style.width = monitorPercentage + '%';
+
+            // Generate insight based on average score
+            const averageScore = totalScore / total;
+            generateInsight(onTrack, developing, monitor, total, averageScore);
+            generateRecommendations(onTrack, developing, monitor, total, averageScore);
+
+            // Show results
+            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('resultsSection').classList.add('show');
+
+            // Scroll to results
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateInsight(onTrack, developing, monitor, total, averageScore) {
+            const onTrackPercentage = Math.round((onTrack / total) * 100);
+            const overviewContainer = document.getElementById('summaryOverviewContainer');
+            const insightContainer = document.getElementById('insightBoxContainer');
+
+            // Generate overview with progress bar
+            let overviewHTML = `
+                <div class="summary-overview">
+                    <h3>Development Overview</h3>
+            `;
+
+            if (averageScore >= 4.5) {
+                overviewHTML += `
+                    <p><strong>Your child is thriving!</strong> They're demonstrating strong development across most areas. This is wonderful progress and a reflection of your supportive care.</p>
+                    <p>${onTrack} out of ${total} milestones are fully on track, showing consistent growth and achievement. Continue fostering their natural curiosity and love of learning.</p>
+                `;
+            } else if (averageScore >= 3.5) {
+                overviewHTML += `
+                    <p><strong>Your child is developing well.</strong> They're meeting most milestones and making steady progress in their developmental journey.</p>
+                    <p>${onTrack} milestones are on track, with ${developing} skills currently developing. This variation is completely normal—children grow at their own pace across different areas.</p>
+                `;
+            } else if (averageScore >= 2.5) {
+                overviewHTML += `
+                    <p><strong>Your child is progressing with some areas needing support.</strong> While some skills are developing well, ${monitor} areas could benefit from gentle practice and encouragement.</p>
+                    <p>This is not unusual—every child has their own developmental timeline. With targeted support and patience, you may see significant progress.</p>
+                `;
+            } else {
+                overviewHTML += `
+                    <p><strong>Your child may benefit from additional support.</strong> Multiple areas show milestones worth monitoring closely.</p>
+                    <p>This is an opportunity to explore supportive strategies and, if needed, professional guidance tailored to your child's unique needs. Early intervention can make a meaningful difference.</p>
+                `;
+            }
+
+            // Add progress bar
+            overviewHTML += `
+                <div class="progress-bar-container">
+                    <div class="progress-bar-label">
+                        <span>Overall Development Progress</span>
+                        <span>${onTrackPercentage}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${onTrackPercentage}%"></div>
+                    </div>
+                </div>
+            </div>
+            `;
+
+            overviewContainer.innerHTML = overviewHTML;
+
+            // Generate detailed insight box
+            let message = '';
+            let title = '';
+            if (averageScore >= 4.5) {
+                title = 'Excellent Development';
+                message = `Your child is showing strong development across the milestones. Keep supporting their natural growth with play, exploration, and everyday activities. Every child develops at their own pace.`;
+            } else if (averageScore >= 3.5) {
+                title = 'Good Progress';
+                message = `Your child is progressing well! They're developing in different areas at their own pace, which is completely normal. Some skills may develop a bit later than others, and that's okay.`;
+            } else if (averageScore >= 2.5) {
+                title = 'Ongoing Development';
+                message = `Your child is on their own developmental journey. Some areas might benefit from gentle support and practice. Remember, children develop at different speeds, and early support can make a wonderful difference.`;
+            } else {
+                title = 'Opportunity for Support';
+                message = `Your child may benefit from additional support in some developmental areas. This is a great time to explore gentle, playful ways to encourage growth and reach out to professionals who can provide personalized guidance.`;
+            }
+
+            insightContainer.innerHTML = `
+                <div class="insight-section">
+                    <div class="insight-box">
+                        <h3>${title}</h3>
+                        <p>${message}</p>
+                        <p><strong>Remember:</strong> This assessment is a general guide, not a diagnosis. Every child is unique and develops at their own pace. Children who are \"worth monitoring\" in some areas often catch up quickly with practice and time.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateRecommendations(onTrack, developing, monitor, total, averageScore) {
+            const container = document.getElementById('recommendationsContainer');
+
+            let recommendations = `
+                <div class="recommendations">
+                    <h3>How You Can Support Your Child</h3>
+            `;
+
+            // Tailored recommendations based on assessment results
+            if (monitor > 0) {
+                recommendations += `
+                    <div class="recommendation-item">
+                        <strong>Play-Based Practice</strong>
+                        <p>Turn learning into play. For areas worth monitoring, incorporate practice into fun activities your child enjoys. For example, if balance is a concern, play hopscotch or dance together. Play makes learning feel effortless and enjoyable.</p>
+                    </div>
+                `;
+            }
+
+            if (developing > 0) {
+                recommendations += `
+                    <div class="recommendation-item">
+                        <strong>Consistent Practice Opportunities</strong>
+                        <p>For skills currently developing, regular exposure helps. Short, frequent practice sessions work better than long ones. A few minutes daily is more effective than occasional longer sessions.</p>
+                    </div>
+                `;
+            }
+
+            recommendations += `
+                    <div class="recommendation-item">
+                        <strong>Create a Rich Learning Environment</strong>
+                        <p>Provide diverse experiences—outdoor play for gross motor skills, puzzles and building for fine motor skills, books and conversation for language. A varied environment naturally supports all areas of development.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <strong>Talk & Narrate Daily Activities</strong>
+                        <p>Language is woven through all development. Talk to your child during daily routines—cooking, shopping, playing. This supports language, cognitive, and social skills simultaneously.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <strong>Encourage Effort Over Perfection</strong>
+                        <p>Praise effort, persistence, and attempts rather than just outcomes. "You worked so hard on that!" builds more confidence than "You did that perfectly." This creates a love of learning and resilience.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <strong>Professional Guidance When Needed</strong>
+                        <p>If you have ongoing concerns, our team is here to help. Niki, our Occupational Therapist, specializes in early childhood development and can provide personalized strategies and support tailored to your child's unique needs.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <strong>Be Patient & Celebrate Milestones</strong>
+                        <p>Development isn't always linear. Some skills take longer, while others emerge quickly. Celebrate small victories and remember that every child has their own perfect timeline. You're doing a wonderful job supporting their growth!</p>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = recommendations;
+        }
+
+        function resetForm() {
+            document.getElementById('childAge').value = '';
+            document.getElementById('milestonesContainer').innerHTML = '';
+            document.getElementById('formSection').style.display = 'block';
+            document.getElementById('resultsSection').classList.remove('show');
+            window.scrollTo(0, 0);
+        }
+
+        function goBackToForm() {
+            resetForm();
+        }
+
+        function contactUsScroll() {
+            window.location.href = 'index.html#contact';
+        }
+
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    </script>
+</body>
+</html>

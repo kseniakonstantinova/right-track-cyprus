@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posture & Movement Assessment - Free Wellness Tool</title>
+    <meta name="description" content="Free assessment to check your posture and movement patterns. Get personalized insights and simple exercises.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --orange: #FF6B35;
+            --white: #ffffff;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --text-dark: #212529;
+            --text-gray: #6C757D;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--off-white);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        .back-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--orange);
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Header Section */
+        .tool-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .tool-header h1 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .tool-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .question-section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .question-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .question-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .question-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* Radio Buttons */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: var(--off-white);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .radio-item:hover {
+            background: #f0f0f0;
+        }
+
+        .radio-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+            accent-color: var(--orange);
+            flex-shrink: 0;
+        }
+
+        .radio-item input[type="radio"]:checked + label {
+            font-weight: 600;
+        }
+
+        .radio-item label {
+            cursor: pointer;
+            margin: 0;
+            flex: 1;
+            color: var(--text-dark);
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        button {
+            flex: 1;
+            padding: 16px 32px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: var(--light-gray);
+            color: var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: #ddd;
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .results-header h2 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .score-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(10, 22, 40, 0.05));
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border: 2px solid var(--orange);
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--orange);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .score-number span:nth-child(2) {
+            font-size: 2.5rem;
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        .score-max {
+            font-size: 2rem;
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        .score-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        /* Insight Boxes */
+        .insight-section {
+            margin-bottom: 40px;
+        }
+
+        .insight-box {
+            background: rgba(255, 107, 53, 0.05);
+            border-left: 4px solid var(--orange);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .insight-box h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .insight-box p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Recommendations */
+        .recommendations {
+            margin-top: 40px;
+        }
+
+        .recommendations h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .recommendation-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: var(--off-white);
+            border-radius: 8px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .recommendation-item strong {
+            display: block;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .recommendation-item p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            border-top: 1px solid var(--light-gray);
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .tool-header h1 {
+                font-size: 2rem;
+            }
+
+            .score-number {
+                font-size: 3rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .form-section, .results-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Right<span>Track</span></a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Tool Header -->
+        <section class="tool-header">
+            <h1>Posture & Movement <span style="color: var(--orange);">Assessment</span></h1>
+            <p>Discover how your daily habits affect your posture and movement. This quick assessment helps you understand your body better and get personalized recommendations for feeling your best.</p>
+        </section>
+
+        <!-- Form Section -->
+        <section id="formSection" class="form-section">
+            <!-- Question 1 -->
+            <div class="question-section">
+                <h3 class="question-title">How many hours do you sit per day?</h3>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="q1a" name="q1" value="5" required>
+                        <label for="q1a">Less than 4 hours</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q1b" name="q1" value="4">
+                        <label for="q1b">4-6 hours</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q1c" name="q1" value="3">
+                        <label for="q1c">6-8 hours</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q1d" name="q1" value="1">
+                        <label for="q1d">More than 8 hours</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-section">
+                <h3 class="question-title">How often do you experience neck or shoulder tension?</h3>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="q2a" name="q2" value="5">
+                        <label for="q2a">Rarely or never</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q2b" name="q2" value="3">
+                        <label for="q2b">A few times a week</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q2c" name="q2" value="2">
+                        <label for="q2c">Daily</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q2d" name="q2" value="1">
+                        <label for="q2d">Constant/severe</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-section">
+                <h3 class="question-title">How would you describe your lower back?</h3>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="q3a" name="q3" value="5">
+                        <label for="q3a">No pain or discomfort</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q3b" name="q3" value="3">
+                        <label for="q3b">Occasional discomfort</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q3c" name="q3" value="2">
+                        <label for="q3c">Regular tension or pain</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q3d" name="q3" value="1">
+                        <label for="q3d">Significant pain limiting activity</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-section">
+                <h3 class="question-title">How often do you exercise or move intentionally?</h3>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="q4a" name="q4" value="5">
+                        <label for="q4a">5+ times per week</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q4b" name="q4" value="4">
+                        <label for="q4b">2-4 times per week</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q4c" name="q4" value="2">
+                        <label for="q4c">Once per week</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q4d" name="q4" value="1">
+                        <label for="q4d">Rarely or never</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-section">
+                <h3 class="question-title">How aware are you of your posture during the day?</h3>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="q5a" name="q5" value="5">
+                        <label for="q5a">Very aware - I notice and correct it</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q5b" name="q5" value="3">
+                        <label for="q5b">Somewhat aware</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q5c" name="q5" value="2">
+                        <label for="q5c">Not very aware</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q5d" name="q5" value="1">
+                        <label for="q5d">Rarely think about it</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-section">
+                <h3 class="question-title">Do you experience any balance or coordination issues?</h3>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="q6a" name="q6" value="5">
+                        <label for="q6a">No issues</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q6b" name="q6" value="3">
+                        <label for="q6b">Occasional slight imbalance</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q6c" name="q6" value="2">
+                        <label for="q6c">Noticeable balance concerns</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="q6d" name="q6" value="1">
+                        <label for="q6d">Significant issues affecting daily life</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn-secondary" onclick="resetForm()">Reset</button>
+                <button type="button" class="btn-primary" onclick="calculateResults()">Get My Results</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section">
+            <div class="results-header">
+                <h2>Your Posture & Movement Profile</h2>
+                <p>Based on your responses, here's what we found.</p>
+            </div>
+
+            <div class="score-display">
+                <div class="score-number">
+                    <span id="scoreNumber">0</span>
+                    <span>/</span>
+                    <span class="score-max" id="scoreMax">30</span>
+                </div>
+                <div class="score-label" id="scoreLabel">Your Score</div>
+            </div>
+
+            <div id="insightContainer"></div>
+
+            <div id="recommendationsContainer"></div>
+
+            <div class="button-group" style="margin-top: 40px;">
+                <button type="button" class="btn-secondary" onclick="goBackToForm()">Take Assessment Again</button>
+                <button type="button" class="btn-primary" onclick="contactUsScroll()">Learn More About Support</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Right Track Rehabilitation & Performance Centre. All rights reserved.</p>
+        <p>GESY-Registered Physiotherapy Provider | Nicosia, Cyprus</p>
+        <p>Email: <a href="mailto:righttrackphysio@gmail.com">righttrackphysio@gmail.com</a></p>
+    </footer>
+
+    <script>
+        function calculateResults() {
+            // Get all answers
+            const answers = {};
+            for (let i = 1; i <= 6; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!selected) {
+                    alert('Please answer all questions');
+                    return;
+                }
+                answers[`q${i}`] = parseInt(selected.value);
+            }
+
+            // Calculate total score (max 30 points: 6 questions × 5 points each)
+            const totalScore = Object.values(answers).reduce((a, b) => a + b, 0);
+            const maxScore = 30;
+
+            // Display score
+            document.getElementById('scoreNumber').textContent = totalScore;
+            document.getElementById('scoreMax').textContent = maxScore;
+            document.getElementById('scoreLabel').textContent = getScoreLabel(totalScore);
+
+            // Generate insights
+            generateInsights(answers, totalScore, maxScore);
+
+            // Show results
+            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('resultsSection').classList.add('show');
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function getScoreLabel(score) {
+            if (score >= 25) return 'Excellent - Great posture & movement habits!';
+            if (score >= 20) return 'Good - You\'re on the right track';
+            if (score >= 15) return 'Fair - Some areas to work on';
+            return 'Needs attention - Let\'s improve together';
+        }
+
+        function generateInsights(answers, totalScore, maxScore) {
+            const container = document.getElementById('insightContainer');
+            let insights = '<div class="insight-section">';
+
+            // Key insight based on score
+            if (totalScore >= 25) {
+                insights += `
+                    <div class="insight-box">
+                        <h3>You're doing great!</h3>
+                        <p>Your posture and movement habits are supporting your overall wellness. Keep maintaining these healthy patterns—they're paying off!</p>
+                    </div>
+                `;
+            } else if (totalScore >= 20) {
+                insights += `
+                    <div class="insight-box">
+                        <h3>Good foundation, small improvements</h3>
+                        <p>You're on the right track! Small adjustments to your daily habits could make a significant difference in how you feel.</p>
+                    </div>
+                `;
+            } else if (totalScore >= 15) {
+                insights += `
+                    <div class="insight-box">
+                        <h3>Time for some changes</h3>
+                        <p>Your posture and movement patterns could benefit from attention. The good news? Small, consistent changes can lead to big improvements in how you feel.</p>
+                    </div>
+                `;
+            } else {
+                insights += `
+                    <div class="insight-box">
+                        <h3>Your body is asking for support</h3>
+                        <p>The patterns you've described suggest your body is working hard to compensate. Professional support could help you feel significantly better.</p>
+                    </div>
+                `;
+            }
+
+            // Specific insights based on answers
+            if (answers.q1 <= 3) {
+                insights += `
+                    <div class="insight-box">
+                        <h3>Sitting Time</h3>
+                        <p>Extended sitting can tighten hip flexors and weaken postural muscles. Even small movement breaks throughout your day make a real difference.</p>
+                    </div>
+                `;
+            }
+
+            if (answers.q2 <= 3) {
+                insights += `
+                    <div class="insight-box">
+                        <h3>Neck & Shoulder Tension</h3>
+                        <p>This is often related to posture, screen time, or stress. Gentle stretching and postural awareness can help significantly.</p>
+                    </div>
+                `;
+            }
+
+            if (answers.q4 <= 2) {
+                insights += `
+                    <div class="insight-box">
+                        <h3>Movement & Exercise</h3>
+                        <p>Regular movement strengthens supporting muscles and improves posture naturally. Even 20 minutes of movement 3x/week makes a difference.</p>
+                    </div>
+                `;
+            }
+
+            insights += '</div>';
+            container.innerHTML = insights;
+        }
+
+        function generateRecommendations(answers, totalScore) {
+            const container = document.getElementById('recommendationsContainer');
+            let recs = `
+                <div class="recommendations">
+                    <h3>Next Steps for Better Posture & Movement</h3>
+            `;
+
+            // Personalized recommendations
+            if (answers.q1 <= 3) {
+                recs += `
+                    <div class="recommendation-item">
+                        <strong>Movement Breaks</strong>
+                        <p>Set a timer to stand and move for 2-3 minutes every hour. Stretch, walk, or do simple movements to counteract prolonged sitting.</p>
+                    </div>
+                `;
+            }
+
+            if (answers.q2 <= 3) {
+                recs += `
+                    <div class="recommendation-item">
+                        <strong>Neck & Shoulder Care</strong>
+                        <p>Try gentle neck stretches, shoulder rolls, and consider your workspace setup. Tension often improves with awareness and simple stretches.</p>
+                    </div>
+                `;
+            }
+
+            if (answers.q3 <= 3) {
+                recs += `
+                    <div class="recommendation-item">
+                        <strong>Lower Back Support</strong>
+                        <p>Focus on core strengthening exercises. Proper posture, frequent position changes, and regular gentle movement help significantly.</p>
+                    </div>
+                `;
+            }
+
+            recs += `
+                <div class="recommendation-item">
+                    <strong>Workspace Ergonomics</strong>
+                    <p>If you work at a desk, ensure your monitor is at eye level, feet flat on floor, and elbows at 90 degrees. Small ergonomic fixes have big impacts.</p>
+                </div>
+                <div class="recommendation-item">
+                    <strong>Regular Movement</strong>
+                    <p>Aim for at least 3-5 movement sessions per week. This could be walking, stretching, strength training, or any activity you enjoy.</p>
+                </div>
+                <div class="recommendation-item">
+                    <strong>Posture Awareness</strong>
+                    <p>Set reminders to check your posture throughout the day. Notice where you hold tension and gently adjust. Awareness is the first step to change.</p>
+                </div>
+                <div class="recommendation-item">
+                    <strong>Professional Assessment</strong>
+                    <p>If pain or discomfort persists, our physiotherapists can assess your individual patterns and create a personalized movement plan for you.</p>
+                </div>
+            `;
+
+            recs += '</div>';
+            container.innerHTML = recs;
+        }
+
+        function resetForm() {
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            document.getElementById('formSection').style.display = 'block';
+            document.getElementById('resultsSection').classList.remove('show');
+            window.scrollTo(0, 0);
+        }
+
+        function goBackToForm() {
+            resetForm();
+        }
+
+        function contactUsScroll() {
+            window.location.href = 'index.html#contact';
+        }
+
+        // Generate recommendations when showing results
+        document.addEventListener('DOMContentLoaded', function() {
+            // Override the main calculateResults to ensure recommendations are generated
+            const originalCalc = window.calculateResults;
+            window.calculateResults = function() {
+                const answers = {};
+                for (let i = 1; i <= 6; i++) {
+                    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (!selected) {
+                        alert('Please answer all questions');
+                        return;
+                    }
+                    answers[`q${i}`] = parseInt(selected.value);
+                }
+                const totalScore = Object.values(answers).reduce((a, b) => a + b, 0);
+                const maxScore = 30;
+
+                document.getElementById('scoreNumber').textContent = totalScore;
+                document.getElementById('scoreMax').textContent = maxScore;
+                document.getElementById('scoreLabel').textContent = getScoreLabel(totalScore);
+
+                generateInsights(answers, totalScore, maxScore);
+                generateRecommendations(answers, totalScore);
+
+                document.getElementById('formSection').style.display = 'none';
+                document.getElementById('resultsSection').classList.add('show');
+                document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+            };
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Track Christmas Certificate of Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --orange: #FF6B35;
+            --white: #ffffff;
+            --gold: #D4AF37;
+            --dark-green: #1B4D3E;
+            --light-gold: #F4E4C1;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-green) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .certificate-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 1.41;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid var(--gold);
+        }
+
+        /* Decorative corners */
+        .certificate-container::before,
+        .certificate-container::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--gold);
+        }
+
+        .certificate-container::before {
+            top: 20px;
+            left: 20px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .certificate-container::after {
+            bottom: 20px;
+            right: 20px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .corner-tr {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--gold);
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-bl {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--gold);
+            border-right: none;
+            border-top: none;
+        }
+
+        /* Decorative snowflakes */
+        .snowflake {
+            position: absolute;
+            color: var(--gold);
+            font-size: 2rem;
+            opacity: 0.6;
+        }
+
+        .snowflake-1 { top: 15%; left: 8%; }
+        .snowflake-2 { top: 20%; right: 10%; }
+        .snowflake-3 { bottom: 15%; left: 12%; }
+        .snowflake-4 { bottom: 18%; right: 8%; }
+
+        /* Holly decorations */
+        .holly {
+            position: absolute;
+            font-size: 1.8rem;
+        }
+
+        .holly-tl { top: 30px; left: 35px; }
+        .holly-tr { top: 30px; right: 35px; transform: scaleX(-1); }
+        .holly-bl { bottom: 30px; left: 35px; }
+        .holly-br { bottom: 30px; right: 35px; transform: scaleX(-1); }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 85%;
+            height: 85%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        /* Top section - Logo/Badge */
+        .badge {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--navy) 100%);
+            color: var(--gold);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            border: 3px solid var(--gold);
+        }
+
+        /* Certificate Title */
+        .cert-title {
+            font-size: 3.5rem;
+            color: var(--navy);
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Georgia', serif;
+        }
+
+        .cert-subtitle {
+            font-size: 1.3rem;
+            color: var(--dark-green);
+            margin-bottom: 25px;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* Divider */
+        .divider {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 20px 0;
+        }
+
+        /* Main text */
+        .cert-text {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin: 20px 0;
+            color: #444;
+        }
+
+        .recipient-name {
+            font-size: 2.2rem;
+            color: var(--orange);
+            font-weight: bold;
+            margin: 15px 0;
+            text-decoration: underline;
+            text-decoration-color: var(--gold);
+            text-underline-offset: 8px;
+            font-style: italic;
+        }
+
+        /* Achievement text */
+        .achievement {
+            font-size: 1.05rem;
+            color: var(--navy);
+            margin: 15px 0;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* Signature area */
+        .signature-area {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 30px;
+            gap: 40px;
+        }
+
+        .signature {
+            flex: 1;
+            text-align: center;
+        }
+
+        .signature-line {
+            width: 100%;
+            border-top: 2px solid var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .signature-name {
+            font-size: 0.9rem;
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .signature-title {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+        }
+
+        /* Date and seal */
+        .bottom-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .date-text {
+            text-align: left;
+        }
+
+        .seal {
+            text-align: right;
+            font-weight: bold;
+            color: var(--orange);
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .certificate-container {
+                box-shadow: none;
+                max-width: 100%;
+                width: 210mm;
+                height: 297mm;
+                aspect-ratio: auto;
+                border: 3px solid var(--gold);
+            }
+
+            .print-button {
+                display: none;
+            }
+        }
+
+        /* Print button */
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .print-button:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(10, 22, 40, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .certificate-container {
+                aspect-ratio: auto;
+                height: auto;
+                min-height: 600px;
+            }
+
+            .cert-title {
+                font-size: 2.2rem;
+            }
+
+            .recipient-name {
+                font-size: 1.6rem;
+            }
+
+            .cert-text, .achievement {
+                font-size: 0.9rem;
+            }
+
+            .signature-area {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .print-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .text-dark {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <!-- Decorative corners -->
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+
+        <!-- Snowflakes -->
+        <div class="snowflake snowflake-1">❄</div>
+        <div class="snowflake snowflake-2">❄</div>
+        <div class="snowflake snowflake-3">❄</div>
+        <div class="snowflake snowflake-4">❄</div>
+
+        <!-- Holly decorations -->
+        <div class="holly holly-tl">🎄</div>
+        <div class="holly holly-tr">🎄</div>
+        <div class="holly holly-bl">🎄</div>
+        <div class="holly holly-br">🎄</div>
+
+        <!-- Certificate Content -->
+        <div class="content">
+            <!-- Badge/Icon -->
+            <div class="badge">🏅</div>
+
+            <!-- Title -->
+            <div class="cert-title">Certificate of</div>
+            <div class="cert-title" style="color: var(--orange); margin-bottom: 15px;">Excellence</div>
+
+            <!-- Subtitle -->
+            <div class="cert-subtitle">~ Presented with Gratitude ~</div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Main text -->
+            <div class="cert-text text-dark">
+                This certificate is proudly presented to
+            </div>
+
+            <!-- Recipient Name (editable) -->
+            <div class="recipient-name" contenteditable="true">Your Name Here</div>
+
+            <!-- Achievement text -->
+            <div class="achievement">
+                In recognition of outstanding dedication to health, wellness, and rehabilitation excellence. Your commitment to your recovery journey and active participation in achieving your goals has been truly inspiring. This festive season, we celebrate your progress and success.
+            </div>
+
+            <!-- Additional text -->
+            <div class="cert-text text-dark">
+                We are honored to have been part of your health journey at <strong>Right Track Rehabilitation & Performance Centre</strong>
+            </div>
+
+            <!-- Signatures -->
+            <div class="signature-area">
+                <div class="signature">
+                    <div class="signature-line"></div>
+                    <div class="signature-name">Antonis Petri</div>
+                    <div class="signature-title">Lead Clinician</div>
+                </div>
+                <div class="signature">
+                    <div class="signature-line"></div>
+                    <div class="signature-name">Team Right Track</div>
+                    <div class="signature-title">Clinical Team</div>
+                </div>
+            </div>
+
+            <!-- Bottom info -->
+            <div class="bottom-info">
+                <div class="date-text">
+                    December 2024 ❄️
+                </div>
+                <div class="seal">
+                    🎅 Festive Season 2024
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <button class="print-button" onclick="window.print()">🖨️ Print Certificate</button>
+
+    <script>
+        // Make recipient name editable with click
+        const recipientName = document.querySelector('.recipient-name');
+
+        recipientName.addEventListener('blur', function() {
+            if (this.textContent.trim() === '') {
+                this.textContent = 'Your Name Here';
+            }
+        });
+
+        // Highlight text on click for easy editing
+        recipientName.addEventListener('click', function(e) {
+            const range = document.createRange();
+            range.selectNodeContents(this);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+        });
+
+        // Optional: Add keyboard shortcut for print
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
