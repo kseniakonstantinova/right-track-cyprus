@@ -161,6 +161,58 @@
             color: var(--white);
         }
 
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--navy);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
         /* Dropdown Menu */
         .dropdown {
             position: relative;
@@ -1746,8 +1798,54 @@
                 padding: 40px;
             }
 
+            /* Show mobile menu button on tablets and phones */
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            /* Mobile menu styles */
             nav ul {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 80px 20px 20px;
+                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+                transition: right 0.3s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            nav ul.mobile-active {
+                right: 0;
+            }
+
+            nav li {
+                margin: 0;
+                width: 100%;
+            }
+
+            nav li a {
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 2px solid var(--light-gray);
+                justify-content: center;
+            }
+
+            .nav-cta {
+                text-align: center;
+                margin: 10px 0;
             }
         }
 
@@ -1888,7 +1986,12 @@
                     <span class="second-word">Track</span>
                 </div>
             </a>
-            <ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="mobileMenu">
                 <li><a href="#team" data-i18n="nav.team">Team</a></li>
                 <li><a href="#services" data-i18n="nav.services">Services</a></li>
                 <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
@@ -1911,6 +2014,9 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -2935,5 +3041,27 @@
 
     <!-- Language Switcher Script -->
     <script src="assets/js/translations.js"></script>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            const btn = document.querySelector('.mobile-menu-btn');
+
+            menu.classList.toggle('mobile-active');
+            overlay.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
