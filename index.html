@@ -2056,6 +2056,127 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our <span>Services</span></h2>
+            <p>Personalized rehabilitation and performance solutions. From injury recovery to peak athletic performance—we'll get you where you need to be.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Physiotherapy -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Physiotherapy</h3>
+                <p>Evidence-based treatment for injury recovery, pain management, and functional restoration. GESY-registered for accessibility.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Sports Rehab</span>
+                    <span class="highlight-tag">Post-Surgery</span>
+                    <span class="highlight-tag">Homecare</span>
+                </div>
+                <ul>
+                    <li>MSK & Sports Rehabilitation</li>
+                    <li>Neurological Rehab</li>
+                    <li>Post-operative Recovery</li>
+                    <li>Homecare Physiotherapy</li>
+                </ul>
+                <div class="service-price">GESY & Private Options</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Learn More →</a>
+            </div>
+
+            <!-- Clinical Pilates -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Clinical Pilates</h3>
+                <p>Physio-led mat Pilates combining therapeutic principles with dynamic movement. Small groups, big results.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Core Strength</span>
+                    <span class="highlight-tag">Flexibility</span>
+                    <span class="highlight-tag">Rehab Integration</span>
+                </div>
+                <ul>
+                    <li>Small group sessions (max 8)</li>
+                    <li>Dynamic, athletic approach</li>
+                    <li>Integration with rehab goals</li>
+                    <li>Measurable progress tracking</li>
+                </ul>
+                <div class="service-price">From €80/month</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Book Trial →</a>
+            </div>
+
+            <!-- Kids' Physiotherapy -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Kids' Physiotherapy</h3>
+                <p>Specialized assessment and treatment for children's developmental and postural needs. Family education included.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Posture Check</span>
+                    <span class="highlight-tag">Family Ed</span>
+                    <span class="highlight-tag">Play-Based</span>
+                </div>
+                <ul>
+                    <li>Scoliosis screening & treatment</li>
+                    <li>Posture & movement assessment</li>
+                    <li>Developmental support</li>
+                    <li>Family education & home plans</li>
+                </ul>
+                <div class="service-price">Customized Packages</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Get Assessment →</a>
+            </div>
+
+            <!-- Performance Training -->
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Performance Training</h3>
+                <p>Sport-specific strength, conditioning, and power development. For athletes serious about results.</p>
+                <div class="service-highlights">
+                    <span class="highlight-tag">Strength & Power</span>
+                    <span class="highlight-tag">Return-to-Sport</span>
+                    <span class="highlight-tag">Conditioning</span>
+                </div>
+                <ul>
+                    <li>Sport-specific programming</li>
+                    <li>Return-to-play protocols</li>
+                    <li>Gym access & guidance</li>
+                    <li>Performance monitoring</li>
+                </ul>
+                <div class="service-price">From €250/month</div>
+                <a href="mailto:righttrackphysio@gmail.com" class="service-cta">Start Training →</a>
+            </div>
+        </div>
+
+        <!-- Service Configurator -->
+        <div class="service-configurator">
+            <h3>Find Your Right Track</h3>
+            <p>Not sure which service is right for you? Answer a few quick questions.</p>
+
+            <div class="configurator-container">
+                <div class="config-step">
+                    <label>What's your primary goal?</label>
+                    <div class="config-options">
+                        <button class="config-btn" onclick="updateConfigurator('goal', 'recover')">Recover from injury</button>
+                        <button class="config-btn" onclick="updateConfigurator('goal', 'improve')">Improve fitness</button>
+                        <button class="config-btn" onclick="updateConfigurator('goal', 'perform')">Enhance performance</button>
+                        <button class="config-btn" onclick="updateConfigurator('goal', 'child')">Child development</button>
+                    </div>
+                </div>
+
+                <div class="config-step">
+                    <label>Preferred setting?</label>
+                    <div class="config-options">
+                        <button class="config-btn" onclick="updateConfigurator('setting', 'clinic')">In-clinic</button>
+                        <button class="config-btn" onclick="updateConfigurator('setting', 'group')">Group sessions</button>
+                        <button class="config-btn" onclick="updateConfigurator('setting', 'home')">At home</button>
+                    </div>
+                </div>
+
+                <div class="config-result">
+                    <p id="configResult">Select options above to discover your ideal service →</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Feature Section 1 -->
     <section class="feature-section">
         <div class="feature-container">
@@ -2366,6 +2487,171 @@
 
         <div style="text-align: center; margin-top: 60px;">
             <a href="mailto:righttrackphysio@gmail.com" class="btn btn-primary">Partner With Us →</a>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-banner-container">
+            <div class="cta-banner-content">
+                <h2>Ready to start your <span>journey?</span></h2>
+                <p>Book your free 15-minute consultation today and take the first step toward recovery and peak performance.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:righttrackphysio@gmail.com" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="cta-banner-image">
+                <img src="assets/images/logos/logo-icon.png" alt="Right Track Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="partnerships" id="partnerships">
+        <div class="section-header">
+            <h2>Our <span>Partnerships</span></h2>
+            <p>Trusted by elite football clubs and organizations across Cyprus</p>
+        </div>
+
+        <div class="partnerships-container">
+            <div class="partnership-card">
+                <div class="partnership-logo">
+                    <img src="LakatamiaFC.png" alt="Lakatamia F.C. Women">
+                </div>
+                <div class="partnership-info">
+                    <h3>Lakatamia F.C. Women</h3>
+                    <p>Elite women's football team</p>
+                    <p class="partnership-description">Right Track provides comprehensive sports physiotherapy support to Lakatamia F.C. Women, focusing on injury prevention, performance optimization, and rapid recovery protocols for elite female athletes.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-placeholder">🏫</div>
+                <div class="partnership-info">
+                    <h3>Frederick University</h3>
+                    <p>Clinical practice supervision & education</p>
+                    <p class="partnership-description">Antonis Petri serves as Clinical Practice Supervisor, training the next generation of healthcare professionals with evidence-based rehabilitation and clinical excellence.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-placeholder">⚽</div>
+                <div class="partnership-info">
+                    <h3>PAEEK Kyrenia</h3>
+                    <p>Professional football club partnership</p>
+                    <p class="partnership-description">Providing comprehensive sports physiotherapy services, performance optimization, and injury prevention protocols for professional football players.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-logo">
+                    <img src="assets/images/partners/muay-thai-warriors.jpg" alt="Muay Thai Warriors">
+                </div>
+                <div class="partnership-info">
+                    <h3>Muay Thai Warriors</h3>
+                    <p>Combat sports performance & recovery</p>
+                    <p class="partnership-description">Performance training and injury prevention specialized for combat athletes, including conditioning, recovery protocols, and movement optimization.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="mailto:righttrackphysio@gmail.com" class="btn btn-primary">Partner With Us →</a>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="section-header">
+            <h2>Latest from our <span>blog</span></h2>
+            <p>Expert insights on recovery, performance, and wellness</p>
+        </div>
+
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="AP_FU_team.jpg" alt="Antonis Petri - Clinical Practice Supervisor at Frederick University">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">November 3, 2024</span>
+                    <h3><a href="antonis-fu-article.html">Bridging Academia and Clinical Practice: Antonis Petri's Role at Frederick University</a></h3>
+                    <p class="blog-excerpt">Discover how our Clinical Practice Supervisor is shaping the next generation of healthcare professionals through evidence-based teaching and real-world clinical experience.</p>
+                    <a href="antonis-fu-article.html" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-1.jpg" alt="Understanding ACL Recovery">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">January 15, 2025</span>
+                    <h3><a href="#">Understanding ACL Recovery: A Complete Guide</a></h3>
+                    <p class="blog-excerpt">Learn about the phases of ACL recovery, what to expect during rehabilitation, and how to optimize your return to sport safely and effectively.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-2.jpg" alt="Benefits of Clinical Pilates">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">January 8, 2025</span>
+                    <h3><a href="#">The Benefits of Clinical Pilates for Rehabilitation</a></h3>
+                    <p class="blog-excerpt">Discover how physio-led Pilates can accelerate recovery, improve core strength, and prevent future injuries through controlled movement patterns.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-3.jpg" alt="Youth Athletic Development">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 28, 2024</span>
+                    <h3><a href="#">Youth Athletic Development: Building Foundations</a></h3>
+                    <p class="blog-excerpt">Essential principles for developing young athletes safely, focusing on movement quality, injury prevention, and long-term performance goals.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-4.jpg" alt="Latest Physiotherapy Research Trends 2024-2025">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">November 2024</span>
+                    <h3><a href="physiotherapy-research-trends-2024.html">Latest Physiotherapy Research Trends 2024-2025: Evidence-Based Innovations</a></h3>
+                    <p class="blog-excerpt">Explore cutting-edge research transforming physical therapy practice—AI integration, holistic pain management, preventive care, and sports neurorehabilitation innovations discussed by leading professionals.</p>
+                    <a href="physiotherapy-research-trends-2024.html" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-4.jpg" alt="Managing Chronic Pain">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 20, 2024</span>
+                    <h3><a href="#">Managing Chronic Pain Through Movement</a></h3>
+                    <p class="blog-excerpt">Evidence-based approaches to chronic pain management, including therapeutic exercise, manual therapy, and lifestyle modifications.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-6.jpg" alt="Post-Operative Recovery">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 5, 2024</span>
+                    <h3><a href="#">Post-Operative Recovery: What to Expect</a></h3>
+                    <p class="blog-excerpt">A comprehensive guide to post-surgical rehabilitation, including timeline expectations, key milestones, and tips for optimal recovery.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
         </div>
     </section>
 
