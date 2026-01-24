@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Right Track Physiotherapy & Performance Centre</title>
+    <meta name="description" content="Expert insights on recovery, performance, and wellness from Right Track physiotherapy professionals in Cyprus.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --orange: #FF6B35;
+            --white: #ffffff;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --text-dark: #212529;
+            --text-gray: #6C757D;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 120px;
+            width: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #e55a2a;
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy), #152238);
+            color: var(--white);
+            padding: 100px 40px 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-header h1 span {
+            color: var(--orange);
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 span {
+            color: var(--orange);
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.15rem;
+        }
+
+        .blog-grid {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, var(--off-white), var(--light-gray));
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-image:has(img[src*="blog-"]) {
+            background: none;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-date {
+            color: var(--orange);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .blog-card h3 {
+            color: var(--navy);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-card h3 a {
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .blog-card h3 a:hover {
+            color: var(--orange);
+        }
+
+        .blog-excerpt {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .blog-read-more {
+            color: var(--orange);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s;
+        }
+
+        .blog-read-more:hover {
+            gap: 12px;
+        }
+
+        .blog-read-more::after {
+            content: '→';
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 60px 40px 30px;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logos/logo-horizontal.png" alt="Right Track Logo">
+            </a>
+            <ul>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#team">Team</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="mailto:righttrackphysio@gmail.com" class="btn btn-primary">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Latest from our <span>blog</span></h1>
+        <p>Expert insights on recovery, performance, and wellness</p>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="../AP_FU_team.jpg" alt="Antonis Petri - Clinical Practice Supervisor at Frederick University">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">November 3, 2024</span>
+                    <h3><a href="blog-fu-article.html">Bridging Academia and Clinical Practice: Antonis Petri's Role at Frederick University</a></h3>
+                    <p class="blog-excerpt">Discover how our Clinical Practice Supervisor is shaping the next generation of healthcare professionals through evidence-based teaching and real-world clinical experience.</p>
+                    <a href="blog-fu-article.html" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="../blog-1.jpg" alt="Understanding ACL Recovery">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">January 15, 2025</span>
+                    <h3><a href="#">Understanding ACL Recovery: A Complete Guide</a></h3>
+                    <p class="blog-excerpt">Learn about the phases of ACL recovery, what to expect during rehabilitation, and how to optimize your return to sport safely and effectively.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="../blog-2.jpg" alt="Benefits of Clinical Pilates">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">January 8, 2025</span>
+                    <h3><a href="#">The Benefits of Clinical Pilates for Rehabilitation</a></h3>
+                    <p class="blog-excerpt">Discover how physio-led Pilates can accelerate recovery, improve core strength, and prevent future injuries through controlled movement patterns.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="../blog-3.jpg" alt="Youth Athletic Development">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 28, 2024</span>
+                    <h3><a href="#">Youth Athletic Development: Building Foundations</a></h3>
+                    <p class="blog-excerpt">Essential principles for developing young athletes safely, focusing on movement quality, injury prevention, and long-term performance goals.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="../blog-4.jpg" alt="Latest Physiotherapy Research Trends 2024-2025">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">November 2024</span>
+                    <h3><a href="blog-physio-trends.html">Latest Physiotherapy Research Trends 2024-2025: Evidence-Based Innovations</a></h3>
+                    <p class="blog-excerpt">Explore cutting-edge research transforming physical therapy practice—AI integration, holistic pain management, preventive care, and sports neurorehabilitation innovations discussed by leading professionals.</p>
+                    <a href="blog-physio-trends.html" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="../blog-4.jpg" alt="Managing Chronic Pain">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 20, 2024</span>
+                    <h3><a href="#">Managing Chronic Pain Through Movement</a></h3>
+                    <p class="blog-excerpt">Evidence-based approaches to chronic pain management, including therapeutic exercise, manual therapy, and lifestyle modifications.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="../blog-6.jpg" alt="Post-Operative Recovery">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">December 5, 2024</span>
+                    <h3><a href="#">Post-Operative Recovery: What to Expect</a></h3>
+                    <p class="blog-excerpt">A comprehensive guide to post-surgical rehabilitation, including timeline expectations, key milestones, and tips for optimal recovery.</p>
+                    <a href="#" class="blog-read-more">Read Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Right Track Physiotherapy & Performance Centre</h3>
+        <p>&copy; 2025 Right Track. All rights reserved.</p>
+        <p><a href="mailto:righttrackphysio@gmail.com">righttrackphysio@gmail.com</a></p>
+    </footer>
+</body>
+</html>
