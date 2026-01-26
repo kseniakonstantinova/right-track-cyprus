@@ -1682,9 +1682,15 @@
 
         .gesy-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .gesy-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .gesy-card {
@@ -1713,18 +1719,6 @@
                 inset 0 1px 0 rgba(255, 255, 255, 1),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(255, 107, 53, 0.3);
-        }
-
-        .gesy-card-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--orange), rgba(255, 107, 53, 0.7));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
         }
 
         .gesy-card h3 {
@@ -1772,6 +1766,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-top: 50px;
+            margin-bottom: 50px;
         }
 
         .gesy-step {
@@ -1862,6 +1857,53 @@
             color: var(--text-gray);
             margin: 0;
             font-size: 1rem;
+        }
+
+        .gesy-important {
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            background: linear-gradient(
+                135deg,
+                rgba(255, 107, 53, 0.15) 0%,
+                rgba(255, 107, 53, 0.08) 50%,
+                rgba(255, 107, 53, 0.12) 100%
+            );
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            box-shadow:
+                0 4px 20px rgba(255, 107, 53, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .gesy-important h4 {
+            font-size: 1.1rem;
+            color: var(--orange);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .gesy-important ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .gesy-important ul li {
+            padding: 6px 0;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .gesy-important ul li::before {
+            content: "•";
+            color: var(--orange);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
         }
 
         @media (max-width: 1024px) {
@@ -2481,11 +2523,11 @@
                 <span></span>
             </button>
             <ul id="mobileMenu">
-                <li><a href="#team" data-i18n="nav.team">Team</a></li>
                 <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#team" data-i18n="nav.team">Team</a></li>
                 <li><a href="#gesy" data-i18n="nav.gesy">GESY</a></li>
                 <li><a href="#partnerships" data-i18n="nav.partnerships">Partnerships</a></li>
-                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contacts</a></li>
                 <li><a href="#join-team" class="nav-cta" style="margin-right: 10px;" data-i18n="nav.joinTeam">Join Team</a></li>
                 <li><a href="pages/booking.html" class="nav-cta-orange" data-i18n="nav.bookOnline">Book Online</a></li>
                 <li class="language-switcher">
@@ -2666,7 +2708,7 @@
                 </div>
             </div>
             <div class="feature-visual">
-                <img src="assets/images/massage.jpg" alt="Sports & Remedial Massage">
+                <img src="assets/images/services/massage.jpg" alt="Sports & Remedial Massage">
             </div>
         </div>
     </section>
@@ -2910,11 +2952,7 @@
         <div class="gesy-container">
             <div class="section-header">
                 <h2>Physiotherapy via <span>GESY</span></h2>
-                <p>Accessible healthcare through the Cyprus National Health System</p>
-            </div>
-
-            <div class="gesy-intro">
-                <p>Right Track is a GESY-registered physiotherapy provider. Get professional treatment at a fraction of private costs through the national healthcare system.</p>
+                <p>Government covers most of your treatment costs</p>
             </div>
 
             <!-- Steps -->
@@ -2941,10 +2979,20 @@
                 </div>
             </div>
 
+            <!-- Important Notice -->
+            <div class="gesy-important">
+                <h4>Important: Ensure Your Referral is Correct</h4>
+                <ul>
+                    <li>Your referral must contain the correct diagnostic code for physiotherapy coverage</li>
+                    <li>If the code is incorrect, contact your doctor to correct it before your appointment</li>
+                    <li>Neurological or Rheumatological patients must be registered in the respective GESY catalog to receive specialized treatment codes</li>
+                    <li>We're here to help — contact us if you need guidance on referral codes</li>
+                </ul>
+            </div>
+
             <!-- Info Cards -->
             <div class="gesy-grid" style="margin-top: 50px;">
                 <div class="gesy-card">
-                    <div class="gesy-card-icon">📋</div>
                     <h3>Referral Types</h3>
                     <ul>
                         <li>Short-term: 3 sessions</li>
@@ -2955,18 +3003,16 @@
                 </div>
 
                 <div class="gesy-card">
-                    <div class="gesy-card-icon">💰</div>
-                    <h3>Co-payment</h3>
+                    <h3>Co-payment (your expenses)</h3>
                     <ul>
                         <li>€10 per session</li>
-                        <li>Annual cap: €150 (general)</li>
-                        <li>Annual cap: €75 (pensioners, children)</li>
-                        <li>Free after cap (Government pays)</li>
+                        <li>Annual cap: €150 (you won't pay more)</li>
+                        <li>Annual cap: €75 (less for pensioners and children)</li>
+                        <li>Government pays 100% when cap is reached</li>
                     </ul>
                 </div>
 
                 <div class="gesy-card">
-                    <div class="gesy-card-icon">📊</div>
                     <h3>Session Limits</h3>
                     <ul>
                         <li>Max 12 sessions per year</li>
@@ -2977,7 +3023,6 @@
                 </div>
 
                 <div class="gesy-card">
-                    <div class="gesy-card-icon">✅</div>
                     <h3>What's Covered</h3>
                     <ul>
                         <li>Musculoskeletal & joint pain</li>
@@ -3089,7 +3134,7 @@
                     <h3>Antonis Petri</h3>
                     <p class="role">Co-Founder & Lead Clinician</p>
                     <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
-                    <p class="gesy-reg">GESY Reg. No: 2825</p>
+                    <p class="gesy-reg">GESY Reg. No: A2825</p>
                     <a href="pages/tony-profile.html">View Full Profile →</a>
                 </div>
             </div>
@@ -3102,19 +3147,20 @@
                     <h3>Charalambos Gregoriou</h3>
                     <p class="role">Co-Founder & Clinical Director</p>
                     <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
-                    <p class="gesy-reg">GESY Reg. No: 1234</p>
+                    <p class="gesy-reg">GESY Reg. No: A0000</p>
                     <a href="pages/charalambos-profile.html">View Full Profile →</a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="team-photo">
-                    <img src="assets/images/team/tony-photo.jpg" alt="Alice Kazanjian">
+                <div class="team-photo" style="background: var(--off-white); display: flex; align-items: center; justify-content: center; color: var(--text-gray); font-size: 3rem;">
+                    AK
                 </div>
                 <div class="team-content">
                     <h3>Alice Kazanjian</h3>
                     <p class="role">Clinical Pilates Instructor</p>
                     <p>Certified clinical Pilates instructor specializing in physio-led mat Pilates, rehabilitation-focused movement, and athletic conditioning for improved strength and mobility.</p>
+                    <p class="gesy-reg">GESY Reg. No: A3509</p>
                     <a href="pages/alice-profile.html">View Full Profile →</a>
                 </div>
             </div>
