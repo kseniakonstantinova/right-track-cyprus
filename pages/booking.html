@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Booking | Right Track Physiotherapy Cyprus</title>
     <meta name="description" content="Book your physiotherapy appointment online. Quick, easy, and convenient scheduling for our Nicosia location.">
+
+    <!-- Booking System CSS -->
+    <link rel="stylesheet" href="../assets/css/booking.css?v=5">
+
     <style>
         * {
             margin: 0;
@@ -97,66 +101,56 @@
             box-shadow: 0 6px 16px rgba(255, 107, 53, 0.2);
         }
 
-        /* Main Content */
-        .booking-container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 40px;
+        .nav-cta-orange {
+            background: var(--orange) !important;
         }
 
-        .booking-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .booking-header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 1rem;
-        }
-
-        .booking-header p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Booking Widget Container */
-        .booking-widget {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            min-height: 600px;
+        /* Language Switcher */
+        .language-switcher {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 8px;
+            margin-left: 10px;
         }
 
-        .booking-widget-placeholder {
-            text-align: center;
-            color: var(--text-gray);
+        .lang-btn {
+            padding: 6px 12px;
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.2s;
         }
 
-        .booking-widget-placeholder h3 {
-            color: var(--navy);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+        .lang-btn.active {
+            background: var(--navy);
+            color: var(--white);
+            border-color: var(--navy);
+        }
+
+        /* Main Content */
+        main {
+            min-height: calc(100vh - 160px);
+            padding: 40px 20px;
         }
 
         /* Info Section */
+        .booking-info-section {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
         .booking-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
 
         .info-card {
             background: var(--white);
-            padding: 30px;
+            padding: 28px;
             border-radius: 12px;
             border: 1px solid var(--light-gray);
         }
@@ -164,7 +158,7 @@
         .info-card h3 {
             color: var(--navy);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .info-card p {
@@ -174,7 +168,6 @@
 
         .info-card ul {
             list-style: none;
-            margin-top: 1rem;
         }
 
         .info-card li {
@@ -187,18 +180,44 @@
             border-bottom: none;
         }
 
+        /* Mobile Nav */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
-            .booking-header h1 {
-                font-size: 2rem;
+            nav {
+                padding: 0.5rem 20px;
             }
 
-            .booking-widget {
-                padding: 20px;
+            .logo img {
+                height: 80px;
             }
 
             nav ul {
                 display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            main {
+                padding: 20px 0;
             }
         }
     </style>
@@ -216,32 +235,44 @@
                 <li><a href="../index.html#partnerships">Partnerships</a></li>
                 <li><a href="../index.html#contact">Contacts</a></li>
                 <li><a href="../index.html#join-team" class="nav-cta" style="background: var(--navy); margin-right: 10px;">Join Team</a></li>
-                <li><a href="booking.html" class="nav-cta">Book Online</a></li>
+                <li><a href="booking.html" class="nav-cta nav-cta-orange">Book Online</a></li>
+                <li>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="el">ΕΛ</button>
+                    </div>
+                </li>
             </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
     <main>
-        <div class="booking-container">
-            <div class="booking-header">
-                <h1>Book Your Appointment Online</h1>
-                <p>Choose your preferred time, therapist, and service. Easy, quick, and convenient scheduling for all our locations.</p>
+        <!-- Booking App Container -->
+        <div id="booking-app">
+            <!-- Loading state -->
+            <div class="booking-container" style="text-align: center; padding: 100px 20px;">
+                <div style="width: 40px; height: 40px; border: 3px solid var(--light-gray); border-top-color: var(--orange); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+                <p style="color: var(--text-gray);">Loading booking system...</p>
             </div>
+        </div>
 
-            <div class="booking-widget">
-                <iframe src="https://righttrackphysio.simplybook.it" width="100%" height="800" frameborder="0"></iframe>
-            </div>
-
+        <!-- Info Cards -->
+        <section class="booking-info-section">
             <div class="booking-info">
                 <div class="info-card">
-                    <h3>📍 Our Location</h3>
+                    <h3>Location</h3>
                     <ul>
-                        <li><strong>Nicosia Clinic</strong><br>Address details here</li>
+                        <li><strong>Right Track Rehabilitation</strong><br>Tseriou 32, Strovolos 2042<br>Nicosia, Cyprus</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
-                    <h3>⏰ Working Hours</h3>
+                    <h3>Working Hours</h3>
                     <ul>
                         <li><strong>Monday - Friday:</strong> 8:00 AM - 8:00 PM</li>
                         <li><strong>Saturday - Sunday:</strong> Closed</li>
@@ -249,16 +280,42 @@
                 </div>
 
                 <div class="info-card">
-                    <h3>💳 Accepted Payment</h3>
+                    <h3>Contact</h3>
                     <ul>
-                        <li>GESY (Γεσύ) - Registered Provider</li>
-                        <li>Private Insurance</li>
-                        <li>Credit/Debit Cards</li>
-                        <li>Cash</li>
+                        <li><strong>Phone:</strong> <a href="tel:+35799126824" style="color: var(--orange);">+357 99 126 824</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:righttrackphysio@gmail.com" style="color: var(--orange);">righttrackphysio@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
+
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- Booking System Scripts -->
+    <script type="module" src="../assets/js/booking/booking-app.js?v=9"></script>
+
+    <!-- Language Switcher -->
+    <script>
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const lang = btn.dataset.lang;
+                localStorage.setItem('language', lang);
+                window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+            });
+        });
+
+        // Set initial language
+        const savedLang = localStorage.getItem('language') || 'en';
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === savedLang);
+        });
+    </script>
 </body>
 </html>
