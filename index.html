@@ -53,32 +53,6 @@
                 0 4px 30px rgba(0, 0, 0, 0.05),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-            transition: padding 0.4s ease;
-        }
-
-        /* Initial state - large centered logo */
-        header.logo-large {
-            padding: 3rem 0;
-        }
-
-        header.logo-large nav {
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        header.logo-large .logo {
-            position: relative;
-            left: auto;
-            transform: none;
-        }
-
-        header.logo-large .logo img {
-            height: 360px;
-        }
-
-        header.logo-large nav ul {
-            opacity: 0;
-            pointer-events: none;
         }
 
         nav {
@@ -88,20 +62,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.4s ease;
         }
 
         .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
-            transition: all 0.4s ease;
         }
 
         .logo img {
             height: 120px;
             width: auto;
-            transition: height 0.4s ease;
         }
 
         .logo-text {
@@ -3415,30 +3386,5 @@
         });
     </script>
 
-    <!-- Logo Animation Script -->
-    <script>
-        (function() {
-            const header = document.querySelector('header');
-            const scrollThreshold = 150;
-
-            // Start with large logo
-            header.classList.add('logo-large');
-
-            function handleScroll() {
-                const scrollY = window.scrollY;
-
-                if (scrollY > scrollThreshold) {
-                    header.classList.remove('logo-large');
-                } else {
-                    header.classList.add('logo-large');
-                }
-            }
-
-            window.addEventListener('scroll', handleScroll, { passive: true });
-
-            // Initial check
-            handleScroll();
-        })();
-    </script>
 </body>
 </html>

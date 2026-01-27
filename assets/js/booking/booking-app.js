@@ -494,7 +494,7 @@ class BookingApp {
     }
 
     async sendTelegramNotification(booking) {
-        const TELEGRAM_BOT_TOKEN = '8572893992:AAGt7QVMdiga-MGgwjaZihmhXqvTa2sa9WY';
+        const TELEGRAM_BOT_TOKEN = '8572893992:AAEa5A7UburA2UDEY59Du2LU3dmd00c3Xt0';
         const TELEGRAM_CHAT_ID = '-1003649608471'; // Right Track Booking channel
 
         const service = getServiceById(booking.service);
