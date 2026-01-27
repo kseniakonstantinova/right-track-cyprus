@@ -494,8 +494,7 @@ class BookingApp {
     }
 
     async sendTelegramNotification(booking) {
-        const TELEGRAM_BOT_TOKEN = '8572893992:AAEa5A7UburA2UDEY59Du2LU3dmd00c3Xt0';
-        const TELEGRAM_CHAT_ID = '-1003649608471'; // Right Track Booking channel
+        const WORKER_URL = 'https://righttrack-telegram.righttrackphysio.workers.dev';
 
         const service = getServiceById(booking.service);
         const therapist = getTherapistById(booking.therapistId);
@@ -524,14 +523,10 @@ ${booking.message ? `💬 Message: ${booking.message}` : ''}
         `.trim();
 
         try {
-            await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            await fetch(WORKER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    chat_id: TELEGRAM_CHAT_ID,
-                    text: message,
-                    parse_mode: 'HTML'
-                })
+                body: JSON.stringify({ message })
             });
             console.log('Telegram notification sent');
         } catch (error) {
