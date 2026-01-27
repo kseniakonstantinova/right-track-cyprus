@@ -3386,5 +3386,27 @@
         });
     </script>
 
+    <!-- Scroll Position Preservation for Profile Pages -->
+    <script>
+        // Save scroll position when clicking on profile links
+        document.querySelectorAll('a[href*="profile.html"]').forEach(link => {
+            link.addEventListener('click', () => {
+                sessionStorage.setItem('teamSectionScrollPosition', window.scrollY.toString());
+            });
+        });
+
+        // Restore scroll position when returning from profile page
+        window.addEventListener('load', () => {
+            const savedPosition = sessionStorage.getItem('restoreScroll');
+            if (savedPosition) {
+                sessionStorage.removeItem('restoreScroll');
+                // Small delay to ensure page is fully loaded
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedPosition, 10));
+                }, 50);
+            }
+        });
+    </script>
+
 </body>
 </html>

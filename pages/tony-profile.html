@@ -29,148 +29,69 @@
             overflow-x: hidden;
         }
 
-        /* Header & Navigation - Liquid Glass Effect */
-        header {
-            padding: 1.2rem 0;
-            position: sticky;
-            top: 0;
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 1rem;
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             background: linear-gradient(
                 135deg,
-                rgba(255, 255, 255, 0.7) 0%,
-                rgba(255, 255, 255, 0.4) 50%,
-                rgba(255, 255, 255, 0.6) 100%
+                rgba(255, 255, 255, 0.85) 0%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0.75) 100%
             );
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
             box-shadow:
-                0 4px 30px rgba(0, 0, 0, 0.05),
+                0 4px 20px rgba(0, 0, 0, 0.1),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0.5rem 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 120px;
-            width: auto;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav li {
-            margin: 0;
-        }
-
-        nav a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--orange);
-        }
-
-        .nav-cta {
-            color: var(--white) !important;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
             transition: all 0.3s ease;
-            white-space: nowrap;
-            backdrop-filter: blur(10px) saturate(150%);
-            -webkit-backdrop-filter: blur(10px) saturate(150%);
-            background: linear-gradient(
-                135deg,
-                rgba(10, 22, 40, 0.85) 0%,
-                rgba(10, 22, 40, 0.6) 50%,
-                rgba(10, 22, 40, 0.75) 100%
-            );
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow:
-                0 4px 15px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
-        .nav-cta:hover {
-            background: linear-gradient(
-                135deg,
-                rgba(255, 107, 53, 0.9) 0%,
-                rgba(255, 107, 53, 0.65) 50%,
-                rgba(255, 107, 53, 0.8) 100%
-            );
-            color: var(--white) !important;
-            transform: translateY(-2px);
-            box-shadow:
-                0 8px 25px rgba(255, 107, 53, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .nav-cta-orange {
-            color: var(--white) !important;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            backdrop-filter: blur(10px) saturate(150%);
-            -webkit-backdrop-filter: blur(10px) saturate(150%);
-            background: linear-gradient(
-                135deg,
-                rgba(255, 107, 53, 0.95) 0%,
-                rgba(255, 107, 53, 0.7) 50%,
-                rgba(255, 107, 53, 0.85) 100%
-            );
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow:
-                0 4px 15px rgba(255, 107, 53, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-cta-orange:hover {
+        .back-button:hover {
             background: linear-gradient(
                 135deg,
                 rgba(10, 22, 40, 0.9) 0%,
                 rgba(10, 22, 40, 0.65) 50%,
                 rgba(10, 22, 40, 0.8) 100%
             );
-            color: var(--white) !important;
-            transform: translateY(-2px);
+            color: var(--white);
+            transform: translateX(-3px);
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.2),
+                0 8px 25px rgba(0, 0, 0, 0.15),
                 inset 0 1px 0 rgba(255, 255, 255, 0.15),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .back-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover .back-arrow {
+            transform: translateX(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .back-button {
+                top: 15px;
+                left: 15px;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
         }
 
         /* Hero Section */
@@ -413,15 +334,34 @@
             border-bottom: none;
         }
 
-        /* Certifications - Grid Layout */
+        /* Certifications - Horizontal Scroll */
         .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            display: flex;
+            gap: 24px;
             padding: 20px 0;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--orange) var(--light-gray);
+        }
+
+        .cert-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .cert-grid::-webkit-scrollbar-track {
+            background: var(--light-gray);
+            border-radius: 4px;
+        }
+
+        .cert-grid::-webkit-scrollbar-thumb {
+            background: var(--orange);
+            border-radius: 4px;
         }
 
         .cert-card {
+            flex: 0 0 280px;
             background: var(--white);
             border-radius: 20px;
             overflow: hidden;
@@ -429,6 +369,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             border: 2px solid transparent;
+            scroll-snap-align: start;
         }
 
         .cert-card:hover {
@@ -512,15 +453,9 @@
             line-height: 1.3;
         }
 
-        @media (max-width: 1200px) {
-            .cert-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .cert-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            .cert-card {
+                flex: 0 0 240px;
             }
         }
 
@@ -1038,23 +973,11 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="../index.html" class="logo">
-                <img src="../assets/images/logos/logo-new-no background.png" alt="Right Track Logo" style="object-fit: contain; max-height: 100%;">
-            </a>
-            <ul>
-                <li><a href="../index.html#services">Services</a></li>
-                <li><a href="../index.html#team">Team</a></li>
-                <li><a href="../index.html#gesy">GESY</a></li>
-                <li><a href="../index.html#partnerships">Partnerships</a></li>
-                <li><a href="../index.html#contact">Contacts</a></li>
-                <li><a href="../index.html#join-team" class="nav-cta" style="margin-right: 10px;">Join Team</a></li>
-                <li><a href="booking.html" class="nav-cta-orange">Book Online</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Back Button -->
+    <a href="#" onclick="goBack(); return false;" class="back-button">
+        <span class="back-arrow">←</span>
+        <span class="back-text">Back</span>
+    </a>
 
     <!-- Profile Hero -->
     <section class="profile-hero">
@@ -1171,6 +1094,17 @@
                             <span class="cert-card-year">2025</span>
                             <h4 class="cert-card-title">Exercise for Neck Pain Disorders</h4>
                             <p class="cert-card-issuer">Cyprus Institute of Orthopaedic Manual Therapy</p>
+                        </div>
+                    </div>
+                    <div class="cert-card" onclick="openModal('cert5')">
+                        <div class="cert-card-image">
+                            <img src="../assets/images/credentials/antonis/Certificate-Extra.jpeg" alt="Patellofemoral Pain Course">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-card-info">
+                            <span class="cert-card-year">2024</span>
+                            <h4 class="cert-card-title">Patellofemoral Pain: What, Why & How</h4>
+                            <p class="cert-card-issuer">CYOMT / Dr Lee Herrington</p>
                         </div>
                     </div>
             </div>
@@ -1314,6 +1248,29 @@
     </div>
 
     <script>
+        // Back navigation with scroll position restoration
+        function goBack() {
+            // Get saved scroll position from sessionStorage
+            const savedScrollPosition = sessionStorage.getItem('teamSectionScrollPosition');
+            const referrer = document.referrer;
+
+            // Check if we came from the main page
+            if (referrer && (referrer.includes('index.html') || referrer.endsWith('/'))) {
+                // Navigate back and restore scroll position
+                if (savedScrollPosition) {
+                    // Store flag to restore scroll on the main page
+                    sessionStorage.setItem('restoreScroll', savedScrollPosition);
+                }
+                window.location.href = '../index.html#team';
+            } else if (window.history.length > 1) {
+                // Use browser back if there's history
+                window.history.back();
+            } else {
+                // Fallback to main page
+                window.location.href = '../index.html#team';
+            }
+        }
+
         function openModal(type) {
             const modal = document.getElementById('diplomaModal');
             const modalTitle = document.getElementById('modalTitle');
@@ -1339,6 +1296,10 @@
                 cert4: {
                     title: 'Exercise for Neck Pain Disorders',
                     image: '../assets/images/credentials/antonis/Exercise-Neck-Pain-Disorders.jpeg'
+                },
+                cert5: {
+                    title: 'Patellofemoral Pain: What, Why & How',
+                    image: '../assets/images/credentials/antonis/Certificate-Extra.jpeg'
                 }
             };
 
