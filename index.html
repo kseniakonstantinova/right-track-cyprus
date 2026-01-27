@@ -53,6 +53,32 @@
                 0 4px 30px rgba(0, 0, 0, 0.05),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+            transition: padding 0.4s ease;
+        }
+
+        /* Initial state - large centered logo */
+        header.logo-large {
+            padding: 3rem 0;
+        }
+
+        header.logo-large nav {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        header.logo-large .logo {
+            position: relative;
+            left: auto;
+            transform: none;
+        }
+
+        header.logo-large .logo img {
+            height: 360px;
+        }
+
+        header.logo-large nav ul {
+            opacity: 0;
+            pointer-events: none;
         }
 
         nav {
@@ -62,17 +88,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.4s ease;
         }
 
         .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
+            transition: all 0.4s ease;
         }
 
         .logo img {
             height: 120px;
             width: auto;
+            transition: height 0.4s ease;
         }
 
         .logo-text {
@@ -1135,6 +1164,22 @@
             line-height: 1.8;
             font-size: 1.1rem;
             margin-bottom: 0;
+        }
+
+        .team-credentials {
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--orange);
+            margin: 1rem 0;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .team-credentials p {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .team-member a[href*="profile"] {
@@ -3146,7 +3191,9 @@
                 <div class="team-content">
                     <h3>Antonis Petri</h3>
                     <p class="role">Co-Founder & Lead Clinician</p>
-                    <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                    <div class="team-credentials">
+                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                    </div>
                     <p class="gesy-reg">GESY Reg. No: A2825</p>
                     <a href="pages/tony-profile.html">View Full Profile →</a>
                 </div>
@@ -3159,7 +3206,9 @@
                 <div class="team-content">
                     <h3>Charalambos Gregoriou</h3>
                     <p class="role">Co-Founder & Clinical Director</p>
-                    <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                    <div class="team-credentials">
+                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                    </div>
                     <p class="gesy-reg">GESY Reg. No: A0000</p>
                     <a href="pages/charalambos-profile.html">View Full Profile →</a>
                 </div>
@@ -3172,7 +3221,9 @@
                 <div class="team-content">
                     <h3>Alice Kazanjian</h3>
                     <p class="role">Clinical Pilates Instructor</p>
-                    <p>Certified clinical Pilates instructor specializing in physio-led mat Pilates, rehabilitation-focused movement, and athletic conditioning for improved strength and mobility.</p>
+                    <div class="team-credentials">
+                        <p>Certified clinical Pilates instructor specializing in physio-led mat Pilates, rehabilitation-focused movement, and athletic conditioning for improved strength and mobility.</p>
+                    </div>
                     <p class="gesy-reg">GESY Reg. No: A3509</p>
                     <a href="pages/alice-profile.html">View Full Profile →</a>
                 </div>
@@ -3362,6 +3413,32 @@
                 }
             });
         });
+    </script>
+
+    <!-- Logo Animation Script -->
+    <script>
+        (function() {
+            const header = document.querySelector('header');
+            const scrollThreshold = 150;
+
+            // Start with large logo
+            header.classList.add('logo-large');
+
+            function handleScroll() {
+                const scrollY = window.scrollY;
+
+                if (scrollY > scrollThreshold) {
+                    header.classList.remove('logo-large');
+                } else {
+                    header.classList.add('logo-large');
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            // Initial check
+            handleScroll();
+        })();
     </script>
 </body>
 </html>
