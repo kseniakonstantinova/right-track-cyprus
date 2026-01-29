@@ -105,7 +105,18 @@ class BookingApp {
             console.error('Firebase init error:', error);
         }
 
-        this.renderModeSelection();
+        // Check for pre-selected service from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const preselectedService = urlParams.get('service');
+
+        if (preselectedService && getServiceById(preselectedService)) {
+            this.state.service = preselectedService;
+            this.state.mode = 'appointment';
+            this.renderBookingForm();
+        } else {
+            this.renderModeSelection();
+        }
+
         this.setupLanguageListener();
     }
 
