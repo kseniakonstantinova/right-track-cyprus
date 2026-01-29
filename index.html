@@ -233,35 +233,31 @@
             color: var(--white);
         }
 
-        /* Mobile Language Switcher - Liquid Glass */
+        /* Mobile Language Switcher */
         .mobile-lang-switcher {
             display: none;
-            position: fixed;
-            top: 20px;
-            right: 80px;
-            z-index: 1001;
-            gap: 4px;
-            padding: 6px 8px;
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.85) 0%,
-                rgba(255, 255, 255, 0.6) 50%,
-                rgba(255, 255, 255, 0.75) 100%
-            );
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 50px;
-            box-shadow:
-                0 4px 20px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+            gap: 8px;
+            align-items: center;
         }
 
         .mobile-lang-switcher .lang-btn {
-            padding: 4px 10px;
-            font-size: 0.8rem;
-            border-width: 1.5px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            border: none;
+            background: transparent;
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .mobile-lang-switcher .lang-btn.active {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .mobile-lang-switcher .lang-btn:hover {
+            color: var(--orange);
         }
 
         /* Mobile Menu Button */
@@ -2337,9 +2333,17 @@
                 padding: 40px;
             }
 
-            /* Show mobile menu button on tablets and phones */
+            /* Show mobile menu button and lang switcher on tablets and phones */
             .mobile-menu-btn {
                 display: flex;
+            }
+
+            .mobile-lang-switcher {
+                display: flex;
+            }
+
+            .logo img {
+                height: 100px;
             }
 
             /* Mobile menu styles */
@@ -2378,10 +2382,6 @@
                 display: none !important;
             }
 
-            .mobile-lang-switcher {
-                display: flex;
-            }
-
             .nav-cta {
                 text-align: center;
                 margin: 10px 0;
@@ -2389,6 +2389,47 @@
         }
 
         @media (max-width: 768px) {
+            /* Mobile Header with Scroll Animation */
+            header {
+                padding: 0.8rem 0;
+                transition: padding 0.3s ease;
+            }
+
+            header.scrolled {
+                padding: 0.5rem 0;
+            }
+
+            nav {
+                padding: 0 20px;
+                position: relative;
+            }
+
+            .logo {
+                transition: all 0.3s ease;
+                transform-origin: left center;
+            }
+
+            .logo img {
+                height: 80px;
+                transition: height 0.3s ease;
+            }
+
+            header.scrolled .logo img {
+                height: 50px;
+            }
+
+            /* Mobile nav layout */
+            .mobile-lang-switcher {
+                display: flex;
+                position: static;
+                margin-left: auto;
+                margin-right: 10px;
+            }
+
+            .mobile-menu-btn {
+                position: static;
+            }
+
             .hero {
                 padding: 80px 20px 60px;
             }
@@ -2788,7 +2829,7 @@
     <header>
         <nav>
             <a href="#" class="logo">
-                <img src="assets/images/logos/logo-new-no background.png" alt="Right Track Logo" style="object-fit: contain; max-height: 100%;">
+                <img src="assets/images/logos/logo-new-no background.png" alt="Right Track Logo">
             </a>
             <div class="mobile-lang-switcher">
                 <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
@@ -3669,6 +3710,31 @@
                     toggleMobileMenu();
                 }
             });
+        });
+
+        // Mobile header scroll animation
+        let lastScrollY = 0;
+        const header = document.querySelector('header');
+
+        function handleScroll() {
+            if (window.innerWidth <= 768) {
+                const scrollY = window.scrollY;
+
+                if (scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                lastScrollY = scrollY;
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                header.classList.remove('scrolled');
+            }
         });
     </script>
 
