@@ -233,6 +233,37 @@
             color: var(--white);
         }
 
+        /* Mobile Language Switcher - Liquid Glass */
+        .mobile-lang-switcher {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 80px;
+            z-index: 1001;
+            gap: 4px;
+            padding: 6px 8px;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.85) 0%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0.75) 100%
+            );
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-lang-switcher .lang-btn {
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-width: 1.5px;
+        }
+
         /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
@@ -2344,11 +2375,11 @@
             }
 
             .language-switcher {
-                margin-left: 0;
-                margin-top: 20px;
-                padding-top: 20px;
-                border-top: 2px solid var(--light-gray);
-                justify-content: center;
+                display: none !important;
+            }
+
+            .mobile-lang-switcher {
+                display: flex;
             }
 
             .nav-cta {
@@ -2650,28 +2681,6 @@
             position: relative;
         }
 
-        .promo-banner-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 180px;
-            height: 100%;
-            background: linear-gradient(to right, var(--navy) 0%, rgba(10, 22, 40, 0.7) 40%, rgba(10, 22, 40, 0.3) 70%, transparent 100%);
-            z-index: 1;
-        }
-
-        .promo-banner-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 100%;
-            background: linear-gradient(to left, var(--navy) 0%, rgba(10, 22, 40, 0.7) 40%, rgba(10, 22, 40, 0.3) 70%, transparent 100%);
-            z-index: 1;
-        }
-
         .promo-banner-image img {
             width: 100%;
             height: 100%;
@@ -2753,6 +2762,10 @@
             <a href="#" class="logo">
                 <img src="assets/images/logos/logo-new-no background.png" alt="Right Track Logo" style="object-fit: contain; max-height: 100%;">
             </a>
+            <div class="mobile-lang-switcher">
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="el" onclick="setLanguage('el')">ΕΛ</button>
+            </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -2792,7 +2805,7 @@
                     <span class="promo-feature">Beginners Welcome</span>
                     <span class="promo-feature">Small Groups</span>
                 </div>
-                <a href="pages/booking.html?service=clinical-pilates" class="promo-cta">
+                <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="promo-cta">
                     Book Online Now →
                 </a>
             </div>
@@ -2885,7 +2898,7 @@
                     <li>Measurable progress tracking</li>
                 </ul>
                 <div style="margin-top: 25px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="mailto:righttrackphysio@gmail.com" class="btn btn-orange">Book Session →</a>
+                    <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="btn btn-orange">Book Session →</a>
                     <div style="display: flex; flex-direction: column; gap: 5px;">
                         <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">Private Only</span>
                         <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">From €80/month (Early Bird)</span>

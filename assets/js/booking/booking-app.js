@@ -1,7 +1,8 @@
 // Main Booking Application for Right Track
 
 import { initializeFirebase } from './firebase-config.js';
-import { SERVICES, THERAPISTS, getTherapistsForService, getServiceById, getTherapistById } from './booking-data.js';
+// Fallback data if Firebase fails
+import { SERVICES as FALLBACK_SERVICES, THERAPISTS as FALLBACK_THERAPISTS } from './booking-data.js';
 import { BookingCalendar } from './calendar.js';
 import { TimeSlots } from './time-slots.js';
 
@@ -20,6 +21,10 @@ class BookingApp {
         this.timeSlots = null;
         this.language = localStorage.getItem('language') || 'en';
         this.db = null;
+
+        // Data loaded from Firebase (or fallback)
+        this.services = [];
+        this.therapists = [];
 
         this.translations = {
             en: {
@@ -105,13 +110,23 @@ class BookingApp {
             console.error('Firebase init error:', error);
         }
 
-        // Check for pre-selected service from URL parameter
+        // Check for pre-selected service and therapist from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const preselectedService = urlParams.get('service');
+        const preselectedTherapist = urlParams.get('therapist');
 
         if (preselectedService && getServiceById(preselectedService)) {
             this.state.service = preselectedService;
             this.state.mode = 'appointment';
+
+            // Also preselect therapist if provided and valid for this service
+            if (preselectedTherapist && getTherapistById(preselectedTherapist)) {
+                const therapistsForService = getTherapistsForService(preselectedService);
+                if (therapistsForService.some(t => t.id === preselectedTherapist)) {
+                    this.state.therapist = preselectedTherapist;
+                }
+            }
+
             this.renderBookingForm();
         } else {
             this.renderModeSelection();
