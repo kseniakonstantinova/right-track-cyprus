@@ -106,8 +106,14 @@ class BookingApp {
         try {
             const firebase = await initializeFirebase();
             this.db = firebase.db;
+
+            // Load data from Firebase
+            await this.loadDataFromFirebase();
         } catch (error) {
             console.error('Firebase init error:', error);
+            // Use fallback data
+            this.services = FALLBACK_SERVICES;
+            this.therapists = FALLBACK_THERAPISTS;
         }
 
         // Check for pre-selected service and therapist from URL parameters
@@ -115,13 +121,13 @@ class BookingApp {
         const preselectedService = urlParams.get('service');
         const preselectedTherapist = urlParams.get('therapist');
 
-        if (preselectedService && getServiceById(preselectedService)) {
+        if (preselectedService && this.getServiceById(preselectedService)) {
             this.state.service = preselectedService;
             this.state.mode = 'appointment';
 
             // Also preselect therapist if provided and valid for this service
-            if (preselectedTherapist && getTherapistById(preselectedTherapist)) {
-                const therapistsForService = getTherapistsForService(preselectedService);
+            if (preselectedTherapist && this.getTherapistById(preselectedTherapist)) {
+                const therapistsForService = this.getTherapistsForService(preselectedService);
                 if (therapistsForService.some(t => t.id === preselectedTherapist)) {
                     this.state.therapist = preselectedTherapist;
                 }
@@ -133,6 +139,54 @@ class BookingApp {
         }
 
         this.setupLanguageListener();
+    }
+
+    async loadDataFromFirebase() {
+        try {
+            const { collection, getDocs, query, orderBy } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js');
+
+            // Load services
+            const servicesSnapshot = await getDocs(query(collection(this.db, 'services'), orderBy('name')));
+            this.services = servicesSnapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+
+            // Load therapists (only active ones)
+            const therapistsSnapshot = await getDocs(query(collection(this.db, 'therapists'), orderBy('name')));
+            this.therapists = therapistsSnapshot.docs
+                .map(doc => ({ id: doc.id, ...doc.data() }))
+                .filter(t => t.isActive !== false);
+
+            console.log(`Loaded ${this.services.length} services and ${this.therapists.length} therapists from Firebase`);
+
+            // Fallback if empty
+            if (this.services.length === 0) {
+                this.services = FALLBACK_SERVICES;
+                console.log('Using fallback services');
+            }
+            if (this.therapists.length === 0) {
+                this.therapists = FALLBACK_THERAPISTS;
+                console.log('Using fallback therapists');
+            }
+        } catch (error) {
+            console.error('Error loading data from Firebase:', error);
+            this.services = FALLBACK_SERVICES;
+            this.therapists = FALLBACK_THERAPISTS;
+        }
+    }
+
+    // Helper methods to get data
+    getServiceById(id) {
+        return this.services.find(s => s.id === id);
+    }
+
+    getTherapistById(id) {
+        return this.therapists.find(t => t.id === id);
+    }
+
+    getTherapistsForService(serviceId) {
+        return this.therapists.filter(t => t.isActive !== false && (t.services || []).includes(serviceId));
     }
 
     t(key) {
@@ -165,14 +219,14 @@ class BookingApp {
                 </div>
 
                 <div class="services-grid">
-                    ${SERVICES.map(s => `
+                    ${this.services.map(s => `
                         <button class="service-card" data-service="${s.id}">
                             <div class="service-icon">
                                 ${this.getServiceIcon(s.id)}
                             </div>
                             <div class="service-info">
-                                <strong>${this.language === 'el' ? s.nameEl : s.name}</strong>
-                                <span class="service-price">${this.language === 'el' ? s.pricing.displayEl : s.pricing.display}</span>
+                                <strong>${this.language === 'el' ? (s.nameEl || s.name) : s.name}</strong>
+                                <span class="service-price">${this.language === 'el' ? (s.pricing?.displayEl || s.pricing?.display || '') : (s.pricing?.display || '')}</span>
                             </div>
                         </button>
                     `).join('')}
@@ -230,8 +284,8 @@ class BookingApp {
                                 ${this.getServiceIcon(this.state.service)}
                             </div>
                             <div class="service-info">
-                                <strong>${this.language === 'el' ? getServiceById(this.state.service)?.nameEl : getServiceById(this.state.service)?.name}</strong>
-                                <span class="service-price">${this.language === 'el' ? getServiceById(this.state.service)?.pricing.displayEl : getServiceById(this.state.service)?.pricing.display}</span>
+                                <strong>${this.language === 'el' ? (this.getServiceById(this.state.service)?.nameEl || this.getServiceById(this.state.service)?.name) : this.getServiceById(this.state.service)?.name}</strong>
+                                <span class="service-price">${this.language === 'el' ? (this.getServiceById(this.state.service)?.pricing?.displayEl || this.getServiceById(this.state.service)?.pricing?.display || '') : (this.getServiceById(this.state.service)?.pricing?.display || '')}</span>
                             </div>
                         </div>
 
@@ -314,16 +368,16 @@ class BookingApp {
     renderTherapistOptions() {
         if (!this.state.service) return '';
 
-        const therapists = getTherapistsForService(this.state.service);
+        const therapists = this.getTherapistsForService(this.state.service);
 
         return therapists.map(t => `
             <label class="therapist-option ${this.state.therapist === t.id ? 'selected' : ''}">
                 <input type="radio" name="therapist" value="${t.id}" ${this.state.therapist === t.id ? 'checked' : ''}>
                 <div class="therapist-info">
-                    <img src="${t.photo}" alt="${t.name}" class="therapist-photo" onerror="this.style.display='none'">
+                    <img src="${t.photo || ''}" alt="${t.name}" class="therapist-photo" onerror="this.style.display='none'">
                     <div class="therapist-details">
-                        <strong>${this.language === 'el' ? t.nameEl : t.name}</strong>
-                        <span>${this.language === 'el' ? t.titleEl : t.title}</span>
+                        <strong>${this.language === 'el' ? (t.nameEl || t.name) : t.name}</strong>
+                        <span>${this.language === 'el' ? (t.titleEl || t.title) : t.title}</span>
                     </div>
                 </div>
             </label>
@@ -461,7 +515,7 @@ class BookingApp {
                 <p>${isCallback ? this.t('successCallback') : this.t('successMessage')}</p>
 
                 <div class="booking-summary">
-                    <p><strong>Service:</strong> ${getServiceById(this.state.service)?.name}</p>
+                    <p><strong>Service:</strong> ${this.getServiceById(this.state.service)?.name}</p>
                     ${this.state.date ? `<p><strong>Date:</strong> ${this.state.date}</p>` : ''}
                     ${this.state.time ? `<p><strong>Time:</strong> ${this.state.time}</p>` : ''}
                 </div>
@@ -483,8 +537,8 @@ class BookingApp {
         const EMAILJS_TEMPLATE_ID = 'template_35sacxf';
         const EMAILJS_PUBLIC_KEY = '1cMf-T1krhUJoreWv';
 
-        const service = getServiceById(booking.service);
-        const therapist = getTherapistById(booking.therapistId);
+        const service = this.getServiceById(booking.service);
+        const therapist = this.getTherapistById(booking.therapistId);
 
         const isCallback = booking.bookingType === 'callback';
 
@@ -522,8 +576,8 @@ class BookingApp {
     async sendTelegramNotification(booking) {
         const WORKER_URL = 'https://righttrack-telegram.righttrackphysio.workers.dev';
 
-        const service = getServiceById(booking.service);
-        const therapist = getTherapistById(booking.therapistId);
+        const service = this.getServiceById(booking.service);
+        const therapist = this.getTherapistById(booking.therapistId);
 
         const isCallback = booking.bookingType === 'callback';
         const bookingTypeEmoji = isCallback ? '📞' : '📅';
