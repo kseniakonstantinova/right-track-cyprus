@@ -382,7 +382,7 @@
         .cert-card-image {
             width: 100%;
             height: auto;
-            aspect-ratio: 8.5 / 11;
+            aspect-ratio: 11 / 8.5;
             background: var(--off-white);
             position: relative;
             overflow: hidden;
@@ -531,7 +531,7 @@
 
         .diploma-thumbnail {
             width: 100%;
-            aspect-ratio: 8.5 / 11;
+            aspect-ratio: 11 / 8.5;
             border-radius: 4px;
             overflow: hidden;
             cursor: pointer;
@@ -831,7 +831,7 @@
                 <p class="profile-summary">Experienced physiotherapist with extensive background in intensive care, oncology rehabilitation, and clinical Pilates. Specialized in post-operative care, cardio-respiratory rehabilitation, and lymphedema prevention for breast cancer patients.</p>
 
                 <div class="team-stats availability-stats">
-                    <span class="availability-badge">In-clinic</span>
+                    <span class="availability-badge">Prenatal Pilates</span>
                     <span class="availability-badge">Clinical Pilates</span>
                     <span class="availability-badge">Prenatal Massage</span>
                 </div>
@@ -873,10 +873,7 @@
                 <div class="education-right">
                     <div class="diploma-frame">
                         <div class="diploma-thumbnail" onclick="openModal('diploma')">
-                            <div class="diploma-placeholder">
-                                <span class="icon">🎓</span>
-                                <span class="text">Diploma image<br>coming soon</span>
-                            </div>
+                            <img src="../assets/images/credentials/alice/bsc-physiotherapy-diploma-euc-2016.jpeg" alt="BSc Physiotherapy Diploma - European University Cyprus" style="width: 100%; height: 100%; object-fit: contain;">
                             <div class="zoom-icon">🔍</div>
                         </div>
                     </div>
@@ -884,9 +881,68 @@
             </div>
 
             <div class="languages" style="margin-top: 40px;">
-                <div class="language-badge">Armenian - Native</div>
                 <div class="language-badge">Greek - Native</div>
+                <div class="language-badge">Armenian - Native</div>
                 <div class="language-badge">English - Fluent</div>
+            </div>
+
+            <h2 style="margin-top: 60px;">Certifications & <span>Training</span></h2>
+            <div class="cert-grid">
+                <div class="cert-card" onclick="openModal('cert1')">
+                    <div class="cert-card-image">
+                        <img src="../assets/images/credentials/alice/prenatal-functional-pilates-itol.jpeg" alt="Prenatal Functional Pilates Certificate">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+                    <div class="cert-card-info">
+                        <span class="cert-card-year">2018</span>
+                        <h4 class="cert-card-title">Prenatal Functional Pilates</h4>
+                        <p class="cert-card-issuer">ITOL Certified</p>
+                    </div>
+                </div>
+                <div class="cert-card" onclick="openModal('cert2')">
+                    <div class="cert-card-image">
+                        <img src="../assets/images/credentials/alice/pilates-reformer-clinical-epimorfosis-2025.jpeg" alt="Pilates Reformer Clinical Course Certificate">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+                    <div class="cert-card-info">
+                        <span class="cert-card-year">2025</span>
+                        <h4 class="cert-card-title">Pilates Reformer - Clinical Course</h4>
+                        <p class="cert-card-issuer">Epimorfosis / FisioPlusPilates, Athens</p>
+                    </div>
+                </div>
+                <div class="cert-card" onclick="openModal('cert3')">
+                    <div class="cert-card-image">
+                        <img src="../assets/images/credentials/alice/infant-child-massage-wmf-2025.jpeg" alt="Infant and Child Massage Certificate">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+                    <div class="cert-card-info">
+                        <span class="cert-card-year">2025</span>
+                        <h4 class="cert-card-title">Infant & Child Massage</h4>
+                        <p class="cert-card-issuer">World Massage Federation (WMF)</p>
+                    </div>
+                </div>
+                <div class="cert-card" onclick="openModal('cert4')">
+                    <div class="cert-card-image">
+                        <img src="../assets/images/credentials/alice/prenatal-massage-wmf-2025.jpeg" alt="Prenatal Massage Certificate">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+                    <div class="cert-card-info">
+                        <span class="cert-card-year">2025</span>
+                        <h4 class="cert-card-title">Prenatal Massage</h4>
+                        <p class="cert-card-issuer">World Massage Federation (WMF)</p>
+                    </div>
+                </div>
+                <div class="cert-card" onclick="openModal('cert5')">
+                    <div class="cert-card-image">
+                        <img src="../assets/images/credentials/alice/functional-pilates-props-itol-2018.jpeg" alt="Functional Pilates with Props Certificate">
+                        <div class="zoom-icon">🔍</div>
+                    </div>
+                    <div class="cert-card-info">
+                        <span class="cert-card-year">2018</span>
+                        <h4 class="cert-card-title">Functional Pilates with Props</h4>
+                        <p class="cert-card-issuer">ITOL Certified</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -937,85 +993,6 @@
                         <li>Inpatient physiotherapy services</li>
                         <li>Multidisciplinary team collaboration</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications -->
-    <section>
-        <div class="section-content">
-            <h2>Certifications & <span>Training</span></h2>
-            <div class="cert-grid">
-                <div class="cert-card" onclick="openModal('cert1')">
-                    <div class="cert-card-image">
-                        <div class="cert-placeholder">🧘</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2025</span>
-                        <h4 class="cert-card-title">Pilates Reformer - Clinical Course</h4>
-                        <p class="cert-card-issuer">Athens, Greece</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert2')">
-                    <div class="cert-card-image">
-                        <div class="cert-placeholder">👶</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2025</span>
-                        <h4 class="cert-card-title">Infant, Child & Prenatal Massage</h4>
-                        <p class="cert-card-issuer">World Massage Federation (WMF)</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert3')">
-                    <div class="cert-card-image">
-                        <div class="cert-placeholder">🏋️</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2018</span>
-                        <h4 class="cert-card-title">Functional Pilates (Foundation, Level 1+2)</h4>
-                        <p class="cert-card-issuer">The Pilates Coach / ITOL Certified</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert4')">
-                    <div class="cert-card-image">
-                        <div class="cert-placeholder">🤰</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2018</span>
-                        <h4 class="cert-card-title">Prenatal Functional Pilates</h4>
-                        <p class="cert-card-issuer">The Pilates Coach / ITOL Certified</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert5')">
-                    <div class="cert-card-image">
-                        <div class="cert-placeholder">⚽</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2018</span>
-                        <h4 class="cert-card-title">Fit Ball Functional Pilates</h4>
-                        <p class="cert-card-issuer">The Pilates Coach / ITOL Certified</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert6')">
-                    <div class="cert-card-image">
-                        <div class="cert-placeholder">🧠</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2014</span>
-                        <h4 class="cert-card-title">Bobath NDT Method</h4>
-                        <p class="cert-card-issuer">Neurodevelopmental Treatment</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert7')">
-                    <div class="cert-card-image">
-                        <div class="cert-placeholder">🩹</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2014</span>
-                        <h4 class="cert-card-title">First Aid Certificate</h4>
-                        <p class="cert-card-issuer">St. John Association & Brigade (30 hours)</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1106,8 +1083,8 @@
                 <button class="close-modal" onclick="closeModal()">×</button>
             </div>
             <div class="modal-body">
-                <div id="diplomaDisplay" style="width: 100%; max-width: 500px; aspect-ratio: 8.5/11; border-radius: 6px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; background: var(--off-white);">
-                    <p style="color: var(--text-gray); text-align: center; padding: 40px;">Certificate image coming soon</p>
+                <div id="diplomaDisplay" style="width: 100%; max-width: 600px; border-radius: 6px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; background: var(--off-white);">
+                    <img id="diplomaImage" src="../assets/images/credentials/alice/bsc-physiotherapy-diploma-euc-2016.jpeg" alt="Diploma" style="width: 100%; height: auto; display: block;">
                 </div>
             </div>
         </div>
@@ -1134,19 +1111,41 @@
         function openModal(type) {
             const modal = document.getElementById('diplomaModal');
             const modalTitle = document.getElementById('modalTitle');
+            const diplomaImage = document.getElementById('diplomaImage');
 
-            const titles = {
-                diploma: 'Bachelor of Science in Physiotherapy',
-                cert1: 'Pilates Reformer - Clinical Course',
-                cert2: 'Infant, Child & Prenatal Massage',
-                cert3: 'Functional Pilates (Foundation, Level 1+2)',
-                cert4: 'Prenatal Functional Pilates',
-                cert5: 'Fit Ball Functional Pilates',
-                cert6: 'Bobath NDT Method',
-                cert7: 'First Aid Certificate'
+            const certs = {
+                diploma: {
+                    title: 'Bachelor of Science in Physiotherapy',
+                    image: '../assets/images/credentials/alice/bsc-physiotherapy-diploma-euc-2016.jpeg'
+                },
+                cert1: {
+                    title: 'Prenatal Functional Pilates',
+                    image: '../assets/images/credentials/alice/prenatal-functional-pilates-itol.jpeg'
+                },
+                cert2: {
+                    title: 'Pilates Reformer - Clinical Course',
+                    image: '../assets/images/credentials/alice/pilates-reformer-clinical-epimorfosis-2025.jpeg'
+                },
+                cert3: {
+                    title: 'Infant & Child Massage',
+                    image: '../assets/images/credentials/alice/infant-child-massage-wmf-2025.jpeg'
+                },
+                cert4: {
+                    title: 'Prenatal Massage',
+                    image: '../assets/images/credentials/alice/prenatal-massage-wmf-2025.jpeg'
+                },
+                cert5: {
+                    title: 'Functional Pilates with Props',
+                    image: '../assets/images/credentials/alice/functional-pilates-props-itol-2018.jpeg'
+                }
             };
 
-            modalTitle.textContent = titles[type] || 'Certificate';
+            const cert = certs[type];
+            if (cert) {
+                modalTitle.textContent = cert.title;
+                diplomaImage.src = cert.image;
+                diplomaImage.alt = cert.title;
+            }
             modal.style.display = 'block';
         }
 
