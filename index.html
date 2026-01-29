@@ -2757,6 +2757,25 @@
             object-position: center top;
         }
 
+        .instructor-profile-link {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: var(--white);
+            background: rgba(0,0,0,0.5);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.3s;
+            z-index: 2;
+        }
+
+        .instructor-profile-link:hover {
+            background: rgba(0,0,0,0.7);
+        }
+
         .promo-discount {
             position: absolute;
             top: 40%;
@@ -2820,6 +2839,78 @@
                 font-size: 0.85rem;
                 padding: 8px 14px;
             }
+
+            .promo-banner-image {
+                min-height: 250px;
+                position: relative;
+            }
+
+            .instructor-profile-link {
+                bottom: 10px;
+                right: 10px;
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .promo-discount {
+                left: 20px;
+                top: 20px;
+                transform: none;
+                padding: 12px 18px;
+            }
+
+            .promo-discount .label {
+                font-size: 0.8rem;
+            }
+
+            .promo-discount .value {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .promo-banner-text {
+                padding: 30px 20px;
+            }
+
+            .promo-banner-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .promo-banner-text .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .promo-features {
+                gap: 8px;
+            }
+
+            .promo-feature {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
+            .promo-cta {
+                padding: 14px 24px;
+                font-size: 1rem;
+            }
+
+            .promo-banner-image {
+                min-height: 200px;
+            }
+
+            .instructor-profile-link {
+                bottom: 8px;
+                right: 8px;
+                padding: 5px 10px;
+                font-size: 0.75rem;
+            }
+
+            .promo-discount {
+                left: 15px;
+                top: 15px;
+                padding: 10px 14px;
+            }
         }
 
     </style>
@@ -2880,7 +2971,7 @@
             </div>
             <div class="promo-banner-image">
                 <img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian - Clinical Pilates Instructor">
-                <a href="pages/alice-profile.html" style="position: absolute; bottom: 20px; right: 20px; color: var(--white); background: rgba(0,0,0,0.5); padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.3s; z-index: 2;">View Instructor Profile →</a>
+                <a href="pages/alice-profile.html" class="instructor-profile-link">View Instructor Profile →</a>
                 <div class="promo-discount">
                     <div class="label">From €80/month</div>
                     <div class="label" style="font-weight: 600;">(Early Bird)</div>
