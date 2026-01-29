@@ -30,6 +30,7 @@ class BookingApp {
             en: {
                 title: 'Book Your Appointment',
                 subtitle: 'Select a service to continue',
+                subtitleTherapist: 'Select a specialist to continue',
                 modeAppointment: 'Select Date & Time',
                 modeAppointmentDesc: 'Choose a specific slot from our calendar',
                 modeCallback: 'Request Callback',
@@ -66,6 +67,7 @@ class BookingApp {
             el: {
                 title: 'Κλείστε Ραντεβού',
                 subtitle: 'Επιλέξτε υπηρεσία για να συνεχίσετε',
+                subtitleTherapist: 'Επιλέξτε ειδικό για να συνεχίσετε',
                 modeAppointment: 'Επιλογή Ημέρας & Ώρας',
                 modeAppointmentDesc: 'Επιλέξτε συγκεκριμένη ώρα από το ημερολόγιο',
                 modeCallback: 'Αίτηση Επανάκλησης',
@@ -274,6 +276,7 @@ class BookingApp {
 
                 <div class="booking-header">
                     <h2>${this.t('title')}</h2>
+                    <p>${this.t('subtitleTherapist')}</p>
                 </div>
 
                 <div class="booking-form-grid ${isAppointment ? 'with-calendar' : ''}">
@@ -462,7 +465,7 @@ class BookingApp {
         submitBtn.textContent = this.t('submitting');
 
         const bookingData = {
-            name: document.getElementById('client-name').value,
+            clientName: document.getElementById('client-name').value,
             phone: document.getElementById('client-phone').value,
             email: document.getElementById('client-email').value || null,
             message: document.getElementById('client-message').value || null,
@@ -472,6 +475,7 @@ class BookingApp {
             bookingType: this.state.mode,
             date: this.state.date || null,
             timeSlot: this.state.time || null,
+            source: 'website', // Mark as website booking
             status: 'pending',
             createdAt: new Date().toISOString()
         };
@@ -544,7 +548,7 @@ class BookingApp {
 
         const templateParams = {
             booking_type: isCallback ? 'Callback Request' : 'Appointment',
-            client_name: booking.name,
+            client_name: booking.clientName,
             client_phone: booking.phone,
             client_email: booking.email || 'Not provided',
             service_name: service?.name || booking.service,
@@ -584,11 +588,11 @@ class BookingApp {
         const bookingTypeText = isCallback ? 'CALLBACK REQUEST' : 'APPOINTMENT';
 
         const message = `
-🆕 NEW BOOKING
+🆕 NEW BOOKING (Website)
 
 ${bookingTypeEmoji} Type: ${bookingTypeText}
 
-👤 Name: ${booking.name}
+👤 Name: ${booking.clientName}
 📱 Phone: ${booking.phone}
 ${booking.email ? `📧 Email: ${booking.email}` : ''}
 

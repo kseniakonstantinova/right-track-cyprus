@@ -2544,6 +2544,34 @@
                 font-size: 2rem;
             }
 
+            .team-content {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .team-content h3 {
+                order: 1;
+            }
+
+            .team-content .role {
+                order: 2;
+                margin-bottom: 0.5rem;
+            }
+
+            .team-content a[href*="profile"] {
+                order: 3;
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .team-content .team-credentials {
+                order: 4;
+            }
+
+            .team-content .gesy-reg {
+                order: 5;
+            }
+
             .cta-banner-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -2877,7 +2905,7 @@
                     <li>GESY-registered</li>
                 </ul>
                 <div style="margin-top: 25px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="mailto:righttrackphysio@gmail.com" class="btn btn-orange">Book Session →</a>
+                    <a href="pages/booking.html?service=athlete-rehab" class="btn btn-orange">Book Online 24/7 →</a>
                     <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">€29 GESY | From €35 Private</span>
                 </div>
             </div>
@@ -2898,7 +2926,7 @@
                     <li>Measurable progress tracking</li>
                 </ul>
                 <div style="margin-top: 25px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="btn btn-orange">Book Session →</a>
+                    <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="btn btn-orange">Book Online 24/7 →</a>
                     <div style="display: flex; flex-direction: column; gap: 5px;">
                         <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">Private Only</span>
                         <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">From €80/month (Early Bird)</span>
@@ -2921,7 +2949,7 @@
                     <li>Family education & home plans</li>
                 </ul>
                 <div style="margin-top: 25px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="mailto:righttrackphysio@gmail.com" class="btn btn-orange">Book Session →</a>
+                    <a href="pages/booking.html?service=kids-physio" class="btn btn-orange">Book Online 24/7 →</a>
                     <span style="font-size: 1.2rem; font-weight: 700; color: var(--navy);">Customized Packages</span>
                 </div>
             </div>
@@ -2941,7 +2969,7 @@
                     <li>Performance monitoring</li>
                 </ul>
                 <div style="margin-top: 25px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="mailto:righttrackphysio@gmail.com" class="btn btn-orange">Book Session →</a>
+                    <a href="pages/booking.html?service=performance-training" class="btn btn-orange">Book Online 24/7 →</a>
                     <span style="font-size: 1.2rem; font-weight: 700; color: var(--navy);">From €250/month</span>
                 </div>
             </div>
@@ -2961,7 +2989,7 @@
                     <li>Convenient scheduling</li>
                 </ul>
                 <div style="margin-top: 25px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="mailto:righttrackphysio@gmail.com" class="btn btn-orange">Book Home Visit →</a>
+                    <a href="pages/booking.html?service=homecare-physio" class="btn btn-orange">Book Online 24/7 →</a>
                     <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">From €45 Private | €29 GESY (+€15 travel)</span>
                 </div>
             </div>
@@ -2982,7 +3010,7 @@
                     <li>Pre/post-competition prep</li>
                 </ul>
                 <div style="margin-top: 25px; display: flex; align-items: center; gap: 20px;">
-                    <a href="mailto:righttrackphysio@gmail.com" class="btn btn-orange">Book Massage →</a>
+                    <a href="pages/booking.html?service=massage" class="btn btn-orange">Book Online 24/7 →</a>
                     <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">From €45 Private</span>
                 </div>
             </div>
@@ -2996,7 +3024,7 @@
     <section class="testimonials" id="testimonials">
         <div class="section-header">
             <h2>What our <span>clients say</span></h2>
-            <p>Real stories from patients and athletes we've helped</p>
+            <p>Real stories from patients and athletes we've helped<br><small style="opacity: 0.7; font-size: 0.85em;">(Reviews may be lightly edited for brevity and clarity)</small></p>
         </div>
 
         <div class="testimonials-container">
@@ -3226,6 +3254,134 @@
         </div>
     </section>
 
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-banner-container">
+            <div class="cta-banner-content">
+                <h2>Let's get you back <span>on track</span></h2>
+                <div class="cta-buttons">
+                    <a href="pages/booking.html" class="btn btn-primary">Book Online 24/7</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="cta-banner-image">
+                <img src="assets/images/logos/cta-banner.png" alt="Right Track">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="section-header">
+            <h2>Meet our <span>team</span></h2>
+            <p>Expert clinicians dedicated to your recovery and performance</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="assets/images/team/tony-photo.jpg" alt="Antonis Petri">
+                </div>
+                <div class="team-content">
+                    <h3>Antonis Petri</h3>
+                    <p class="role">Co-Founder & Lead Clinician</p>
+                    <div class="team-credentials">
+                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                    </div>
+                    <p class="gesy-reg">GESY Reg. No: A2825</p>
+                    <a href="pages/tony-profile.html">View Full Profile →</a>
+                </div>
+            </div>
+
+            <div class="team-member reverse">
+                <div class="team-photo">
+                    <img src="assets/images/team/charalambos-photo.jpg" alt="Charalambos Gregoriou">
+                </div>
+                <div class="team-content">
+                    <h3>Charalambos Gregoriou</h3>
+                    <p class="role">Co-Founder & Clinical Director</p>
+                    <div class="team-credentials">
+                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                    </div>
+                    <p class="gesy-reg">GESY Reg. No: A3522</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="assets/images/team/alice-photo.jpg" alt="Alice Kazanjian">
+                </div>
+                <div class="team-content">
+                    <h3>Alice Kazanjian</h3>
+                    <p class="role">Clinical Pilates Instructor</p>
+                    <div class="team-credentials">
+                        <p>Certified clinical Pilates instructor specializing in physio-led mat Pilates, rehabilitation-focused movement, and athletic conditioning for improved strength and mobility.</p>
+                    </div>
+                    <p class="gesy-reg">GESY Reg. No: A3509</p>
+                    <a href="pages/alice-profile.html">View Full Profile →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="partnerships" id="partnerships">
+        <div class="section-header">
+            <h2>Our <span>Partnerships</span></h2>
+            <p>Trusted by elite football clubs and organizations across Cyprus</p>
+        </div>
+
+        <div class="partnerships-container">
+            <div class="partnership-card">
+                <div class="partnership-logo">
+                    <img src="assets/images/partnerships-logos/frederick-logo-601x737.png" alt="Frederick University" style="transform: scale(2.016) translateY(4%);">
+                </div>
+                <div class="partnership-info">
+                    <h3>Frederick University</h3>
+                    <p>Clinical practice supervision & education</p>
+                    <p class="partnership-description">Antonis Petri serves as Clinical Practice Supervisor, training the next generation of healthcare professionals with evidence-based rehabilitation and clinical excellence.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-logo">
+                    <img src="assets/images/partnerships-logos/paeek-kyrenia.png?v=2" alt="PAEEK Kyrenia Academies">
+                </div>
+                <div class="partnership-info">
+                    <h3>PAEEK Kyrenia Academies</h3>
+                    <p>Professional football club partnership</p>
+                    <p class="partnership-description">Providing comprehensive sports physiotherapy services, performance optimization, and injury prevention protocols for professional football players.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-logo">
+                    <img src="assets/images/partnerships-logos/lakatamia-fc.png" alt="Lakatamia F.C. Women">
+                </div>
+                <div class="partnership-info">
+                    <h3>Lakatamia F.C. Women</h3>
+                    <p>Elite women's football team support</p>
+                    <p class="partnership-description">Right Track provides comprehensive sports physiotherapy support to Lakatamia F.C. Women, focusing on injury prevention, performance optimization, and rapid recovery protocols for elite female athletes.</p>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <div class="partnership-logo">
+                    <img src="assets/images/partnerships-logos/muya-tay.png" alt="Muay Thai Warriors">
+                </div>
+                <div class="partnership-info">
+                    <h3>Muay Thai Warriors</h3>
+                    <p>Combat sports performance & recovery</p>
+                    <p class="partnership-description">Performance training and injury prevention specialized for combat athletes, including conditioning, recovery protocols, and movement optimization.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="mailto:righttrackphysio@gmail.com" class="btn btn-primary">Partner With Us →</a>
+        </div>
+    </section>
+
     <!-- GESY Section -->
     <section class="gesy-section" id="gesy">
         <div class="gesy-container">
@@ -3328,134 +3484,6 @@
                     <p>Contact us for guidance on the referral process. We're here to help you access affordable care.</p>
                 </div>
                 <a href="tel:+35799126824" class="btn btn-primary" style="white-space: nowrap;">Call +357 99 126 824</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partnerships Section -->
-    <section class="partnerships" id="partnerships">
-        <div class="section-header">
-            <h2>Our <span>Partnerships</span></h2>
-            <p>Trusted by elite football clubs and organizations across Cyprus</p>
-        </div>
-
-        <div class="partnerships-container">
-            <div class="partnership-card">
-                <div class="partnership-logo">
-                    <img src="assets/images/partnerships-logos/frederick-logo-601x737.png" alt="Frederick University" style="transform: scale(2.016) translateY(4%);">
-                </div>
-                <div class="partnership-info">
-                    <h3>Frederick University</h3>
-                    <p>Clinical practice supervision & education</p>
-                    <p class="partnership-description">Antonis Petri serves as Clinical Practice Supervisor, training the next generation of healthcare professionals with evidence-based rehabilitation and clinical excellence.</p>
-                </div>
-            </div>
-
-            <div class="partnership-card">
-                <div class="partnership-logo">
-                    <img src="assets/images/partnerships-logos/paeek-kyrenia.png?v=2" alt="PAEEK Kyrenia Academies">
-                </div>
-                <div class="partnership-info">
-                    <h3>PAEEK Kyrenia Academies</h3>
-                    <p>Professional football club partnership</p>
-                    <p class="partnership-description">Providing comprehensive sports physiotherapy services, performance optimization, and injury prevention protocols for professional football players.</p>
-                </div>
-            </div>
-
-            <div class="partnership-card">
-                <div class="partnership-logo">
-                    <img src="assets/images/partnerships-logos/lakatamia-fc.png" alt="Lakatamia F.C. Women">
-                </div>
-                <div class="partnership-info">
-                    <h3>Lakatamia F.C. Women</h3>
-                    <p>Elite women's football team support</p>
-                    <p class="partnership-description">Right Track provides comprehensive sports physiotherapy support to Lakatamia F.C. Women, focusing on injury prevention, performance optimization, and rapid recovery protocols for elite female athletes.</p>
-                </div>
-            </div>
-
-            <div class="partnership-card">
-                <div class="partnership-logo">
-                    <img src="assets/images/partnerships-logos/muya-tay.png" alt="Muay Thai Warriors">
-                </div>
-                <div class="partnership-info">
-                    <h3>Muay Thai Warriors</h3>
-                    <p>Combat sports performance & recovery</p>
-                    <p class="partnership-description">Performance training and injury prevention specialized for combat athletes, including conditioning, recovery protocols, and movement optimization.</p>
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="mailto:righttrackphysio@gmail.com" class="btn btn-primary">Partner With Us →</a>
-        </div>
-    </section>
-
-    <!-- CTA Banner -->
-    <section class="cta-banner">
-        <div class="cta-banner-container">
-            <div class="cta-banner-content">
-                <h2>Let's get you back <span>on track</span></h2>
-                <div class="cta-buttons">
-                    <a href="pages/booking.html" class="btn btn-primary">Book Online 24/7</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="cta-banner-image">
-                <img src="assets/images/logos/cta-banner.png" alt="Right Track">
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="section-header">
-            <h2>Meet our <span>team</span></h2>
-            <p>Expert clinicians dedicated to your recovery and performance</p>
-        </div>
-
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="team-photo">
-                    <img src="assets/images/team/tony-photo.jpg" alt="Antonis Petri">
-                </div>
-                <div class="team-content">
-                    <h3>Antonis Petri</h3>
-                    <p class="role">Co-Founder & Lead Clinician</p>
-                    <div class="team-credentials">
-                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
-                    </div>
-                    <p class="gesy-reg">GESY Reg. No: A2825</p>
-                    <a href="pages/tony-profile.html">View Full Profile →</a>
-                </div>
-            </div>
-
-            <div class="team-member reverse">
-                <div class="team-photo">
-                    <img src="assets/images/team/charalambos-photo.jpg" alt="Charalambos Gregoriou">
-                </div>
-                <div class="team-content">
-                    <h3>Charalambos Gregoriou</h3>
-                    <p class="role">Co-Founder & Clinical Director</p>
-                    <div class="team-credentials">
-                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
-                    </div>
-                    <p class="gesy-reg">GESY Reg. No: A3522</p>
-                </div>
-            </div>
-
-            <div class="team-member">
-                <div class="team-photo">
-                    <img src="assets/images/team/alice-photo.jpg" alt="Alice Kazanjian">
-                </div>
-                <div class="team-content">
-                    <h3>Alice Kazanjian</h3>
-                    <p class="role">Clinical Pilates Instructor</p>
-                    <div class="team-credentials">
-                        <p>Certified clinical Pilates instructor specializing in physio-led mat Pilates, rehabilitation-focused movement, and athletic conditioning for improved strength and mobility.</p>
-                    </div>
-                    <p class="gesy-reg">GESY Reg. No: A3509</p>
-                    <a href="pages/alice-profile.html">View Full Profile →</a>
-                </div>
             </div>
         </div>
     </section>
