@@ -10,8 +10,8 @@ const SERVICES = [
             type: 'fixed',
             gesyPrice: 29,
             privatePrice: 35,
-            display: '€29 GESY | From €35 Private',
-            displayEl: '€29 ΓΕΣΥ | Από €35 Ιδιωτικά'
+            display: 'GESY | Private - from €35',
+            displayEl: 'ΓΕΣΥ | Ιδιωτικά - από €35'
         }
     },
     {
@@ -23,8 +23,8 @@ const SERVICES = [
             type: 'from',
             gesyPrice: null,
             privatePrice: 80,
-            display: 'From €80/month (Private Only)',
-            displayEl: 'Από €80/μήνα (Μόνο Ιδιωτικά)'
+            display: 'Private Only | From €80/month',
+            displayEl: 'Μόνο Ιδιωτικά | Από €80/μήνα'
         }
     },
     {
@@ -51,8 +51,8 @@ const SERVICES = [
             type: 'from',
             gesyPrice: null,
             privatePrice: 250,
-            display: 'From €250/month',
-            displayEl: 'Από €250/μήνα'
+            display: 'Private Only | From €250/month',
+            displayEl: 'Μόνο Ιδιωτικά | Από €250/μήνα'
         }
     },
     {
@@ -64,8 +64,8 @@ const SERVICES = [
             type: 'fixed',
             gesyPrice: 29,
             privatePrice: 45,
-            display: '€29 GESY (+€15 travel) | From €45 Private',
-            displayEl: '€29 ΓΕΣΥ (+€15 μετακίνηση) | Από €45 Ιδιωτικά'
+            display: 'GESY (+€15 travel) | Private - from €45',
+            displayEl: 'ΓΕΣΥ (+€15 μετακίνηση) | Ιδιωτικά - από €45'
         }
     },
     {
@@ -77,8 +77,8 @@ const SERVICES = [
             type: 'from',
             gesyPrice: null,
             privatePrice: 45,
-            display: 'From €45 Private',
-            displayEl: 'Από €45 Ιδιωτικά'
+            display: 'Private Only | From €45',
+            displayEl: 'Μόνο Ιδιωτικά | Από €45'
         }
     }
 ];

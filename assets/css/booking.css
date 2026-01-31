@@ -129,6 +129,11 @@
 .service-price {
     color: var(--text-gray);
     font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.service-price .price-line {
+    display: block;
     line-height: 1.4;
 }
 

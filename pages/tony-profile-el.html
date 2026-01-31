@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alice Kazanjian | Physiotherapist & Clinical Pilates Instructor - Right Track Cyprus</title>
-    <meta name="description" content="Meet Alice Kazanjian, BSc Physiotherapy, Clinical Pilates Instructor with 8+ years of experience in ICU, oncology, and rehabilitation at Right Track Cyprus.">
+    <title>Αντώνης Πέτρη | Επικεφαλής Κλινικός - Right Track Κύπρος</title>
+    <meta name="description" content="Γνωρίστε τον Αντώνη Πέτρη, BSc Φυσιοθεραπεία, Επόπτη Κλινικής Πρακτικής στο Πανεπιστήμιο Frederick και Ιδρυτή του Right Track Rehabilitation Centre στην Κύπρο.">
     <style>
         * {
             margin: 0;
@@ -432,7 +432,7 @@
         .cert-card-image {
             width: 100%;
             height: auto;
-            aspect-ratio: 11 / 8.5;
+            aspect-ratio: 8.5 / 11;
             background: var(--off-white);
             position: relative;
             overflow: hidden;
@@ -510,17 +510,44 @@
             }
         }
 
-        /* Placeholder for certificates */
-        .cert-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
-            color: var(--text-gray);
-            font-size: 3rem;
-            font-weight: 700;
+        /* Diploma View Button */
+        .view-cert-btn {
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            background: linear-gradient(
+                135deg,
+                rgba(255, 107, 53, 0.95) 0%,
+                rgba(255, 107, 53, 0.7) 50%,
+                rgba(255, 107, 53, 0.85) 100%
+            );
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-left: auto;
+            box-shadow:
+                0 4px 15px rgba(255, 107, 53, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .view-cert-btn:hover {
+            background: linear-gradient(
+                135deg,
+                rgba(10, 22, 40, 0.9) 0%,
+                rgba(10, 22, 40, 0.65) 50%,
+                rgba(10, 22, 40, 0.8) 100%
+            );
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         /* Education Section with Diploma */
@@ -581,7 +608,7 @@
 
         .diploma-thumbnail {
             width: 100%;
-            aspect-ratio: 11 / 8.5;
+            aspect-ratio: 8.5 / 11;
             border-radius: 4px;
             overflow: hidden;
             cursor: pointer;
@@ -620,31 +647,6 @@
 
         .diploma-thumbnail:hover .zoom-icon {
             opacity: 1;
-        }
-
-        /* Diploma Placeholder */
-        .diploma-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
-            color: var(--navy);
-            text-align: center;
-            padding: 20px;
-        }
-
-        .diploma-placeholder .icon {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            opacity: 0.5;
-        }
-
-        .diploma-placeholder .text {
-            font-size: 0.9rem;
-            opacity: 0.7;
         }
 
         /* Modal Styles */
@@ -733,6 +735,146 @@
             gap: 15px;
         }
 
+        .diploma-image {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 8.5 / 11;
+            background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
+            border: 6px solid #8b7355;
+            border-radius: 6px;
+            padding: 25px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .diploma-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .diploma-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .diploma-seal {
+            width: 80px;
+            height: 80px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .diploma-title {
+            font-size: 2rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin: 15px 0;
+            font-family: Georgia, serif;
+        }
+
+        .diploma-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .diploma-body {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin: 30px 0;
+            font-family: Georgia, serif;
+        }
+
+        .diploma-signature {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            width: 100%;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        .signature-line {
+            text-align: center;
+        }
+
+        .signature-line div:first-child {
+            border-top: 2px solid var(--navy);
+            padding-top: 10px;
+            min-width: 120px;
+        }
+
+        .diploma-date {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 20px;
+        }
+
+        /* Teaching Philosophy */
+        .philosophy-content {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 16px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .philosophy-content p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .philosophy-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .philosophy-item {
+            padding: 20px;
+            background: var(--off-white);
+            border-radius: 12px;
+        }
+
+        .philosophy-item h4 {
+            color: var(--navy);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .philosophy-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
         /* Languages */
         .languages {
             display: flex;
@@ -747,6 +889,67 @@
             border: 2px solid var(--light-gray);
             font-weight: 600;
             color: var(--navy);
+        }
+
+        /* Location Section */
+        .location-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 16px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .location-info h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .location-details {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .location-details p {
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+
+        .location-details a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .location-details a:hover {
+            text-decoration: underline;
+        }
+
+        .location-btn {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .location-btn:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .location-map {
+            width: 100%;
         }
 
         /* Team Stats & Availability */
@@ -830,7 +1033,8 @@
 
             .education-grid,
             .expertise-grid,
-            .education-section {
+            .philosophy-list,
+            .location-card {
                 grid-template-columns: 1fr;
             }
 
@@ -861,50 +1065,47 @@
 <body>
     <!-- Language Switcher -->
     <div class="lang-switcher">
-        <a href="alice-profile.html" class="lang-btn active">EN</a>
-        <a href="alice-profile-el.html" class="lang-btn">EL</a>
+        <a href="tony-profile.html" class="lang-btn">EN</a>
+        <a href="tony-profile-el.html" class="lang-btn active">EL</a>
     </div>
 
     <!-- Back Button -->
     <a href="#" onclick="goBack(); return false;" class="back-button">
         <span class="back-arrow">←</span>
-        <span class="back-text">Back</span>
+        <span class="back-text">Πίσω</span>
     </a>
 
     <!-- Profile Hero -->
     <section class="profile-hero">
         <div class="profile-hero-content">
             <div class="profile-image">
-                <img src="../assets/images/team/alice-photo.jpg" alt="Alice Kazanjian, BSc Physiotherapy">
+                <img src="../assets/images/team/tony-photo.jpg" alt="Antonis Petri, BSc Physiotherapy">
             </div>
             <div class="profile-intro">
-                <h1>Alice Kazanjian</h1>
+                <h1>Αντώνης Πέτρη</h1>
                 <div class="team-stats">
-                    <span class="stat-badge"><span class="icon">+</span> 8+ years experience</span>
-                    <span class="stat-badge gesy-badge">GESY Reg. No: A3509</span>
+                    <span class="stat-badge"><span class="icon">♥</span> 350+ ασθενείς βοηθήθηκαν</span>
+                    <span class="stat-badge gesy-badge">Αρ. Εγγρ. ΓΕΣΥ: A2825</span>
                 </div>
-                <p class="profile-title">BSc (Physiotherapy) | Clinical Pilates Instructor | ICU & Rehabilitation Specialist</p>
-                <p class="profile-summary">Experienced physiotherapist with extensive background in intensive care, oncology rehabilitation, and clinical Pilates. Specialized in post-operative care, cardio-respiratory rehabilitation, and lymphedema prevention for breast cancer patients.</p>
+                <p class="profile-title">BSc (Φυσιοθεραπεία) | Επόπτης Κλινικής Πρακτικής | Ιδρυτής & Επικεφαλής Κλινικός</p>
+                <p class="profile-summary">Αφοσιωμένος εκπαιδευτής και κλινικός φυσιοθεραπείας με εκτενή εμπειρία που γεφυρώνει την ακαδημαϊκή διδασκαλία και την κλινική πρακτική. Επί του παρόντος υπηρετεί ως Επόπτης Κλινικής Πρακτικής στο Πανεπιστήμιο Frederick ενώ παράλληλα διευθύνει το Right Track Rehabilitation & Performance Centre.</p>
 
                 <div class="team-stats availability-stats">
-                    <span class="availability-badge">Prenatal Pilates</span>
-                    <span class="availability-badge">Clinical Pilates</span>
-                    <span class="availability-badge">Prenatal Massage</span>
+                    <span class="availability-badge">Στην κλινική</span>
+                    <span class="availability-badge">Κατ' οίκον</span>
+                    <span class="availability-badge">Στο γήπεδο</span>
                 </div>
 
                 <div class="contact-info">
                     <div class="contact-item">
-                        <strong>Phone:</strong> <a href="tel:+35799122575">+357 99122575</a>
+                        <strong>Τηλέφωνο:</strong> <a href="tel:+35799126824">+357 99 126 824</a>
                     </div>
                     <div class="contact-item">
-                        <strong>Email:</strong> <a href="mailto:kazanjianalice@gmail.com">kazanjianalice@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Location:</strong> Nicosia, Cyprus
+                        <strong>Τοποθεσία:</strong> Στρόβολος, Λευκωσία, Κύπρος
                     </div>
                 </div>
 
-                <a href="booking.html?service=clinical-pilates&therapist=alice" class="cta-button">Book Your Service</a>
+                <a href="booking.html" class="cta-button">Κλείστε Ραντεβού</a>
             </div>
         </div>
     </section>
@@ -912,24 +1113,24 @@
     <!-- Education -->
     <section>
         <div class="section-content">
-            <h2>Education & <span>Credentials</span></h2>
+            <h2>Εκπαίδευση & <span>Διαπιστευτήρια</span></h2>
             <div class="education-section">
                 <div class="education-left">
                     <div class="education-card">
-                        <h3>Bachelor of Science in Physiotherapy</h3>
-                        <p class="institution">European University Cyprus</p>
-                        <p class="year">2012 - 2016</p>
+                        <h3>Πτυχίο Φυσιοθεραπείας (BSc)</h3>
+                        <p class="institution">Πανεπιστήμιο Semmelweis, Βουδαπέστη, Ουγγαρία</p>
+                        <p class="year">2017 - 2022</p>
                         <ul>
-                            <li>GPA: 3.65/4.0 - Magna Cum Laude</li>
-                            <li>Dean's List throughout entire studies</li>
-                            <li>Thesis: "The effect of muscle strengthening in children and adolescents with cerebral palsy"</li>
+                            <li>Ολοκληρωμένη εκπαίδευση σε τεκμηριωμένη φυσιοθεραπευτική πρακτική</li>
+                            <li>Διεθνές πρόγραμμα σπουδών με έμφαση στην κλινική συλλογιστική και χειροθεραπεία</li>
+                            <li>Κλινικές πρακτικές σε ποικίλα περιβάλλοντα υγειονομικής περίθαλψης</li>
                         </ul>
                     </div>
                 </div>
                 <div class="education-right">
                     <div class="diploma-frame">
-                        <div class="diploma-thumbnail" onclick="openModal('diploma')">
-                            <img src="../assets/images/credentials/alice/bsc-physiotherapy-diploma-euc-2016.jpeg" alt="BSc Physiotherapy Diploma - European University Cyprus" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="diploma-thumbnail" onclick="openModal('diplomas')">
+                            <img src="../assets/images/credentials/antonis/Bachelor of Science in Physiotherapy.jpeg" alt="BSc Physiotherapy Diploma" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="zoom-icon">🔍</div>
                         </div>
                     </div>
@@ -937,117 +1138,102 @@
             </div>
 
             <div class="languages" style="margin-top: 40px;">
-                <div class="language-badge">Greek - Native</div>
-                <div class="language-badge">Armenian - Native</div>
-                <div class="language-badge">English - Fluent</div>
-            </div>
-
-            <h2 style="margin-top: 60px;">Certifications & <span>Training</span></h2>
-            <div class="cert-grid">
-                <div class="cert-card" onclick="openModal('cert2')">
-                    <div class="cert-card-image">
-                        <img src="../assets/images/credentials/alice/pilates-reformer-clinical-epimorfosis-2025.jpeg" alt="Pilates Reformer Clinical Course Certificate">
-                        <div class="zoom-icon">🔍</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2025</span>
-                        <h4 class="cert-card-title">Pilates Reformer - Clinical Course</h4>
-                        <p class="cert-card-issuer">Epimorfosis / FisioPlusPilates, Athens</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert3')">
-                    <div class="cert-card-image">
-                        <img src="../assets/images/credentials/alice/infant-child-massage-wmf-2025.jpeg" alt="Infant and Child Massage Certificate">
-                        <div class="zoom-icon">🔍</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2025</span>
-                        <h4 class="cert-card-title">Infant & Child Massage</h4>
-                        <p class="cert-card-issuer">World Massage Federation (WMF)</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert4')">
-                    <div class="cert-card-image">
-                        <img src="../assets/images/credentials/alice/prenatal-massage-wmf-2025.jpeg" alt="Prenatal Massage Certificate">
-                        <div class="zoom-icon">🔍</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2025</span>
-                        <h4 class="cert-card-title">Prenatal Massage</h4>
-                        <p class="cert-card-issuer">World Massage Federation (WMF)</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert1')">
-                    <div class="cert-card-image">
-                        <img src="../assets/images/credentials/alice/prenatal-functional-pilates-itol.jpeg" alt="Prenatal Functional Pilates Certificate">
-                        <div class="zoom-icon">🔍</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2018</span>
-                        <h4 class="cert-card-title">Prenatal Functional Pilates</h4>
-                        <p class="cert-card-issuer">ITOL Certified</p>
-                    </div>
-                </div>
-                <div class="cert-card" onclick="openModal('cert5')">
-                    <div class="cert-card-image">
-                        <img src="../assets/images/credentials/alice/functional-pilates-props-itol-2018.jpeg" alt="Functional Pilates with Props Certificate">
-                        <div class="zoom-icon">🔍</div>
-                    </div>
-                    <div class="cert-card-info">
-                        <span class="cert-card-year">2018</span>
-                        <h4 class="cert-card-title">Functional Pilates with Props</h4>
-                        <p class="cert-card-issuer">ITOL Certified</p>
-                    </div>
-                </div>
+                <div class="language-badge">Ελληνικά - Μητρική</div>
+                <div class="language-badge">Αγγλικά - Άριστα</div>
+                <div class="language-badge">Ουγγρικά - Βασικά</div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Experience -->
+    <!-- Certifications -->
     <section class="section-alt">
         <div class="section-content">
-            <h2>Professional <span>Experience</span></h2>
+            <h2>Πιστοποιήσεις & <span>Εκπαίδευση</span></h2>
+            <div class="cert-grid">
+                    <div class="cert-card" onclick="openModal('cert4')">
+                        <div class="cert-card-image">
+                            <img src="../assets/images/credentials/antonis/Exercise-Neck-Pain-Disorders.jpeg" alt="Exercise for Neck Pain Disorders">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-card-info">
+                            <span class="cert-card-year">2025</span>
+                            <h4 class="cert-card-title">Άσκηση για Διαταραχές Πόνου Αυχένα</h4>
+                            <p class="cert-card-issuer">Κυπριακό Ινστιτούτο Ορθοπεδικής Χειροθεραπείας</p>
+                        </div>
+                    </div>
+                    <div class="cert-card" onclick="openModal('cert1')">
+                        <div class="cert-card-image">
+                            <img src="../assets/images/credentials/antonis/Diploma-Orthopaedic-Manual-Therapy.jpeg" alt="Diploma in Orthopaedic Manual Therapy">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-card-info">
+                            <span class="cert-card-year">2024</span>
+                            <h4 class="cert-card-title">Δίπλωμα Ορθοπεδικής Χειροθεραπείας</h4>
+                            <p class="cert-card-issuer">Κυπριακό Ινστιτούτο Ορθοπεδικής Χειροθεραπείας</p>
+                        </div>
+                    </div>
+                    <div class="cert-card" onclick="openModal('cert3')">
+                        <div class="cert-card-image">
+                            <img src="../assets/images/credentials/antonis/Knee-Sports-Injuries.jpeg" alt="Knee Sports Injuries">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-card-info">
+                            <span class="cert-card-year">2024</span>
+                            <h4 class="cert-card-title">Αθλητικοί Τραυματισμοί Γονάτων: Αξιολόγηση και Διαχείριση</h4>
+                            <p class="cert-card-issuer">Κυπριακό Ινστιτούτο Ορθοπεδικής Χειροθεραπείας</p>
+                        </div>
+                    </div>
+                    <div class="cert-card" onclick="openModal('cert5')">
+                        <div class="cert-card-image">
+                            <img src="../assets/images/credentials/antonis/Certificate-Extra.jpeg" alt="Patellofemoral Pain Course">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-card-info">
+                            <span class="cert-card-year">2024</span>
+                            <h4 class="cert-card-title">Επιγονατιδομηριαίος Πόνος: Τι, Γιατί & Πώς</h4>
+                            <p class="cert-card-issuer">CYOMT / Dr Lee Herrington</p>
+                        </div>
+                    </div>
+                    <div class="cert-card" onclick="openModal('cert2')">
+                        <div class="cert-card-image">
+                            <img src="../assets/images/credentials/antonis/Dynamic-Tape-Certification.jpeg" alt="Dynamic Tape Certification">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-card-info">
+                            <span class="cert-card-year">2019</span>
+                            <h4 class="cert-card-title">Εισαγωγή στη Βιομηχανική-Δυναμική Μεθοδολογία Taping</h4>
+                            <p class="cert-card-issuer">Dynamic Tape®</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic & Professional Appointments -->
+    <section>
+        <div class="section-content">
+            <h2>Ακαδημαϊκές & Επαγγελματικές <span>Θέσεις</span></h2>
             <div class="education-grid">
                 <div class="education-card">
-                    <h3>Private Physiotherapist & GESY Provider</h3>
-                    <p class="institution">Right Track Rehabilitation Centre</p>
-                    <p class="year">March 2025 – Present</p>
+                    <h3>Επόπτης Κλινικής Πρακτικής</h3>
+                    <p class="institution">Πανεπιστήμιο Frederick, Τμήμα Επιστημών Υγείας</p>
+                    <p class="year">Οκτώβριος 2025 – Σήμερα</p>
                     <ul>
-                        <li>Clinical Pilates instruction and rehabilitation</li>
-                        <li>Musculoskeletal and sports injury treatment</li>
-                        <li>Post-operative rehabilitation programs</li>
-                        <li>Patient-centered evidence-based care</li>
+                        <li>Εποπτεία προπτυχιακών κλινικών τοποθετήσεων φυσιοθεραπείας</li>
+                        <li>Καθοδήγηση φοιτητών στην κλινική συλλογιστική και τεκμηριωμένη πρακτική</li>
+                        <li>Σχεδιασμός πρακτικών εκπαιδευτικών modules σε MSK, Νευρο και Καρδιο Αποκατάσταση</li>
+                        <li>Αξιολόγηση απόδοσης φοιτητών και παροχή διαμορφωτικής ανατροφοδότησης</li>
                     </ul>
                 </div>
                 <div class="education-card">
-                    <h3>ICU & Ward Physiotherapist</h3>
-                    <p class="institution">American Medical Center, Nicosia</p>
-                    <p class="year">July 2017 – January 2025</p>
+                    <h3>Ιδρυτής & Επικεφαλής Φυσιοθεραπευτής</h3>
+                    <p class="institution">Right Track Rehabilitation & Performance Centre</p>
+                    <p class="year">2024 – Σήμερα</p>
                     <ul>
-                        <li>Intensive Care Unit rehabilitation</li>
-                        <li>Post-surgical physiotherapy for breast center patients</li>
-                        <li>Lymphedema prevention programs</li>
-                        <li>Oncology, orthopedic, neurological & cardio-respiratory rehabilitation</li>
-                    </ul>
-                </div>
-                <div class="education-card">
-                    <h3>Physiotherapist</h3>
-                    <p class="institution">Ariti Supported Living Center, Nicosia</p>
-                    <p class="year">October 2016 – April 2017</p>
-                    <ul>
-                        <li>Rehabilitation for residents with disabilities</li>
-                        <li>Individualized treatment programs</li>
-                        <li>Mobility and functional training</li>
-                    </ul>
-                </div>
-                <div class="education-card">
-                    <h3>Physiotherapist & Clinical Trainee</h3>
-                    <p class="institution">Euromedica Arogi, Thessaloniki, Greece</p>
-                    <p class="year">2016</p>
-                    <ul>
-                        <li>Practical training in rehabilitation center</li>
-                        <li>Inpatient physiotherapy services</li>
-                        <li>Multidisciplinary team collaboration</li>
+                        <li>Ίδρυση εξειδικευμένης κλινικής αθλητικών τραυματισμών και απόδοσης</li>
+                        <li>Παροχή τεκμηριωμένης φροντίδας σε ποικίλες ομάδες ασθενών</li>
+                        <li>Εφαρμογή προηγμένων πρωτοκόλλων χειροθεραπείας και αποκατάστασης</li>
+                        <li>Καθοδήγηση νεότερων φυσιοθεραπευτών και φοιτητών</li>
                     </ul>
                 </div>
             </div>
@@ -1055,69 +1241,82 @@
     </section>
 
     <!-- Clinical Expertise -->
-    <section class="section-alt">
+    <section>
         <div class="section-content">
-            <h2>Areas of Clinical <span>Expertise</span></h2>
+            <h2>Τομείς Κλινικής <span>Εξειδίκευσης</span></h2>
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <h3>Clinical Pilates</h3>
+                    <h3>Μυοσκελετική Φυσιοθεραπεία</h3>
                     <ul>
-                        <li>Mat Pilates for rehabilitation</li>
-                        <li>Reformer Pilates</li>
-                        <li>Prenatal & postnatal Pilates</li>
-                        <li>Core stability and strength training</li>
+                        <li>Αξιολόγηση και αποκατάσταση αθλητικών τραυματισμών</li>
+                        <li>Χειροθεραπεία και κινητοποίηση αρθρώσεων</li>
+                        <li>Συνταγογράφηση και πρόοδος άσκησης</li>
+                        <li>Μετεγχειρητική αποκατάσταση</li>
                     </ul>
                 </div>
                 <div class="expertise-card">
-                    <h3>Intensive Care Rehabilitation</h3>
+                    <h3>Νευρολογική Αποκατάσταση</h3>
                     <ul>
-                        <li>ICU patient mobilization</li>
-                        <li>Respiratory physiotherapy</li>
-                        <li>Post-ventilation rehabilitation</li>
-                        <li>Early mobilization protocols</li>
+                        <li>Τεκμηριωμένη νευρολογική αξιολόγηση</li>
+                        <li>Λειτουργική κινητικότητα και εκπαίδευση κινητικού ελέγχου</li>
+                        <li>Ενσωμάτωση αρχών νευροεπιστήμης</li>
+                        <li>Αποκατάσταση εγκεφαλικού και ισορροπίας</li>
                     </ul>
                 </div>
                 <div class="expertise-card">
-                    <h3>Oncology Rehabilitation</h3>
+                    <h3>Καρδιαγγειακή Αποκατάσταση</h3>
                     <ul>
-                        <li>Post-mastectomy rehabilitation</li>
-                        <li>Lymphedema prevention and management</li>
-                        <li>Cancer-related fatigue management</li>
-                        <li>Quality of life improvement programs</li>
+                        <li>Προγράμματα καρδιακής αποκατάστασης με βάση την άσκηση</li>
+                        <li>Τροποποίηση παραγόντων κινδύνου και εκπαίδευση ασθενών</li>
+                        <li>Αξιολόγηση και πρόοδος λειτουργικής ικανότητας</li>
+                        <li>Παρακολούθηση υγείας καρδιάς</li>
                     </ul>
                 </div>
                 <div class="expertise-card">
-                    <h3>Cardio-Respiratory Physiotherapy</h3>
+                    <h3>Βελτιστοποίηση Απόδοσης</h3>
                     <ul>
-                        <li>Breathing exercises and techniques</li>
-                        <li>Cardiac rehabilitation</li>
-                        <li>COPD management</li>
-                        <li>Post-surgical respiratory care</li>
+                        <li>Ανάλυση κίνησης και βιομηχανική αξιολόγηση</li>
+                        <li>Αθλητική προετοιμασία και πρόληψη τραυματισμών</li>
+                        <li>Δοκιμασίες επιστροφής στον αθλητισμό</li>
+                        <li>Βελτίωση αθλητικής απόδοσης</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Conferences & Training -->
-    <section>
+    <!-- Teaching Philosophy -->
+    <section class="section-alt">
         <div class="section-content">
-            <h2>Conferences & <span>Continuing Education</span></h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>4th Pancyprian Physiotherapy Conference</h3>
-                    <p class="year">2014</p>
-                    <ul>
-                        <li>PNF application in neurological patient gait</li>
-                        <li>Therapeutic Taping Techniques</li>
-                    </ul>
-                </div>
-                <div class="education-card">
-                    <h3>University of Monday Seminar</h3>
-                    <p class="year">2013</p>
-                    <ul>
-                        <li>Chronic Respiratory Diseases and Physiotherapy</li>
-                    </ul>
+            <h2>Διδακτική Φιλοσοφία & <span>Προσέγγιση</span></h2>
+            <div class="philosophy-content">
+                <p>Η προσέγγισή μου δίνει έμφαση στην ανάπτυξη κλινικά ικανών και κριτικά σκεπτόμενων φυσιοθεραπευτών μέσω τεκμηριωμένης πρακτικής, πρακτικής ανάπτυξης δεξιοτήτων και εφαρμογής στον πραγματικό κόσμο.</p>
+
+                <div class="philosophy-list">
+                    <div class="philosophy-item">
+                        <h4>Ανάπτυξη Κλινικής Συλλογιστικής</h4>
+                        <p>Καθοδήγηση φοιτητών στη σύνθεση ευρημάτων αξιολόγησης, έρευνας και αξιών ασθενών</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Απόκτηση Πρακτικών Δεξιοτήτων</h4>
+                        <p>Δομημένη εκπαίδευση σε χειροθεραπεία, συνταγογράφηση άσκησης και αξιολόγηση</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Τεκμηριωμένη Ενσωμάτωση</h4>
+                        <p>Καλλιέργεια κριτικής αξιολόγησης και εφαρμογής έρευνας στην κλινική πρακτική</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Διαμόρφωση Επαγγελματικής Ταυτότητας</h4>
+                        <p>Καθοδήγηση για ηθική, επικοινωνιακή και αναστοχαστική πρακτική</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Εφαρμογή στον Πραγματικό Κόσμο</h4>
+                        <p>Χρήση αυθεντικής μάθησης βασισμένης σε περιστατικά από κλινική εμπειρία</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>Διεπιστημονική Συνεργασία</h4>
+                        <p>Προετοιμασία φοιτητών για ομαδική εργασία σε σύγχρονα περιβάλλοντα υγείας</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1126,27 +1325,28 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Right Track Rehabilitation & Performance Centre. All rights reserved.</p>
-            <p>GESY-Registered Specialists | Nicosia, Cyprus</p>
+            <p>&copy; 2026 Right Track Rehabilitation & Performance Centre. Με επιφύλαξη παντός δικαιώματος.</p>
+            <p>Εγγεγραμμένοι Ειδικοί ΓΕΣΥ | Λευκωσία, Κύπρος</p>
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Diploma Modal -->
     <div id="diplomaModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="modalTitle">Certificate</h2>
+                <h2 id="modalTitle">Bachelor of Science in Physiotherapy</h2>
                 <button class="close-modal" onclick="closeModal()">×</button>
             </div>
             <div class="modal-body">
-                <div id="diplomaDisplay" style="width: 100%; max-width: 600px; border-radius: 6px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; background: var(--off-white);">
-                    <img id="diplomaImage" src="../assets/images/credentials/alice/bsc-physiotherapy-diploma-euc-2016.jpeg" alt="Diploma" style="width: 100%; height: auto; display: block;">
+                <div id="diplomaDisplay" style="width: 100%; max-width: 500px; aspect-ratio: 8.5/11; border-radius: 6px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.2);">
+                    <img id="diplomaImage" src="../assets/images/credentials/antonis/Bachelor of Science in Physiotherapy.jpeg" alt="Diploma" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Back navigation with scroll position restoration
         // Back navigation - always go to main page
         function goBack() {
             const savedScrollPosition = sessionStorage.getItem('teamSectionScrollPosition');
@@ -1161,39 +1361,40 @@
             const modalTitle = document.getElementById('modalTitle');
             const diplomaImage = document.getElementById('diplomaImage');
 
-            const certs = {
-                diploma: {
+            const content = {
+                diplomas: {
                     title: 'Bachelor of Science in Physiotherapy',
-                    image: '../assets/images/credentials/alice/bsc-physiotherapy-diploma-euc-2016.jpeg'
+                    image: '../assets/images/credentials/antonis/Bachelor of Science in Physiotherapy.jpeg'
                 },
                 cert1: {
-                    title: 'Prenatal Functional Pilates',
-                    image: '../assets/images/credentials/alice/prenatal-functional-pilates-itol.jpeg'
+                    title: 'Diploma in Orthopaedic Manual Therapy',
+                    image: '../assets/images/credentials/antonis/Diploma-Orthopaedic-Manual-Therapy.jpeg'
                 },
                 cert2: {
-                    title: 'Pilates Reformer - Clinical Course',
-                    image: '../assets/images/credentials/alice/pilates-reformer-clinical-epimorfosis-2025.jpeg'
+                    title: 'Introduction to Biomechanical-Dynamic Taping Methodology',
+                    image: '../assets/images/credentials/antonis/Dynamic-Tape-Certification.jpeg'
                 },
                 cert3: {
-                    title: 'Infant & Child Massage',
-                    image: '../assets/images/credentials/alice/infant-child-massage-wmf-2025.jpeg'
+                    title: 'Knee Sports Injuries: Assessment and Injury Management',
+                    image: '../assets/images/credentials/antonis/Knee-Sports-Injuries.jpeg'
                 },
                 cert4: {
-                    title: 'Prenatal Massage',
-                    image: '../assets/images/credentials/alice/prenatal-massage-wmf-2025.jpeg'
+                    title: 'Exercise for Neck Pain Disorders',
+                    image: '../assets/images/credentials/antonis/Exercise-Neck-Pain-Disorders.jpeg'
                 },
                 cert5: {
-                    title: 'Functional Pilates with Props',
-                    image: '../assets/images/credentials/alice/functional-pilates-props-itol-2018.jpeg'
+                    title: 'Patellofemoral Pain: What, Why & How',
+                    image: '../assets/images/credentials/antonis/Certificate-Extra.jpeg'
                 }
             };
 
-            const cert = certs[type];
+            const cert = content[type];
             if (cert) {
                 modalTitle.textContent = cert.title;
                 diplomaImage.src = cert.image;
                 diplomaImage.alt = cert.title;
             }
+
             modal.style.display = 'block';
         }
 
@@ -1202,6 +1403,7 @@
             modal.style.display = 'none';
         }
 
+        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('diplomaModal');
             if (event.target == modal) {

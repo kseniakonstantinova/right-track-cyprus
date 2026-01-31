@@ -29,6 +29,54 @@
             overflow-x: hidden;
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .lang-btn.active {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .lang-btn:not(.active) {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--navy);
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn:not(.active):hover {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .lang-switcher {
+                top: 15px;
+                right: 15px;
+            }
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
         /* Back Button */
         .back-button {
             position: fixed;
@@ -291,8 +339,9 @@
         }
 
         .education-card ul {
-            list-style: none;
+            list-style: disc;
             margin-top: 1rem;
+            padding-left: 1.5rem;
         }
 
         .education-card li {
@@ -321,7 +370,8 @@
         }
 
         .expertise-card ul {
-            list-style: none;
+            list-style: disc;
+            padding-left: 1.5rem;
         }
 
         .expertise-card li {
@@ -1013,6 +1063,12 @@
     </style>
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="tony-profile.html" class="lang-btn active">EN</a>
+        <a href="tony-profile-el.html" class="lang-btn">EL</a>
+    </div>
+
     <!-- Back Button -->
     <a href="#" onclick="goBack(); return false;" class="back-button">
         <span class="back-arrow">←</span>
@@ -1094,6 +1150,17 @@
         <div class="section-content">
             <h2>Advanced Certifications & <span>Training</span></h2>
             <div class="cert-grid">
+                    <div class="cert-card" onclick="openModal('cert4')">
+                        <div class="cert-card-image">
+                            <img src="../assets/images/credentials/antonis/Exercise-Neck-Pain-Disorders.jpeg" alt="Exercise for Neck Pain Disorders">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-card-info">
+                            <span class="cert-card-year">2025</span>
+                            <h4 class="cert-card-title">Exercise for Neck Pain Disorders</h4>
+                            <p class="cert-card-issuer">Cyprus Institute of Orthopaedic Manual Therapy</p>
+                        </div>
+                    </div>
                     <div class="cert-card" onclick="openModal('cert1')">
                         <div class="cert-card-image">
                             <img src="../assets/images/credentials/antonis/Diploma-Orthopaedic-Manual-Therapy.jpeg" alt="Diploma in Orthopaedic Manual Therapy">
@@ -1103,17 +1170,6 @@
                             <span class="cert-card-year">2024</span>
                             <h4 class="cert-card-title">Diploma in Orthopaedic Manual Therapy</h4>
                             <p class="cert-card-issuer">Cyprus Institute of Orthopaedic Manual Therapy</p>
-                        </div>
-                    </div>
-                    <div class="cert-card" onclick="openModal('cert2')">
-                        <div class="cert-card-image">
-                            <img src="../assets/images/credentials/antonis/Dynamic-Tape-Certification.jpeg" alt="Dynamic Tape Certification">
-                            <div class="zoom-icon">🔍</div>
-                        </div>
-                        <div class="cert-card-info">
-                            <span class="cert-card-year">2019</span>
-                            <h4 class="cert-card-title">Introduction to Biomechanical-Dynamic Taping Methodology</h4>
-                            <p class="cert-card-issuer">Dynamic Tape®</p>
                         </div>
                     </div>
                     <div class="cert-card" onclick="openModal('cert3')">
@@ -1127,17 +1183,6 @@
                             <p class="cert-card-issuer">Cyprus Institute of Orthopaedic Manual Therapy</p>
                         </div>
                     </div>
-                    <div class="cert-card" onclick="openModal('cert4')">
-                        <div class="cert-card-image">
-                            <img src="../assets/images/credentials/antonis/Exercise-Neck-Pain-Disorders.jpeg" alt="Exercise for Neck Pain Disorders">
-                            <div class="zoom-icon">🔍</div>
-                        </div>
-                        <div class="cert-card-info">
-                            <span class="cert-card-year">2025</span>
-                            <h4 class="cert-card-title">Exercise for Neck Pain Disorders</h4>
-                            <p class="cert-card-issuer">Cyprus Institute of Orthopaedic Manual Therapy</p>
-                        </div>
-                    </div>
                     <div class="cert-card" onclick="openModal('cert5')">
                         <div class="cert-card-image">
                             <img src="../assets/images/credentials/antonis/Certificate-Extra.jpeg" alt="Patellofemoral Pain Course">
@@ -1147,6 +1192,17 @@
                             <span class="cert-card-year">2024</span>
                             <h4 class="cert-card-title">Patellofemoral Pain: What, Why & How</h4>
                             <p class="cert-card-issuer">CYOMT / Dr Lee Herrington</p>
+                        </div>
+                    </div>
+                    <div class="cert-card" onclick="openModal('cert2')">
+                        <div class="cert-card-image">
+                            <img src="../assets/images/credentials/antonis/Dynamic-Tape-Certification.jpeg" alt="Dynamic Tape Certification">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-card-info">
+                            <span class="cert-card-year">2019</span>
+                            <h4 class="cert-card-title">Introduction to Biomechanical-Dynamic Taping Methodology</h4>
+                            <p class="cert-card-issuer">Dynamic Tape®</p>
                         </div>
                     </div>
             </div>
@@ -1290,27 +1346,13 @@
     </div>
 
     <script>
-        // Back navigation with scroll position restoration
+        // Back navigation - always go to main page
         function goBack() {
-            // Get saved scroll position from sessionStorage
             const savedScrollPosition = sessionStorage.getItem('teamSectionScrollPosition');
-            const referrer = document.referrer;
-
-            // Check if we came from the main page
-            if (referrer && (referrer.includes('index.html') || referrer.endsWith('/'))) {
-                // Navigate back and restore scroll position
-                if (savedScrollPosition) {
-                    // Store flag to restore scroll on the main page
-                    sessionStorage.setItem('restoreScroll', savedScrollPosition);
-                }
-                window.location.href = '../index.html#team';
-            } else if (window.history.length > 1) {
-                // Use browser back if there's history
-                window.history.back();
-            } else {
-                // Fallback to main page
-                window.location.href = '../index.html#team';
+            if (savedScrollPosition) {
+                sessionStorage.setItem('restoreScroll', savedScrollPosition);
             }
+            window.location.href = '../index.html#team';
         }
 
         function openModal(type) {

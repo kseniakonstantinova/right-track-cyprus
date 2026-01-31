@@ -5,6 +5,7 @@ import { initializeFirebase } from './firebase-config.js';
 import { SERVICES as FALLBACK_SERVICES, THERAPISTS as FALLBACK_THERAPISTS } from './booking-data.js';
 import { BookingCalendar } from './calendar.js';
 import { TimeSlots } from './time-slots.js';
+import { i18n } from '../i18n.js';
 
 class BookingApp {
     constructor() {
@@ -19,92 +20,22 @@ class BookingApp {
 
         this.calendar = null;
         this.timeSlots = null;
-        this.language = localStorage.getItem('language') || 'en';
         this.db = null;
 
         // Data loaded from Firebase (or fallback)
         this.services = [];
         this.therapists = [];
+    }
 
-        this.translations = {
-            en: {
-                title: 'Book Your Appointment',
-                subtitle: 'Select a service to continue',
-                subtitleTherapist: 'Select a specialist to continue',
-                modeAppointment: 'Select Date & Time',
-                modeAppointmentDesc: 'Choose a specific slot from our calendar',
-                modeCallback: 'Request Callback',
-                modeCallbackDesc: 'We\'ll call you to arrange a time',
-                orCallback: 'Or request a callback',
-                callbackDesc: 'Not sure when? We\'ll call you to arrange',
-                selectService: 'Select Service',
-                selectTherapist: 'Select Therapist',
-                selectDate: 'Select Date',
-                selectTime: 'Select Time',
-                yourDetails: 'Your Details',
-                name: 'Full Name',
-                namePlaceholder: 'Enter your full name',
-                phone: 'Phone Number',
-                phonePlaceholder: '+357 99 XXX XXX',
-                email: 'Email (Optional)',
-                emailPlaceholder: 'your@email.com',
-                paymentType: 'Payment Type (Optional)',
-                gesy: 'GESY',
-                private: 'Private',
-                message: 'Message (Optional)',
-                messagePlaceholder: 'Any additional information...',
-                submit: 'Confirm Booking',
-                submitting: 'Submitting...',
-                back: 'Back',
-                required: 'Required',
-                successTitle: 'Booking Submitted!',
-                successMessage: 'We\'ve received your booking request and will contact you shortly.',
-                successCallback: 'We\'ll call you at the number provided to arrange your appointment.',
-                newBooking: 'Make Another Booking',
-                errorGeneric: 'Something went wrong. Please try again.',
-                any: 'Any available'
-            },
-            el: {
-                title: 'Κλείστε Ραντεβού',
-                subtitle: 'Επιλέξτε υπηρεσία για να συνεχίσετε',
-                subtitleTherapist: 'Επιλέξτε ειδικό για να συνεχίσετε',
-                modeAppointment: 'Επιλογή Ημέρας & Ώρας',
-                modeAppointmentDesc: 'Επιλέξτε συγκεκριμένη ώρα από το ημερολόγιο',
-                modeCallback: 'Αίτηση Επανάκλησης',
-                modeCallbackDesc: 'Θα σας καλέσουμε για να κανονίσουμε',
-                orCallback: 'Ή ζητήστε επανάκληση',
-                callbackDesc: 'Δεν είστε σίγουροι πότε; Θα σας καλέσουμε',
-                selectService: 'Επιλέξτε Υπηρεσία',
-                selectTherapist: 'Επιλέξτε Θεραπευτή',
-                selectDate: 'Επιλέξτε Ημερομηνία',
-                selectTime: 'Επιλέξτε Ώρα',
-                yourDetails: 'Τα Στοιχεία Σας',
-                name: 'Ονοματεπώνυμο',
-                namePlaceholder: 'Εισάγετε το ονοματεπώνυμό σας',
-                phone: 'Τηλέφωνο',
-                phonePlaceholder: '+357 99 XXX XXX',
-                email: 'Email (Προαιρετικό)',
-                emailPlaceholder: 'your@email.com',
-                paymentType: 'Τρόπος Πληρωμής (Προαιρετικό)',
-                gesy: 'ΓΕΣΥ',
-                private: 'Ιδιωτικά',
-                message: 'Μήνυμα (Προαιρετικό)',
-                messagePlaceholder: 'Οποιαδήποτε επιπλέον πληροφορία...',
-                submit: 'Επιβεβαίωση Κράτησης',
-                submitting: 'Υποβολή...',
-                back: 'Πίσω',
-                required: 'Υποχρεωτικό',
-                successTitle: 'Η Κράτηση Υποβλήθηκε!',
-                successMessage: 'Λάβαμε το αίτημα κράτησής σας και θα επικοινωνήσουμε σύντομα.',
-                successCallback: 'Θα σας καλέσουμε στον αριθμό που δώσατε για να κανονίσουμε το ραντεβού σας.',
-                newBooking: 'Νέα Κράτηση',
-                errorGeneric: 'Κάτι πήγε στραβά. Προσπαθήστε ξανά.',
-                any: 'Οποιοσδήποτε διαθέσιμος'
-            }
-        };
+    // Get current language
+    get language() {
+        return i18n.language;
     }
 
     async init() {
+        // Initialize i18n
+        await i18n.init();
+
         try {
             const firebase = await initializeFirebase();
             this.db = firebase.db;
@@ -191,14 +122,24 @@ class BookingApp {
         return this.therapists.filter(t => t.isActive !== false && (t.services || []).includes(serviceId));
     }
 
+    // Translation helper - uses i18n module
     t(key) {
-        return this.translations[this.language][key] || key;
+        return i18n.t(`booking.${key}`);
+    }
+
+    // Get localized field from data object (e.g., service.name or service.nameEl)
+    getLocalizedField(obj, fieldName) {
+        return i18n.getField(obj, fieldName);
     }
 
     setupLanguageListener() {
         // Listen for language changes from main site
         window.addEventListener('languageChanged', (e) => {
-            this.language = e.detail.language;
+            this.refresh();
+        });
+
+        // Also listen for i18n module changes
+        i18n.onLanguageChange(() => {
             this.refresh();
         });
     }
@@ -227,8 +168,8 @@ class BookingApp {
                                 ${this.getServiceIcon(s.id)}
                             </div>
                             <div class="service-info">
-                                <strong>${this.language === 'el' ? (s.nameEl || s.name) : s.name}</strong>
-                                <span class="service-price">${this.language === 'el' ? (s.pricing?.displayEl || s.pricing?.display || '') : (s.pricing?.display || '')}</span>
+                                <strong>${this.getLocalizedField(s, 'name')}</strong>
+                                <div class="service-price">${this.renderPriceDisplay(s.pricing)}</div>
                             </div>
                         </button>
                     `).join('')}
@@ -261,6 +202,34 @@ class BookingApp {
         return `<span style="font-size: 28px; filter: grayscale(1) brightness(10);">${icons[serviceId] || '⭐'}</span>`;
     }
 
+    // Render price in two-line format: GESY on top, Private below (or Private Only / From €XX)
+    renderPriceDisplay(pricing) {
+        if (!pricing) return '';
+
+        const isGreek = this.language === 'el';
+
+        // Custom pricing type
+        if (pricing.type === 'custom') {
+            return `<span class="price-line">${isGreek ? (pricing.customTextEl || pricing.customText) : pricing.customText}</span>`;
+        }
+
+        const lines = [];
+
+        if (pricing.gesyPrice) {
+            // Has GESY
+            lines.push(isGreek ? 'ΓΕΣΥ' : 'GESY');
+            if (pricing.privatePrice) {
+                lines.push(isGreek ? `Ιδιωτικά - από €${pricing.privatePrice}` : `Private - from €${pricing.privatePrice}`);
+            }
+        } else if (pricing.privatePrice) {
+            // Private only
+            lines.push(isGreek ? 'Μόνο Ιδιωτικά' : 'Private Only');
+            lines.push(isGreek ? `Από €${pricing.privatePrice}` : `From €${pricing.privatePrice}`);
+        }
+
+        return lines.map(line => `<span class="price-line">${line}</span>`).join('');
+    }
+
     renderBookingForm() {
         const container = document.getElementById('booking-app');
         const isAppointment = this.state.mode === 'appointment';
@@ -287,8 +256,8 @@ class BookingApp {
                                 ${this.getServiceIcon(this.state.service)}
                             </div>
                             <div class="service-info">
-                                <strong>${this.language === 'el' ? (this.getServiceById(this.state.service)?.nameEl || this.getServiceById(this.state.service)?.name) : this.getServiceById(this.state.service)?.name}</strong>
-                                <span class="service-price">${this.language === 'el' ? (this.getServiceById(this.state.service)?.pricing?.displayEl || this.getServiceById(this.state.service)?.pricing?.display || '') : (this.getServiceById(this.state.service)?.pricing?.display || '')}</span>
+                                <strong>${this.getLocalizedField(this.getServiceById(this.state.service), 'name')}</strong>
+                                <div class="service-price">${this.renderPriceDisplay(this.getServiceById(this.state.service)?.pricing)}</div>
                             </div>
                         </div>
 
@@ -379,8 +348,8 @@ class BookingApp {
                 <div class="therapist-info">
                     <img src="${t.photo || ''}" alt="${t.name}" class="therapist-photo" onerror="this.style.display='none'">
                     <div class="therapist-details">
-                        <strong>${this.language === 'el' ? (t.nameEl || t.name) : t.name}</strong>
-                        <span>${this.language === 'el' ? (t.titleEl || t.title) : t.title}</span>
+                        <strong>${this.getLocalizedField(t, 'name')}</strong>
+                        <span>${this.getLocalizedField(t, 'title')}</span>
                     </div>
                 </div>
             </label>

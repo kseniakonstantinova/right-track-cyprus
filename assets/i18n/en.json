@@ -1,0 +1,72 @@
+{
+  "booking": {
+    "title": "Book Your Appointment",
+    "subtitle": "Select a service to continue",
+    "subtitleTherapist": "Select a specialist to continue",
+    "modeAppointment": "Select Date & Time",
+    "modeAppointmentDesc": "Choose a specific slot from our calendar",
+    "modeCallback": "Request Callback",
+    "modeCallbackDesc": "We'll call you to arrange a time",
+    "orCallback": "Or request a callback",
+    "callbackDesc": "Not sure when? We'll call you to arrange",
+    "selectService": "Select Service",
+    "selectTherapist": "Select Therapist",
+    "selectDate": "Select Date",
+    "selectTime": "Select Time",
+    "yourDetails": "Your Details",
+    "name": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "phone": "Phone Number",
+    "phonePlaceholder": "+357 99 XXX XXX",
+    "email": "Email (Optional)",
+    "emailPlaceholder": "your@email.com",
+    "paymentType": "Payment Type (Optional)",
+    "gesy": "GESY",
+    "private": "Private",
+    "message": "Message (Optional)",
+    "messagePlaceholder": "Any additional information...",
+    "submit": "Confirm Booking",
+    "submitting": "Submitting...",
+    "back": "Back",
+    "required": "Required",
+    "successTitle": "Booking Submitted!",
+    "successMessage": "We've received your booking request and will contact you shortly.",
+    "successCallback": "We'll call you at the number provided to arrange your appointment.",
+    "newBooking": "Make Another Booking",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "any": "Any available"
+  },
+  "calendar": {
+    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "today": "Today",
+    "noSlots": "No available slots"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "team": "Team",
+    "gesy": "GESY",
+    "partnerships": "Partnerships",
+    "contact": "Contact",
+    "booking": "Book Online",
+    "joinTeam": "Join Team"
+  },
+  "footer": {
+    "copyright": "© 2026 Right Track Rehabilitation & Performance Centre. All rights reserved.",
+    "gesyRegistered": "GESY-Registered Specialists | Nicosia, Cyprus"
+  }
+}

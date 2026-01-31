@@ -33,100 +33,90 @@
             background: var(--off-white);
         }
 
-        /* Header */
-        header {
-            background: var(--white);
-            padding: 1.2rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--light-gray);
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0.5rem 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 120px;
-            width: auto;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--orange);
-        }
-
-        .nav-cta {
-            background: var(--navy);
-            color: var(--white) !important;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .nav-cta:hover {
-            background: var(--orange);
-            color: var(--white) !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.2);
-        }
-
-        .nav-cta-orange {
-            background: var(--orange) !important;
-        }
 
         /* Language Switcher */
         .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
             display: flex;
             gap: 8px;
-            margin-left: 10px;
         }
 
         .lang-btn {
-            padding: 6px 12px;
-            border: 1px solid var(--light-gray);
-            border-radius: 6px;
-            background: var(--white);
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
             cursor: pointer;
-            font-weight: 500;
-            font-size: 0.85rem;
-            transition: all 0.2s;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            color: var(--navy);
         }
 
         .lang-btn.active {
             background: var(--navy);
             color: var(--white);
-            border-color: var(--navy);
+        }
+
+        .lang-btn:not(.active):hover {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateX(-3px);
+        }
+
+        .back-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover .back-arrow {
+            transform: translateX(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 15px;
+                right: 15px;
+            }
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            .back-button {
+                top: 15px;
+                left: 15px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
         }
 
         /* Main Content */
@@ -180,42 +170,8 @@
             border-bottom: none;
         }
 
-        /* Mobile Nav */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--navy);
-            margin: 5px 0;
-            transition: all 0.3s;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 0.5rem 20px;
-            }
-
-            .logo img {
-                height: 80px;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
             main {
                 padding: 20px 0;
             }
@@ -223,33 +179,17 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../index.html" class="logo">
-                <img src="../assets/images/logos/logo-new-no background.png" alt="Right Track Logo">
-            </a>
-            <ul>
-                <li><a href="../index.html#services">Services</a></li>
-                <li><a href="../index.html#team">Team</a></li>
-                <li><a href="../index.html#gesy">GESY</a></li>
-                <li><a href="../index.html#partnerships">Partnerships</a></li>
-                <li><a href="../index.html#contact">Contacts</a></li>
-                <li><a href="../index.html#join-team" class="nav-cta" style="background: var(--navy); margin-right: 10px;">Join Team</a></li>
-                <li><a href="booking.html" class="nav-cta nav-cta-orange">Book Online</a></li>
-                <li>
-                    <div class="language-switcher">
-                        <button class="lang-btn active" data-lang="en">EN</button>
-                        <button class="lang-btn" data-lang="el">ΕΛ</button>
-                    </div>
-                </li>
-            </ul>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-    </header>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="el">ΕΛ</button>
+    </div>
+
+    <!-- Back Button -->
+    <a href="#" onclick="goBack(); return false;" class="back-button">
+        <span class="back-arrow">←</span>
+        <span class="back-text">Back</span>
+    </a>
 
     <main>
         <!-- Booking App Container -->
@@ -299,8 +239,17 @@
     <!-- Booking System Scripts -->
     <script type="module" src="../assets/js/booking/booking-app.js?v=9"></script>
 
-    <!-- Language Switcher -->
     <script>
+        // Back navigation - always go to main page
+        function goBack() {
+            const savedScrollPosition = sessionStorage.getItem('bookingScrollPosition');
+            if (savedScrollPosition) {
+                sessionStorage.setItem('restoreScroll', savedScrollPosition);
+            }
+            window.location.href = '../index.html';
+        }
+
+        // Language Switcher
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));

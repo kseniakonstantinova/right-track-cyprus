@@ -539,12 +539,16 @@ class AdminApp {
         const title = document.getElementById('service-modal-title');
         const form = document.getElementById('service-form');
 
+        // Populate therapist checkboxes
+        this.populateServiceTherapists(service?.providedBy || []);
+
         if (service) {
             title.textContent = 'Edit Service';
             document.getElementById('service-id').value = service.id;
             document.getElementById('service-name').value = service.name || '';
             document.getElementById('service-name-el').value = service.nameEl || '';
             document.getElementById('service-description').value = service.description || '';
+            document.getElementById('service-description-el').value = service.descriptionEl || '';
             document.getElementById('service-pricing-type').value = service.pricing?.type || 'fixed';
             document.getElementById('service-gesy-price').value = service.pricing?.gesyPrice || '';
             document.getElementById('service-private-price').value = service.pricing?.privatePrice || '';
@@ -556,6 +560,8 @@ class AdminApp {
             form.reset();
             document.getElementById('service-id').value = '';
             this.togglePricingFields('fixed');
+            // Reset therapist checkboxes
+            this.populateServiceTherapists([]);
         }
 
         modal.classList.add('active');
@@ -587,6 +593,7 @@ class AdminApp {
                 name: document.getElementById('service-name').value.trim(),
                 nameEl: document.getElementById('service-name-el').value.trim(),
                 description: document.getElementById('service-description').value.trim(),
+                descriptionEl: document.getElementById('service-description-el').value.trim(),
                 pricing: {
                     type: pricingType,
                     gesyPrice: pricingType !== 'custom' ? (parseInt(document.getElementById('service-gesy-price').value) || null) : null,
@@ -594,6 +601,7 @@ class AdminApp {
                     customText: pricingType === 'custom' ? document.getElementById('service-custom-text').value.trim() : null,
                     customTextEl: pricingType === 'custom' ? document.getElementById('service-custom-text-el').value.trim() : null
                 },
+                providedBy: this.getSelectedTherapists(),
                 updatedAt: firebase.firestore.FieldValue.serverTimestamp()
             };
 
@@ -624,21 +632,56 @@ class AdminApp {
         }
     }
 
+    populateServiceTherapists(selectedIds = []) {
+        const container = document.getElementById('service-therapists');
+        if (!container) return;
+
+        if (!this.therapists || this.therapists.length === 0) {
+            container.innerHTML = '<p class="text-muted">No therapists available. Add therapists first.</p>';
+            return;
+        }
+
+        container.innerHTML = this.therapists.map(t => `
+            <label class="checkbox-item">
+                <input type="checkbox" name="service-therapist" value="${t.id}"
+                    ${selectedIds.includes(t.id) ? 'checked' : ''}>
+                <span>${this.escapeHtml(t.name)}</span>
+            </label>
+        `).join('');
+    }
+
+    getSelectedTherapists() {
+        const checkboxes = document.querySelectorAll('input[name="service-therapist"]:checked');
+        return Array.from(checkboxes).map(cb => cb.value);
+    }
+
     generatePriceDisplay(pricing, lang = 'en') {
         if (pricing.type === 'custom') {
             return lang === 'el' ? (pricing.customTextEl || pricing.customText) : pricing.customText;
         }
 
         const parts = [];
-        const prefix = pricing.type === 'from' ? (lang === 'el' ? 'Από ' : 'From ') : '';
         const gesy = lang === 'el' ? 'ΓΕΣΥ' : 'GESY';
         const priv = lang === 'el' ? 'Ιδιωτικά' : 'Private';
+        const privateOnly = lang === 'el' ? 'Μόνο Ιδιωτικά' : 'Private Only';
+        const fromText = lang === 'el' ? 'από' : 'from';
+        const FromText = lang === 'el' ? 'Από' : 'From';
 
+        // If has GESY price
         if (pricing.gesyPrice) {
-            parts.push(`${prefix}€${pricing.gesyPrice} ${gesy}`);
+            parts.push(gesy);
         }
+
+        // If has Private price
         if (pricing.privatePrice) {
-            parts.push(`${prefix}€${pricing.privatePrice} ${priv}`);
+            if (!pricing.gesyPrice) {
+                // No GESY - show "Private Only | From €XX"
+                parts.push(privateOnly);
+                parts.push(`${FromText} €${pricing.privatePrice}`);
+            } else {
+                // Has GESY - show "GESY | Private - from €XX"
+                parts.push(`${priv} - ${fromText} €${pricing.privatePrice}`);
+            }
         }
 
         return parts.join(' | ') || (lang === 'el' ? 'Επικοινωνήστε μαζί μας' : 'Contact us');
@@ -1239,6 +1282,8 @@ class AdminApp {
 
         grid.innerHTML = this.therapists.map(t => {
             const initials = t.name ? t.name.split(' ').map(n => n[0]).join('') : '?';
+            const hasGreekName = t.nameEl && t.nameEl.trim();
+            const hasGreekTitle = t.titleEl && t.titleEl.trim();
 
             return `
                 <div class="therapist-card">
@@ -1249,8 +1294,14 @@ class AdminApp {
                         }
                     </div>
                     <div class="therapist-details">
-                        <div class="therapist-name">${this.escapeHtml(t.name)}</div>
-                        <div class="therapist-title">${this.escapeHtml(t.title || '')}</div>
+                        <div class="therapist-name">
+                            ${this.escapeHtml(t.name)}
+                            ${hasGreekName ? `<span class="lang-badge">EL: ${this.escapeHtml(t.nameEl)}</span>` : '<span class="missing-translation" title="Missing Greek translation">⚠️ EL</span>'}
+                        </div>
+                        <div class="therapist-title">
+                            ${this.escapeHtml(t.title || '')}
+                            ${t.title && !hasGreekTitle ? '<span class="missing-translation" title="Missing Greek translation">⚠️</span>' : ''}
+                        </div>
                         <div class="therapist-meta">
                             <div class="therapist-meta-item">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1332,28 +1383,33 @@ class AdminApp {
         }
 
         grid.innerHTML = this.services.map(s => {
-            // Get therapists who provide this service
+            // Get therapists who provide this service (from providedBy array)
+            const providerIds = s.providedBy || [];
             const therapistNames = this.therapists
-                .filter(t => t.isActive !== false && (t.services || []).includes(s.id))
+                .filter(t => providerIds.includes(t.id))
                 .map(t => t.name);
 
-            // Format pricing
-            let gesyPrice = '—';
+            // Format pricing - GESY shows Yes/No, Private shows price
+            let gesyPrice = 'No';
             let privatePrice = '—';
 
             if (s.pricing) {
                 if (s.pricing.type === 'fixed' || s.pricing.type === 'from') {
                     if (s.pricing.gesyPrice) {
-                        gesyPrice = s.pricing.type === 'from' ? `From €${s.pricing.gesyPrice}` : `€${s.pricing.gesyPrice}`;
+                        gesyPrice = 'Yes';
                     }
                     if (s.pricing.privatePrice) {
-                        privatePrice = s.pricing.type === 'from' ? `From €${s.pricing.privatePrice}` : `€${s.pricing.privatePrice}`;
+                        // Private always shows "from"
+                        privatePrice = `from €${s.pricing.privatePrice}`;
                     }
                 } else if (s.pricing.type === 'custom') {
-                    gesyPrice = s.pricing.customText || '—';
+                    gesyPrice = s.pricing.customText || 'No';
                     privatePrice = s.pricing.customText || '—';
                 }
             }
+
+            const hasGreekName = s.nameEl && s.nameEl.trim();
+            const hasGreekDesc = s.descriptionEl && s.descriptionEl.trim();
 
             return `
                 <div class="service-card-admin">
@@ -1362,17 +1418,21 @@ class AdminApp {
                             <span>⭐</span>
                         </div>
                         <div class="service-card-title">
-                            <h3>${this.escapeHtml(s.name)}</h3>
-                            <p>${this.escapeHtml(s.description || '')}</p>
+                            <h3>
+                                ${this.escapeHtml(s.name)}
+                                ${!hasGreekName ? '<span class="missing-translation" title="Missing Greek translation">⚠️ EL</span>' : ''}
+                            </h3>
+                            ${hasGreekName ? `<p class="lang-subtitle">EL: ${this.escapeHtml(s.nameEl)}</p>` : ''}
+                            <p>${this.escapeHtml(s.description || '')} ${s.description && !hasGreekDesc ? '<span class="missing-translation">⚠️</span>' : ''}</p>
                         </div>
                     </div>
                     <div class="service-pricing">
                         <div class="price-row">
-                            <span class="price-label">GESY Price</span>
+                            <span class="price-label">GESY</span>
                             <span class="price-value gesy">${gesyPrice}</span>
                         </div>
                         <div class="price-row">
-                            <span class="price-label">Private Price</span>
+                            <span class="price-label">Private</span>
                             <span class="price-value">${privatePrice}</span>
                         </div>
                     </div>
