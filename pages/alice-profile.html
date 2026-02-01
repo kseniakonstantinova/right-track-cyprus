@@ -273,6 +273,31 @@
             color: var(--navy) !important;
         }
 
+        .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .cta-row .cta-button {
+            margin-top: 0;
+        }
+
+        .view-packages-link {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--orange);
+            text-decoration: underline;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .view-packages-link:hover {
+            opacity: 0.8;
+        }
+
         /* Content Sections */
         section {
             padding: 80px 40px;
@@ -792,6 +817,126 @@
             font-weight: 700;
         }
 
+        /* Pilates Pricing */
+        .pilates-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-column {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--light-gray);
+        }
+
+        .pricing-column.early-bird {
+            border-color: var(--orange);
+        }
+
+        .pricing-header {
+            padding: 25px;
+            text-align: center;
+            background: var(--off-white);
+        }
+
+        .pricing-column.early-bird .pricing-header {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .pricing-badge.regular-badge {
+            background: var(--navy);
+        }
+
+        .pricing-subtitle {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .pricing-options {
+            padding: 20px;
+        }
+
+        .pricing-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--light-gray);
+            position: relative;
+        }
+
+        .pricing-option:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-option.best-value {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(255, 107, 53, 0.03) 100%);
+            border-radius: 12px;
+            margin: 0 -10px;
+            padding: 25px 30px;
+            border-bottom: none;
+        }
+
+        .best-value-badge {
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            background: var(--orange);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .pricing-option .sessions {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .pricing-option .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .pricing-option .price .per-month {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-gray);
+        }
+
+        .pricing-option .per-session {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .pilates-pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--white);
@@ -904,7 +1049,10 @@
                     </div>
                 </div>
 
-                <a href="booking.html?service=clinical-pilates&therapist=alice" class="cta-button">Book Your Service</a>
+                <div class="cta-row">
+                    <a href="booking.html?service=clinical-pilates&therapist=alice" class="cta-button">Book Your Service</a>
+                    <a href="#pilates-packages" class="view-packages-link">View all packages →</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1050,6 +1198,68 @@
                         <li>Multidisciplinary team collaboration</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Pilates Packages -->
+    <section id="pilates-packages">
+        <div class="section-content">
+            <h2>Clinical Pilates <span>Packages</span></h2>
+            <p style="font-size: 1.15rem; color: var(--text-gray); margin-bottom: 2rem; max-width: 700px;">Small group classes (max 6 people) with personalized attention. Pre and Post-natal friendly, beginners welcome.</p>
+
+            <div class="pilates-pricing-grid">
+                <div class="pricing-column early-bird">
+                    <div class="pricing-header">
+                        <span class="pricing-badge">Early Bird</span>
+                        <p class="pricing-subtitle">Book by 20th of previous month</p>
+                    </div>
+                    <div class="pricing-options">
+                        <div class="pricing-option">
+                            <span class="sessions">4 sessions</span>
+                            <span class="price">€80<span class="per-month">/month</span></span>
+                            <span class="per-session">€20/session</span>
+                        </div>
+                        <div class="pricing-option">
+                            <span class="sessions">8 sessions</span>
+                            <span class="price">€140<span class="per-month">/month</span></span>
+                            <span class="per-session">€17.50/session</span>
+                        </div>
+                        <div class="pricing-option best-value">
+                            <span class="best-value-badge">Best Value</span>
+                            <span class="sessions">12 sessions</span>
+                            <span class="price">€200<span class="per-month">/month</span></span>
+                            <span class="per-session">€16.67/session</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-column regular">
+                    <div class="pricing-header">
+                        <span class="pricing-badge regular-badge">Regular</span>
+                        <p class="pricing-subtitle">Standard pricing</p>
+                    </div>
+                    <div class="pricing-options">
+                        <div class="pricing-option">
+                            <span class="sessions">4 sessions</span>
+                            <span class="price">€100<span class="per-month">/month</span></span>
+                            <span class="per-session">€25/session</span>
+                        </div>
+                        <div class="pricing-option">
+                            <span class="sessions">8 sessions</span>
+                            <span class="price">€180<span class="per-month">/month</span></span>
+                            <span class="per-session">€22.50/session</span>
+                        </div>
+                        <div class="pricing-option">
+                            <span class="sessions">12 sessions</span>
+                            <span class="price">€240<span class="per-month">/month</span></span>
+                            <span class="per-session">€20/session</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="booking.html?service=clinical-pilates&therapist=alice" class="cta-button">Book Your Pilates Package</a>
             </div>
         </div>
     </section>

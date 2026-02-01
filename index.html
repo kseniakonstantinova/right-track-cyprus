@@ -53,6 +53,11 @@
                 0 4px 30px rgba(0, 0, 0, 0.05),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+            transition: padding 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.6rem 0;
         }
 
         nav {
@@ -73,6 +78,11 @@
         .logo img {
             height: 120px;
             width: auto;
+            transition: height 0.3s ease;
+        }
+
+        header.scrolled .logo img {
+            height: 60px;
         }
 
         .logo-text {
@@ -2693,26 +2703,33 @@
         .promo-banner-text .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 25px;
+            margin-bottom: 45px;
             line-height: 1.5;
         }
 
         .promo-features {
+            position: absolute;
+            left: 20px;
+            top: 30%;
+            transform: translateY(-50%);
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2;
         }
 
         .promo-feature {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--navy);
             padding: 10px 18px;
             border-radius: 50px;
             font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
 
         .promo-feature.highlight {
@@ -2818,7 +2835,7 @@
             }
 
             .promo-features {
-                justify-content: center;
+                left: 15px;
             }
 
             .promo-banner-image {
@@ -2838,6 +2855,10 @@
             .promo-feature {
                 font-size: 0.85rem;
                 padding: 8px 14px;
+            }
+
+            .promo-features {
+                left: 10px;
             }
 
             .promo-banner-image {
@@ -2882,12 +2903,13 @@
             }
 
             .promo-features {
-                gap: 8px;
+                gap: 6px;
+                left: 8px;
             }
 
             .promo-feature {
-                font-size: 0.8rem;
-                padding: 6px 12px;
+                font-size: 0.75rem;
+                padding: 5px 10px;
             }
 
             .promo-cta {
@@ -2958,24 +2980,20 @@
                     <span class="pulse"></span>
                     New Classes Starting February 1st
                 </div>
-                <h2>Clinical <span>Mat Pilates</span> with Alice</h2>
+                <h2>Clinical <span>Mat Pilates</span><br>with Alice</h2>
                 <p class="subtitle">Physio-led Pilates for rehabilitation, strength & mobility.</p>
+                <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="promo-cta">
+                    Book from €80/month (Early Bird) →
+                </a>
+            </div>
+            <div class="promo-banner-image">
+                <img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian - Clinical Pilates Instructor">
                 <div class="promo-features">
                     <span class="promo-feature">Pre and Post-natal</span>
                     <span class="promo-feature">Beginners Welcome</span>
                     <span class="promo-feature">Small Groups</span>
                 </div>
-                <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="promo-cta">
-                    Book Online Now →
-                </a>
-            </div>
-            <div class="promo-banner-image">
-                <img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian - Clinical Pilates Instructor">
-                <a href="pages/alice-profile.html" class="instructor-profile-link">View Instructor Profile →</a>
-                <div class="promo-discount">
-                    <div class="label">From €80/month</div>
-                    <div class="label" style="font-weight: 600;">(Early Bird)</div>
-                </div>
+                <a href="pages/alice-profile.html" class="instructor-profile-link">View Instructor Profile & Packages →</a>
             </div>
         </div>
     </section>
@@ -3064,7 +3082,7 @@
                     <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="btn btn-orange">Book Online 24/7 →</a>
                     <div style="display: flex; flex-direction: column; gap: 5px;">
                         <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">Private Only</span>
-                        <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">From €80/month (Early Bird)</span>
+                        <a href="#" onclick="openPilatesModal(); return false;" style="font-size: 1.1rem; font-weight: 700; color: var(--orange); text-decoration: underline; cursor: pointer;">View all packages →</a>
                     </div>
                 </div>
             </div>
@@ -3274,7 +3292,7 @@
                 <div class="testimonial-rating">
                     <span>Feel Younger</span>
                 </div>
-                <p class="testimonial-text">"Started Pilates classes in August. I'm 52 and feel stronger than I did at 40. Alice really knows her stuff - small groups mean she corrects your form properly. Can finally touch my toes again!"</p>
+                <p class="testimonial-text">"Started Pilates classes recently. I'm 52 and feel stronger than I did at 40. Alice really knows her stuff - small groups mean she corrects your form properly. Can finally touch my toes again!"</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">SW</div>
                     <div class="testimonial-info">
@@ -3288,7 +3306,7 @@
                 <div class="testimonial-rating">
                     <span>Καριέρα Σωσμένη</span>
                 </div>
-                <p class="testimonial-text">"Νόμιζα ότι οι μέρες μου στο βόλεϊ είχαν τελειώσει μετά τον τραυματισμό στον ώμο. Αυτοί τα παιδιά μου απέδειξαν το αντίθετο."</p>
+                <p class="testimonial-text">"Νόμιζα ότι οι μέρες μου στο βόλεϊ είχαν τελειώσει μετά τον τραυματισμό στον ώμο. Αυτά τα παιδιά μου απέδειξαν το αντίθετο."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">ΠΜ</div>
                     <div class="testimonial-info">
@@ -3443,11 +3461,12 @@
                 </div>
                 <div class="team-content">
                     <h3>Charalambos Gregoriou</h3>
-                    <p class="role">Co-Founder & Clinical Director</p>
+                    <p class="role">Co-Founder & Physiotherapist / Personal Trainer</p>
                     <div class="team-credentials">
-                        <p>BSc Physiotherapy, Sports & Orthopaedic Rehabilitation Specialist. Clinical Practice Supervisor at Frederick University (Cardio, MSK, Neuro Rehab).</p>
+                        <p>BSc Physiotherapy (European University Cyprus). Specializing in musculoskeletal rehabilitation, manual therapy, acupuncture, and functional training. Owner of physiotherapy centre with gym facility.</p>
                     </div>
                     <p class="gesy-reg">GESY Reg. No: A3522</p>
+                    <a href="pages/charalambos-profile.html">View Full Profile →</a>
                 </div>
             </div>
 
@@ -3815,30 +3834,23 @@
             });
         });
 
-        // Mobile header scroll animation
+        // Header scroll animation (compact header on scroll)
         let lastScrollY = 0;
         const header = document.querySelector('header');
 
         function handleScroll() {
-            if (window.innerWidth <= 768) {
-                const scrollY = window.scrollY;
+            const scrollY = window.scrollY;
 
-                if (scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-
-                lastScrollY = scrollY;
+            if (scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
+
+            lastScrollY = scrollY;
         }
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                header.classList.remove('scrolled');
-            }
-        });
     </script>
 
     <!-- Scroll Position Preservation for Profile and Booking Pages -->
@@ -3870,6 +3882,233 @@
                 window.scrollTo({ top: scrollY, behavior: 'instant' });
             });
         }
+    </script>
+
+    <!-- Pilates Packages Modal -->
+    <div id="pilatesModal" class="pilates-modal" onclick="if(event.target === this) closePilatesModal()">
+        <div class="pilates-modal-content">
+            <button class="pilates-modal-close" onclick="closePilatesModal()">&times;</button>
+            <h2>Clinical Pilates <span style="color: var(--orange);">Packages</span></h2>
+            <p style="color: var(--text-gray); margin-bottom: 25px;">Small group sessions (max 4) with Alice Kazanjian</p>
+
+            <div class="pilates-packages">
+                <div class="pilates-package early-bird">
+                    <div class="package-badge">Early Bird</div>
+                    <div class="package-subtitle">Until Feb 15</div>
+                    <div class="package-options">
+                        <div class="package-row">
+                            <span class="sessions">4 sessions/month</span>
+                            <span class="price">€80<small>/month</small></span>
+                            <span class="per-session">€20/session</span>
+                        </div>
+                        <div class="package-row">
+                            <span class="sessions">8 sessions/month</span>
+                            <span class="price">€140<small>/month</small></span>
+                            <span class="per-session">€17.50/session</span>
+                        </div>
+                        <div class="package-row best-value">
+                            <span class="best-badge">Best Value</span>
+                            <span class="sessions">12 sessions/month</span>
+                            <span class="price">€200<small>/month</small></span>
+                            <span class="per-session">€16.66/session</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pilates-package regular">
+                    <div class="package-badge">Regular</div>
+                    <div class="package-subtitle">Standard pricing</div>
+                    <div class="package-options">
+                        <div class="package-row">
+                            <span class="sessions">4 sessions/month</span>
+                            <span class="price">€100<small>/month</small></span>
+                            <span class="per-session">€25/session</span>
+                        </div>
+                        <div class="package-row">
+                            <span class="sessions">8 sessions/month</span>
+                            <span class="price">€180<small>/month</small></span>
+                            <span class="per-session">€22.50/session</span>
+                        </div>
+                        <div class="package-row">
+                            <span class="sessions">12 sessions/month</span>
+                            <span class="price">€240<small>/month</small></span>
+                            <span class="per-session">€20/session</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="btn btn-orange" style="margin-top: 25px; display: inline-block;">Book Your Package →</a>
+        </div>
+    </div>
+
+    <style>
+        .pilates-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .pilates-modal.active {
+            display: flex;
+        }
+        .pilates-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pilates-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-gray);
+            line-height: 1;
+        }
+        .pilates-modal-close:hover {
+            color: var(--navy);
+        }
+        .pilates-modal h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: var(--navy);
+        }
+        .pilates-packages {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .pilates-package {
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+        }
+        .pilates-package.early-bird {
+            background: linear-gradient(135deg, #FFF5F0 0%, #FFE8DC 100%);
+            border: 2px solid var(--orange);
+        }
+        .pilates-package.regular {
+            background: var(--off-white);
+            border: 1px solid var(--light-gray);
+        }
+        .package-badge {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--navy);
+        }
+        .early-bird .package-badge {
+            color: var(--orange);
+        }
+        .package-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+        .package-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .package-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto auto;
+            gap: 2px 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 8px;
+            position: relative;
+        }
+        .package-row .sessions {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.9rem;
+        }
+        .package-row .price {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 1.1rem;
+            text-align: right;
+        }
+        .package-row .price small {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+        .package-row .per-session {
+            grid-column: 1 / -1;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+        .package-row.best-value {
+            background: var(--orange);
+            color: white;
+        }
+        .package-row.best-value .sessions,
+        .package-row.best-value .price,
+        .package-row.best-value .per-session {
+            color: white;
+        }
+        .package-row.best-value .price small {
+            color: rgba(255,255,255,0.8);
+        }
+        .best-badge {
+            position: absolute;
+            top: -8px;
+            right: 10px;
+            background: var(--navy);
+            color: white;
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        @media (max-width: 600px) {
+            .pilates-packages {
+                grid-template-columns: 1fr;
+            }
+            .pilates-modal-content {
+                padding: 25px;
+            }
+            .pilates-modal h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        function openPilatesModal() {
+            document.getElementById('pilatesModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closePilatesModal() {
+            document.getElementById('pilatesModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePilatesModal();
+        });
     </script>
 
 </body>

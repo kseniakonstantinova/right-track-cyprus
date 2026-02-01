@@ -2693,26 +2693,33 @@
         .promo-banner-text .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 25px;
+            margin-bottom: 45px;
             line-height: 1.5;
         }
 
         .promo-features {
+            position: absolute;
+            left: 20px;
+            top: 30%;
+            transform: translateY(-50%);
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2;
         }
 
         .promo-feature {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--navy);
             padding: 10px 18px;
             border-radius: 50px;
             font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
 
         .promo-feature.highlight {
@@ -2818,7 +2825,7 @@
             }
 
             .promo-features {
-                justify-content: center;
+                left: 15px;
             }
 
             .promo-banner-image {
@@ -2838,6 +2845,10 @@
             .promo-feature {
                 font-size: 0.85rem;
                 padding: 8px 14px;
+            }
+
+            .promo-features {
+                left: 10px;
             }
 
             .promo-banner-image {
@@ -2882,12 +2893,13 @@
             }
 
             .promo-features {
-                gap: 8px;
+                gap: 6px;
+                left: 8px;
             }
 
             .promo-feature {
-                font-size: 0.8rem;
-                padding: 6px 12px;
+                font-size: 0.75rem;
+                padding: 5px 10px;
             }
 
             .promo-cta {
@@ -2958,24 +2970,20 @@
                     <span class="pulse"></span>
                     Νέα Τμήματα από 1η Φεβρουαρίου
                 </div>
-                <h2>Κλινικό <span>Mat Pilates</span> με την Alice</h2>
+                <h2>Κλινικό <span>Mat Pilates</span><br>με την Alice</h2>
                 <p class="subtitle">Pilates καθοδηγούμενο από φυσιοθεραπευτή για αποκατάσταση, δύναμη & κινητικότητα.</p>
+                <a href="pages/booking.html?service=clinical-pilates&therapist=alice&lang=el" class="promo-cta">
+                    Κράτηση από €80/μήνα (Early Bird) →
+                </a>
+            </div>
+            <div class="promo-banner-image">
+                <img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian - Εκπαιδεύτρια Κλινικού Pilates">
                 <div class="promo-features">
                     <span class="promo-feature">Προγεννητικό & Μεταγεννητικό</span>
                     <span class="promo-feature">Αρχάριοι Ευπρόσδεκτοι</span>
                     <span class="promo-feature">Μικρές Ομάδες</span>
                 </div>
-                <a href="pages/booking.html?service=clinical-pilates&therapist=alice&lang=el" class="promo-cta">
-                    Κλείστε Online Τώρα →
-                </a>
-            </div>
-            <div class="promo-banner-image">
-                <img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian - Εκπαιδεύτρια Κλινικού Pilates">
-                <a href="pages/alice-profile-el.html" class="instructor-profile-link">Δείτε το Προφίλ της Εκπαιδεύτριας →</a>
-                <div class="promo-discount">
-                    <div class="label">Από €80/μήνα</div>
-                    <div class="label" style="font-weight: 600;">(Early Bird)</div>
-                </div>
+                <a href="pages/alice-profile-el.html" class="instructor-profile-link">Δείτε το Προφίλ & Πακέτα →</a>
             </div>
         </div>
     </section>
@@ -3013,7 +3021,7 @@
                 <div class="stat-label">Κρατήσεις</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">Όλες οι Ηλικίες</div>
+                <div class="stat-number">Για όλους</div>
                 <div class="stat-label">Παιδιά & Ενήλικες</div>
             </div>
         </div>
@@ -3064,7 +3072,7 @@
                     <a href="pages/booking.html?service=clinical-pilates&therapist=alice&lang=el" class="btn btn-orange">Κλείστε Online 24/7 →</a>
                     <div style="display: flex; flex-direction: column; gap: 5px;">
                         <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">Ιδιωτικά προγράμματα</span>
-                        <span style="font-size: 1.1rem; font-weight: 700; color: var(--navy);">Από €80/μήνα (Early Access)</span>
+                        <a href="#" onclick="openPilatesModal(); return false;" style="font-size: 1.1rem; font-weight: 700; color: var(--orange); text-decoration: underline; cursor: pointer;">Δείτε όλα τα πακέτα →</a>
                     </div>
                 </div>
             </div>
@@ -3274,7 +3282,7 @@
                 <div class="testimonial-rating">
                     <span>Feel Younger</span>
                 </div>
-                <p class="testimonial-text">"Started Pilates classes in August. I'm 52 and feel stronger than I did at 40. Alice really knows her stuff - small groups mean she corrects your form properly. Can finally touch my toes again!"</p>
+                <p class="testimonial-text">"Started Pilates classes recently. I'm 52 and feel stronger than I did at 40. Alice really knows her stuff - small groups mean she corrects your form properly. Can finally touch my toes again!"</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">SW</div>
                     <div class="testimonial-info">
@@ -3288,7 +3296,7 @@
                 <div class="testimonial-rating">
                     <span>Καριέρα Σωσμένη</span>
                 </div>
-                <p class="testimonial-text">"Νόμιζα ότι οι μέρες μου στο βόλεϊ είχαν τελειώσει μετά τον τραυματισμό στον ώμο. Αυτοί τα παιδιά μου απέδειξαν το αντίθετο."</p>
+                <p class="testimonial-text">"Νόμιζα ότι οι μέρες μου στο βόλεϊ είχαν τελειώσει μετά τον τραυματισμό στον ώμο. Αυτά τα παιδιά μου απέδειξαν το αντίθετο."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">ΠΜ</div>
                     <div class="testimonial-info">
@@ -3402,7 +3410,7 @@
     <section class="cta-banner">
         <div class="cta-banner-container">
             <div class="cta-banner-content">
-                <h2>Ας σας επαναφέρουμε <span>στο σωστό δρόμο</span></h2>
+                <h2>Όταν η αποκατάσταση <span>γίνεται στρατηγική.</span></h2>
                 <div class="cta-buttons">
                     <a href="pages/booking.html?lang=el" class="btn btn-primary">Κλείστε Online 24/7</a>
                     <a href="#contact" class="btn btn-secondary">Επικοινωνήστε μαζί μας</a>
@@ -3443,11 +3451,12 @@
                 </div>
                 <div class="team-content">
                     <h3>Χαράλαμπος Γρηγορίου</h3>
-                    <p class="role">Συνιδρυτής & Κλινικός Διευθυντής</p>
+                    <p class="role">Συνιδρυτής & Φυσικοθεραπευτής / Personal Trainer</p>
                     <div class="team-credentials">
-                        <p>BSc Φυσιοθεραπεία, Ειδικός Αθλητικής & Ορθοπεδικής Αποκατάστασης. Επόπτης Κλινικής Πρακτικής στο Πανεπιστήμιο Frederick (Καρδιο, Μυοσκελετική, Νευρο Αποκατάσταση).</p>
+                        <p>BSc Φυσιοθεραπεία (Ευρωπαϊκό Πανεπιστήμιο Κύπρου). Εξειδίκευση σε μυοσκελετική αποκατάσταση, manual therapy, βελονισμό και functional training. Ιδιοκτήτης κέντρου φυσικοθεραπείας με γυμναστήριο.</p>
                     </div>
                     <p class="gesy-reg">Αρ. ΓΕΣΥ: A3522</p>
+                    <a href="pages/charalambos-profile-el.html">Δείτε το Πλήρες Προφίλ →</a>
                 </div>
             </div>
 
@@ -3870,6 +3879,233 @@
                 window.scrollTo({ top: scrollY, behavior: 'instant' });
             });
         }
+    </script>
+
+    <!-- Pilates Packages Modal -->
+    <div id="pilatesModal" class="pilates-modal" onclick="if(event.target === this) closePilatesModal()">
+        <div class="pilates-modal-content">
+            <button class="pilates-modal-close" onclick="closePilatesModal()">&times;</button>
+            <h2>Κλινικό Pilates <span style="color: var(--orange);">Πακέτα</span></h2>
+            <p style="color: var(--text-gray); margin-bottom: 25px;">Μικρές ομάδες (έως 4 άτομα) με την Alice Kazanjian</p>
+
+            <div class="pilates-packages">
+                <div class="pilates-package early-bird">
+                    <div class="package-badge">Early Bird</div>
+                    <div class="package-subtitle">Έως 15 Φεβρουαρίου</div>
+                    <div class="package-options">
+                        <div class="package-row">
+                            <span class="sessions">4 συνεδρίες/μήνα</span>
+                            <span class="price">€80<small>/μήνα</small></span>
+                            <span class="per-session">€20/συνεδρία</span>
+                        </div>
+                        <div class="package-row">
+                            <span class="sessions">8 συνεδρίες/μήνα</span>
+                            <span class="price">€140<small>/μήνα</small></span>
+                            <span class="per-session">€17.50/συνεδρία</span>
+                        </div>
+                        <div class="package-row best-value">
+                            <span class="best-badge">Καλύτερη Τιμή</span>
+                            <span class="sessions">12 συνεδρίες/μήνα</span>
+                            <span class="price">€200<small>/μήνα</small></span>
+                            <span class="per-session">€16.66/συνεδρία</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pilates-package regular">
+                    <div class="package-badge">Κανονική Τιμή</div>
+                    <div class="package-subtitle">Τυπική τιμολόγηση</div>
+                    <div class="package-options">
+                        <div class="package-row">
+                            <span class="sessions">4 συνεδρίες/μήνα</span>
+                            <span class="price">€100<small>/μήνα</small></span>
+                            <span class="per-session">€25/συνεδρία</span>
+                        </div>
+                        <div class="package-row">
+                            <span class="sessions">8 συνεδρίες/μήνα</span>
+                            <span class="price">€180<small>/μήνα</small></span>
+                            <span class="per-session">€22.50/συνεδρία</span>
+                        </div>
+                        <div class="package-row">
+                            <span class="sessions">12 συνεδρίες/μήνα</span>
+                            <span class="price">€240<small>/μήνα</small></span>
+                            <span class="per-session">€20/συνεδρία</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="pages/booking.html?service=clinical-pilates&therapist=alice&lang=el" class="btn btn-orange" style="margin-top: 25px; display: inline-block;">Κλείστε το Πακέτο σας →</a>
+        </div>
+    </div>
+
+    <style>
+        .pilates-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .pilates-modal.active {
+            display: flex;
+        }
+        .pilates-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pilates-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-gray);
+            line-height: 1;
+        }
+        .pilates-modal-close:hover {
+            color: var(--navy);
+        }
+        .pilates-modal h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: var(--navy);
+        }
+        .pilates-packages {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .pilates-package {
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+        }
+        .pilates-package.early-bird {
+            background: linear-gradient(135deg, #FFF5F0 0%, #FFE8DC 100%);
+            border: 2px solid var(--orange);
+        }
+        .pilates-package.regular {
+            background: var(--off-white);
+            border: 1px solid var(--light-gray);
+        }
+        .package-badge {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--navy);
+        }
+        .early-bird .package-badge {
+            color: var(--orange);
+        }
+        .package-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+        .package-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .package-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto auto;
+            gap: 2px 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 8px;
+            position: relative;
+        }
+        .package-row .sessions {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.9rem;
+        }
+        .package-row .price {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 1.1rem;
+            text-align: right;
+        }
+        .package-row .price small {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+        .package-row .per-session {
+            grid-column: 1 / -1;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+        .package-row.best-value {
+            background: var(--orange);
+            color: white;
+        }
+        .package-row.best-value .sessions,
+        .package-row.best-value .price,
+        .package-row.best-value .per-session {
+            color: white;
+        }
+        .package-row.best-value .price small {
+            color: rgba(255,255,255,0.8);
+        }
+        .best-badge {
+            position: absolute;
+            top: -8px;
+            right: 10px;
+            background: var(--navy);
+            color: white;
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        @media (max-width: 600px) {
+            .pilates-packages {
+                grid-template-columns: 1fr;
+            }
+            .pilates-modal-content {
+                padding: 25px;
+            }
+            .pilates-modal h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        function openPilatesModal() {
+            document.getElementById('pilatesModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closePilatesModal() {
+            document.getElementById('pilatesModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePilatesModal();
+        });
     </script>
 
 </body>

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charalambos Gregoriou | Physiotherapist - Right Track Cyprus</title>
+    <meta name="description" content="Meet Charalambos Gregoriou, BSc Physiotherapy, specializing in musculoskeletal rehabilitation and personal training.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --orange: #FF6B35;
+            --white: #ffffff;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --text-dark: #212529;
+            --text-gray: #6C757D;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .lang-btn.active {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .lang-btn:not(.active) {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--navy);
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn:not(.active):hover {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .lang-switcher {
+                top: 15px;
+                right: 15px;
+            }
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 1rem;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.85) 0%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0.75) 100%
+            );
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(
+                135deg,
+                rgba(10, 22, 40, 0.9) 0%,
+                rgba(10, 22, 40, 0.65) 50%,
+                rgba(10, 22, 40, 0.8) 100%
+            );
+            color: var(--white);
+            transform: translateX(-3px);
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .back-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover .back-arrow {
+            transform: translateX(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .back-button {
+                top: 15px;
+                left: 15px;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Hero Section */
+        .profile-hero {
+            background: var(--white);
+            padding: 100px 40px;
+        }
+
+        .profile-hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            background: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .profile-image-placeholder {
+            font-size: 8rem;
+            color: var(--navy);
+            opacity: 0.3;
+        }
+
+        .profile-intro h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+        }
+
+        .profile-intro .team-stats {
+            margin-bottom: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .profile-title {
+            font-size: 1.4rem;
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-summary {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .contact-item strong {
+            color: var(--navy);
+        }
+
+        .contact-item a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 36px;
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            background: linear-gradient(
+                135deg,
+                rgba(10, 22, 40, 0.9) 0%,
+                rgba(10, 22, 40, 0.65) 50%,
+                rgba(10, 22, 40, 0.8) 100%
+            );
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(
+                135deg,
+                rgba(255, 107, 53, 0.95) 0%,
+                rgba(255, 107, 53, 0.7) 50%,
+                rgba(255, 107, 53, 0.85) 100%
+            );
+            transform: translateY(-2px);
+            box-shadow:
+                0 10px 30px rgba(255, 107, 53, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .gesy-badge {
+            background: rgba(10, 22, 40, 0.08) !important;
+            border-color: rgba(10, 22, 40, 0.2) !important;
+            color: var(--navy) !important;
+        }
+
+        /* Content Sections */
+        section {
+            padding: 80px 40px;
+        }
+
+        .section-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-alt {
+            background: var(--off-white);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        h2 span {
+            color: var(--orange);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        /* Education & Experience */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .education-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .education-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .institution {
+            color: var(--text-gray);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .year {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card ul {
+            list-style: disc;
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .education-card li {
+            padding: 0.4rem 0;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Expertise Areas */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .expertise-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .expertise-card h3 {
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .expertise-card ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+
+        .expertise-card li {
+            padding: 0.7rem 0;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 1rem;
+        }
+
+        .expertise-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Education Section with Diploma */
+        .education-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .education-left {
+            flex: 1;
+        }
+
+        .education-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Diploma Frame */
+        .diploma-frame {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            padding: 20px;
+            background: linear-gradient(145deg, #1a2a3a 0%, #0a1628 100%);
+            border-radius: 8px;
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .diploma-frame::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 2px solid rgba(255, 107, 53, 0.4);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+
+        .diploma-frame::after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: 14px;
+            bottom: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .diploma-thumbnail {
+            width: 100%;
+            aspect-ratio: 8.5 / 11;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--off-white);
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .diploma-thumbnail:hover {
+            transform: scale(1.02);
+        }
+
+        .diploma-frame:hover {
+            box-shadow:
+                0 25px 60px rgba(255, 107, 53, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .diploma-thumbnail .zoom-icon {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 107, 53, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.4rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .diploma-thumbnail:hover .zoom-icon {
+            opacity: 1;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 0;
+            max-width: 420px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .close-modal:hover {
+            transform: scale(1.2);
+        }
+
+        .modal-body {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .education-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Languages */
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language-badge {
+            background: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: 2px solid var(--light-gray);
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* Team Stats & Availability */
+        .team-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--off-white);
+            border-radius: 20px;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .stat-badge .icon {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid var(--orange);
+            border-radius: 20px;
+            font-size: 0.95rem;
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .availability-badge::before {
+            content: '';
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            border-top: 1px solid var(--light-gray);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .profile-hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .profile-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .education-grid,
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-intro h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-hero {
+                padding: 60px 20px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .profile-intro h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="charalambos-profile.html" class="lang-btn active">EN</a>
+        <a href="charalambos-profile-el.html" class="lang-btn">EL</a>
+    </div>
+
+    <!-- Back Button -->
+    <a href="#" onclick="goBack(); return false;" class="back-button">
+        <span class="back-arrow">←</span>
+        <span class="back-text">Back</span>
+    </a>
+
+    <!-- Profile Hero -->
+    <section class="profile-hero">
+        <div class="profile-hero-content">
+            <div class="profile-image">
+                <img src="../assets/images/team/charalambos-photo.jpg" alt="Charalambos Gregoriou, Physiotherapist" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'profile-image-placeholder\'>CG</div>';">
+            </div>
+            <div class="profile-intro">
+                <h1>Charalambos Gregoriou</h1>
+                <div class="team-stats">
+                    <span class="stat-badge"><span class="icon">⭕</span> Results-Driven</span>
+                    <span class="stat-badge gesy-badge">GESY Reg. No: A3522</span>
+                </div>
+                <p class="profile-title">BSc (Physiotherapy) | Personal Trainer | Clinic Owner</p>
+                <p class="profile-summary">Physiotherapist with experience in musculoskeletal rehabilitation, functional exercise, and personal training. Strong hands-on approach to therapy with emphasis on patient assessment, customized rehabilitation program design, and overall business management. Results-oriented with professionalism, responsibility, and direct patient communication.</p>
+
+                <div class="team-stats availability-stats">
+                    <span class="availability-badge">In-clinic</span>
+                    <span class="availability-badge">Pitch-side</span>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Location:</strong> Nicosia, Cyprus
+                    </div>
+                </div>
+
+                <a href="booking.html" class="cta-button">Book Your Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+        <div class="section-content">
+            <h2>Education & <span>Credentials</span></h2>
+            <div class="education-section">
+                <div class="education-left">
+                    <div class="education-card">
+                        <h3>Bachelor of Science in Physiotherapy</h3>
+                        <p class="institution">European University Cyprus</p>
+                        <p class="year">Cyprus</p>
+                        <ul>
+                            <li>Comprehensive evidence-based physiotherapy training</li>
+                            <li>Clinical practice across various healthcare settings</li>
+                            <li>Acupuncture in Physiotherapy</li>
+                            <li>Sports Rehabilitation</li>
+                            <li>Personal Training / Functional Training</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="education-right">
+                    <div class="diploma-frame">
+                        <div class="diploma-thumbnail" onclick="openModal('diploma')">
+                            <iframe src="../assets/images/credentials/charalambos/BSc-Physiotherapy-Diploma.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width: 100%; height: 100%; border: none; pointer-events: none;"></iframe>
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="languages" style="margin-top: 40px;">
+                <div class="language-badge">Greek - Native</div>
+                <div class="language-badge">English - Conversational</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section-alt">
+        <div class="section-content">
+            <h2>Professional <span>Experience</span></h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Owner – Physiotherapist / Personal Trainer</h3>
+                    <p class="institution">Physiotherapy Centre & Gym</p>
+                    <p class="year">Cyprus – Present</p>
+                    <ul>
+                        <li>Patient assessment and rehabilitation for musculoskeletal and functional problems</li>
+                        <li>Design and implementation of individualized rehabilitation programs</li>
+                        <li>Application of manual therapy, kinesiotherapy, and acupuncture techniques</li>
+                        <li>Personal training services for strengthening, rehabilitation, and fitness improvement</li>
+                        <li>Management of appointments, client base, and overall business operations</li>
+                        <li>Patient education and guidance for injury prevention and lifestyle improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Expertise -->
+    <section>
+        <div class="section-content">
+            <h2>Areas of Clinical <span>Expertise</span></h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3>Clinical Skills</h3>
+                    <ul>
+                        <li>Posture and movement assessment</li>
+                        <li>Manual therapy</li>
+                        <li>Acupuncture</li>
+                        <li>Injury rehabilitation</li>
+                        <li>Post-surgical rehabilitation</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <h3>Training Skills</h3>
+                    <ul>
+                        <li>Strength & conditioning</li>
+                        <li>Functional training</li>
+                        <li>Individualized exercise programs</li>
+                        <li>Fitness improvement</li>
+                        <li>Injury prevention</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <h3>Organizational Skills</h3>
+                    <ul>
+                        <li>Client management</li>
+                        <li>Appointment scheduling</li>
+                        <li>Professional communication</li>
+                        <li>Patient guidance</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <h3>Musculoskeletal Physiotherapy</h3>
+                    <ul>
+                        <li>Musculoskeletal condition assessment and rehabilitation</li>
+                        <li>Kinesiotherapy</li>
+                        <li>Functional rehabilitation</li>
+                        <li>Return to daily activities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Right Track Rehabilitation & Performance Centre. All rights reserved.</p>
+            <p>GESY-Registered Specialists | Nicosia, Cyprus</p>
+        </div>
+    </footer>
+
+    <!-- Diploma Modal -->
+    <div id="diplomaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>BSc in Physiotherapy</h2>
+                <button class="close-modal" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <iframe src="../assets/images/credentials/charalambos/BSc-Physiotherapy-Diploma.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width: 100%; aspect-ratio: 8.5 / 11; border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Back navigation - always go to main page
+        function goBack() {
+            const savedScrollPosition = sessionStorage.getItem('teamSectionScrollPosition');
+            if (savedScrollPosition) {
+                sessionStorage.setItem('restoreScroll', savedScrollPosition);
+            }
+            window.location.href = '../index.html#team';
+        }
+
+        function openModal(type) {
+            const modal = document.getElementById('diplomaModal');
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('diplomaModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('diplomaModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
