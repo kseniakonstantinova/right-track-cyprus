@@ -55,7 +55,7 @@ const translations = {
         'service.performance.desc': 'Structured training programs for athletes. Strength, conditioning, movement quality, and injury prevention.',
 
         'service.pediatric.title': 'Pediatric Physiotherapy',
-        'service.pediatric.desc': 'Specialized care for children's development, motor skills, and movement patterns. Fun, effective, evidence-based.',
+        'service.pediatric.desc': 'Specialized care for children\'s development, motor skills, and movement patterns. Fun, effective, evidence-based.',
 
         'service.ot.title': 'Occupational Therapy',
         'service.ot.desc': 'Helping children develop skills for daily living, sensory processing, and independence.',
