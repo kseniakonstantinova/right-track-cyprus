@@ -1352,8 +1352,10 @@
             const savedScrollPosition = sessionStorage.getItem('teamSectionScrollPosition');
             if (savedScrollPosition) {
                 sessionStorage.setItem('restoreScroll', savedScrollPosition);
+                window.location.href = '../index-el.html';
+            } else {
+                window.location.href = '../index-el.html#team';
             }
-            window.location.href = '../index.html#team';
         }
 
         function openModal(type) {
