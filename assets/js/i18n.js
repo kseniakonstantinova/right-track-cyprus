@@ -18,7 +18,11 @@ class I18n {
 
     async loadTranslations(lang) {
         try {
-            const response = await fetch(`/assets/i18n/${lang}.json`);
+            // Determine base path for GitHub Pages compatibility
+            const basePath = window.location.pathname.includes('/right-track-cyprus')
+                ? '/right-track-cyprus'
+                : '';
+            const response = await fetch(`${basePath}/assets/i18n/${lang}.json`);
             if (!response.ok) throw new Error(`Failed to load ${lang}.json`);
             this.translations[lang] = await response.json();
         } catch (error) {
