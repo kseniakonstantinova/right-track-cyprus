@@ -78,8 +78,8 @@ class BookingApp {
         try {
             const { collection, getDocs, query, orderBy } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js');
 
-            // Load services
-            const servicesSnapshot = await getDocs(query(collection(this.db, 'services'), orderBy('name')));
+            // Load services (sorted by display order)
+            const servicesSnapshot = await getDocs(query(collection(this.db, 'services'), orderBy('order')));
             this.services = servicesSnapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()

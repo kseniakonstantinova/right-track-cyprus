@@ -2,16 +2,29 @@
 
 const SERVICES = [
     {
-        id: 'athlete-rehab',
-        name: 'Athlete-Centred Rehabilitation',
-        nameEl: 'Αποκατάσταση Αθλητών',
-        description: 'MSK & Sports Rehab, Post-operative Recovery',
+        id: 'physiotherapy',
+        name: 'General Physiotherapy',
+        nameEl: 'Γενική Φυσιοθεραπεία',
+        description: 'Back, Neck & Joint Pain, Neurological Rehab, Chronic Pain',
         pricing: {
             type: 'fixed',
             gesyPrice: 29,
             privatePrice: 35,
             display: 'GESY | Private - from €35',
             displayEl: 'ΓΕΣΥ | Ιδιωτικά - από €35'
+        }
+    },
+    {
+        id: 'athlete-rehab',
+        name: 'Athlete-Centred Rehabilitation',
+        nameEl: 'Αποκατάσταση Αθλητών',
+        description: 'Return to Sport, Sports Injury Rehab, Performance Recovery',
+        pricing: {
+            type: 'fixed',
+            gesyPrice: 29,
+            privatePrice: 45,
+            display: 'GESY | Private - from €45',
+            displayEl: 'ΓΕΣΥ | Ιδιωτικά - από €45'
         }
     },
     {
@@ -94,7 +107,7 @@ const THERAPISTS = [
         email: 'righttrackphysio@gmail.com',
         calendarEmail: 'righttrackphysio@gmail.com',
         photo: '/assets/images/team/tony-photo.jpg',
-        services: ['athlete-rehab', 'kids-physio', 'performance-training', 'homecare-physio', 'massage'],
+        services: ['physiotherapy', 'athlete-rehab', 'kids-physio', 'performance-training', 'homecare-physio', 'massage'],
         isActive: true
     },
     {
@@ -107,7 +120,7 @@ const THERAPISTS = [
         email: 'righttrackphysio@gmail.com',
         calendarEmail: 'righttrackphysio@gmail.com',
         photo: '/assets/images/team/charalambos-photo.jpg',
-        services: ['athlete-rehab', 'kids-physio', 'performance-training', 'massage'],
+        services: ['physiotherapy', 'athlete-rehab', 'kids-physio', 'performance-training', 'massage'],
         isActive: true
     },
     {
