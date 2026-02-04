@@ -669,6 +669,43 @@ class AdminApp {
         }
     }
 
+    // Auto-sync without confirmation (called when Firebase is empty)
+    async autoSyncInitialData() {
+        try {
+            console.log('Auto-syncing services and therapists...');
+
+            // Sync services
+            for (const service of INITIAL_SERVICES) {
+                await this.db.collection('services').doc(service.id).set({
+                    ...service,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+            }
+
+            // Sync therapists
+            for (const therapist of INITIAL_THERAPISTS) {
+                await this.db.collection('therapists').doc(therapist.id).set({
+                    ...therapist,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+            }
+
+            console.log('Auto-sync completed');
+            this.showToast('Initial data loaded successfully!');
+
+            // Reload data
+            await this.loadServices();
+            await this.loadTherapists();
+
+        } catch (error) {
+            console.error('Auto-sync error:', error);
+            this.services = INITIAL_SERVICES;
+            this.renderServices();
+        }
+    }
+
     populateTherapistFilter() {
         const select = document.getElementById('filter-therapist');
         select.innerHTML = '<option value="all">All Therapists</option>';
@@ -810,6 +847,14 @@ class AdminApp {
                 id: doc.id,
                 ...doc.data()
             }));
+
+            // Auto-sync if no services in Firebase
+            if (this.services.length === 0) {
+                console.log('No services found, auto-syncing from code...');
+                await this.autoSyncInitialData();
+                return;
+            }
+
             this.renderServices();
         } catch (error) {
             console.error('Error loading services:', error);
