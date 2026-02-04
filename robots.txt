@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Block admin panel from indexing
+Disallow: /pages/manage-rtphysio-2026/

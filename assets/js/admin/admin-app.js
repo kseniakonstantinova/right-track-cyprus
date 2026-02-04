@@ -8,6 +8,7 @@ const INITIAL_SERVICES = [
         name: 'General Physiotherapy',
         nameEl: 'Γενική Φυσιοθεραπεία',
         description: 'Back, Neck & Joint Pain, Neurological Rehab, Chronic Pain',
+        order: 1,
         pricing: {
             type: 'fixed',
             gesyPrice: 29,
@@ -21,6 +22,7 @@ const INITIAL_SERVICES = [
         name: 'Athlete-Centred Rehabilitation',
         nameEl: 'Αποκατάσταση Αθλητών',
         description: 'Return to Sport, Sports Injury Rehab, Performance Recovery',
+        order: 2,
         pricing: {
             type: 'fixed',
             gesyPrice: 29,
@@ -34,6 +36,7 @@ const INITIAL_SERVICES = [
         name: 'Clinical Pilates',
         nameEl: 'Κλινικό Pilates',
         description: 'Small groups (max 4), Dynamic athletic approach',
+        order: 3,
         pricing: {
             type: 'from',
             gesyPrice: null,
@@ -47,6 +50,7 @@ const INITIAL_SERVICES = [
         name: "Kids' Physiotherapy",
         nameEl: 'Παιδική Φυσιοθεραπεία',
         description: 'Scoliosis screening, Developmental support',
+        order: 4,
         pricing: {
             type: 'custom',
             gesyPrice: null,
@@ -62,6 +66,7 @@ const INITIAL_SERVICES = [
         name: 'Performance Training',
         nameEl: 'Προπόνηση Απόδοσης',
         description: 'Sport-specific programming, Return-to-play protocols',
+        order: 5,
         pricing: {
             type: 'from',
             gesyPrice: null,
@@ -75,6 +80,7 @@ const INITIAL_SERVICES = [
         name: 'Home-care Physiotherapy',
         nameEl: 'Φυσιοθεραπεία κατ\' Οίκον',
         description: 'Professional physiotherapy in your home',
+        order: 6,
         pricing: {
             type: 'fixed',
             gesyPrice: 29,
@@ -88,6 +94,7 @@ const INITIAL_SERVICES = [
         name: 'Sports & Remedial Massage',
         nameEl: 'Αθλητικό & Θεραπευτικό Μασάζ',
         description: 'Sports massage, Deep tissue, Recovery sessions',
+        order: 7,
         pricing: {
             type: 'from',
             gesyPrice: null,
@@ -148,6 +155,8 @@ class AdminApp {
         this.bookings = [];
         this.therapists = [];
         this.services = [];
+        this.clients = [];
+        this.currentClientPhone = null;
         this.unsubscribe = null;
         // Calendar state
         this.calendarDate = new Date();
@@ -290,6 +299,11 @@ class AdminApp {
         // Service Modal
         document.getElementById('add-service-btn').addEventListener('click', () => {
             this.openServiceModal();
+        });
+
+        // Sync Services Button
+        document.getElementById('sync-services-btn')?.addEventListener('click', () => {
+            this.syncInitialData();
         });
 
         // Add Booking Modal
