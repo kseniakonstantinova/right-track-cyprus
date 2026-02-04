@@ -1,158 +1,5 @@
 // Admin Panel Application
-// Data is stored in Firebase and synced with local arrays
-
-// Initial data for sync (from booking-data.js)
-const INITIAL_SERVICES = [
-    {
-        id: 'physiotherapy',
-        name: 'General Physiotherapy',
-        nameEl: 'Γενική Φυσιοθεραπεία',
-        description: 'Back, Neck & Joint Pain, Neurological Rehab, Chronic Pain',
-        order: 1,
-        providedBy: ['antonis', 'charalambos'],
-        pricing: {
-            type: 'fixed',
-            gesyPrice: 29,
-            privatePrice: 35,
-            display: '€29 GESY | From €35 Private',
-            displayEl: '€29 ΓΕΣΥ | Από €35 Ιδιωτικά'
-        }
-    },
-    {
-        id: 'athlete-rehab',
-        name: 'Athlete-Centred Rehabilitation',
-        nameEl: 'Αποκατάσταση Αθλητών',
-        description: 'Return to Sport, Sports Injury Rehab, Performance Recovery',
-        order: 2,
-        providedBy: ['antonis', 'charalambos'],
-        pricing: {
-            type: 'fixed',
-            gesyPrice: 29,
-            privatePrice: 45,
-            display: '€29 GESY | From €45 Private',
-            displayEl: '€29 ΓΕΣΥ | Από €45 Ιδιωτικά'
-        }
-    },
-    {
-        id: 'clinical-pilates',
-        name: 'Clinical Pilates',
-        nameEl: 'Κλινικό Pilates',
-        description: 'Small groups (max 4), Dynamic athletic approach',
-        order: 3,
-        providedBy: ['alice'],
-        pricing: {
-            type: 'from',
-            gesyPrice: null,
-            privatePrice: 80,
-            display: 'From €80/month (Private Only)',
-            displayEl: 'Από €80/μήνα (Μόνο Ιδιωτικά)'
-        }
-    },
-    {
-        id: 'kids-physio',
-        name: "Kids' Physiotherapy",
-        nameEl: 'Παιδική Φυσιοθεραπεία',
-        description: 'Scoliosis screening, Developmental support',
-        order: 4,
-        providedBy: ['antonis', 'charalambos'],
-        pricing: {
-            type: 'custom',
-            gesyPrice: null,
-            privatePrice: null,
-            customText: 'Customized Packages',
-            customTextEl: 'Εξατομικευμένα Πακέτα',
-            display: 'Customized Packages',
-            displayEl: 'Εξατομικευμένα Πακέτα'
-        }
-    },
-    {
-        id: 'performance-training',
-        name: 'Performance Training',
-        nameEl: 'Προπόνηση Απόδοσης',
-        description: 'Sport-specific programming, Return-to-play protocols',
-        order: 5,
-        providedBy: ['antonis', 'charalambos'],
-        pricing: {
-            type: 'from',
-            gesyPrice: null,
-            privatePrice: 250,
-            display: 'From €250/month',
-            displayEl: 'Από €250/μήνα'
-        }
-    },
-    {
-        id: 'homecare-physio',
-        name: 'Home-care Physiotherapy',
-        nameEl: 'Φυσιοθεραπεία κατ\' Οίκον',
-        description: 'Professional physiotherapy in your home',
-        order: 6,
-        providedBy: ['antonis'],
-        pricing: {
-            type: 'fixed',
-            gesyPrice: 29,
-            privatePrice: 45,
-            display: '€29 GESY (+€15 travel) | From €45 Private',
-            displayEl: '€29 ΓΕΣΥ (+€15 μετακίνηση) | Από €45 Ιδιωτικά'
-        }
-    },
-    {
-        id: 'massage',
-        name: 'Sports & Remedial Massage',
-        nameEl: 'Αθλητικό & Θεραπευτικό Μασάζ',
-        description: 'Sports massage, Deep tissue, Recovery sessions',
-        order: 7,
-        providedBy: ['antonis', 'charalambos'],
-        pricing: {
-            type: 'from',
-            gesyPrice: null,
-            privatePrice: 45,
-            display: 'From €45 Private',
-            displayEl: 'Από €45 Ιδιωτικά'
-        }
-    }
-];
-
-const INITIAL_THERAPISTS = [
-    {
-        id: 'antonis',
-        name: 'Antonis Petri',
-        nameEl: 'Αντώνης Πέτρη',
-        title: 'Co-Founder & Lead Clinician',
-        titleEl: 'Συνιδρυτής & Επικεφαλής Κλινικός',
-        gesyCode: 'A2825',
-        email: 'righttrackphysio@gmail.com',
-        calendarEmail: 'righttrackphysio@gmail.com',
-        photo: '/assets/images/team/tony-photo.jpg',
-        services: ['physiotherapy', 'athlete-rehab', 'kids-physio', 'performance-training', 'homecare-physio', 'massage'],
-        isActive: true
-    },
-    {
-        id: 'charalambos',
-        name: 'Charalambos Gregoriou',
-        nameEl: 'Χαράλαμπος Γρηγορίου',
-        title: 'Co-Founder & Clinical Director',
-        titleEl: 'Συνιδρυτής & Κλινικός Διευθυντής',
-        gesyCode: 'A0000',
-        email: 'righttrackphysio@gmail.com',
-        calendarEmail: 'righttrackphysio@gmail.com',
-        photo: '/assets/images/team/charalambos-photo.jpg',
-        services: ['physiotherapy', 'athlete-rehab', 'kids-physio', 'performance-training', 'massage'],
-        isActive: true
-    },
-    {
-        id: 'alice',
-        name: 'Alice Kazanjian',
-        nameEl: 'Alice Kazanjian',
-        title: 'Clinical Pilates Instructor',
-        titleEl: 'Εκπαιδεύτρια Κλινικού Pilates',
-        gesyCode: 'A3509',
-        email: 'righttrackphysio@gmail.com',
-        calendarEmail: 'righttrackphysio@gmail.com',
-        photo: '/assets/images/team/alice-photo.jpg',
-        services: ['clinical-pilates'],
-        isActive: true
-    }
-];
+// Data is stored in Firebase only - managed via admin panel
 
 class AdminApp {
     constructor() {
@@ -308,11 +155,6 @@ class AdminApp {
             this.openServiceModal();
         });
 
-        // Sync Services Button
-        document.getElementById('sync-services-btn')?.addEventListener('click', () => {
-            this.syncInitialData();
-        });
-
         // Add Booking Modal
         document.getElementById('add-booking-btn').addEventListener('click', () => {
             this.openAddBookingModal();
@@ -353,11 +195,6 @@ class AdminApp {
                     this.closeModal(modalId);
                 }
             });
-        });
-
-        // Sync data button
-        document.getElementById('sync-data-btn').addEventListener('click', () => {
-            this.syncInitialData();
         });
 
         // Calendar controls
@@ -587,12 +424,15 @@ class AdminApp {
             ? new Date(localStorage.getItem('adminLastSeenTime'))
             : new Date();
 
-        // Load local data immediately for instant UI
-        this.services = INITIAL_SERVICES;
-        this.therapists = INITIAL_THERAPISTS;
+        // Initialize empty arrays, will be populated from Firebase
+        this.services = [];
+        this.therapists = [];
         this.bookings = [];
 
-        // Render UI immediately
+        // Load data from Firebase
+        await this.loadDataFromFirebase();
+
+        // Render UI after data is loaded
         this.populateTherapistFilter();
         this.renderTherapists();
         this.renderServices();
@@ -610,99 +450,6 @@ class AdminApp {
             this.startNotificationListener();
         } catch (error) {
             console.log('Firebase not available, using local data only');
-        }
-    }
-
-    async syncInitialData() {
-        const btn = document.getElementById('sync-data-btn');
-        if (!confirm('This will import the initial services and therapists data to Firebase. Continue?')) {
-            return;
-        }
-
-        btn.disabled = true;
-        btn.innerHTML = `
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin">
-                <polyline points="23 4 23 10 17 10"></polyline>
-                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
-            </svg>
-            Syncing...
-        `;
-
-        try {
-            // Sync services
-            for (const service of INITIAL_SERVICES) {
-                await this.db.collection('services').doc(service.id).set({
-                    ...service,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
-            }
-
-            // Sync therapists
-            for (const therapist of INITIAL_THERAPISTS) {
-                await this.db.collection('therapists').doc(therapist.id).set({
-                    ...therapist,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
-            }
-
-            this.showToast('Data synced successfully!');
-            btn.classList.add('hidden');
-
-            // Reload data
-            await this.loadServices();
-            await this.loadTherapists();
-
-        } catch (error) {
-            console.error('Sync error:', error);
-            this.showToast('Error syncing data: ' + error.message, 'error');
-            btn.disabled = false;
-            btn.innerHTML = `
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="23 4 23 10 17 10"></polyline>
-                    <polyline points="1 20 1 14 7 14"></polyline>
-                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-                </svg>
-                Sync Initial Data
-            `;
-        }
-    }
-
-    // Auto-sync without confirmation (called when Firebase is empty)
-    async autoSyncInitialData() {
-        try {
-            console.log('Auto-syncing services and therapists...');
-
-            // Sync services
-            for (const service of INITIAL_SERVICES) {
-                await this.db.collection('services').doc(service.id).set({
-                    ...service,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
-            }
-
-            // Sync therapists
-            for (const therapist of INITIAL_THERAPISTS) {
-                await this.db.collection('therapists').doc(therapist.id).set({
-                    ...therapist,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
-            }
-
-            console.log('Auto-sync completed');
-            this.showToast('Initial data loaded successfully!');
-
-            // Reload data
-            await this.loadServices();
-            await this.loadTherapists();
-
-        } catch (error) {
-            console.error('Auto-sync error:', error);
-            this.services = INITIAL_SERVICES;
-            this.renderServices();
         }
     }
 
@@ -731,10 +478,7 @@ class AdminApp {
             this.renderTherapists();
         } catch (error) {
             console.error('Error loading therapists:', error);
-            // Load from local data if Firebase fails
-            this.therapists = INITIAL_THERAPISTS;
-            this.populateTherapistFilter();
-            this.renderTherapists();
+            this.showToast('Error loading therapists', 'error');
         }
     }
 
@@ -847,20 +591,10 @@ class AdminApp {
                 id: doc.id,
                 ...doc.data()
             }));
-
-            // Auto-sync if no services in Firebase
-            if (this.services.length === 0) {
-                console.log('No services found, auto-syncing from code...');
-                await this.autoSyncInitialData();
-                return;
-            }
-
             this.renderServices();
         } catch (error) {
             console.error('Error loading services:', error);
-            // Load from local data if Firebase fails
-            this.services = INITIAL_SERVICES;
-            this.renderServices();
+            this.showToast('Error loading services', 'error');
         }
     }
 
