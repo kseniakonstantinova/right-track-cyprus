@@ -9,6 +9,7 @@ const INITIAL_SERVICES = [
         nameEl: 'Γενική Φυσιοθεραπεία',
         description: 'Back, Neck & Joint Pain, Neurological Rehab, Chronic Pain',
         order: 1,
+        providedBy: ['antonis', 'charalambos'],
         pricing: {
             type: 'fixed',
             gesyPrice: 29,
@@ -23,6 +24,7 @@ const INITIAL_SERVICES = [
         nameEl: 'Αποκατάσταση Αθλητών',
         description: 'Return to Sport, Sports Injury Rehab, Performance Recovery',
         order: 2,
+        providedBy: ['antonis', 'charalambos'],
         pricing: {
             type: 'fixed',
             gesyPrice: 29,
@@ -37,6 +39,7 @@ const INITIAL_SERVICES = [
         nameEl: 'Κλινικό Pilates',
         description: 'Small groups (max 4), Dynamic athletic approach',
         order: 3,
+        providedBy: ['alice'],
         pricing: {
             type: 'from',
             gesyPrice: null,
@@ -51,6 +54,7 @@ const INITIAL_SERVICES = [
         nameEl: 'Παιδική Φυσιοθεραπεία',
         description: 'Scoliosis screening, Developmental support',
         order: 4,
+        providedBy: ['antonis', 'charalambos'],
         pricing: {
             type: 'custom',
             gesyPrice: null,
@@ -67,6 +71,7 @@ const INITIAL_SERVICES = [
         nameEl: 'Προπόνηση Απόδοσης',
         description: 'Sport-specific programming, Return-to-play protocols',
         order: 5,
+        providedBy: ['antonis', 'charalambos'],
         pricing: {
             type: 'from',
             gesyPrice: null,
@@ -81,6 +86,7 @@ const INITIAL_SERVICES = [
         nameEl: 'Φυσιοθεραπεία κατ\' Οίκον',
         description: 'Professional physiotherapy in your home',
         order: 6,
+        providedBy: ['antonis'],
         pricing: {
             type: 'fixed',
             gesyPrice: 29,
@@ -95,6 +101,7 @@ const INITIAL_SERVICES = [
         nameEl: 'Αθλητικό & Θεραπευτικό Μασάζ',
         description: 'Sports massage, Deep tissue, Recovery sessions',
         order: 7,
+        providedBy: ['antonis', 'charalambos'],
         pricing: {
             type: 'from',
             gesyPrice: null,
