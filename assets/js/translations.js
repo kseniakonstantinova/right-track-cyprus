@@ -157,21 +157,14 @@ const translations = {
 };
 
 // Language switcher functionality
-let currentLang = localStorage.getItem('language') || 'en';
-
-function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('language', lang);
-    document.documentElement.lang = lang;
-    translatePage();
-    updateLanguageButtons();
-}
+// Detect language from page filename (index-el.html = Greek, otherwise English)
+let currentLang = window.location.pathname.includes('-el') ? 'el' : 'en';
 
 function translatePage() {
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
-        const translation = translations[currentLang][key];
+        const translation = translations[currentLang]?.[key];
         if (translation) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translation;
@@ -182,19 +175,7 @@ function translatePage() {
     });
 }
 
-function updateLanguageButtons() {
-    const buttons = document.querySelectorAll('.lang-btn');
-    buttons.forEach(btn => {
-        if (btn.getAttribute('data-lang') === currentLang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     translatePage();
-    updateLanguageButtons();
 });
