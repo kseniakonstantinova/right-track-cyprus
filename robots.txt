@@ -3,3 +3,6 @@ Allow: /
 
 # Block admin panel from indexing
 Disallow: /pages/manage-rtphysio-2026/
+
+# Sitemap
+Sitemap: https://righttrackphysio.com.cy/sitemap.xml
