@@ -286,6 +286,39 @@
     min-height: 100px;
 }
 
+/* Consent Checkboxes */
+.consent-group {
+    margin-top: 16px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--orange);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-label a {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.checkbox-label a:hover {
+    color: var(--navy);
+}
+
 /* Therapist Options */
 .therapist-options {
     display: flex;

@@ -321,6 +321,20 @@ class BookingApp {
                                 <textarea id="client-message" class="form-textarea" placeholder="${this.t('messagePlaceholder')}" rows="3"></textarea>
                             </div>
 
+                            <div class="form-group consent-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="consent-privacy" required>
+                                    <span>${this.t('consentPrivacy')} <a href="/pages/privacy.html" target="_blank">${this.t('privacyPolicy')}</a></span>
+                                </label>
+                            </div>
+
+                            <div class="form-group consent-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="consent-terms" required>
+                                    <span>${this.t('consentTerms')} <a href="/pages/terms.html" target="_blank">${this.t('termsConditions')}</a></span>
+                                </label>
+                            </div>
+
                             <button type="submit" class="submit-btn" id="submit-btn">
                                 ${this.t('submit')}
                             </button>
