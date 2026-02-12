@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Right Track Physiotherapy & Performance Centre Cyprus</title>
+    <meta name="description" content="Sports injury insights, rehabilitation tips, and physiotherapy expertise from the Right Track team in Nicosia, Cyprus.">
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://righttrackphysio.com.cy/pages/blog.html">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQT03Q3821"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQT03Q3821');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/logos/logo-new-no background.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog | Right Track Physiotherapy Cyprus">
+    <meta property="og:description" content="Sports injury insights, rehabilitation tips, and expert physiotherapy advice from Nicosia, Cyprus.">
+    <meta property="og:image" content="https://righttrackphysio.com.cy/assets/images/hero-team.jpg">
+    <meta property="og:url" content="https://righttrackphysio.com.cy/pages/blog.html">
+    <meta property="og:type" content="website">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --orange: #FF6B35;
+            --white: #ffffff;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --text-dark: #212529;
+            --text-gray: #6C757D;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation - Liquid Glass Effect */
+        header {
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.7) 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                rgba(255, 255, 255, 0.6) 100%
+            );
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow:
+                0 4px 30px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.5rem 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            flex: 1;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+        /* Liquid Glass Buttons */
+        .nav-cta-orange {
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+            background: linear-gradient(
+                135deg,
+                rgba(255, 107, 53, 0.95) 0%,
+                rgba(255, 107, 53, 0.7) 50%,
+                rgba(255, 107, 53, 0.85) 100%
+            );
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow:
+                0 4px 15px rgba(255, 107, 53, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-cta-orange:hover {
+            background: linear-gradient(
+                135deg,
+                rgba(10, 22, 40, 0.9) 0%,
+                rgba(10, 22, 40, 0.65) 50%,
+                rgba(10, 22, 40, 0.8) 100%
+            );
+            color: var(--white) !important;
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-book {
+            background: var(--orange);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-book:hover {
+            background: #e55a2b;
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--navy);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Hero */
+        .blog-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2940 100%);
+            padding: 80px 40px 60px;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            color: var(--white);
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .blog-hero h1 span {
+            color: var(--orange);
+        }
+
+        .blog-hero p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Tabs */
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 30px 40px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: 30px;
+            background: var(--white);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--orange);
+            color: var(--orange);
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--orange);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: var(--light-gray);
+        }
+
+        .blog-card-content {
+            padding: 24px;
+        }
+
+        .blog-card-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--orange);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .blog-card-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            color: var(--navy);
+        }
+
+        .blog-card-content p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .blog-card-meta img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .blog-card-meta .author-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* CTA Section */
+        .blog-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2940 100%);
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .blog-cta h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .blog-cta h2 span {
+            color: var(--orange);
+        }
+
+        .blog-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+
+        .blog-cta .btn-book {
+            display: inline-block;
+            padding: 14px 40px;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            border-top: 1px solid var(--light-gray);
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        footer .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--off-white);
+            color: var(--text-gray);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        footer .footer-social a:hover {
+            background: var(--orange);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        footer p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 80px 20px 20px;
+                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+                transition: right 0.3s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            nav ul.mobile-active {
+                right: 0;
+            }
+
+            nav li a {
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid var(--light-gray);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            nav {
+                padding: 0 20px;
+            }
+
+            .logo img {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logos/logo-new-no background.png" alt="Right Track Logo">
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="mobileMenu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#team">Team</a></li>
+                <li><a href="../index.html#gesy">GESY</a></li>
+                <li><a href="../index.html#partnerships">Partnerships</a></li>
+                <li><a href="../index.html#contact">Contacts</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="booking.html" class="nav-cta-orange">Book Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- Hero -->
+    <section class="blog-hero">
+        <h1>The <span>Right Track</span> Blog</h1>
+        <p>Sports injury insights, rehabilitation science, and expert tips from our physiotherapy team in Nicosia</p>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="blog-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="injury">Injury Decoded</button>
+        <button class="filter-btn" data-filter="case-study">Case Studies</button>
+        <button class="filter-btn" data-filter="science">Behind the Science</button>
+        <button class="filter-btn" data-filter="tips">Training Tips</button>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+
+        <!-- Article 1 -->
+        <a href="blog/acl-recovery-athletes-cyprus.html" class="blog-card" data-category="injury">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">ACL</div>
+            <div class="blog-card-content">
+                <span class="blog-card-tag">Injury Decoded</span>
+                <h3>ACL Tears: What 90% of Athletes Get Wrong About Recovery</h3>
+                <p>The timeline most physios give you is wrong. Here's what the latest research actually says about returning to sport after ACL reconstruction.</p>
+                <div class="blog-card-meta">
+                    <span class="author-name">Antonis Petri</span>
+                    <span>|</span>
+                    <span>8 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="blog/ankle-sprain-rehabilitation-guide.html" class="blog-card" data-category="injury">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 700; padding: 20px; text-align: center;">Ankle<br>Sprains</div>
+            <div class="blog-card-content">
+                <span class="blog-card-tag">Injury Decoded</span>
+                <h3>Why Your Ankle Sprain Keeps Coming Back (And How to Fix It for Good)</h3>
+                <p>That ankle you "rolled" 3 years ago? It's still affecting your performance. Here's the rehab protocol athletes actually need.</p>
+                <div class="blog-card-meta">
+                    <span class="author-name">Antonis Petri</span>
+                    <span>|</span>
+                    <span>6 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Article 3 (Coming Soon placeholder) -->
+        <div class="blog-card" style="opacity: 0.6; cursor: default;" data-category="case-study">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, var(--light-gray) 0%, #ddd 100%); display: flex; align-items: center; justify-content: center; color: var(--text-gray); font-size: 1.2rem; font-weight: 600;">Coming Soon</div>
+            <div class="blog-card-content">
+                <span class="blog-card-tag">Case Study</span>
+                <h3>From Torn Meniscus to Match Day: A Footballer's 4-Month Journey</h3>
+                <p>A real patient's recovery story — from injury diagnosis through rehabilitation to stepping back on the pitch.</p>
+                <div class="blog-card-meta">
+                    <span class="author-name">Antonis Petri</span>
+                    <span>|</span>
+                    <span>Coming soon</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="blog-cta">
+        <h2>Ready to get back <span>on track?</span></h2>
+        <p>Book your assessment with our sports physiotherapy team</p>
+        <a href="booking.html" class="btn-book">Book Appointment</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/righttrackrehab" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1C6r7VUWx6/" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/antonis-petri-040012241" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+        </div>
+        <p>&copy; 2026 Right Track Rehabilitation & Performance Centre</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            const btn = document.querySelector('.mobile-menu-btn');
+            menu.classList.toggle('mobile-active');
+            overlay.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Blog filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.blog-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

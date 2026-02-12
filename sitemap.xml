@@ -84,4 +84,24 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Blog -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Articles -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/ankle-sprain-rehabilitation-guide.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>

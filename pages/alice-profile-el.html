@@ -11,6 +11,15 @@
     <link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/alice-profile.html">
     <link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/alice-profile-el.html">
 
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQT03Q3821"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQT03Q3821');
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/images/logos/logo-new-no background.png">
 
@@ -996,6 +1005,25 @@
             text-decoration: underline;
         }
 
+        /* Footer Social */
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-social a {
+            color: var(--text-gray);
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            color: var(--orange);
+            transform: translateY(-2px);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .profile-hero-content {
@@ -1369,6 +1397,17 @@
     <!-- Footer -->
     <footer>
         <div class="container">
+            <div class="footer-social">
+                <a href="https://www.instagram.com/righttrackrehab" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="https://www.facebook.com/share/1C6r7VUWx6/" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/antonis-petri-040012241" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </div>
             <p>&copy; 2026 Right Track Rehabilitation & Performance Centre. Με επιφύλαξη παντός δικαιώματος.</p>
             <p>Εγγεγραμμένοι Ειδικοί ΓΕΣΥ | Λευκωσία, Κύπρος</p>
         </div>
