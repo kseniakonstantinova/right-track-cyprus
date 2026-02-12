@@ -104,4 +104,40 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/when-to-see-physiotherapist.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
