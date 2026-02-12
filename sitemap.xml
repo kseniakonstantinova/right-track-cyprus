@@ -84,58 +84,150 @@
         <priority>0.7</priority>
     </url>
 
-    <!-- Blog -->
+    <!-- Blog - English -->
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog-el.html"/>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Blog Articles -->
+    <!-- Blog - Greek -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog-el.html"/>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Articles - English -->
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus-el.html"/>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/ankle-sprain-rehabilitation-guide.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/ankle-sprain-rehabilitation-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/ankle-sprain-rehabilitation-guide-el.html"/>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study-el.html"/>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide-el.html"/>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth-el.html"/>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide-el.html"/>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/when-to-see-physiotherapist.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/when-to-see-physiotherapist.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/when-to-see-physiotherapist-el.html"/>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Blog Articles - Greek -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/ankle-sprain-rehabilitation-guide-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/ankle-sprain-rehabilitation-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/ankle-sprain-rehabilitation-guide-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/when-to-see-physiotherapist-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/when-to-see-physiotherapist.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/when-to-see-physiotherapist-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises-el.html"/>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

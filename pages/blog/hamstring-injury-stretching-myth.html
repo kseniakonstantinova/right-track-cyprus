@@ -9,6 +9,9 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth.html">
+    <link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth.html">
+    <link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth-el.html">
+
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQT03Q3821"></script>
@@ -409,9 +412,77 @@
         footer p { color: var(--text-gray); margin-bottom: 0.5rem; font-size: 0.9rem; }
         footer a { color: var(--orange); text-decoration: none; }
 
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--light-gray);
+            color: var(--text-dark);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        .lang-btn.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* Mobile Language Switcher */
+        .mobile-lang-switcher {
+            display: none;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .mobile-lang-switcher .lang-btn {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            border: none;
+            background: transparent;
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .mobile-lang-switcher .lang-btn.active {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .mobile-lang-switcher .lang-btn:hover {
+            color: var(--orange);
+        }
+
         @media (max-width: 1024px) {
             .mobile-menu-btn {
                 display: flex;
+            }
+
+            .mobile-lang-switcher {
+                display: flex;
+            }
+
+            .language-switcher {
+                display: none;
             }
 
             nav ul {

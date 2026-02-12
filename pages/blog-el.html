@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Right Track Physiotherapy & Performance Centre Cyprus</title>
-    <meta name="description" content="Sports injury insights, rehabilitation tips, and physiotherapy expertise from the Right Track team in Nicosia, Cyprus.">
+    <title>Blog | Right Track Φυσιοθεραπεία & Κέντρο Απόδοσης Κύπρος</title>
+    <meta name="description" content="Πληροφορίες για αθλητικούς τραυματισμούς, συμβουλές αποκατάστασης και εξειδικευμένη γνώση φυσιοθεραπείας από την ομάδα Right Track στη Λευκωσία, Κύπρο.">
 
     <!-- Canonical & Hreflang -->
-    <link rel="canonical" href="https://righttrackphysio.com.cy/pages/blog.html">
+    <link rel="canonical" href="https://righttrackphysio.com.cy/pages/blog-el.html">
     <link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog.html">
     <link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog-el.html">
-
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQT03Q3821"></script>
@@ -25,11 +24,12 @@
     <link rel="icon" type="image/png" href="../assets/images/logos/logo-new-no background.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Blog | Right Track Physiotherapy Cyprus">
-    <meta property="og:description" content="Sports injury insights, rehabilitation tips, and expert physiotherapy advice from Nicosia, Cyprus.">
+    <meta property="og:title" content="Blog | Right Track Φυσιοθεραπεία Κύπρος">
+    <meta property="og:description" content="Πληροφορίες για αθλητικούς τραυματισμούς, συμβουλές αποκατάστασης και εξειδικευμένη φυσιοθεραπευτική γνώση από τη Λευκωσία, Κύπρο.">
     <meta property="og:image" content="https://righttrackphysio.com.cy/assets/images/hero-team.jpg">
-    <meta property="og:url" content="https://righttrackphysio.com.cy/pages/blog.html">
+    <meta property="og:url" content="https://righttrackphysio.com.cy/pages/blog-el.html">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="el_CY">
 
     <style>
         * {
@@ -123,6 +123,65 @@
         }
 
         nav a:hover {
+            color: var(--orange);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--light-gray);
+            color: var(--text-dark);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        .lang-btn.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* Mobile Language Switcher */
+        .mobile-lang-switcher {
+            display: none;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .mobile-lang-switcher .lang-btn {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            border: none;
+            background: transparent;
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .mobile-lang-switcher .lang-btn.active {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .mobile-lang-switcher .lang-btn:hover {
             color: var(--orange);
         }
 
@@ -358,13 +417,6 @@
             color: var(--text-gray);
         }
 
-        .blog-card-meta img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
         .blog-card-meta .author-name {
             font-weight: 600;
             color: var(--text-dark);
@@ -445,66 +497,6 @@
             text-decoration: none;
         }
 
-
-        /* Language Switcher */
-        .language-switcher {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            margin-left: 15px;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 2px solid var(--light-gray);
-            color: var(--text-dark);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .lang-btn:hover {
-            border-color: var(--orange);
-            color: var(--orange);
-        }
-
-        .lang-btn.active {
-            background: var(--navy);
-            border-color: var(--navy);
-            color: var(--white);
-        }
-
-        /* Mobile Language Switcher */
-        .mobile-lang-switcher {
-            display: none;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .mobile-lang-switcher .lang-btn {
-            padding: 6px 12px;
-            font-size: 0.85rem;
-            border: none;
-            background: transparent;
-            color: var(--text-dark);
-            font-weight: 500;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .mobile-lang-switcher .lang-btn.active {
-            color: var(--navy);
-            font-weight: 700;
-        }
-
-        .mobile-lang-switcher .lang-btn:hover {
-            color: var(--orange);
-        }
-
         /* Responsive */
         @media (max-width: 1024px) {
             .mobile-menu-btn {
@@ -571,23 +563,31 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="../index.html" class="logo">
+            <a href="../index-el.html" class="logo">
                 <img src="../assets/images/logos/logo-new-no background.png" alt="Right Track Logo">
             </a>
+            <div class="mobile-lang-switcher">
+                <a href="blog.html" class="lang-btn">EN</a>
+                <span class="lang-btn active">ΕΛ</span>
+            </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul id="mobileMenu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#services">Services</a></li>
-                <li><a href="../index.html#team">Team</a></li>
-                <li><a href="../index.html#gesy">GESY</a></li>
-                <li><a href="../index.html#partnerships">Partnerships</a></li>
-                <li><a href="../index.html#contact">Contacts</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="booking.html" class="nav-cta-orange">Book Online</a></li>
+                <li><a href="../index-el.html">Αρχική</a></li>
+                <li><a href="../index-el.html#services">Υπηρεσίες</a></li>
+                <li><a href="../index-el.html#team">Ομάδα</a></li>
+                <li><a href="../index-el.html#gesy">ΓΕΣΥ</a></li>
+                <li><a href="../index-el.html#partnerships">Συνεργασίες</a></li>
+                <li><a href="../index-el.html#contact">Επικοινωνία</a></li>
+                <li><a href="blog-el.html">Blog</a></li>
+                <li><a href="booking.html?lang=el" class="nav-cta-orange">Κλείστε Online</a></li>
+                <li class="language-switcher">
+                    <a href="blog.html" class="lang-btn">EN</a>
+                    <span class="lang-btn active">ΕΛ</span>
+                </li>
             </ul>
         </nav>
     </header>
@@ -597,138 +597,138 @@
 
     <!-- Hero -->
     <section class="blog-hero">
-        <h1>The <span>Right Track</span> Blog</h1>
-        <p>Sports injury insights, rehabilitation science, and expert tips from our physiotherapy team in Nicosia</p>
+        <h1>Το <span>Right Track</span> Blog</h1>
+        <p>Πληροφορίες για αθλητικούς τραυματισμούς, επιστήμη αποκατάστασης και συμβουλές ειδικών από την ομάδα φυσιοθεραπείας μας στη Λευκωσία</p>
     </section>
 
     <!-- Filter Tabs -->
     <div class="blog-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="injury">Injury Decoded</button>
-        <button class="filter-btn" data-filter="case-study">Case Studies</button>
-        <button class="filter-btn" data-filter="science">Behind the Science</button>
-        <button class="filter-btn" data-filter="tips">Training Tips</button>
+        <button class="filter-btn active" data-filter="all">Όλα</button>
+        <button class="filter-btn" data-filter="injury">Ανάλυση Τραυματισμών</button>
+        <button class="filter-btn" data-filter="case-study">Κλινικές Περιπτώσεις</button>
+        <button class="filter-btn" data-filter="science">Πίσω από την Επιστήμη</button>
+        <button class="filter-btn" data-filter="tips">Συμβουλές</button>
     </div>
 
     <!-- Blog Grid -->
     <div class="blog-grid">
 
         <!-- Article: ACL Recovery -->
-        <a href="blog/acl-recovery-athletes-cyprus.html" class="blog-card" data-category="injury">
+        <a href="blog/acl-recovery-athletes-cyprus-el.html" class="blog-card" data-category="injury">
             <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">ACL</div>
             <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>ACL Tears: What 90% of Athletes Get Wrong About Recovery</h3>
-                <p>The timeline most physios give you is wrong. Here's what the latest research actually says about returning to sport after ACL reconstruction.</p>
+                <span class="blog-card-tag">Ανάλυση Τραυματισμών</span>
+                <h3>Ρήξη ΠΧΣ: Τι Κάνει Λάθος το 90% των Αθλητών στην Αποκατάσταση</h3>
+                <p>Το χρονοδιάγραμμα που δίνουν οι περισσότεροι φυσιοθεραπευτές είναι λανθασμένο. Δείτε τι λέει πραγματικά η τελευταία έρευνα.</p>
                 <div class="blog-card-meta">
                     <span class="author-name">Antonis Petri</span>
                     <span>|</span>
-                    <span>8 min read</span>
+                    <span>8 λεπτά</span>
                 </div>
             </div>
         </a>
 
         <!-- Article: Ankle Sprain -->
-        <a href="blog/ankle-sprain-rehabilitation-guide.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 700; padding: 20px; text-align: center;">Ankle<br>Sprains</div>
+        <a href="blog/ankle-sprain-rehabilitation-guide-el.html" class="blog-card" data-category="injury">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 700; padding: 20px; text-align: center;">Διάστρεμμα<br>Αστραγάλου</div>
             <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>Why Your Ankle Sprain Keeps Coming Back (And How to Fix It for Good)</h3>
-                <p>That ankle you "rolled" 3 years ago? It's still affecting your performance. Here's the rehab protocol athletes actually need.</p>
+                <span class="blog-card-tag">Ανάλυση Τραυματισμών</span>
+                <h3>Γιατί το Διάστρεμμα του Αστραγάλου σας Επαναλαμβάνεται (Και Πώς να το Διορθώσετε Οριστικά)</h3>
+                <p>Ο αστράγαλος που «γυρίσατε» πριν 3 χρόνια; Εξακολουθεί να επηρεάζει την απόδοσή σας.</p>
                 <div class="blog-card-meta">
                     <span class="author-name">Antonis Petri</span>
                     <span>|</span>
-                    <span>6 min read</span>
+                    <span>6 λεπτά</span>
                 </div>
             </div>
         </a>
 
         <!-- Article: Runner Exercises -->
-        <a href="blog/runner-injury-prevention-exercises.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #ff8c5a 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; font-weight: 700; padding: 20px; text-align: center;">5 Runner<br>Exercises</div>
+        <a href="blog/runner-injury-prevention-exercises-el.html" class="blog-card" data-category="tips">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #ff8c5a 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; font-weight: 700; padding: 20px; text-align: center;">5 Ασκήσεις<br>για Δρομείς</div>
             <div class="blog-card-content">
-                <span class="blog-card-tag">Tips & Guides</span>
-                <h3>The 5 Exercises Every Runner in Cyprus Should Be Doing</h3>
-                <p>Running is simple — until injuries stop you. These 5 exercises take 15 minutes and prevent the most common running injuries.</p>
+                <span class="blog-card-tag">Συμβουλές</span>
+                <h3>Οι 5 Ασκήσεις που Κάθε Δρομέας στην Κύπρο Πρέπει να Κάνει</h3>
+                <p>Το τρέξιμο είναι απλό — μέχρι να σας σταματήσουν οι τραυματισμοί. Αυτές οι 5 ασκήσεις χρειάζονται 15 λεπτά.</p>
                 <div class="blog-card-meta">
                     <span class="author-name">Antonis Petri</span>
                     <span>|</span>
-                    <span>6 min read</span>
+                    <span>6 λεπτά</span>
                 </div>
             </div>
         </a>
 
         <!-- Article: When to See a Physio -->
-        <a href="blog/when-to-see-physiotherapist.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #2c3e5a 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Physio<br>or Wait?</div>
+        <a href="blog/when-to-see-physiotherapist-el.html" class="blog-card" data-category="tips">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #2c3e5a 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Φυσικοθεραπευτής<br>ή Αναμονή;</div>
             <div class="blog-card-content">
-                <span class="blog-card-tag">Tips & Guides</span>
-                <h3>When to See a Physio vs When to Wait It Out (A Honest Guide)</h3>
-                <p>Not every ache needs a physiotherapist. But some do. Here's how to tell the difference.</p>
+                <span class="blog-card-tag">Συμβουλές</span>
+                <h3>Πότε να Επισκεφθείτε Φυσιοθεραπευτή και Πότε να Περιμένετε (Ειλικρινής Οδηγός)</h3>
+                <p>Δεν χρειάζεται κάθε πόνος φυσιοθεραπευτή. Αλλά κάποιοι χρειάζονται. Δείτε πώς να ξεχωρίσετε.</p>
                 <div class="blog-card-meta">
                     <span class="author-name">Antonis Petri</span>
                     <span>|</span>
-                    <span>5 min read</span>
+                    <span>5 λεπτά</span>
                 </div>
             </div>
         </a>
 
         <!-- Article: GESY Guide -->
-        <a href="blog/gesy-physiotherapy-cyprus-guide.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a3a5c 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800; padding: 20px; text-align: center;">GESY<br>Guide</div>
+        <a href="blog/gesy-physiotherapy-cyprus-guide-el.html" class="blog-card" data-category="tips">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a3a5c 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800; padding: 20px; text-align: center;">Οδηγός<br>ΓΕΣΥ</div>
             <div class="blog-card-content">
-                <span class="blog-card-tag">Tips & Guides</span>
-                <h3>GESY Physiotherapy in Cyprus: Everything You Need to Know in 2026</h3>
-                <p>How many sessions do you get? Do you need a referral? Everything about accessing physiotherapy through the national health system.</p>
+                <span class="blog-card-tag">Συμβουλές</span>
+                <h3>Φυσιοθεραπεία ΓΕΣΥ στην Κύπρο: Όλα Όσα Πρέπει να Γνωρίζετε το 2026</h3>
+                <p>Πόσες συνεδρίες δικαιούστε; Χρειάζεστε παραπεμπτικό; Όλα όσα πρέπει να ξέρετε για τη φυσιοθεραπεία μέσω ΓΕΣΥ.</p>
                 <div class="blog-card-meta">
                     <span class="author-name">Antonis Petri</span>
                     <span>|</span>
-                    <span>5 min read</span>
+                    <span>5 λεπτά</span>
                 </div>
             </div>
         </a>
 
         <!-- Article: Hamstring Myth -->
-        <a href="blog/hamstring-injury-stretching-myth.html" class="blog-card" data-category="science">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #e55a2b 0%, #c44a20 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Hamstring<br>Myth</div>
+        <a href="blog/hamstring-injury-stretching-myth-el.html" class="blog-card" data-category="science">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #e55a2b 0%, #c44a20 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Μύθος<br>Οπισθίων</div>
             <div class="blog-card-content">
-                <span class="blog-card-tag">Behind the Science</span>
-                <h3>Why Stretching Alone Won't Fix Your Hamstring (What Actually Works)</h3>
-                <p>Still stretching every morning? Here's why the stretch-only approach fails and what the evidence says actually works.</p>
+                <span class="blog-card-tag">Πίσω από την Επιστήμη</span>
+                <h3>Γιατί το Τέντωμα Μόνο του Δεν Θα Διορθώσει τους Οπισθίους Μηριαίους σας</h3>
+                <p>Ακόμα τεντώνεστε κάθε πρωί; Δείτε γιατί η προσέγγιση «μόνο τέντωμα» αποτυγχάνει.</p>
                 <div class="blog-card-meta">
                     <span class="author-name">Antonis Petri</span>
                     <span>|</span>
-                    <span>6 min read</span>
+                    <span>6 λεπτά</span>
                 </div>
             </div>
         </a>
 
         <!-- Article: Shoulder Impingement -->
-        <a href="blog/shoulder-impingement-treatment-guide.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #243447 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Shoulder<br>Pain</div>
+        <a href="blog/shoulder-impingement-treatment-guide-el.html" class="blog-card" data-category="injury">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #243447 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Πόνος<br>στον Ώμο</div>
             <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>Shoulder Impingement: The Injury That Doesn't Care If You're an Athlete</h3>
-                <p>Shoulder pain when reaching overhead? It affects everyone from desk workers to swimmers. Here's how to fix it.</p>
+                <span class="blog-card-tag">Ανάλυση Τραυματισμών</span>
+                <h3>Σύνδρομο Πρόσκρουσης Ώμου: Ο Τραυματισμός που Δεν Ενδιαφέρεται αν Είστε Αθλητής</h3>
+                <p>Πόνος στον ώμο όταν σηκώνετε το χέρι; Επηρεάζει τους πάντες, από υπαλλήλους γραφείου μέχρι κολυμβητές.</p>
                 <div class="blog-card-meta">
                     <span class="author-name">Antonis Petri</span>
                     <span>|</span>
-                    <span>7 min read</span>
+                    <span>7 λεπτά</span>
                 </div>
             </div>
         </a>
 
         <!-- Article: Meniscus Case Study -->
-        <a href="blog/meniscus-tear-recovery-case-study.html" class="blog-card" data-category="case-study">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #0A1628 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Case<br>Study</div>
+        <a href="blog/meniscus-tear-recovery-case-study-el.html" class="blog-card" data-category="case-study">
+            <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #0A1628 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Κλινική<br>Περίπτωση</div>
             <div class="blog-card-content">
-                <span class="blog-card-tag">Case Study</span>
-                <h3>From Torn Meniscus to Match Day: A Footballer's Recovery Story</h3>
-                <p>How a 28-year-old amateur footballer returned to competitive play 16 weeks after a meniscus tear.</p>
+                <span class="blog-card-tag">Κλινική Περίπτωση</span>
+                <h3>Από Ρήξη Μηνίσκου σε Αγωνιστική Δράση: Η Ιστορία Αποκατάστασης ενός Ποδοσφαιριστή</h3>
+                <p>Πώς ένας 28χρονος ερασιτέχνης ποδοσφαιριστής επέστρεψε στο γήπεδο 16 εβδομάδες μετά από ρήξη μηνίσκου.</p>
                 <div class="blog-card-meta">
                     <span class="author-name">Antonis Petri</span>
                     <span>|</span>
-                    <span>7 min read</span>
+                    <span>7 λεπτά</span>
                 </div>
             </div>
         </a>
@@ -737,9 +737,9 @@
 
     <!-- CTA -->
     <section class="blog-cta">
-        <h2>Ready to get back <span>on track?</span></h2>
-        <p>Book your assessment with our sports physiotherapy team</p>
-        <a href="booking.html" class="btn-book">Book Appointment</a>
+        <h2>Έτοιμοι να επιστρέψετε <span>στο σωστό δρόμο;</span></h2>
+        <p>Κλείστε την αξιολόγησή σας με την ομάδα αθλητικής φυσιοθεραπείας μας</p>
+        <a href="booking.html?lang=el" class="btn-book">Κλείστε Ραντεβού</a>
     </section>
 
     <!-- Footer -->
@@ -756,7 +756,7 @@
             </a>
         </div>
         <p>&copy; 2026 Right Track Rehabilitation & Performance Centre</p>
-        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+        <p><a href="privacy-el.html">Πολιτική Απορρήτου</a> | <a href="terms-el.html">Όροι & Προϋποθέσεις</a></p>
     </footer>
 
     <script>
