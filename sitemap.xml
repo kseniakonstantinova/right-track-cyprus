@@ -120,6 +120,24 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Seminar - English -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/seminar-muay-thai.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai-el.html"/>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Seminar - Greek -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/seminar-muay-thai-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai-el.html"/>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Blog Articles - English -->
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus.html</loc>
@@ -185,7 +203,23 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/injury-prevention-combat-sports.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/injury-prevention-combat-sports.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/injury-prevention-combat-sports-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Blog Articles - Greek -->
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/injury-prevention-combat-sports-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/injury-prevention-combat-sports.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/injury-prevention-combat-sports-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus-el.html</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus.html"/>
