@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Νέα Κοινότητας & Εκδηλώσεις | Right Track Physiotherapy Cyprus</title>
-    <meta name="description" content="Νέα κοινότητας, σεμινάρια πρόληψης τραυματισμών, αθλητικά camps και εκδηλώσεις από τη Right Track Physiotherapy στη Λευκωσία, Κύπρο. Αθλητική επιστήμη για κάθε αθλητή.">
+    <title>Community News & Events | Right Track Physiotherapy Cyprus</title>
+    <meta name="description" content="Community news, seminars, workshops, and sports events by Right Track Physiotherapy. Practical injury prevention and performance knowledge for athletes in Cyprus.">
 
     <!-- Canonical & Hreflang -->
-    <link rel="canonical" href="https://righttrackphysio.com.cy/pages/events-el.html">
-    <link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/events.html">
-    <link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/events-el.html">
+    <link rel="canonical" href="https://righttrackphysio.com.cy/pages/community.html">
+    <link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/community.html">
+    <link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/community-el.html">
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQT03Q3821"></script>
@@ -24,12 +24,11 @@
     <link rel="icon" type="image/png" href="../assets/images/logos/logo-new-no background.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Εκδηλώσεις & Σεμινάρια | Right Track Physiotherapy Cyprus">
-    <meta property="og:description" content="Σεμινάρια πρόληψης τραυματισμών, αθλητικά camps και κοινοτικές εκδηλώσεις από τη Right Track Physiotherapy στη Λευκωσία, Κύπρο.">
+    <meta property="og:title" content="Events & Workshops | Right Track Physiotherapy Cyprus">
+    <meta property="og:description" content="Seminars, workshops, and sports events by Right Track Physiotherapy. Practical injury prevention and performance knowledge for athletes in Cyprus.">
     <meta property="og:image" content="https://righttrackphysio.com.cy/assets/images/hero-team.jpg">
-    <meta property="og:url" content="https://righttrackphysio.com.cy/pages/events-el.html">
+    <meta property="og:url" content="https://righttrackphysio.com.cy/pages/community.html">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="el_CY">
 
     <style>
         * {
@@ -123,69 +122,6 @@
         }
 
         nav a:hover {
-            color: var(--orange);
-        }
-
-        .nav-active {
-            color: var(--orange) !important;
-        }
-
-        /* Language Switcher */
-        .language-switcher {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            margin-left: 15px;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 2px solid var(--light-gray);
-            color: var(--text-dark);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .lang-btn:hover {
-            border-color: var(--orange);
-            color: var(--orange);
-        }
-
-        .lang-btn.active {
-            background: var(--navy);
-            border-color: var(--navy);
-            color: var(--white);
-        }
-
-        /* Mobile Language Switcher */
-        .mobile-lang-switcher {
-            display: none;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .mobile-lang-switcher .lang-btn {
-            padding: 6px 12px;
-            font-size: 0.85rem;
-            border: none;
-            background: transparent;
-            color: var(--text-dark);
-            font-weight: 500;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .mobile-lang-switcher .lang-btn.active {
-            color: var(--navy);
-            font-weight: 700;
-        }
-
-        .mobile-lang-switcher .lang-btn:hover {
             color: var(--orange);
         }
 
@@ -315,7 +251,7 @@
         .events-hero p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.15rem;
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -323,9 +259,9 @@
         .events-grid {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 40px;
+            padding: 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
         }
 
@@ -350,8 +286,13 @@
         .event-card-image {
             width: 100%;
             height: 220px;
-            object-fit: cover;
-            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            font-weight: 800;
+            position: relative;
         }
 
         .event-badge {
@@ -364,16 +305,16 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            z-index: 2;
+            z-index: 1;
         }
 
         .event-badge.upcoming {
-            background: rgba(255, 107, 53, 0.95);
+            background: var(--orange);
             color: var(--white);
         }
 
-        .event-badge.soon {
-            background: rgba(10, 22, 40, 0.85);
+        .event-badge.coming-soon {
+            background: var(--navy);
             color: var(--white);
         }
 
@@ -384,7 +325,7 @@
         .event-card-content h3 {
             font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.3;
             color: var(--navy);
         }
@@ -396,39 +337,16 @@
             margin-bottom: 16px;
         }
 
-        .event-details {
+        .event-details-line {
             display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            padding-top: 16px;
-            border-top: 1px solid var(--light-gray);
-        }
-
-        .event-details svg {
-            flex-shrink: 0;
-        }
-
-        .event-cta-row {
-            display: flex;
-            justify-content: flex-end;
-            padding: 0 24px 24px;
-        }
-
-        .event-link {
-            display: inline-flex;
             align-items: center;
             gap: 6px;
-            color: var(--orange);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: gap 0.2s ease;
+            font-size: 0.85rem;
+            color: var(--text-gray);
         }
 
-        .event-card:hover .event-link {
-            gap: 10px;
+        .event-details-line svg {
+            flex-shrink: 0;
         }
 
         /* CTA Section */
@@ -436,7 +354,7 @@
             background: linear-gradient(135deg, var(--navy) 0%, #1a2940 100%);
             padding: 60px 40px;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .events-cta h2 {
@@ -453,9 +371,6 @@
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 24px;
             font-size: 1.05rem;
-            max-width: 550px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .events-cta .btn-book {
@@ -509,6 +424,65 @@
             text-decoration: none;
         }
 
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--light-gray);
+            color: var(--text-dark);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        .lang-btn.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        /* Mobile Language Switcher */
+        .mobile-lang-switcher {
+            display: none;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .mobile-lang-switcher .lang-btn {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            border: none;
+            background: transparent;
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .mobile-lang-switcher .lang-btn.active {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .mobile-lang-switcher .lang-btn:hover {
+            color: var(--orange);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .mobile-menu-btn {
@@ -557,7 +531,8 @@
 
             .events-grid {
                 grid-template-columns: 1fr;
-                padding: 30px 20px;
+                padding: 20px;
+                gap: 20px;
             }
 
             nav {
@@ -575,12 +550,12 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="../index-el.html" class="logo">
+            <a href="../index.html" class="logo">
                 <img src="../assets/images/logos/logo-new-no background.png" alt="Right Track Logo">
             </a>
             <div class="mobile-lang-switcher">
-                <a href="events.html" class="lang-btn">EN</a>
-                <span class="lang-btn active">ΕΛ</span>
+                <span class="lang-btn active">EN</span>
+                <a href="community-el.html" class="lang-btn">EL</a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                 <span></span>
@@ -588,17 +563,17 @@
                 <span></span>
             </button>
             <ul id="mobileMenu">
-                <li><a href="../index-el.html">Αρχική</a></li>
-                <li><a href="../index-el.html#services">Υπηρεσίες</a></li>
-                <li><a href="../index-el.html#team">Ομάδα</a></li>
-                <li><a href="../index-el.html#gesy">ΓΕΣΥ</a></li>
-                <li><a href="../index-el.html#contact">Επικοινωνία</a></li>
-                <li><a href="blog-el.html">Ιστολόγιο</a></li>
-                <li><a href="events-el.html" class="nav-active">Κοινότητα</a></li>
-                <li><a href="booking.html?lang=el" class="nav-cta-orange">Κλείσε Ραντεβού</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#team">Team</a></li>
+                <li><a href="../index.html#gesy">GESY</a></li>
+                <li><a href="../index.html#contact">Contacts</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="community.html" style="color: var(--orange);">Community</a></li>
+                <li><a href="booking.html" class="nav-cta-orange">Book Online</a></li>
                 <li class="language-switcher">
-                    <a href="events.html" class="lang-btn">EN</a>
-                    <span class="lang-btn active">ΕΛ</span>
+                    <span class="lang-btn active">EN</span>
+                    <a href="community-el.html" class="lang-btn">EL</a>
                 </li>
             </ul>
         </nav>
@@ -609,37 +584,57 @@
 
     <!-- Hero -->
     <section class="events-hero">
-        <h1>Νέα Κοινότητας & <span>Εκδηλώσεις</span></h1>
-        <p>Σεμινάρια, camps, αγώνες και άλλες κοινοτικές εκδηλώσεις που φέρνουν την αθλητική επιστήμη στους αθλητές σε όλη την Κύπρο.</p>
+        <h1>Community News & <span>Events</span></h1>
+        <p>Seminars, camps, games and other community events bringing sports science to athletes across Cyprus.</p>
     </section>
 
     <!-- Events Grid -->
     <div class="events-grid">
 
         <!-- Event 1: Muay Thai Seminar -->
-        <a href="seminar-muay-thai-el.html" class="event-card">
-            <span class="event-badge upcoming">Προσεχώς</span>
-            <div class="event-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #e55a2b 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">MT</div>
+        <a href="seminar-muay-thai.html" class="event-card">
+            <div class="event-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #e55a2b 100%);">
+                <span class="event-badge upcoming">Upcoming</span>
+                MUAY THAI
+            </div>
             <div class="event-card-content">
-                <h3>Προπονήσου Σκληρά. Μάχου Έξυπνα. Μείνε Χωρίς Τραυματισμούς.</h3>
-                <p>Σεμινάριο πρόληψης τραυματισμών 90 λεπτών για αθλητές μαχητικών αθλημάτων. Από τον φυσιοθεραπευτή Αντώνη Πέτρι.</p>
-                <div class="event-details">
+                <h3>Train Hard. Fight Smart. Stay Injury-Free.</h3>
+                <p>90-minute injury prevention seminar for combat sports athletes. By physiotherapist Antonis Petri.</p>
+                <div class="event-details-line">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    <span>4 Απριλίου 2026 | Muay Thai Warriors Gym, Λευκωσία</span>
+                    April 4, 2026 &nbsp;|&nbsp; Muay Thai Warriors Gym, Nicosia
                 </div>
             </div>
         </a>
 
         <!-- Event 2: Padel Camp -->
-        <a href="padel-camp-el.html" class="event-card">
-            <span class="event-badge upcoming">Προσεχώς</span>
-            <div class="event-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #2d7a4f 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: 800;">PADEL</div>
+        <a href="padel-camp.html" class="event-card">
+            <div class="event-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #2d7a4f 100%);">
+                <span class="event-badge upcoming">Upcoming</span>
+                PADEL
+            </div>
             <div class="event-card-content">
                 <h3>The Padel Camp Cyprus 2026</h3>
-                <p>5-ήμερο εντατικό padel camp με αθλητική φυσιοθεραπεία, υπηρεσίες αποκατάστασης και πρόληψη τραυματισμών από τη Right Track.</p>
-                <div class="event-details">
+                <p>5-day intensive padel camp with on-site sports physiotherapy, recovery services, and injury prevention by Right Track.</p>
+                <div class="event-details-line">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    <span>13&ndash;19 Απριλίου 2026 | Limassol Padel Club</span>
+                    April 13&ndash;19, 2026 &nbsp;|&nbsp; Limassol Padel Club
+                </div>
+            </div>
+        </a>
+
+        <!-- News: PAEEK × Dragon Force (FC Porto) -->
+        <a href="https://paeekacademy.cy/stratigiki-synergasia-me-ti-dragon-force-tis-fc-porto/" target="_blank" rel="noopener" class="event-card">
+            <div class="event-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #2d5aa0 100%);">
+                <span class="event-badge upcoming" style="background: var(--navy);">Partnership</span>
+                PAEEK
+            </div>
+            <div class="event-card-content">
+                <h3>PAEEK Academy &times; Dragon Force &mdash; FC Porto Expands to Cyprus</h3>
+                <p>Through their strategic partnership with Dragon Force, FC Porto has expanded to Cyprus. Antonis Petri and Charalambos Gregoriou are the officially registered physiotherapists for the joint club.</p>
+                <div class="event-details-line">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Official Sports Physiotherapy Partner
                 </div>
             </div>
         </a>
@@ -648,9 +643,9 @@
 
     <!-- CTA -->
     <section class="events-cta">
-        <h2>Θέλεις να συνεργαστούμε σε <span>εκδήλωση;</span></h2>
-        <p>Γυμναστήρια, σύλλογοι και ομάδες -- επικοινωνήστε μαζί μας για σεμινάρια πρόληψης τραυματισμών.</p>
-        <a href="booking.html?lang=el" class="btn-book">Επικοινωνία</a>
+        <h2>Want to host an <span>event together?</span></h2>
+        <p>We partner with gyms, clubs, and sports teams across Cyprus</p>
+        <a href="booking.html" class="btn-book">Get in Touch</a>
     </section>
 
     <!-- Footer -->
@@ -667,7 +662,7 @@
             </a>
         </div>
         <p>&copy; 2026 Right Track Rehabilitation & Performance Centre</p>
-        <p><a href="privacy-el.html">Πολιτική Απορρήτου</a> | <a href="terms-el.html">Όροι Χρήσης</a> | <a href="disclaimer-el.html">Ιατρική Αποποίηση</a></p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a> | <a href="disclaimer.html">Medical Disclaimer</a></p>
     </footer>
 
     <script>
