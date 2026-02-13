@@ -519,6 +519,23 @@
             .logo img { height: 60px; }
         }
     
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 16px 24px 0;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        .breadcrumb a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
         /* Social Sharing */
         .share-buttons {
             display: flex;
@@ -560,6 +577,10 @@
             <a href="../../index.html" class="logo">
                 <img src="../../assets/images/logos/logo-new-no background.png" alt="Right Track Logo">
             </a>
+            <div class="mobile-lang-switcher">
+                <span class="lang-btn active">EN</span>
+                <a href="shoulder-impingement-treatment-guide-el.html" class="lang-btn">ΕΛ</a>
+            </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -574,12 +595,20 @@
                 <li><a href="../../index.html#contact">Contacts</a></li>
                 <li><a href="../blog.html">Blog</a></li>
                 <li><a href="../booking.html" class="nav-cta-orange">Book Online</a></li>
+                <li class="language-switcher">
+                    <span class="lang-btn active">EN</span>
+                    <a href="shoulder-impingement-treatment-guide-el.html" class="lang-btn">ΕΛ</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="../blog.html">&larr; Blog</a>
+    </div>
 
     <section class="article-hero">
         <span class="tag">Injury Decoded</span>
