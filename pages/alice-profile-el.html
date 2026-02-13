@@ -1430,12 +1430,10 @@
     </div>
 
     <script>
-        // Back navigation with scroll position restoration
+        // Back navigation - use browser history to return to previous page
         function goBack() {
-            const savedScrollPosition = sessionStorage.getItem('teamSectionScrollPosition');
-            if (savedScrollPosition) {
-                sessionStorage.setItem('restoreScroll', savedScrollPosition);
-                window.location.href = '../index-el.html';
+            if (document.referrer && window.history.length > 1) {
+                history.back();
             } else {
                 window.location.href = '../index-el.html#team';
             }
