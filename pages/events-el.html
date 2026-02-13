@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Right Track Φυσιοθεραπεία & Κέντρο Απόδοσης Κύπρος</title>
-    <meta name="description" content="Πληροφορίες για αθλητικούς τραυματισμούς, συμβουλές αποκατάστασης και εξειδικευμένη γνώση φυσιοθεραπείας από την ομάδα Right Track στη Λευκωσία, Κύπρο.">
+    <title>Εκδηλώσεις & Σεμινάρια | Right Track Physiotherapy Cyprus</title>
+    <meta name="description" content="Σεμινάρια πρόληψης τραυματισμών, αθλητικά camps και κοινοτικές εκδηλώσεις από τη Right Track Physiotherapy στη Λευκωσία, Κύπρο. Αθλητική επιστήμη για κάθε αθλητή.">
 
     <!-- Canonical & Hreflang -->
-    <link rel="canonical" href="https://righttrackphysio.com.cy/pages/blog-el.html">
-    <link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog.html">
-    <link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog-el.html">
+    <link rel="canonical" href="https://righttrackphysio.com.cy/pages/events-el.html">
+    <link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/events.html">
+    <link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/events-el.html">
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQT03Q3821"></script>
@@ -24,10 +24,10 @@
     <link rel="icon" type="image/png" href="../assets/images/logos/logo-new-no background.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Blog | Right Track Φυσιοθεραπεία Κύπρος">
-    <meta property="og:description" content="Πληροφορίες για αθλητικούς τραυματισμούς, συμβουλές αποκατάστασης και εξειδικευμένη φυσιοθεραπευτική γνώση από τη Λευκωσία, Κύπρο.">
+    <meta property="og:title" content="Εκδηλώσεις & Σεμινάρια | Right Track Physiotherapy Cyprus">
+    <meta property="og:description" content="Σεμινάρια πρόληψης τραυματισμών, αθλητικά camps και κοινοτικές εκδηλώσεις από τη Right Track Physiotherapy στη Λευκωσία, Κύπρο.">
     <meta property="og:image" content="https://righttrackphysio.com.cy/assets/images/hero-team.jpg">
-    <meta property="og:url" content="https://righttrackphysio.com.cy/pages/blog-el.html">
+    <meta property="og:url" content="https://righttrackphysio.com.cy/pages/events-el.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="el_CY">
 
@@ -124,6 +124,10 @@
 
         nav a:hover {
             color: var(--orange);
+        }
+
+        .nav-active {
+            color: var(--orange) !important;
         }
 
         /* Language Switcher */
@@ -291,71 +295,41 @@
         }
 
         /* Hero */
-        .blog-hero {
+        .events-hero {
             background: linear-gradient(135deg, var(--navy) 0%, #1a2940 100%);
             padding: 80px 40px 60px;
             text-align: center;
         }
 
-        .blog-hero h1 {
+        .events-hero h1 {
             color: var(--white);
             font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 16px;
         }
 
-        .blog-hero h1 span {
+        .events-hero h1 span {
             color: var(--orange);
         }
 
-        .blog-hero p {
+        .events-hero p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.15rem;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        /* Filter Tabs */
-        .blog-filters {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            padding: 30px 40px 0;
+        /* Events Grid */
+        .events-grid {
             max-width: 1200px;
             margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            border: 2px solid var(--light-gray);
-            border-radius: 30px;
-            background: var(--white);
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            border-color: var(--orange);
-            color: var(--orange);
-            background: rgba(255, 107, 53, 0.05);
-        }
-
-        /* Blog Grid */
-        .blog-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px;
+            padding: 50px 40px;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
 
-        .blog-card {
+        .event-card {
             background: var(--white);
             border-radius: 16px;
             overflow: hidden;
@@ -364,89 +338,127 @@
             text-decoration: none;
             color: inherit;
             display: block;
+            position: relative;
         }
 
-        .blog-card:hover {
+        .event-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
             border-color: var(--orange);
         }
 
-        .blog-card-image {
+        .event-card-image {
             width: 100%;
             height: 220px;
             object-fit: cover;
             background: var(--light-gray);
         }
 
-        .blog-card-content {
+        .event-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .event-badge.upcoming {
+            background: rgba(255, 107, 53, 0.95);
+            color: var(--white);
+        }
+
+        .event-badge.soon {
+            background: rgba(10, 22, 40, 0.85);
+            color: var(--white);
+        }
+
+        .event-card-content {
             padding: 24px;
         }
 
-        .blog-card-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(255, 107, 53, 0.1);
-            color: var(--orange);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .blog-card-content h3 {
+        .event-card-content h3 {
             font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1.3;
             color: var(--navy);
         }
 
-        .blog-card-content p {
+        .event-card-content p {
             color: var(--text-gray);
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 16px;
         }
 
-        .blog-card-meta {
+        .event-details {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             font-size: 0.85rem;
             color: var(--text-gray);
+            padding-top: 16px;
+            border-top: 1px solid var(--light-gray);
         }
 
-        .blog-card-meta .author-name {
+        .event-details svg {
+            flex-shrink: 0;
+        }
+
+        .event-cta-row {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 24px 24px;
+        }
+
+        .event-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--orange);
             font-weight: 600;
-            color: var(--text-dark);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: gap 0.2s ease;
+        }
+
+        .event-card:hover .event-link {
+            gap: 10px;
         }
 
         /* CTA Section */
-        .blog-cta {
+        .events-cta {
             background: linear-gradient(135deg, var(--navy) 0%, #1a2940 100%);
             padding: 60px 40px;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
-        .blog-cta h2 {
+        .events-cta h2 {
             color: var(--white);
             font-size: 2rem;
             margin-bottom: 12px;
         }
 
-        .blog-cta h2 span {
+        .events-cta h2 span {
             color: var(--orange);
         }
 
-        .blog-cta p {
+        .events-cta p {
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 24px;
             font-size: 1.05rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .blog-cta .btn-book {
+        .events-cta .btn-book {
             display: inline-block;
             padding: 14px 40px;
             font-size: 1.05rem;
@@ -539,13 +551,13 @@
         }
 
         @media (max-width: 768px) {
-            .blog-hero h1 {
+            .events-hero h1 {
                 font-size: 2rem;
             }
 
-            .blog-grid {
+            .events-grid {
                 grid-template-columns: 1fr;
-                padding: 20px;
+                padding: 30px 20px;
             }
 
             nav {
@@ -567,7 +579,7 @@
                 <img src="../assets/images/logos/logo-new-no background.png" alt="Right Track Logo">
             </a>
             <div class="mobile-lang-switcher">
-                <a href="blog.html" class="lang-btn">EN</a>
+                <a href="events.html" class="lang-btn">EN</a>
                 <span class="lang-btn active">ΕΛ</span>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
@@ -582,11 +594,11 @@
                 <li><a href="../index-el.html#gesy">ΓΕΣΥ</a></li>
                 <li><a href="../index-el.html#partnerships">Συνεργασίες</a></li>
                 <li><a href="../index-el.html#contact">Επικοινωνία</a></li>
-                <li><a href="blog-el.html">Blog</a></li>
-                <li><a href="events-el.html">Events</a></li>
-                <li><a href="booking.html?lang=el" class="nav-cta-orange">Κλείστε Online</a></li>
+                <li><a href="blog-el.html">Ιστολόγιο</a></li>
+                <li><a href="events-el.html" class="nav-active">Εκδηλώσεις</a></li>
+                <li><a href="booking.html?lang=el" class="nav-cta-orange">Κλείσε Ραντεβού</a></li>
                 <li class="language-switcher">
-                    <a href="blog.html" class="lang-btn">EN</a>
+                    <a href="events.html" class="lang-btn">EN</a>
                     <span class="lang-btn active">ΕΛ</span>
                 </li>
             </ul>
@@ -597,154 +609,38 @@
     <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
 
     <!-- Hero -->
-    <section class="blog-hero">
-        <h1>Το <span>Right Track</span> Blog</h1>
-        <p>Πληροφορίες για αθλητικούς τραυματισμούς, επιστήμη αποκατάστασης και συμβουλές ειδικών από την ομάδα φυσιοθεραπείας μας στη Λευκωσία</p>
+    <section class="events-hero">
+        <h1>Εκδηλώσεις & <span>Σεμινάρια</span></h1>
+        <p>Σεμινάρια, camps και κοινοτικές εκδηλώσεις που φέρνουν την αθλητική επιστήμη στους αθλητές σε όλη την Κύπρο.</p>
     </section>
 
-    <!-- Filter Tabs -->
-    <div class="blog-filters">
-        <button class="filter-btn active" data-filter="all">Όλα</button>
-        <button class="filter-btn" data-filter="injury">Ανάλυση Τραυματισμών</button>
-        <button class="filter-btn" data-filter="case-study">Κλινικές Περιπτώσεις</button>
-        <button class="filter-btn" data-filter="science">Πίσω από την Επιστήμη</button>
-        <button class="filter-btn" data-filter="tips">Συμβουλές</button>
-    </div>
+    <!-- Events Grid -->
+    <div class="events-grid">
 
-    <!-- Blog Grid -->
-    <div class="blog-grid">
-
-        <!-- Article: Combat Sports Injury Prevention -->
-        <a href="blog/injury-prevention-combat-sports-el.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #e55a2b 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">MT</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Ανάλυση Τραυματισμών</span>
-                <h3>Πρόληψη Τραυματισμών στα Μαχητικά Αθλήματα: Τι Πρέπει να Γνωρίζει Κάθε Αθλητής</h3>
-                <p>Οι τραυματισμοί στα μαχητικά αθλήματα είναι διαφορετικοί. Οι γενικές συμβουλές δεν αρκούν. Δείτε τι πραγματικά λειτουργεί.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>8 λεπτά</span>
+        <!-- Event 1: Muay Thai Seminar -->
+        <a href="seminar-muay-thai-el.html" class="event-card">
+            <span class="event-badge upcoming">Προσεχώς</span>
+            <div class="event-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #e55a2b 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">MT</div>
+            <div class="event-card-content">
+                <h3>Προπονήσου Σκληρά. Μάχου Έξυπνα. Μείνε Χωρίς Τραυματισμούς.</h3>
+                <p>Σεμινάριο πρόληψης τραυματισμών 90 λεπτών για αθλητές μαχητικών αθλημάτων. Από τον φυσιοθεραπευτή Αντώνη Πέτρι.</p>
+                <div class="event-details">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>Ημερομηνία TBA | Muay Thai Warriors Gym, Λευκωσία</span>
                 </div>
             </div>
         </a>
 
-        <!-- Article: ACL Recovery -->
-        <a href="blog/acl-recovery-athletes-cyprus-el.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 800;">ACL</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Ανάλυση Τραυματισμών</span>
-                <h3>Ρήξη ΠΧΣ: Τι Κάνει Λάθος το 90% των Αθλητών στην Αποκατάσταση</h3>
-                <p>Το χρονοδιάγραμμα που δίνουν οι περισσότεροι φυσιοθεραπευτές είναι λανθασμένο. Δείτε τι λέει πραγματικά η τελευταία έρευνα.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>8 λεπτά</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Article: Ankle Sprain -->
-        <a href="blog/ankle-sprain-rehabilitation-guide-el.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 700; padding: 20px; text-align: center;">Διάστρεμμα<br>Αστραγάλου</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Ανάλυση Τραυματισμών</span>
-                <h3>Γιατί το Διάστρεμμα του Αστραγάλου σας Επαναλαμβάνεται (Και Πώς να το Διορθώσετε Οριστικά)</h3>
-                <p>Ο αστράγαλος που «γυρίσατε» πριν 3 χρόνια; Εξακολουθεί να επηρεάζει την απόδοσή σας.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>6 λεπτά</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Article: Runner Exercises -->
-        <a href="blog/runner-injury-prevention-exercises-el.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #ff8c5a 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; font-weight: 700; padding: 20px; text-align: center;">5 Ασκήσεις<br>για Δρομείς</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Συμβουλές</span>
-                <h3>Οι 5 Ασκήσεις που Κάθε Δρομέας στην Κύπρο Πρέπει να Κάνει</h3>
-                <p>Το τρέξιμο είναι απλό — μέχρι να σας σταματήσουν οι τραυματισμοί. Αυτές οι 5 ασκήσεις χρειάζονται 15 λεπτά.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>6 λεπτά</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Article: When to See a Physio -->
-        <a href="blog/when-to-see-physiotherapist-el.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #2c3e5a 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Φυσικοθεραπευτής<br>ή Αναμονή;</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Συμβουλές</span>
-                <h3>Πότε να Επισκεφθείτε Φυσιοθεραπευτή και Πότε να Περιμένετε (Ειλικρινής Οδηγός)</h3>
-                <p>Δεν χρειάζεται κάθε πόνος φυσιοθεραπευτή. Αλλά κάποιοι χρειάζονται. Δείτε πώς να ξεχωρίσετε.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>5 λεπτά</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Article: GESY Guide -->
-        <a href="blog/gesy-physiotherapy-cyprus-guide-el.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a3a5c 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 800; padding: 20px; text-align: center;">Οδηγός<br>ΓΕΣΥ</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Συμβουλές</span>
-                <h3>Φυσιοθεραπεία ΓΕΣΥ στην Κύπρο: Όλα Όσα Πρέπει να Γνωρίζετε το 2026</h3>
-                <p>Πόσες συνεδρίες δικαιούστε; Χρειάζεστε παραπεμπτικό; Όλα όσα πρέπει να ξέρετε για τη φυσιοθεραπεία μέσω ΓΕΣΥ.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>5 λεπτά</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Article: Hamstring Myth -->
-        <a href="blog/hamstring-injury-stretching-myth-el.html" class="blog-card" data-category="science">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #e55a2b 0%, #c44a20 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Μύθος<br>Οπισθίων</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Πίσω από την Επιστήμη</span>
-                <h3>Γιατί το Τέντωμα Μόνο του Δεν Θα Διορθώσει τους Οπισθίους Μηριαίους σας</h3>
-                <p>Ακόμα τεντώνεστε κάθε πρωί; Δείτε γιατί η προσέγγιση «μόνο τέντωμα» αποτυγχάνει.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>6 λεπτά</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Article: Shoulder Impingement -->
-        <a href="blog/shoulder-impingement-treatment-guide-el.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #243447 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Πόνος<br>στον Ώμο</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Ανάλυση Τραυματισμών</span>
-                <h3>Σύνδρομο Πρόσκρουσης Ώμου: Ο Τραυματισμός που Δεν Ενδιαφέρεται αν Είστε Αθλητής</h3>
-                <p>Πόνος στον ώμο όταν σηκώνετε το χέρι; Επηρεάζει τους πάντες, από υπαλλήλους γραφείου μέχρι κολυμβητές.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>7 λεπτά</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Article: Meniscus Case Study -->
-        <a href="blog/meniscus-tear-recovery-case-study-el.html" class="blog-card" data-category="case-study">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #0A1628 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.6rem; font-weight: 700; padding: 20px; text-align: center;">Κλινική<br>Περίπτωση</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Κλινική Περίπτωση</span>
-                <h3>Από Ρήξη Μηνίσκου σε Αγωνιστική Δράση: Η Ιστορία Αποκατάστασης ενός Ποδοσφαιριστή</h3>
-                <p>Πώς ένας 28χρονος ερασιτέχνης ποδοσφαιριστής επέστρεψε στο γήπεδο 16 εβδομάδες μετά από ρήξη μηνίσκου.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>7 λεπτά</span>
+        <!-- Event 2: Padel Camp -->
+        <a href="padel-camp-el.html" class="event-card">
+            <span class="event-badge upcoming">Προσεχώς</span>
+            <div class="event-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #2d7a4f 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: 800;">PADEL</div>
+            <div class="event-card-content">
+                <h3>The Padel Camp Cyprus 2026</h3>
+                <p>5-ήμερο εντατικό padel camp με αθλητική φυσιοθεραπεία, υπηρεσίες αποκατάστασης και πρόληψη τραυματισμών από τη Right Track.</p>
+                <div class="event-details">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>13&ndash;19 Απριλίου 2026 | Limassol Padel Club</span>
                 </div>
             </div>
         </a>
@@ -752,10 +648,10 @@
     </div>
 
     <!-- CTA -->
-    <section class="blog-cta">
-        <h2>Έτοιμοι να επιστρέψετε <span>στο σωστό δρόμο;</span></h2>
-        <p>Κλείστε την αξιολόγησή σας με την ομάδα αθλητικής φυσιοθεραπείας μας</p>
-        <a href="booking.html?lang=el" class="btn-book">Κλείστε Ραντεβού</a>
+    <section class="events-cta">
+        <h2>Θέλεις να συνεργαστούμε σε <span>εκδήλωση;</span></h2>
+        <p>Γυμναστήρια, σύλλογοι και ομάδες -- επικοινωνήστε μαζί μας για σεμινάρια πρόληψης τραυματισμών.</p>
+        <a href="booking.html?lang=el" class="btn-book">Επικοινωνία</a>
     </section>
 
     <!-- Footer -->
@@ -772,7 +668,7 @@
             </a>
         </div>
         <p>&copy; 2026 Right Track Rehabilitation & Performance Centre</p>
-        <p><a href="privacy-el.html">Πολιτική Απορρήτου</a> | <a href="terms-el.html">Όροι & Προϋποθέσεις</a> | <a href="disclaimer-el.html">Ιατρική Αποποίηση</a></p>
+        <p><a href="privacy-el.html">Πολιτική Απορρήτου</a> | <a href="terms-el.html">Όροι Χρήσης</a> | <a href="disclaimer-el.html">Ιατρική Αποποίηση</a></p>
     </footer>
 
     <script>
@@ -791,23 +687,6 @@
                 if (window.innerWidth <= 1024) {
                     toggleMobileMenu();
                 }
-            });
-        });
-
-        // Blog filter functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const filter = btn.dataset.filter;
-                document.querySelectorAll('.blog-card').forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
             });
         });
     </script>

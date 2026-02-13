@@ -56,6 +56,7 @@ For each article, produce a report with these sections:
   - Year
   - DOI or PMID when available
 - Flag any claims that are **not supported** by current evidence or are **outdated**
+- **CRITICAL: Flag any citations older than 10 years** (before 2016 as of 2026). These MUST be replaced with modern equivalents. No exceptions — outdated citations undermine clinical credibility.
 - Flag any claims where the evidence is **stronger than stated** (opportunity to be more authoritative)
 
 **Format for each claim:**
@@ -151,11 +152,12 @@ When verifying claims or finding sources:
 2. **DO NOT** make the writing academic or jargon-heavy — the audience is athletes, not researchers
 3. **DO NOT** remove CTAs, brand mentions, or conversion elements
 4. **DO NOT** suggest removing sections that serve SEO or patient education purposes
-5. **DO** prioritize BJSM, JOSPT, and Cochrane as primary sources (highest credibility in sports physio)
-6. **DO** flag when "generic research language" can be replaced with specific, powerful citations
-7. **DO** note when the article could reference clinical tools/tests by their validated names (e.g., "ACL-RSI questionnaire" — already done well in the ACL article)
-8. **DO** suggest Schema.org improvements for the article structured data when relevant (e.g., adding `citation` property, `MedicalWebPage` type)
-9. **DO** consider that each article exists in both English and Greek — note if evidence integration approach should differ by language
+5. **DO NOT** cite research older than 10 years. All citations must be from the last 10 years (2016 or newer as of 2026). If an article references a study older than 10 years, flag it as **OUTDATED** and provide a modern replacement from the same topic area. Older landmark studies should be replaced with newer systematic reviews, meta-analyses, or updated versions by the same research group where available.
+6. **DO** prioritize BJSM, JOSPT, and Cochrane as primary sources (highest credibility in sports physio)
+7. **DO** flag when "generic research language" can be replaced with specific, powerful citations
+8. **DO** note when the article could reference clinical tools/tests by their validated names (e.g., "ACL-RSI questionnaire" — already done well in the ACL article)
+9. **DO** suggest Schema.org improvements for the article structured data when relevant (e.g., adding `citation` property, `MedicalWebPage` type)
+10. **DO** consider that each article exists in both English and Greek — note if evidence integration approach should differ by language
 
 ---
 
