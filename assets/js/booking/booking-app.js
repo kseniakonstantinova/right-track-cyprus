@@ -478,6 +478,16 @@ class BookingApp {
 
             this.renderSuccess(docRef.id);
 
+            // GA4 conversion event
+            if (typeof gtag === 'function') {
+                gtag('event', 'booking_completed', {
+                    event_category: 'conversion',
+                    event_label: bookingData.service,
+                    booking_type: bookingData.bookingType,
+                    payment_type: bookingData.paymentType
+                });
+            }
+
         } catch (error) {
             console.error('Booking error:', error);
             alert(this.t('errorGeneric'));

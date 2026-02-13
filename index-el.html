@@ -128,7 +128,45 @@
             "ratingValue": "5.0",
             "reviewCount": "16",
             "bestRating": "5"
-        }
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Andreas G."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "reviewBody": "Serious knee injury. Back on the pitch in 4 months. Antonis is the best."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Nikos K."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "reviewBody": "Tore my ACL in March, back on the court by September. These guys know their job. Best rehab experience."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Ivana M."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "reviewBody": "Had knee pain for 2 years. Tried everything. Finally came here and they actually fixed it."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Sarah W."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "reviewBody": "Started Pilates classes recently. I'm 52 and feel stronger than I did at 40. Alice really knows her stuff."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Petros M."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "reviewBody": "I thought my volleyball days were over after my shoulder injury. These guys proved me wrong."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Dimitris M."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "reviewBody": "Clean facilities, professional staff. Used GESY so it cost me nothing. Worth it."
+            }
+        ]
     }
     </script>
 
@@ -4418,6 +4456,73 @@
         }
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closePilatesModal();
+        });
+    </script>
+
+    <!-- GA4 Event Tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track phone clicks
+            document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'phone_click', {
+                            event_category: 'contact',
+                            event_label: this.href.replace('tel:', '')
+                        });
+                    }
+                });
+            });
+
+            // Track email clicks
+            document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'email_click', {
+                            event_category: 'contact',
+                            event_label: this.href.replace('mailto:', '')
+                        });
+                    }
+                });
+            });
+
+            // Track Book Online CTA clicks
+            document.querySelectorAll('a[href*="booking"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'cta_click', {
+                            event_category: 'conversion',
+                            event_label: 'book_online'
+                        });
+                    }
+                });
+            });
+
+            // Track newsletter signup
+            var newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function() {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'newsletter_signup', {
+                            event_category: 'conversion',
+                            event_label: 'sports_injury_guide'
+                        });
+                    }
+                });
+            }
+
+            // Track join team form
+            var joinForm = document.querySelector('.join-team-form form');
+            if (joinForm) {
+                joinForm.addEventListener('submit', function() {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'join_team_submit', {
+                            event_category: 'conversion',
+                            event_label: 'team_application'
+                        });
+                    }
+                });
+            }
         });
     </script>
 

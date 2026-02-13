@@ -349,5 +349,15 @@
             btn.classList.toggle('active', btn.dataset.lang === savedLang);
         });
     </script>
+
+    <!-- GA4: Track booking page view as initiate_booking -->
+    <script>
+        if (typeof gtag === 'function') {
+            gtag('event', 'initiate_booking', {
+                event_category: 'conversion',
+                event_label: 'booking_page_view'
+            });
+        }
+    </script>
 </body>
 </html>
