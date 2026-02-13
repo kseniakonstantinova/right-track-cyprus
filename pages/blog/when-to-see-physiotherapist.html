@@ -411,48 +411,160 @@
         .callout p { margin: 0; font-weight: 500; }
 
         .flowchart {
-            background: var(--off-white);
-            border-radius: 16px;
-            padding: 28px;
+            background: linear-gradient(135deg, #f8f9fb 0%, #eef1f5 100%);
+            border-radius: 20px;
+            padding: 32px 24px;
             margin: 30px 0;
+            border: 1px solid var(--light-gray);
         }
 
         .flowchart h3 {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 28px;
+            font-size: 1.25rem;
+            color: var(--navy);
         }
 
-        .flowchart .step {
+        .fc-node {
+            position: relative;
             background: var(--white);
-            border: 2px solid var(--light-gray);
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin-bottom: 12px;
-            font-size: 1rem;
+            border-radius: 14px;
+            padding: 18px 22px;
+            font-size: 0.95rem;
             font-weight: 500;
+            line-height: 1.5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 2px solid var(--light-gray);
         }
 
-        .flowchart .step.green {
-            border-color: #28a745;
-            background: rgba(40, 167, 69, 0.05);
-        }
-
-        .flowchart .step.orange {
-            border-color: var(--orange);
-            background: rgba(255, 107, 53, 0.05);
-        }
-
-        .flowchart .step.red {
-            border-color: #dc3545;
-            background: rgba(220, 53, 69, 0.05);
-        }
-
-        .flowchart .arrow {
+        .fc-node.fc-start {
+            background: var(--navy);
+            color: var(--white);
             text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-gray);
+            font-weight: 700;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .fc-node.fc-question {
+            border-color: var(--navy);
+            text-align: center;
+        }
+
+        .fc-node.fc-wait {
+            border-color: #28a745;
+            border-left: 5px solid #28a745;
+            background: linear-gradient(135deg, rgba(40,167,69,0.04) 0%, rgba(40,167,69,0.08) 100%);
+        }
+
+        .fc-node.fc-wait .fc-badge {
+            background: #28a745;
+        }
+
+        .fc-node.fc-book {
+            border-color: var(--orange);
+            border-left: 5px solid var(--orange);
+            background: linear-gradient(135deg, rgba(255,107,53,0.04) 0%, rgba(255,107,53,0.08) 100%);
+        }
+
+        .fc-node.fc-book .fc-badge {
+            background: var(--orange);
+        }
+
+        .fc-node.fc-emergency {
+            border-color: #dc3545;
+            border-left: 5px solid #dc3545;
+            background: linear-gradient(135deg, rgba(220,53,69,0.04) 0%, rgba(220,53,69,0.08) 100%);
+        }
+
+        .fc-node.fc-emergency .fc-badge {
+            background: #dc3545;
+        }
+
+        .fc-badge {
+            display: inline-block;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+
+        .fc-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6px 0;
+            position: relative;
+        }
+
+        .fc-connector .fc-line {
+            width: 3px;
+            height: 24px;
+            background: var(--navy);
+            border-radius: 2px;
+        }
+
+        .fc-connector .fc-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--navy);
+            background: var(--white);
+            border: 2px solid var(--navy);
+            border-radius: 20px;
+            padding: 2px 14px;
             margin: 4px 0;
+        }
+
+        .fc-connector .fc-label.fc-yes {
+            color: #28a745;
+            border-color: #28a745;
+        }
+
+        .fc-connector .fc-label.fc-no {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .fc-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 0;
+        }
+
+        .fc-split-connector {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            padding: 6px 0;
+        }
+
+        .fc-split-connector .fc-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .fc-split-connector .fc-branch .fc-line {
+            width: 3px;
+            height: 20px;
+            background: var(--navy);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 540px) {
+            .fc-split {
+                grid-template-columns: 1fr;
+            }
+            .fc-split-connector {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         .author-box {
@@ -809,24 +921,68 @@
         <div class="flowchart">
             <h3>Should I See a Physiotherapist?</h3>
 
-            <div class="step">Start here: Do you have pain, stiffness, or an injury?</div>
-            <div class="arrow">&#8595;</div>
+            <div class="fc-node fc-start">Do you have pain, stiffness, or an injury?</div>
 
-            <div class="step">Can you do all your normal daily activities without limitation?</div>
-            <div class="arrow">&#8595; YES</div>
+            <div class="fc-connector">
+                <div class="fc-line"></div>
+                <div class="fc-line"></div>
+            </div>
 
-            <div class="step green">Has the pain been present for less than 2 weeks? &#8594; WAIT. Self-manage with rest, gentle movement, and compression if swollen. Reassess in 1-2 weeks.</div>
-            <div class="arrow">&#8595; NO (more than 2 weeks)</div>
+            <div class="fc-node fc-question">Can you do all your normal daily activities without limitation?</div>
 
-            <div class="step orange">Book a physio appointment. Something is preventing normal recovery.</div>
+            <div class="fc-split-connector">
+                <div class="fc-branch">
+                    <div class="fc-label fc-yes">YES</div>
+                    <div class="fc-line"></div>
+                </div>
+                <div class="fc-branch">
+                    <div class="fc-label fc-no">NO</div>
+                    <div class="fc-line"></div>
+                </div>
+            </div>
 
-            <div class="arrow" style="margin-top: 24px;">&#8593; Back to: Can you do all your normal daily activities?</div>
-            <div class="arrow">&#8595; NO</div>
-
-            <div class="step orange">Is the pain getting worse, not better? &#8594; Book a physio appointment now.</div>
-            <div class="arrow">&#8595;</div>
-
-            <div class="step red">Do you have any of these: can't bear weight, visible deformity, sudden numbness/weakness, severe pain with no cause? &#8594; See a DOCTOR first (A&E if severe).</div>
+            <div class="fc-split">
+                <div>
+                    <div class="fc-node fc-question" style="font-size: 0.9rem;">Has the pain lasted less than 2 weeks?</div>
+                    <div class="fc-connector">
+                        <div class="fc-line"></div>
+                        <div class="fc-label fc-yes">YES</div>
+                        <div class="fc-line"></div>
+                    </div>
+                    <div class="fc-node fc-wait">
+                        <div class="fc-badge">Wait & self-manage</div><br>
+                        Rest, gentle movement, compression if swollen. Reassess in 1-2 weeks.
+                    </div>
+                    <div class="fc-connector">
+                        <div class="fc-line"></div>
+                        <div class="fc-label fc-no">NO — 2+ weeks</div>
+                        <div class="fc-line"></div>
+                    </div>
+                    <div class="fc-node fc-book">
+                        <div class="fc-badge">Book physio</div><br>
+                        Something is preventing normal recovery. Get assessed.
+                    </div>
+                </div>
+                <div>
+                    <div class="fc-node fc-question" style="font-size: 0.9rem;">Is the pain getting worse, not better?</div>
+                    <div class="fc-connector">
+                        <div class="fc-line"></div>
+                        <div class="fc-label fc-yes">YES</div>
+                        <div class="fc-line"></div>
+                    </div>
+                    <div class="fc-node fc-book">
+                        <div class="fc-badge">Book physio now</div><br>
+                        Worsening pain means the issue is not resolving on its own.
+                    </div>
+                    <div class="fc-connector">
+                        <div class="fc-line"></div>
+                    </div>
+                    <div class="fc-node fc-emergency">
+                        <div class="fc-badge">See a doctor first</div><br>
+                        Can't bear weight, visible deformity, sudden numbness/weakness, or severe unexplained pain? Go to A&E if severe.
+                    </div>
+                </div>
+            </div>
         </div>
 
         <h2>The Real Cost of Waiting Too Long</h2>
