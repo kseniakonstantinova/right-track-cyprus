@@ -33,20 +33,30 @@
     <meta property="article:author" content="Antonis Petri">
     <meta property="article:published_time" content="2026-02-10">
 
-    <!-- Schema.org Article -->
+    <!-- Schema.org MedicalWebPage + Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": ["Article", "MedicalWebPage"],
         "headline": "The 5 Exercises Every Runner in Cyprus Should Be Doing",
         "description": "Running in Nicosia's heat is hard enough without injuries. Sports physiotherapist Antonis Petri shares the 5 exercises that prevent the most common running injuries.",
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Running-Related Injuries",
+            "alternateName": "Running Overuse Injuries"
+        },
         "author": {
             "@type": "Person",
             "name": "Antonis Petri",
             "jobTitle": "Lead Clinician & Sports Physiotherapist",
+            "honorificSuffix": "BSc, OMPT",
             "worksFor": {
                 "@type": "Physiotherapy",
                 "name": "Right Track Physiotherapy & Performance Centre"
+            },
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Frederick University"
             }
         },
         "publisher": {
@@ -55,7 +65,95 @@
             "url": "https://righttrackphysio.com.cy"
         },
         "datePublished": "2026-02-10",
-        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises.html"
+        "dateModified": "2026-02-13",
+        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises.html",
+        "citation": [
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Strength training as superior, dose-dependent and safe prevention of acute and overuse sports injuries",
+                "author": "Lauersen JB, Andersen TE, Andersen LB",
+                "datePublished": "2018",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis",
+                "author": "Lauersen JB, Bertelsen DM, Andersen LB",
+                "datePublished": "2014",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "A systematic review of running-related musculoskeletal injuries in runners",
+                "author": "Kakouris N, Yener N, Fong DTP",
+                "datePublished": "2021",
+                "isPartOf": {"@type": "Periodical", "name": "Journal of Sport and Health Science"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Hip Abductor Weakness in Distance Runners with Iliotibial Band Syndrome",
+                "author": "Fredericson M, Cookingham CL, Chaudhari AM, et al.",
+                "datePublished": "2000",
+                "isPartOf": {"@type": "Periodical", "name": "Clinical Journal of Sport Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "The Adductor Strengthening Programme prevents groin problems among male football players",
+                "author": "Harøy J, Clarsen B, Wiger EG, et al.",
+                "datePublished": "2019",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How often should runners do strength training?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Research recommends 2-3 strength training sessions per week for runners. A systematic review in BJSM found that strength training reduces sports injuries by up to 69% (Lauersen et al., 2018). These sessions can be as short as 15 minutes and should be done on non-running days or after easy runs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the most common running injuries?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most common running injuries are patellofemoral pain (runner's knee), IT band syndrome, Achilles tendinopathy, plantar fasciitis, and shin splints. Most are overuse injuries caused by repetitive loading on tissues that aren't strong enough. Research shows injury incidence ranges from 37% to 79% of runners per year."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does stretching prevent running injuries?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. A major systematic review of 25 trials with over 26,000 participants found that stretching had no significant effect on injury prevention (RR 0.963). In contrast, strength training reduced injuries by up to 69% (Lauersen et al., BJSM, 2014). Stretching has other benefits, but injury prevention is not one of them."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I do these exercises if I already have pain?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you're currently experiencing pain, you should get assessed by a physiotherapist before starting any exercise programme. Some exercises may need to be modified based on your specific injury. These exercises are designed primarily for injury prevention in healthy runners, not as treatment for existing injuries."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is running on concrete more likely to cause injuries?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hard surfaces like concrete and asphalt absorb none of the impact force, meaning your muscles, tendons, and joints absorb 100% of it. While your body can adapt to hard surfaces, runners who primarily train on concrete need greater lower-limb strength to handle the repetitive loading — making strength training even more important."
+                }
+            }
+        ]
     }
     </script>
 
@@ -657,11 +755,11 @@
 
     <article class="article-body">
 
-        <p>Running is one of the simplest forms of exercise. Shoes on, door open, go. No gym membership, no equipment, no teammates required. It's also one of the most injury-prone activities in sport — with research consistently showing that <strong>up to 80% of runners will experience a running-related injury in any given year.</strong></p>
+        <p>Running is one of the simplest forms of exercise. Shoes on, door open, go. No gym membership, no equipment, no teammates required. It's also one of the most injury-prone activities in sport — with a systematic review in the <em>Journal of Sport and Health Science</em> reporting injury incidence <strong>between 37% and 79% of runners per year</strong>, depending on training level and how injuries are defined (Kakouris et al., 2021).</p>
 
         <p>That's not a reason to stop running. It's a reason to start doing something about it.</p>
 
-        <p>The majority of running injuries are not caused by a single traumatic event. They're overuse injuries — the result of repetitive loading on tissues that aren't strong enough to handle it. The good news: most of them are preventable with a targeted strength program that takes about 15 minutes, two to three times per week.</p>
+        <p>The majority of running injuries are not caused by a single traumatic event. They're overuse injuries — the result of repetitive loading on tissues that aren't strong enough to handle it. The good news: a meta-analysis in the <em>British Journal of Sports Medicine</em> found that strength training <strong>reduces sports injuries by up to 69%</strong> (Lauersen et al., 2018). And a targeted program takes about 15 minutes, two to three times per week.</p>
 
         <p>These are the 5 exercises I prescribe most frequently to runners in my clinic. They're not random. Each one targets the specific weaknesses that cause the most common running injuries. No gym required. No excuses.</p>
 
@@ -671,7 +769,7 @@
                 <span>3 x 15 each leg</span>
                 <span>Prevents: Achilles tendinopathy, plantar fasciitis</span>
             </div>
-            <p><strong>Why it matters:</strong> Your calf muscles absorb 6-8 times your body weight with every running stride. If they're not strong enough, the load transfers to your Achilles tendon and plantar fascia — and that's where the pain starts. Achilles tendinopathy and plantar fasciitis are two of the most common and most stubborn running injuries. Both are directly linked to calf weakness.</p>
+            <p><strong>Why it matters:</strong> Your Achilles tendon experiences forces of up to 6-8 times your body weight with every running stride — close to the tendon's maximum tolerable load. If your calf muscles aren't strong enough, these forces overload the tendon and plantar fascia — and that's where the pain starts. Achilles tendinopathy and plantar fasciitis are two of the most common and most stubborn running injuries, and decreased plantar flexion strength is an established risk factor for both (Habets et al., <em>JOSPT</em>, 2019).</p>
             <p><strong>How to do it:</strong> Stand on one foot on the edge of a step, with your heel hanging off. Push up onto your toes as high as you can, hold for 1 second at the top, then lower slowly over 3 seconds until your heel drops below the step level. That slow lowering phase is the most important part — don't rush it.</p>
             <p><strong>Progression:</strong> Start with both legs if single-leg is too difficult. Once you can comfortably do 3x15, add weight by holding a dumbbell or a backpack with books in it. Aim to eventually do these with 10-20% of your body weight added.</p>
         </div>
@@ -693,7 +791,7 @@
                 <span>3 x 8 each side</span>
                 <span>Prevents: Groin strains, adductor overload</span>
             </div>
-            <p><strong>Why it matters:</strong> The adductor muscles (inner thigh) are one of the most neglected muscle groups in runners. They play a critical role in stabilizing your pelvis and controlling leg alignment during the stance phase of running. When they're weak, other structures compensate — and groin pain, hip pain, and even knee issues can follow. The Copenhagen exercise has some of the strongest evidence of any exercise for reducing groin injuries.</p>
+            <p><strong>Why it matters:</strong> The adductor muscles (inner thigh) are one of the most neglected muscle groups in runners. They play a critical role in stabilizing your pelvis and controlling leg alignment during the stance phase of running. When they're weak, other structures compensate — and groin pain, hip pain, and even knee issues can follow. A cluster-randomised controlled trial published in <em>BJSM</em> found that the Copenhagen-based adductor strengthening programme significantly reduced groin problems in athletes (Harøy et al., 2019).</p>
             <p><strong>How to do it:</strong> Lie on your side. Place your top foot on a bench or sturdy chair (the seat, not the edge). Your bottom leg hangs below. Support yourself on your forearm. Lift your bottom leg up to meet the bench by squeezing your inner thigh, hold for 1-2 seconds, then lower with control. Keep your body in a straight line — don't let your hips sag.</p>
             <p><strong>Progression:</strong> If the full version is too demanding, start with a shorter lever by placing your knee on the bench instead of your foot. Build up to the straight-leg version over 2-3 weeks. Once 3x8 is comfortable, add a slow 3-second lowering phase.</p>
         </div>
@@ -704,7 +802,7 @@
                 <span>3 x 15 each side</span>
                 <span>Prevents: IT band syndrome, runner's knee</span>
             </div>
-            <p><strong>Why it matters:</strong> IT band syndrome and patellofemoral pain (runner's knee) are the two most common knee complaints in runners. Both are closely associated with hip weakness — specifically, weakness of the gluteus medius, the muscle responsible for preventing your knee from collapsing inward during running. When this muscle is weak, your knee tracks poorly, and the IT band gets overloaded.</p>
+            <p><strong>Why it matters:</strong> IT band syndrome and patellofemoral pain (runner's knee) are the two most common knee complaints in runners. Both are closely associated with hip weakness — specifically, weakness of the gluteus medius, the muscle responsible for preventing your knee from collapsing inward during running. A landmark study by Fredericson et al. (<em>Clinical Journal of Sport Medicine</em>, 2000) found that <strong>92% of runners with IT band syndrome returned to running pain-free</strong> after a 6-week glute medius strengthening protocol. When this muscle is weak, your knee tracks poorly, and the IT band gets overloaded.</p>
             <p><strong>How to do it:</strong> Lie on your side with your legs stacked. For hip abduction: keep your legs straight and lift the top leg toward the ceiling, about 30-40 degrees, then lower with control. For clamshells: bend both knees to 90 degrees, keep your feet together, and rotate your top knee open like a clamshell. In both versions, keep your hips stacked and don't roll backward — that's the most common cheat.</p>
             <p><strong>Progression:</strong> Start without resistance. Add a resistance band around your knees (for clamshells) or ankles (for abduction) once you can do 3x15 easily. Eventually progress to standing variations or single-leg exercises like side-stepping with a band.</p>
         </div>
@@ -715,7 +813,7 @@
                 <span>3 x 10 each leg</span>
                 <span>Prevents: Patellofemoral pain, general knee injuries</span>
             </div>
-            <p><strong>Why it matters:</strong> Quad strength is one of the strongest predictors of knee health in runners. Weak quads mean your knee absorbs more impact force with every stride — and over thousands of strides per run, that adds up fast. The single-leg squat also challenges your knee control, hip stability, and ankle mobility all at once. It's the closest strength exercise to what your legs actually do when you run.</p>
+            <p><strong>Why it matters:</strong> Quadriceps weakness is consistently found in runners with knee pain and is an established treatment target in patellofemoral pain research (Neal et al., <em>JOSPT</em>, 2019). Weak quads mean your knee absorbs more impact force with every stride — and over thousands of strides per run, that adds up fast. The single-leg squat also challenges your knee control, hip stability, and ankle mobility all at once. It's the closest strength exercise to what your legs actually do when you run.</p>
             <p><strong>How to do it:</strong> Stand on one leg in front of a bench or sturdy chair. Slowly lower yourself until your backside lightly touches the bench, then drive back up. Keep your knee tracking over your toes — don't let it collapse inward. Your weight should stay through your whole foot, not shifting to your toes. Control is everything here — if you're dropping onto the bench, it's too fast.</p>
             <p><strong>Progression:</strong> Start with a higher surface if a standard bench is too deep. As you get stronger, lower the surface. Eventually, hold a weight at your chest (goblet position) to add load. A good long-term target: 3x10 with 10kg held at your chest.</p>
         </div>
@@ -726,9 +824,9 @@
 
         <p><strong>Timing:</strong> Ideally on non-running days, or after an easy run. Don't do a heavy strength session before a hard run or a long run — your legs need to be fresh for those.</p>
 
-        <p><strong>Duration:</strong> The entire routine takes about 15 minutes once you know the exercises. That's less time than you spend stretching (which, by the way, has far less evidence for injury prevention than strength training does).</p>
+        <p><strong>Duration:</strong> The entire routine takes about 15 minutes once you know the exercises. That's less time than you spend stretching — which, according to a meta-analysis of 26,610 participants, has <strong>no significant effect on injury prevention</strong> (Lauersen et al., <em>BJSM</em>, 2014). Strength training, by contrast, reduced injuries to less than one-third.</p>
 
-        <p><strong>Consistency beats intensity:</strong> Doing these exercises at moderate effort three times per week for months is far more effective than doing them at maximum effort once and then forgetting about them for two weeks.</p>
+        <p><strong>Consistency beats intensity:</strong> Doing these exercises at moderate effort three times per week for months is far more effective than doing them at maximum effort once and then forgetting about them for two weeks. If you're dealing with a <a href="ankle-sprain-rehabilitation-guide.html" style="color: var(--orange);">recurring ankle sprain</a>, these exercises are a good complement to your rehab — but get assessed first.</p>
 
         <div class="callout">
             <p>You don't need a gym for any of these exercises. A step, a chair, and a resistance band are the only equipment you'll ever need. Total cost: less than a single physio session.</p>
@@ -746,11 +844,26 @@
 
         <h2>The Bottom Line</h2>
 
-        <p>Running injuries are not inevitable. They feel inevitable because so many runners experience them — but the research is clear: targeted strength training significantly reduces your risk of the most common running injuries.</p>
+        <p>Running injuries are not inevitable. They feel inevitable because so many runners experience them — but the research is clear: two separate meta-analyses in the <em>British Journal of Sports Medicine</em> confirm that targeted strength training reduces injury risk by up to 69%, with a dose-dependent relationship — the more you train, the lower your risk (Lauersen et al., 2014; 2018).</p>
 
         <p>These 5 exercises won't make you immune to injury. But they will make your body significantly more resilient to the repetitive demands of running. They take 15 minutes. They require no gym. And they work.</p>
 
-        <p><strong>Start this week. Your future self — the one still running pain-free in 5 years — will thank you.</strong></p>
+        <p><strong>Start this week. Your future self — the one still running pain-free in 5 years — will thank you.</strong> And if you're not sure whether your current pain needs professional attention, read our guide on <a href="when-to-see-physiotherapist.html" style="color: var(--orange);">when to see a physiotherapist</a>.</p>
+
+        <!-- Sources & Further Reading -->
+        <div style="margin-top: 40px; padding: 24px; background: var(--off-white); border-radius: 12px; border-left: 4px solid var(--navy);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--navy);">Sources & Further Reading</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-gray); line-height: 2; margin-left: 20px;">
+                <li>Lauersen JB, Andersen TE, Andersen LB. "Strength training as superior, dose-dependent and safe prevention of acute and overuse sports injuries: a systematic review, qualitative analysis and meta-analysis." <em>British Journal of Sports Medicine</em>. 2018;52(24):1557-1563. DOI: 10.1136/bjsports-2018-099078</li>
+                <li>Lauersen JB, Bertelsen DM, Andersen LB. "The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials." <em>British Journal of Sports Medicine</em>. 2014;48(11):871-877. DOI: 10.1136/bjsports-2013-092538</li>
+                <li>Kakouris N, Yener N, Fong DTP. "A systematic review of running-related musculoskeletal injuries in runners." <em>Journal of Sport and Health Science</em>. 2021;10(5):513-522. PMID: 33862272</li>
+                <li>Fredericson M, Cookingham CL, Chaudhari AM, et al. "Hip Abductor Weakness in Distance Runners with Iliotibial Band Syndrome." <em>Clinical Journal of Sport Medicine</em>. 2000;10(3):169-175. PMID: 10959926</li>
+                <li>Harøy J, Clarsen B, Wiger EG, et al. "The Adductor Strengthening Programme prevents groin problems among male football players: a cluster-randomised controlled trial." <em>British Journal of Sports Medicine</em>. 2019;53(3):150-157. PMID: 29891614</li>
+                <li>Habets B, van Cingel REH, et al. "Altered Strength Profile in Achilles Tendinopathy: A Systematic Review and Meta-Analysis." <em>Journal of Orthopaedic & Sports Physical Therapy</em>. 2019;49(9):629-639. PMID: 31213161</li>
+                <li>Neal BS, Barton CJ, Gallie R, et al. "Runners with patellofemoral pain have altered biomechanics which targeted interventions can modify: A systematic review and meta-analysis." <em>Gait & Posture</em>. 2016;45:69-82. DOI: 10.1016/j.gaitpost.2015.11.018</li>
+                <li>Videbæk S, Bueno AM, Nielsen RO, Rasmussen S. "Incidence of Running-Related Injuries Per 1000 h of Running in Different Types of Runners: A Systematic Review and Meta-Analysis." <em>Sports Medicine</em>. 2015;45(7):1017-1026. DOI: 10.1007/s40279-015-0333-8</li>
+            </ol>
+        </div>
 
         <div class="author-box">
             <a href="../tony-profile.html"><img src="../../assets/images/team/tony-photo.jpg" alt="Antonis Petri - Sports Physiotherapist" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></a>
@@ -775,6 +888,46 @@
 
 
     </article>
+
+    <!-- FAQ Section -->
+    <section style="max-width: 740px; margin: 0 auto; padding: 0 24px 50px;">
+        <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 24px;">Frequently Asked Questions</h2>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">How often should runners do strength training?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Research recommends 2-3 strength training sessions per week for runners. A systematic review in <em>BJSM</em> found that strength training reduces sports injuries by up to 69% (Lauersen et al., 2018), and the benefit is dose-dependent — the more consistently you train, the greater the protection. Sessions can be as short as 15 minutes.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">What are the most common running injuries?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                The most common running injuries are patellofemoral pain (runner's knee), IT band syndrome, Achilles tendinopathy, plantar fasciitis, and shin splints. Most are overuse injuries caused by repetitive loading on tissues that aren't strong enough. Systematic reviews report injury incidence ranging from 37% to 79% of runners per year, depending on training level and injury definition.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Does stretching prevent running injuries?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                No. A major meta-analysis of 25 trials with over 26,000 participants found that stretching had no significant effect on injury prevention (Lauersen et al., <em>BJSM</em>, 2014). Strength training, by contrast, reduced injuries by up to 69%. Stretching has other benefits — flexibility, recovery, comfort — but injury prevention isn't one of them.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Can I do these exercises if I already have pain?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                If you're currently experiencing pain while running, get assessed by a physiotherapist before starting a new exercise programme. Some of these exercises may need to be modified depending on your specific injury. These exercises are designed primarily for injury prevention in healthy runners — not as treatment for existing injuries. <a href="when-to-see-physiotherapist.html" style="color: var(--orange);">Read our guide on when to see a physio.</a>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Is running on concrete more likely to cause injuries?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Hard surfaces like concrete and asphalt absorb none of the impact force, meaning your muscles, tendons, and joints absorb 100% of it. While your body can adapt to hard surfaces over time, runners who primarily train on concrete — as most runners in Cyprus do — need greater lower-limb strength to handle the repetitive loading. This makes strength training even more important.
+            </div>
+        </details>
+    </section>
 
     <section class="article-cta">
         <h2>Want a running-specific <span>assessment?</span></h2>
