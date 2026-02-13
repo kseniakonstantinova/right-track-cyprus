@@ -2162,158 +2162,166 @@
             }
         }
 
-        /* Partnerships Section */
-        .partnerships {
+        /* Community Section */
+        .community {
             padding: 120px 40px;
             background: var(--white);
         }
 
-        .partnerships-container {
-            max-width: 1400px;
-            margin: 60px auto 0;
+        .community-logos {
+            max-width: 900px;
+            margin: 50px auto 0;
             display: flex;
-            gap: 30px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            padding: 10px 0 30px 0;
-            -webkit-overflow-scrolling: touch;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px 50px;
         }
 
-        .partnerships-container::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .partnerships-container::-webkit-scrollbar-track {
-            background: var(--light-gray);
-            border-radius: 10px;
-        }
-
-        .partnerships-container::-webkit-scrollbar-thumb {
-            background: var(--orange);
-            border-radius: 10px;
-        }
-
-        .partnerships-container::-webkit-scrollbar-thumb:hover {
-            background: var(--navy);
-        }
-
-        .partnership-card {
-            backdrop-filter: blur(15px) saturate(180%);
-            -webkit-backdrop-filter: blur(15px) saturate(180%);
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.85) 0%,
-                rgba(255, 255, 255, 0.5) 50%,
-                rgba(255, 255, 255, 0.7) 100%
-            );
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow:
-                0 8px 32px rgba(0, 0, 0, 0.08),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+        .community-logo {
             display: flex;
             flex-direction: column;
-            min-width: 380px;
-            max-width: 380px;
-            scroll-snap-align: start;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
         }
 
-        .partnership-card:hover {
-            transform: translateY(-8px);
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.12),
-                inset 0 1px 0 rgba(255, 255, 255, 1),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 107, 53, 0.5);
+        .community-logo:hover {
+            transform: translateY(-4px);
         }
 
-        .partnership-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .partnership-logo {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(10, 22, 40, 0.03));
+        .community-logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            background: var(--off-white);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px;
+            padding: 12px;
+            border: 1px solid var(--light-gray);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .partnership-logo img {
+        .community-logo:hover .community-logo-img {
+            border-color: var(--orange);
+            box-shadow: 0 4px 16px rgba(255, 107, 53, 0.15);
+        }
+
+        .community-logo-img img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            mix-blend-mode: multiply;
         }
 
-        .partnership-placeholder {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(10, 22, 40, 0.05));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-        }
-
-        .partnership-info {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .partnership-info h3 {
+        .community-logo-img span {
+            font-size: 0.7rem;
+            font-weight: 800;
             color: var(--navy);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .partnership-info > p:first-of-type {
-            color: var(--orange);
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.2;
             letter-spacing: 0.5px;
         }
 
-        .partnership-description {
-            color: var(--text-dark);
-            line-height: 1.7;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .partnership-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid var(--light-gray);
-        }
-
-        .partnership-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(255, 107, 53, 0.05));
-            color: var(--orange);
-            padding: 6px 12px;
-            border-radius: 16px;
+        .community-logo-name {
             font-size: 0.8rem;
             font-weight: 600;
-            border: 1px solid rgba(255, 107, 53, 0.2);
+            color: var(--navy);
+            text-align: center;
+            max-width: 100px;
+            line-height: 1.3;
+        }
+
+        .community-events {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .community-events h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .community-events-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .community-event-card {
+            display: flex;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--white);
+        }
+
+        .community-event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .community-event-thumb {
+            width: 120px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .community-event-info {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .community-event-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .community-event-info .event-date {
+            font-size: 0.85rem;
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .community-event-info p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .community-events-cta {
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .community-events-cta a {
+            color: var(--orange);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .community-events-cta a:hover {
+            color: var(--navy);
         }
 
         /* Contact Section */
@@ -2803,31 +2811,29 @@
                 font-size: 1.5rem;
             }
 
-            .partnerships,
+            .community,
             .testimonials {
                 padding: 80px 20px;
             }
 
-            .partnerships-container {
-                padding: 10px 20px 30px 20px;
+            .community-logos {
+                gap: 24px 30px;
             }
 
-            .partnership-card {
-                min-width: 280px;
-                max-width: 280px;
-                padding: 25px;
+            .community-logo-img {
+                width: 64px;
+                height: 64px;
+                padding: 10px;
             }
 
-            .partnership-image {
-                height: 200px;
+            .community-events-grid {
+                grid-template-columns: 1fr;
             }
 
-            .partnership-info {
-                padding: 20px;
-            }
-
-            .partnership-info h3 {
-                font-size: 1.3rem;
+            .community-event-thumb {
+                width: 90px;
+                min-height: 90px;
+                font-size: 0.75rem;
             }
 
             .testimonials-container {
@@ -3244,7 +3250,7 @@
                 <li><a href="#services">Υπηρεσίες</a></li>
                 <li><a href="#team">Ομάδα</a></li>
                 <li><a href="#gesy">ΓΕΣΥ</a></li>
-                <li><a href="#partnerships">Συνεργασίες</a></li>
+
                 <li><a href="#contact">Επικοινωνία</a></li>
                 <li><a href="pages/blog-el.html">Blog</a></li>
                 <li><a href="pages/events-el.html">Events</a></li>
@@ -3801,61 +3807,67 @@
         </div>
     </section>
 
-    <!-- Partnerships Section -->
-    <section class="partnerships" id="partnerships">
+    <!-- Community Section -->
+    <section class="community" id="community">
         <div class="section-header">
-            <h2>Οι <span>Συνεργασίες</span> μας</h2>
-            <p>Έμπιστοι από κορυφαίες ποδοσφαιρικές ομάδες και οργανισμούς σε όλη την Κύπρο</p>
+            <h2>Η <span>Κοινότητά</span> μας</h2>
+            <p>Εμπιστοσύνη από αθλητικές ομάδες, πανεπιστήμια και αθλητές σε όλη την Κύπρο</p>
         </div>
 
-        <div class="partnerships-container">
-            <div class="partnership-card">
-                <div class="partnership-logo">
-                    <img src="assets/images/partnerships-logos/frederick-logo-601x737.png" alt="Πανεπιστήμιο Frederick" style="transform: scale(2.016) translateY(4%);">
+        <div class="community-logos">
+            <a href="https://www.frederick.ac.cy" target="_blank" rel="noopener" class="community-logo">
+                <div class="community-logo-img">
+                    <img src="assets/images/partnerships-logos/frederick-logo-601x737.png" alt="Πανεπιστήμιο Frederick">
                 </div>
-                <div class="partnership-info">
-                    <h3>Πανεπιστήμιο Frederick</h3>
-                    <p>Εποπτεία κλινικής πρακτικής & εκπαίδευση</p>
-                    <p class="partnership-description">Ο Αντώνης Πέτρη υπηρετεί ως Επόπτης Κλινικής Πρακτικής, εκπαιδεύοντας την επόμενη γενιά επαγγελματιών υγείας με αποκατάσταση βασισμένη σε τεκμήρια και κλινική αριστεία.</p>
+                <span class="community-logo-name">Πανεπιστήμιο Frederick</span>
+            </a>
+            <a href="https://www.facebook.com/paeaborgiasacademy/" target="_blank" rel="noopener" class="community-logo">
+                <div class="community-logo-img">
+                    <img src="assets/images/partnerships-logos/paeek-kyrenia.png?v=2" alt="ΠΑΕΕΚ Κερύνεια">
                 </div>
-            </div>
-
-            <div class="partnership-card">
-                <div class="partnership-logo">
-                    <img src="assets/images/partnerships-logos/paeek-kyrenia.png?v=2" alt="Ακαδημίες ΠΑΕΕΚ Κερύνειας">
-                </div>
-                <div class="partnership-info">
-                    <h3>Ακαδημίες ΠΑΕΕΚ Κερύνειας</h3>
-                    <p>Συνεργασία με επαγγελματικό ποδοσφαιρικό σύλλογο</p>
-                    <p class="partnership-description">Παροχή ολοκληρωμένων υπηρεσιών αθλητικής φυσιοθεραπείας, βελτιστοποίηση απόδοσης και πρωτόκολλα πρόληψης τραυματισμών για επαγγελματίες ποδοσφαιριστές.</p>
-                </div>
-            </div>
-
-            <div class="partnership-card">
-                <div class="partnership-logo">
-                    <img src="assets/images/partnerships-logos/lakatamia-fc.png" alt="Λακατάμεια F.C. Γυναικών">
-                </div>
-                <div class="partnership-info">
-                    <h3>Λακατάμεια F.C. Γυναικών</h3>
-                    <p>Υποστήριξη κορυφαίας γυναικείας ποδοσφαιρικής ομάδας</p>
-                    <p class="partnership-description">Το Right Track παρέχει ολοκληρωμένη υποστήριξη αθλητικής φυσιοθεραπείας στη Λακατάμεια F.C. Γυναικών, εστιάζοντας στην πρόληψη τραυματισμών, βελτιστοποίηση απόδοσης και πρωτόκολλα ταχείας ανάρρωσης για κορυφαίες αθλήτριες.</p>
-                </div>
-            </div>
-
-            <div class="partnership-card">
-                <div class="partnership-logo">
+                <span class="community-logo-name">ΠΑΕΕΚ Κερύνεια</span>
+            </a>
+            <a class="community-logo" style="cursor: default;">
+                <div class="community-logo-img">
                     <img src="assets/images/partnerships-logos/muya-tay.png" alt="Muay Thai Warriors">
                 </div>
-                <div class="partnership-info">
-                    <h3>Muay Thai Warriors</h3>
-                    <p>Απόδοση & ανάρρωση αθλητών μαχητικών τεχνών</p>
-                    <p class="partnership-description">Προπόνηση απόδοσης και πρόληψη τραυματισμών εξειδικευμένη για αθλητές μαχητικών τεχνών, συμπεριλαμβανομένης προετοιμασίας, πρωτοκόλλων ανάρρωσης και βελτιστοποίησης κίνησης.</p>
+                <span class="community-logo-name">Muay Thai Warriors</span>
+            </a>
+            <a href="https://thepadelcamp.com.cy" target="_blank" rel="noopener" class="community-logo">
+                <div class="community-logo-img">
+                    <span>THE PADEL<br>CAMP</span>
                 </div>
-            </div>
+                <span class="community-logo-name">The Padel Camp</span>
+            </a>
         </div>
 
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="mailto:antonis@righttrackphysio.com.cy" class="btn btn-primary">Γίνετε Συνεργάτης →</a>
+        <div class="community-events">
+            <h3>Επερχόμενες Εκδηλώσεις</h3>
+            <div class="community-events-grid">
+                <a href="pages/seminar-muay-thai-el.html" class="community-event-card">
+                    <div class="community-event-thumb" style="background: linear-gradient(135deg, #0A1628, #1a3a5c);">
+                        MUAY THAI
+                    </div>
+                    <div class="community-event-info">
+                        <h4>Σεμινάριο Muay Thai</h4>
+                        <div class="event-date">4 Απριλίου 2026</div>
+                        <p>Προπονήσου Σκληρά. Πολέμα Έξυπνα. Μείνε Χωρίς Τραυματισμούς.</p>
+                    </div>
+                </a>
+                <a href="pages/padel-camp-el.html" class="community-event-card">
+                    <div class="community-event-thumb" style="background: linear-gradient(135deg, #0A1628, #2d7a4f);">
+                        PADEL
+                    </div>
+                    <div class="community-event-info">
+                        <h4>The Padel Camp Cyprus 2026</h4>
+                        <div class="event-date">13&ndash;19 Απριλίου 2026</div>
+                        <p>Αθλητική φυσικοθεραπεία &amp; αποκατάσταση στο Limassol Padel Club.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="community-events-cta">
+                <a href="pages/events-el.html">Δείτε όλες τις εκδηλώσεις &rarr;</a>
+            </div>
         </div>
     </section>
 
