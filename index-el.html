@@ -3214,30 +3214,99 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
 
-    <!-- Promo Banner - Mat Pilates Launch -->
-    <section class="promo-banner">
-        <div class="promo-banner-content">
-            <div class="promo-banner-text">
-                <div class="promo-badge">
-                    <span class="pulse"></span>
-                    Νέα Τμήματα από 1η Φεβρουαρίου
+    <!-- Promo Carousel -->
+    <section class="promo-carousel" id="promoCarousel">
+
+        <!-- Slide 1: Σεμινάριο Muay Thai -->
+        <div class="promo-slide active" data-slide="0">
+            <div class="promo-slide-content">
+                <div class="promo-slide-text">
+                    <div class="promo-badge">
+                        <span class="pulse"></span>
+                        Επερχόμενο Σεμινάριο
+                    </div>
+                    <h2>Προπονήσου Σκληρά. Αγωνίσου Έξυπνα.<br><span>Μείνε Χωρίς Τραυματισμούς.</span></h2>
+                    <p class="subtitle">Σεμινάριο πρόληψης τραυματισμών 90 λεπτών για αθλητές μαχητικών αθλημάτων. Από τον φυσιοθεραπευτή Αντώνη Πέτρη.</p>
+                    <div class="promo-cta-group">
+                        <a href="pages/seminar-muay-thai-el.html" class="promo-cta">Εγγραφή — €25 →</a>
+                        <a href="pages/tony-profile-el.html" class="promo-cta-secondary">Γνωρίστε τον Αντώνη →</a>
+                    </div>
                 </div>
-                <h2>Κλινικό <span>Mat Pilates</span><br>με την Alice</h2>
-                <p class="subtitle">Pilates καθοδηγούμενο από φυσιοθεραπευτή για αποκατάσταση, δύναμη & κινητικότητα.</p>
-                <a href="pages/booking.html?service=clinical-pilates&therapist=alice&lang=el" class="promo-cta">
-                    Κράτηση από €80/μήνα (Early Bird) →
-                </a>
-            </div>
-            <div class="promo-banner-image">
-                <img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian - Εκπαιδεύτρια Κλινικού Pilates">
-                <div class="promo-features">
-                    <span class="promo-feature">Προγεννητικό & Μεταγεννητικό</span>
-                    <span class="promo-feature">Αρχάριοι Ευπρόσδεκτοι</span>
-                    <span class="promo-feature">Μικρές Ομάδες</span>
+                <div class="promo-slide-image">
+                    <img src="assets/images/banners/muay-thai-seminar.jpg" alt="Σεμινάριο Πρόληψης Τραυματισμών για Μαχητές — Αντώνης Πέτρης">
+                    <div class="promo-features">
+                        <span class="promo-feature">Μαχητικά Αθλήματα</span>
+                        <span class="promo-feature">Πρόληψη Τραυματισμών</span>
+                        <span class="promo-feature">Βασισμένο σε Μελέτες</span>
+                    </div>
+                    <a href="pages/tony-profile-el.html" class="instructor-profile-link">Δείτε το Προφίλ του Εισηγητή →</a>
                 </div>
-                <a href="pages/alice-profile-el.html" class="instructor-profile-link">Δείτε το Προφίλ & Πακέτα →</a>
             </div>
         </div>
+
+        <!-- Slide 2: Padel Camp -->
+        <div class="promo-slide" data-slide="1">
+            <div class="promo-slide-content">
+                <div class="promo-slide-text">
+                    <div class="promo-badge">
+                        <span class="pulse"></span>
+                        13–19 Απριλίου 2026
+                    </div>
+                    <h2>The Padel Camp<br><span>Cyprus 2026</span></h2>
+                    <p class="subtitle">5ήμερο εντατικό camp padel με φυσιοθεραπευτή επί τόπου. Αποκατάσταση, πρόληψη τραυματισμών & βελτιστοποίηση απόδοσης.</p>
+                    <div class="promo-cta-group">
+                        <a href="pages/padel-camp-el.html" class="promo-cta">Μάθετε Περισσότερα →</a>
+                        <a href="pages/tony-profile-el.html" class="promo-cta-secondary">Γνωρίστε τον Φυσιοθεραπευτή →</a>
+                    </div>
+                </div>
+                <div class="promo-slide-image">
+                    <img src="assets/images/banners/padel-camp.jpg" alt="The Padel Camp Cyprus 2026 — Αθλητική Φυσιοθεραπεία επί Τόπου">
+                    <div class="promo-features">
+                        <span class="promo-feature">5ήμερο Camp</span>
+                        <span class="promo-feature">Φυσιοθεραπεία επί Τόπου</span>
+                        <span class="promo-feature">Λεμεσός</span>
+                    </div>
+                    <a href="pages/tony-profile-el.html" class="instructor-profile-link">Δείτε το Προφίλ του Φυσιοθεραπευτή →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Κλινικό Pilates -->
+        <div class="promo-slide" data-slide="2">
+            <div class="promo-slide-content">
+                <div class="promo-slide-text">
+                    <div class="promo-badge">
+                        <span class="pulse"></span>
+                        Νέα Τμήματα Διαθέσιμα
+                    </div>
+                    <h2>Κλινικό <span>Mat Pilates</span><br>με την Alice</h2>
+                    <p class="subtitle">Pilates καθοδηγούμενο από φυσιοθεραπευτή για αποκατάσταση, δύναμη & κινητικότητα. Μικρές ομάδες, μεγάλα αποτελέσματα.</p>
+                    <div class="promo-cta-group">
+                        <a href="pages/booking.html?service=clinical-pilates&therapist=alice&lang=el" class="promo-cta">Κράτηση από €80/μήνα →</a>
+                        <a href="pages/alice-profile-el.html" class="promo-cta-secondary">Γνωρίστε την Alice →</a>
+                    </div>
+                </div>
+                <div class="promo-slide-image">
+                    <img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian — Εκπαιδεύτρια Κλινικού Pilates">
+                    <div class="promo-features">
+                        <span class="promo-feature">Προγεννητικό & Μεταγεννητικό</span>
+                        <span class="promo-feature">Αρχάριοι Ευπρόσδεκτοι</span>
+                        <span class="promo-feature">Μικρές Ομάδες</span>
+                    </div>
+                    <a href="pages/alice-profile-el.html" class="instructor-profile-link">Δείτε το Προφίλ & Πακέτα →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-arrow prev" onclick="changeSlide(-1)" aria-label="Προηγούμενο slide">&#10094;</button>
+        <button class="carousel-arrow next" onclick="changeSlide(1)" aria-label="Επόμενο slide">&#10095;</button>
+        <div class="carousel-dots">
+            <button class="carousel-dot active" data-slide="0" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+            <button class="carousel-dot" data-slide="1" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+            <button class="carousel-dot" data-slide="2" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-progress" id="carouselProgress"></div>
     </section>
 
     <!-- Hero Section -->
@@ -4360,6 +4429,74 @@
                 });
             }
         });
+    </script>
+
+    <!-- Promo Carousel Script -->
+    <script>
+        (function() {
+            var currentSlide = 0;
+            var slides = document.querySelectorAll('.promo-slide');
+            var dots = document.querySelectorAll('.carousel-dot');
+            var progressBar = document.getElementById('carouselProgress');
+            var totalSlides = slides.length;
+            var interval = 6000;
+            var autoplayTimer = null;
+
+            function goToSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                currentSlide = (index + totalSlides) % totalSlides;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+                resetProgress();
+            }
+
+            function changeSlide(dir) {
+                goToSlide(currentSlide + dir);
+            }
+
+            function resetProgress() {
+                if (progressBar) {
+                    progressBar.style.transition = 'none';
+                    progressBar.style.width = '0%';
+                    void progressBar.offsetWidth;
+                    progressBar.style.transition = 'width ' + interval + 'ms linear';
+                    progressBar.style.width = '100%';
+                }
+                clearInterval(autoplayTimer);
+                autoplayTimer = setInterval(function() {
+                    goToSlide(currentSlide + 1);
+                }, interval);
+            }
+
+            // Touch / swipe
+            var touchStartX = 0;
+            var carousel = document.getElementById('promoCarousel');
+            if (carousel) {
+                carousel.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+                carousel.addEventListener('touchend', function(e) {
+                    var diff = touchStartX - e.changedTouches[0].screenX;
+                    if (Math.abs(diff) > 50) {
+                        changeSlide(diff > 0 ? 1 : -1);
+                    }
+                }, { passive: true });
+                carousel.addEventListener('mouseenter', function() {
+                    clearInterval(autoplayTimer);
+                    if (progressBar) {
+                        progressBar.style.transition = 'none';
+                    }
+                });
+                carousel.addEventListener('mouseleave', function() {
+                    resetProgress();
+                });
+            }
+
+            window.goToSlide = goToSlide;
+            window.changeSlide = changeSlide;
+            resetProgress();
+        })();
     </script>
 
     <script src="assets/js/cookie-consent.js"></script>
