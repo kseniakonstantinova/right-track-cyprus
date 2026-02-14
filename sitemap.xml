@@ -77,6 +77,120 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Service Pages - English -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/physiotherapy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/physiotherapy.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/physiotherapy-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/athlete-rehabilitation.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/athlete-rehabilitation.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/athlete-rehabilitation-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/clinical-pilates.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/clinical-pilates.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/clinical-pilates-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/kids-physiotherapy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/kids-physiotherapy.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/kids-physiotherapy-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/performance-training.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/performance-training.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/performance-training-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/homecare-physiotherapy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/homecare-physiotherapy.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/homecare-physiotherapy-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/sports-massage.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/sports-massage.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/sports-massage-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Service Pages - Greek -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/physiotherapy-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/physiotherapy.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/physiotherapy-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/athlete-rehabilitation-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/athlete-rehabilitation.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/athlete-rehabilitation-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/clinical-pilates-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/clinical-pilates.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/clinical-pilates-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/kids-physiotherapy-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/kids-physiotherapy.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/kids-physiotherapy-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/performance-training-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/performance-training.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/performance-training-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/homecare-physiotherapy-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/homecare-physiotherapy.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/homecare-physiotherapy-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/services/sports-massage-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/services/sports-massage.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/services/sports-massage-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Tools -->
     <url>
         <loc>https://righttrackphysio.com.cy/pages/tools-child-development.html</loc>
