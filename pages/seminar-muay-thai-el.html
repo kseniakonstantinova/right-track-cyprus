@@ -1173,6 +1173,12 @@
         const WORKER_URL = 'https://righttrack-telegram.righttrackphysio.workers.dev';
         const SEMINAR_NAME = 'Injury Prevention for Fighters — April 4, 2026';
 
+        // EmailJS config
+        const EMAILJS_SERVICE_ID = 'service_apg3zoa';
+        const EMAILJS_PUBLIC_KEY = '1cMf-T1krhUJoreWv';
+        const EMAILJS_TEMPLATE_NOTIFY = 'template_35sacxf';      // Business notification
+        const EMAILJS_TEMPLATE_CONFIRM = 'template_0f0ms19';  // Client confirmation (Seminar Registration)
+
         const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js');
         const { getFirestore, collection, addDoc } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js');
 
@@ -1238,6 +1244,53 @@
                     });
                 } catch (_) { /* notification failure is non-blocking */ }
 
+                // Email notification to business
+                try {
+                    await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            service_id: EMAILJS_SERVICE_ID,
+                            template_id: EMAILJS_TEMPLATE_NOTIFY,
+                            user_id: EMAILJS_PUBLIC_KEY,
+                            template_params: {
+                                booking_type: 'Seminar Registration',
+                                client_name: name,
+                                client_phone: phone,
+                                client_email: email,
+                                service_name: SEMINAR_NAME,
+                                therapist_name: 'Antonis Petri',
+                                payment_type: 'Pay at door — €25',
+                                booking_date: 'April 4, 2026',
+                                booking_time: '18:30 – 20:00',
+                                message: `Level: ${level}${gym ? ` | Gym: ${gym}` : ''}${injuries ? ` | Injuries: ${injuries}` : ''}`
+                            }
+                        })
+                    });
+                } catch (_) { /* email failure is non-blocking */ }
+
+                // Confirmation email to registrant
+                try {
+                    await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            service_id: EMAILJS_SERVICE_ID,
+                            template_id: EMAILJS_TEMPLATE_CONFIRM,
+                            user_id: EMAILJS_PUBLIC_KEY,
+                            template_params: {
+                                to_email: email,
+                                to_name: name,
+                                seminar_name: SEMINAR_NAME,
+                                level: level,
+                                seminar_date: 'Friday, April 4, 2026',
+                                seminar_time: '18:30 – 20:00',
+                                seminar_location: 'Muay Thai Warriors, Nicosia'
+                            }
+                        })
+                    });
+                } catch (_) { /* confirmation failure is non-blocking */ }
+
                 // GA4 event
                 if (typeof gtag === 'function') {
                     gtag('event', 'seminar_registration', {
@@ -1251,6 +1304,7 @@
                 formSuccess.style.display = 'block';
 
             } catch (err) {
+                console.error('Seminar registration error:', err);
                 formError.textContent = 'Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε μας.';
                 formError.style.display = 'block';
                 submitBtn.disabled = false;
