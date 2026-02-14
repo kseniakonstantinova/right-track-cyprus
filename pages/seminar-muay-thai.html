@@ -655,6 +655,151 @@
             font-size: 0.9rem;
         }
 
+        /* Registration Form */
+        .register-form {
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .form-group label .required {
+            color: var(--orange);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s, background 0.2s;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+
+        .form-group select option {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .btn-submit {
+            display: inline-block;
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            background: var(--orange);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+            font-family: inherit;
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 32px 0;
+        }
+
+        .form-success .success-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .form-success h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .form-success p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .form-error {
+            display: none;
+            background: rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--white);
@@ -919,8 +1064,59 @@
     <section class="final-cta" id="register">
         <h2>Ready to Train <span>Smarter?</span></h2>
         <p>Reserve your spot now. Spaces are limited.</p>
-        <!-- TODO: Replace with actual Google Form or registration link -->
-        <a href="#" class="btn-register">Register Now &mdash; &euro;25</a>
+
+        <div id="registerFormWrap">
+            <form class="register-form" id="seminarRegisterForm" novalidate>
+                <div id="formError" class="form-error"></div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name <span class="required">*</span></label>
+                        <input type="text" id="regName" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone <span class="required">*</span></label>
+                        <input type="tel" id="regPhone" placeholder="+357 99 123456" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" id="regEmail" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Experience Level <span class="required">*</span></label>
+                        <select id="regLevel" required>
+                            <option value="" disabled selected>Select level</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                            <option value="Coach">Coach</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Club / Gym <span style="color: rgba(255,255,255,0.4); font-weight: 400;">(optional)</span></label>
+                    <input type="text" id="regGym" placeholder="e.g. Muay Thai Warriors">
+                </div>
+
+                <div class="form-group">
+                    <label>Current Injuries? <span style="color: rgba(255,255,255,0.4); font-weight: 400;">(optional)</span></label>
+                    <textarea id="regInjuries" placeholder="Any injuries or conditions we should know about"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit" id="regSubmitBtn">Register Now &mdash; &euro;25</button>
+            </form>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+            <div class="success-icon">&#10003;</div>
+            <h3>You're Registered!</h3>
+            <p>We'll send a confirmation to your email. See you on April 4th!</p>
+        </div>
+
         <p class="spots">Limited to 30 participants for a hands-on experience</p>
     </section>
 
@@ -957,6 +1153,107 @@
                     toggleMobileMenu();
                 }
             });
+        });
+    </script>
+
+    <!-- Seminar Registration Logic -->
+    <script type="module">
+        const firebaseConfig = {
+            apiKey: "AIzaSyACv0o8NPh52XBoEuAyNuuE8IzjVb2zNvE",
+            authDomain: "righttrack-booking-167c6.firebaseapp.com",
+            projectId: "righttrack-booking-167c6",
+            storageBucket: "righttrack-booking-167c6.firebasestorage.app",
+            messagingSenderId: "550244482545",
+            appId: "1:550244482545:web:4e73995eb699a8acd4d850",
+            measurementId: "G-XQT03Q3821"
+        };
+
+        const WORKER_URL = 'https://righttrack-telegram.righttrackphysio.workers.dev';
+        const SEMINAR_NAME = 'Injury Prevention for Fighters — April 4, 2026';
+
+        const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js');
+        const { getFirestore, collection, addDoc } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js');
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const form = document.getElementById('seminarRegisterForm');
+        const submitBtn = document.getElementById('regSubmitBtn');
+        const formError = document.getElementById('formError');
+        const formWrap = document.getElementById('registerFormWrap');
+        const formSuccess = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            formError.style.display = 'none';
+
+            const name = document.getElementById('regName').value.trim();
+            const phone = document.getElementById('regPhone').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const level = document.getElementById('regLevel').value;
+            const gym = document.getElementById('regGym').value.trim();
+            const injuries = document.getElementById('regInjuries').value.trim();
+
+            // Validation
+            if (!name || !phone || !email || !level) {
+                formError.textContent = 'Please fill in all required fields.';
+                formError.style.display = 'block';
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                formError.textContent = 'Please enter a valid email address.';
+                formError.style.display = 'block';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            try {
+                const regData = {
+                    name,
+                    phone,
+                    email,
+                    level,
+                    gym: gym || null,
+                    injuries: injuries || null,
+                    seminar: SEMINAR_NAME,
+                    source: 'website',
+                    status: 'registered',
+                    createdAt: new Date().toISOString()
+                };
+
+                await addDoc(collection(db, 'seminar-registrations'), regData);
+
+                // Telegram notification
+                try {
+                    const message = `🥊 SEMINAR REGISTRATION\n\n👤 ${name}\n📱 ${phone}\n📧 ${email}\n🏋️ Level: ${level}${gym ? `\n🏠 Gym: ${gym}` : ''}${injuries ? `\n⚠️ Injuries: ${injuries}` : ''}\n\n📌 ${SEMINAR_NAME}`;
+                    await fetch(WORKER_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message })
+                    });
+                } catch (_) { /* notification failure is non-blocking */ }
+
+                // GA4 event
+                if (typeof gtag === 'function') {
+                    gtag('event', 'seminar_registration', {
+                        event_category: 'conversion',
+                        event_label: SEMINAR_NAME
+                    });
+                }
+
+                // Show success
+                formWrap.style.display = 'none';
+                formSuccess.style.display = 'block';
+
+            } catch (err) {
+                formError.textContent = 'Something went wrong. Please try again or call us.';
+                formError.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Register Now — €25';
+            }
         });
     </script>
 
