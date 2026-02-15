@@ -1265,11 +1265,11 @@
                             }
                         })
                     });
-                } catch (_) { /* email failure is non-blocking */ }
+                } catch (emailErr) { console.error('Business email error:', emailErr); }
 
                 // Confirmation email to registrant
                 try {
-                    await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                    const confirmRes = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
@@ -1287,7 +1287,8 @@
                             }
                         })
                     });
-                } catch (_) { /* confirmation failure is non-blocking */ }
+                    console.log('Confirmation email status:', confirmRes.status, await confirmRes.text());
+                } catch (confirmErr) { console.error('Confirmation email error:', confirmErr); }
 
                 // GA4 event
                 if (typeof gtag === 'function') {

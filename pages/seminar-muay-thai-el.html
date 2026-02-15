@@ -1267,7 +1267,7 @@
                             }
                         })
                     });
-                } catch (_) { /* email failure is non-blocking */ }
+                } catch (emailErr) { console.error('Business email error:', emailErr); }
 
                 // Confirmation email to registrant
                 try {
@@ -1289,7 +1289,7 @@
                             }
                         })
                     });
-                } catch (_) { /* confirmation failure is non-blocking */ }
+                } catch (confirmErr) { console.error('Confirmation email error:', confirmErr); }
 
                 // GA4 event
                 if (typeof gtag === 'function') {
