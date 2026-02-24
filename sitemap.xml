@@ -288,6 +288,24 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- PAEEK Partnership - English -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/paeek-partnership.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/paeek-partnership.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/paeek-partnership-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- PAEEK Partnership - Greek -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/paeek-partnership-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/paeek-partnership.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/paeek-partnership-el.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Blog Articles - English -->
     <url>
         <loc>https://righttrackphysio.com.cy/pages/blog/acl-recovery-athletes-cyprus.html</loc>
