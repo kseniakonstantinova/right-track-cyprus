@@ -72,6 +72,88 @@
 
 ---
 
+## Google Search Console — Indexing Log
+
+**Date started:** February 16, 2026 (first data in GSC)
+
+### GSC Status as of February 24, 2026
+
+| Metric | Value |
+|--------|-------|
+| Indexed pages | 15 |
+| Not indexed | 38 (37 "Discovered" + 1 redirect) |
+| Total clicks (9 days) | 5 |
+| Total impressions | 63 |
+| Average CTR | 7.9% |
+| Average position | 6.5 |
+
+**Top performing pages:**
+- `padel-camp.html` — 3 clicks, 17 impressions (best performer)
+- `homepage` — 1 click, 20 impressions
+- `blog/gesy-physiotherapy-cyprus-guide.html` — 1 click, 5 impressions (first blog article indexed)
+
+**Why pages aren't indexed:**
+- "Discovered – currently not indexed" = 37 → normal queue, no content issues
+- "Page with redirect" = 1 → `http://righttrackphysio.com.cy/` (harmless, HTTP redirects to HTTPS)
+- "Crawled – currently not indexed" = 0 → **no quality problems**
+
+**Sitemap:** submitted 16 Feb, last read by Google 23 Feb. Re-submitted 24 Feb.
+
+---
+
+### PAEEK Partnership Pages — Created 24 Feb 2026
+
+**Files created/modified:**
+- `pages/paeek-partnership-el.html` — Greek version (new)
+- `pages/paeek-partnership.html` — added hreflang + EL language switcher
+- `sitemap.xml` — added both pages with hreflang alternates
+
+---
+
+### URL Inspection — Request Indexing Log
+
+GSC limit: ~10 requests/day. Use: GSC → URL Inspection → paste URL → "Request Indexing"
+
+| URL | Date requested | Status |
+|-----|---------------|--------|
+| `/pages/paeek-partnership.html` | 24 Feb 2026 | Requested |
+| `/pages/paeek-partnership-el.html` | 24 Feb 2026 | Requested |
+| `/pages/blog/acl-recovery-athletes-cyprus.html` | 24 Feb 2026 | Requested |
+| `/pages/blog/shoulder-impingement-treatment-guide.html` | 24 Feb 2026 | Requested |
+| `/pages/blog/ankle-sprain-rehabilitation-guide.html` | 24 Feb 2026 | Requested |
+| `/pages/services/athlete-rehabilitation.html` | 24 Feb 2026 | Requested |
+| `/pages/blog/meniscus-tear-recovery-case-study.html` | — | **TODO** |
+| `/pages/blog/when-to-see-physiotherapist.html` | — | **TODO** |
+| `/pages/blog/runner-injury-prevention-exercises.html` | — | **TODO** |
+| `/pages/blog/injury-prevention-combat-sports.html` | — | **TODO** |
+| `/pages/blog/hamstring-injury-stretching-myth.html` | — | **TODO** |
+| `/pages/services/physiotherapy.html` | — | **TODO** |
+| `/pages/services/clinical-pilates.html` | — | **TODO** |
+| `/pages/services/sports-massage.html` | — | **TODO** |
+| `/pages/padel-camp-el.html` | — | **TODO** |
+| `/pages/blog/acl-recovery-athletes-cyprus-el.html` | — | **TODO** |
+| `/pages/blog/ankle-sprain-rehabilitation-guide-el.html` | — | **TODO** |
+| `/pages/blog/meniscus-tear-recovery-case-study-el.html` | — | **TODO** |
+
+**Daily plan:**
+- **25 Feb:** meniscus, when-to-see, runner, injury-combat-sports, hamstring
+- **26 Feb:** services/physiotherapy, services/clinical-pilates, services/sports-massage, padel-camp-el
+- **27 Feb:** EL versions of blog articles
+
+---
+
+### Backlinks — TODO (highest impact action)
+
+One real external link = faster crawl budget + better rankings.
+
+| Source | What to ask | URL to link to | Status |
+|--------|------------|----------------|--------|
+| **PAEEK Kyrenia** | Link from their website/socials as official physio partner | `/pages/paeek-partnership.html` | Not done |
+| **Muay Thai Warriors** | Link to seminar page from their website/socials | `/pages/seminar-muay-thai.html` | Not done |
+| **Frederick University** | Antonis mentioned on department page with link | `/pages/tony-profile.html` | Not done |
+
+---
+
 ## TODO — Manual Actions Required
 
 | Action | Priority | Owner |
