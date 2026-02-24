@@ -142,15 +142,16 @@ GSC limit: ~10 requests/day. Use: GSC → URL Inspection → paste URL → "Requ
 
 ---
 
-### Backlinks — TODO (highest impact action)
+### Backlinks — Status
 
 One real external link = faster crawl budget + better rankings.
 
-| Source | What to ask | URL to link to | Status |
-|--------|------------|----------------|--------|
-| **PAEEK Kyrenia** | Link from their website/socials as official physio partner | `/pages/paeek-partnership.html` | Not done |
-| **Muay Thai Warriors** | Link to seminar page from their website/socials | `/pages/seminar-muay-thai.html` | Not done |
-| **Frederick University** | Antonis mentioned on department page with link | `/pages/tony-profile.html` | Not done |
+| Source | URL linked | Status | Notes |
+|--------|-----------|--------|-------|
+| **thepadelcamp** | `/pages/padel-camp.html` | ✅ **Active** | Explains why padel-camp.html is top performer (3 clicks, 17 impressions) |
+| **PAEEK Kyrenia** | `/pages/paeek-partnership.html` | Not done | Ask to link as official physio partner |
+| **Muay Thai Warriors** | `/pages/seminar-muay-thai.html` | Not done | Ask to link to seminar page |
+| **Frederick University** | `/pages/tony-profile.html` | Not done | Antonis on department page with link |
 
 ---
 
