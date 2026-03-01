@@ -1834,9 +1834,55 @@
             color: #666;
         }
 
-        .testimonials-container {
+        /* Testimonials Navigation Arrows */
+        .testimonials-wrapper {
+            position: relative;
             max-width: 1400px;
             margin: 60px auto 0;
+        }
+
+        .testimonials-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: all 0.2s ease;
+            color: var(--navy);
+            font-size: 1.2rem;
+        }
+
+        .testimonials-nav:hover {
+            background: var(--orange);
+            color: white;
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .testimonials-nav--prev {
+            left: -24px;
+        }
+
+        .testimonials-nav--next {
+            right: -24px;
+        }
+
+        .testimonial-date {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0;
             display: flex;
             gap: 30px;
             overflow-x: auto;
@@ -2777,6 +2823,14 @@
                 padding: 10px 20px 30px 20px;
             }
 
+            .testimonials-wrapper {
+                margin: 30px auto 0;
+            }
+
+            .testimonials-nav {
+                display: none;
+            }
+
             .testimonial-card {
                 min-width: 280px;
                 max-width: 280px;
@@ -3304,7 +3358,7 @@
                     </div>
                 </div>
                 <div class="promo-slide-image">
-                    <img src="assets/images/banners/muay-thai-seminar.jpg" alt="Σεμινάριο Πρόληψης Τραυματισμών για Μαχητές — Αντώνης Πέτρης">
+                    <img src="assets/images/banners/seminar-muay-thai.jpg" alt="Σεμινάριο Πρόληψης Τραυματισμών για Μαχητές — Αντώνης Πέτρης">
                     <div class="promo-features">
                         <span class="promo-feature">Μαχητικά Αθλήματα</span>
                         <span class="promo-feature">Πρόληψη Τραυματισμών</span>
@@ -3355,8 +3409,8 @@
                         <a href="pages/tony-profile-el.html" class="promo-cta-secondary">Γνωρίστε τον Φυσιοθεραπευτή →</a>
                     </div>
                 </div>
-                <div class="promo-slide-image" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0A1628 0%,#0d2a1a 100%);">
-                    <img src="assets/images/banners/logo.png" alt="The Padel Camp Cyprus 2026 — Αθλητική Φυσιοθεραπεία επί Τόπου" style="width:65%;max-width:400px;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.92;">
+                <div class="promo-slide-image">
+                    <img src="assets/images/photo_2026-02-24 02.02.01.jpeg" alt="The Padel Camp Cyprus 2026 — Αθλητική Φυσιοθεραπεία επί Τόπου" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
                     <div class="promo-features">
                         <span class="promo-feature">5ήμερο Camp</span>
                         <span class="promo-feature">Φυσιοθεραπεία επί Τόπου</span>
@@ -3615,6 +3669,9 @@
             </a>
         </div>
 
+        <div class="testimonials-wrapper">
+            <button class="testimonials-nav testimonials-nav--prev" aria-label="Προηγούμενες κριτικές">&#10094;</button>
+            <button class="testimonials-nav testimonials-nav--next" aria-label="Επόμενες κριτικές">&#10095;</button>
         <div class="testimonials-container">
             <div class="testimonial-card">
                 <div class="testimonial-stars">
@@ -3626,7 +3683,7 @@
                     <div class="testimonial-avatar">IS</div>
                     <div class="testimonial-info">
                         <h4>Igor Sharafutdinov</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 2 εβδομάδες πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3641,7 +3698,7 @@
                     <div class="testimonial-avatar">AM</div>
                     <div class="testimonial-info">
                         <h4>Anastasis Markou</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 3 εβδομάδες πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3656,7 +3713,7 @@
                     <div class="testimonial-avatar">IK</div>
                     <div class="testimonial-info">
                         <h4>Iwsifina Koumettou</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3671,7 +3728,7 @@
                     <div class="testimonial-avatar">KK</div>
                     <div class="testimonial-info">
                         <h4>Ksenia Konstantinova</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3686,7 +3743,7 @@
                     <div class="testimonial-avatar">AD</div>
                     <div class="testimonial-info">
                         <h4>Antrea Demetriou</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3701,7 +3758,7 @@
                     <div class="testimonial-avatar">DA</div>
                     <div class="testimonial-info">
                         <h4>Dem Att</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 2 μήνες πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3716,7 +3773,7 @@
                     <div class="testimonial-avatar">ES</div>
                     <div class="testimonial-info">
                         <h4>Evagoras Savva</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 2 μήνες πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3731,7 +3788,7 @@
                     <div class="testimonial-avatar">MP</div>
                     <div class="testimonial-info">
                         <h4>Michali Petri</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 3 μήνες πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3746,7 +3803,7 @@
                     <div class="testimonial-avatar">PP</div>
                     <div class="testimonial-info">
                         <h4>Panayiotis Polycarpou</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 3 μήνες πριν</span></p>
                     </div>
                 </div>
             </div>
@@ -3761,10 +3818,11 @@
                     <div class="testimonial-avatar">RT</div>
                     <div class="testimonial-info">
                         <h4>Receipt Tenerife</h4>
-                        <p>Κριτική Google</p>
+                        <p>Κριτική Google <span class="testimonial-date">· 4 μήνες πριν</span></p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -4102,26 +4160,26 @@
             // Logic to match goal + setting to service
             if (goal === 'recover') {
                 if (setting === 'clinic') {
-                    recommendation = '<strong>Physiotherapy</strong> - Evidence-based treatment for injury recovery, pain management, and functional restoration. Book your assessment with one of our specialists today.';
+                    recommendation = '<strong>Φυσιοθεραπεία</strong> — Θεραπεία βασισμένη σε αποδείξεις για αποκατάσταση τραυματισμών, διαχείριση πόνου και λειτουργική αποκατάσταση. Κλείστε την αξιολόγησή σας με έναν από τους ειδικούς μας σήμερα.';
                 } else if (setting === 'home') {
-                    recommendation = '<strong>Homecare Physiotherapy</strong> - Convenient, personalized treatment in your own home. Perfect for recovery after surgery or injury. Book a home visit →';
+                    recommendation = '<strong>Κατ\' Οίκον Φυσιοθεραπεία</strong> — Εξατομικευμένη θεραπεία στο σπίτι σας. Ιδανική για αποκατάσταση μετά από χειρουργείο ή τραυματισμό. Κλείστε κατ\' οίκον επίσκεψη →';
                 } else if (setting === 'group') {
-                    recommendation = '<strong>Clinical Pilates</strong> - Therapeutic movement in small group sessions. Ideal for injury recovery combined with strength building. Book your trial →';
+                    recommendation = '<strong>Κλινικό Pilates</strong> — Θεραπευτική κίνηση σε μικρές ομάδες. Ιδανικό για αποκατάσταση τραυματισμών σε συνδυασμό με ενδυνάμωση. Κλείστε δοκιμαστική συνεδρία →';
                 }
             } else if (goal === 'improve') {
                 if (setting === 'clinic' || setting === 'group') {
-                    recommendation = '<strong>Clinical Pilates</strong> - Transform your core strength, posture, and flexibility. Small group sessions combine therapeutic precision with motivating community. Book your trial →';
+                    recommendation = '<strong>Κλινικό Pilates</strong> — Μεταμορφώστε τη δύναμη του κορμού, τη στάση και την ευελιξία σας. Ομαδικές συνεδρίες που συνδυάζουν θεραπευτική ακρίβεια με κίνητρο. Κλείστε δοκιμαστική συνεδρία →';
                 } else if (setting === 'home') {
-                    recommendation = '<strong>Homecare Pilates</strong> - One-on-one sessions tailored to your fitness goals and schedule. Get stronger and improve flexibility at home. Book a session →';
+                    recommendation = '<strong>Κατ\' Οίκον Pilates</strong> — Ατομικές συνεδρίες προσαρμοσμένες στους στόχους και το πρόγραμμά σας. Γίνετε πιο δυνατοί και βελτιώστε την ευελιξία στο σπίτι. Κλείστε συνεδρία →';
                 }
             } else if (goal === 'perform') {
                 if (setting === 'clinic' || setting === 'group') {
-                    recommendation = '<strong>Performance Training</strong> - Sport-specific conditioning and movement optimization. Enhance speed, agility, and athletic performance. Start training →';
+                    recommendation = '<strong>Προπόνηση Απόδοσης</strong> — Αθλητική προετοιμασία και βελτιστοποίηση κίνησης. Βελτιώστε ταχύτητα, ευκινησία και αθλητική απόδοση. Ξεκινήστε την προπόνηση →';
                 } else if (setting === 'home') {
-                    recommendation = '<strong>Home Performance Program</strong> - Personalized training program designed for your sport. Professional guidance in your own space. Get your plan →';
+                    recommendation = '<strong>Πρόγραμμα Απόδοσης στο Σπίτι</strong> — Εξατομικευμένο πρόγραμμα προπόνησης σχεδιασμένο για το άθλημά σας. Επαγγελματική καθοδήγηση στο δικό σας χώρο. Αποκτήστε το πρόγραμμά σας →';
                 }
             } else if (goal === 'child') {
-                recommendation = '<strong>Kids\' Physiotherapy</strong> - Play-based therapy supporting growth, development, and movement skills. Expert care for children from infancy to adolescence. Get assessment →';
+                recommendation = '<strong>Παιδική Φυσιοθεραπεία</strong> — Θεραπεία μέσω παιχνιδιού που υποστηρίζει την ανάπτυξη και τις κινητικές δεξιότητες. Εξειδικευμένη φροντίδα για παιδιά από τη βρεφική ηλικία έως την εφηβεία. Κλείστε αξιολόγηση →';
             }
 
             // Update result display
@@ -4173,6 +4231,23 @@
         }
 
         window.addEventListener('scroll', handleScroll, { passive: true });
+    </script>
+
+    <!-- Testimonials Navigation Arrows -->
+    <script>
+        (function() {
+            const container = document.querySelector('.testimonials-container');
+            const prevBtn = document.querySelector('.testimonials-nav--prev');
+            const nextBtn = document.querySelector('.testimonials-nav--next');
+            if (!container || !prevBtn || !nextBtn) return;
+            const scrollAmount = 410;
+            prevBtn.addEventListener('click', () => {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        })();
     </script>
 
     <!-- Scroll Position Preservation for Profile and Booking Pages -->
