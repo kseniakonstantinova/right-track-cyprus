@@ -41,21 +41,6 @@ const SERVICES = [
         }
     },
     {
-        id: 'kids-physio',
-        name: "Kids' Physiotherapy",
-        nameEl: 'Παιδική Φυσιοθεραπεία',
-        description: 'Scoliosis screening, Developmental support',
-        pricing: {
-            type: 'custom',
-            gesyPrice: null,
-            privatePrice: null,
-            customText: 'Customized Packages',
-            customTextEl: 'Εξατομικευμένα Πακέτα',
-            display: 'Customized Packages',
-            displayEl: 'Εξατομικευμένα Πακέτα'
-        }
-    },
-    {
         id: 'performance-training',
         name: 'Performance Training',
         nameEl: 'Προπόνηση Απόδοσης',
@@ -70,9 +55,9 @@ const SERVICES = [
     },
     {
         id: 'homecare-physio',
-        name: 'Home-care Physiotherapy',
-        nameEl: 'Φυσιοθεραπεία κατ\' Οίκον',
-        description: 'Professional physiotherapy in your home',
+        name: 'Recovery & Rehab at Home',
+        nameEl: 'Αποκατάσταση & Rehab στο Σπίτι',
+        description: 'Post-surgery recovery, Return-to-sport rehab at home',
         pricing: {
             type: 'fixed',
             gesyPrice: 29,
@@ -107,7 +92,7 @@ const THERAPISTS = [
         email: 'righttrackphysio@gmail.com',
         calendarEmail: 'righttrackphysio@gmail.com',
         photo: '/assets/images/team/tony-photo.jpg',
-        services: ['physiotherapy', 'athlete-rehab', 'kids-physio', 'performance-training', 'homecare-physio', 'massage'],
+        services: ['physiotherapy', 'athlete-rehab', 'performance-training', 'homecare-physio', 'massage'],
         isActive: true
     },
     {
@@ -120,7 +105,7 @@ const THERAPISTS = [
         email: 'righttrackphysio@gmail.com',
         calendarEmail: 'righttrackphysio@gmail.com',
         photo: '/assets/images/team/charalambos-photo.jpg',
-        services: ['physiotherapy', 'athlete-rehab', 'kids-physio', 'performance-training', 'massage'],
+        services: ['physiotherapy', 'athlete-rehab', 'performance-training', 'massage'],
         isActive: true
     },
     {

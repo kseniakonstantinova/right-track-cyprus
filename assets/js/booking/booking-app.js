@@ -194,9 +194,8 @@ class BookingApp {
         const icons = {
             'athlete-rehab': '💪',
             'clinical-pilates': '🧘',
-            'kids-physio': '👶',
             'performance-training': '🏋️',
-            'homecare-physio': '❤️',
+            'homecare-physio': '🏠',
             'massage': '✨'
         };
         return `<span style="font-size: 28px; filter: grayscale(1) brightness(10);">${icons[serviceId] || '⭐'}</span>`;
