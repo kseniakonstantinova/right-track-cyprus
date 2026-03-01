@@ -54,12 +54,6 @@ const translations = {
         'service.performance.title': 'Sports Performance',
         'service.performance.desc': 'Structured training programs for athletes. Strength, conditioning, movement quality, and injury prevention.',
 
-        'service.pediatric.title': 'Pediatric Physiotherapy',
-        'service.pediatric.desc': 'Specialized care for children\'s development, motor skills, and movement patterns. Fun, effective, evidence-based.',
-
-        'service.ot.title': 'Occupational Therapy',
-        'service.ot.desc': 'Helping children develop skills for daily living, sensory processing, and independence.',
-
         'service.homecare.title': 'Homecare Services',
         'service.homecare.desc': 'Professional physiotherapy delivered to your home. Post-operative care, mobility training, and chronic condition management.',
 
@@ -131,12 +125,6 @@ const translations = {
 
         'service.performance.title': 'Αθλητική απόδοση',
         'service.performance.desc': 'Δομημένα προγράμματα προπόνησης για αθλητές. Δύναμη, φυσική κατάσταση, ποιότητα κίνησης και πρόληψη τραυματισμών.',
-
-        'service.pediatric.title': 'Παιδική φυσιοθεραπεία',
-        'service.pediatric.desc': 'Εξειδικευμένη φροντίδα για την ανάπτυξη των παιδιών, κινητικές δεξιότητες και πρότυπα κίνησης. Διασκεδαστικό, αποτελεσματικό, επιστημονικά τεκμηριωμένο.',
-
-        'service.ot.title': 'Εργοθεραπεία',
-        'service.ot.desc': 'Βοηθάμε τα παιδιά να αναπτύξουν δεξιότητες για την καθημερινή ζωή, αισθητηριακή επεξεργασία και ανεξαρτησία.',
 
         'service.homecare.title': 'Υπηρεσίες κατ\' οίκον',
         'service.homecare.desc': 'Επαγγελματική φυσιοθεραπεία στο σπίτι σας. Μετεγχειρητική φροντίδα, εκπαίδευση κινητικότητας και διαχείριση χρόνιων καταστάσεων.',

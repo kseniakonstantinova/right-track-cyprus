@@ -196,14 +196,6 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- Tools -->
-    <url>
-        <loc>https://righttrackphysio.com.cy/pages/tools-child-development.html</loc>
-        <lastmod>2026-02-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
     <!-- Events - English -->
     <url>
         <loc>https://righttrackphysio.com.cy/pages/community.html</loc>
