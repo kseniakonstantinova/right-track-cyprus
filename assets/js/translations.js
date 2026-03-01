@@ -7,7 +7,6 @@ const translations = {
         'nav.blog': 'Blog',
         'nav.partnerships': 'Partnerships',
         'nav.contact': 'Contact',
-        'nav.checkYourself': 'Check Yourself',
         'nav.joinTeam': 'Join Team',
         'nav.bookOnline': 'Book Online',
 
@@ -79,7 +78,6 @@ const translations = {
         'nav.blog': 'Ιστολόγιο',
         'nav.partnerships': 'Συνεργασίες',
         'nav.contact': 'Επικοινωνία',
-        'nav.checkYourself': 'Έλεγχος',
         'nav.joinTeam': 'Γίνετε μέλος',
         'nav.bookOnline': 'Κλείστε ραντεβού',
 
