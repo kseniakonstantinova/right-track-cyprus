@@ -3,8 +3,8 @@
 const SERVICES = [
     {
         id: 'physiotherapy',
-        name: 'General Physiotherapy',
-        nameEl: 'Γενική Φυσιοθεραπεία',
+        name: 'Expert Physiotherapy',
+        nameEl: 'Εξειδικευμένη Φυσιοθεραπεία',
         description: 'Back, Neck & Joint Pain, Neurological Rehab, Chronic Pain',
         pricing: {
             type: 'fixed',
