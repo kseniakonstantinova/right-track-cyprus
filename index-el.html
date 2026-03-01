@@ -253,6 +253,11 @@
                 0 4px 30px rgba(0, 0, 0, 0.05),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+            transition: padding 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.6rem 0;
         }
 
         nav {
@@ -273,6 +278,11 @@
         .logo img {
             height: 120px;
             width: auto;
+            transition: height 0.3s ease;
+        }
+
+        header.scrolled .logo img {
+            height: 60px;
         }
 
         .logo-text {
@@ -1909,6 +1919,32 @@
             box-shadow:
                 0 2px 10px rgba(255, 107, 53, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .testimonial-stars .stars {
+            color: #FBBC04;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .google-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .google-badge .google-icon {
+            width: 16px;
+            height: 16px;
         }
 
         .testimonial-text {
