@@ -12,6 +12,9 @@ admin/*.credentials.*
 *.secret
 *.secrets
 
+# Internal docs (not for deploy)
+инфраструктурные/
+
 # IDE
 .idea/
 .vscode/
