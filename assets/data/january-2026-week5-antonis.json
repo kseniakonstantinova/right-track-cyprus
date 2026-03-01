@@ -1,0 +1,301 @@
+{
+  "period": "2026-01-27 to 2026-02-02",
+  "week": 5,
+  "therapist": "Antonis",
+  "bookings": [
+    {
+      "date": "2026-01-27",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A50",
+          "phone": "+357 99 000 050",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 32,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A51",
+          "phone": "+357 99 000 051",
+          "service": "homecare-physio",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 35,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A52",
+          "phone": "+357 99 000 052",
+          "service": "homecare-physio",
+          "timeSlot": "11:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 36,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Mr. Nikos",
+          "phone": "+357 99 000 029",
+          "service": "athlete-rehab",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 0,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Special client - continued treatment"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-28",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A53",
+          "phone": "+357 99 000 053",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A54",
+          "phone": "+357 99 000 054",
+          "service": "massage",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 15,
+          "source": "walkin",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Mr. Nikos",
+          "phone": "+357 99 000 029",
+          "service": "athlete-rehab",
+          "timeSlot": "15:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 15,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Special client - continued treatment"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-29",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A55",
+          "phone": "+357 99 000 055",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A56",
+          "phone": "+357 99 000 056",
+          "service": "homecare-physio",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A57",
+          "phone": "+357 99 000 057",
+          "service": "homecare-physio",
+          "timeSlot": "11:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Mrs. Maria",
+          "phone": "+357 99 000 058",
+          "service": "massage",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "physio",
+          "price": 15,
+          "source": "phone",
+          "status": "confirmed",
+          "notes": "Mum - special rate"
+        },
+        {
+          "clientName": "Mr. Nikos",
+          "phone": "+357 99 000 029",
+          "service": "athlete-rehab",
+          "timeSlot": "15:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 15,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Special client - continued treatment"
+        },
+        {
+          "clientName": "Client A59",
+          "phone": "+357 99 000 059",
+          "service": "massage",
+          "timeSlot": "16:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 0,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Complimentary session"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-30",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A60",
+          "phone": "+357 99 000 060",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A61",
+          "phone": "+357 99 000 061",
+          "service": "homecare-physio",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A62",
+          "phone": "+357 99 000 062",
+          "service": "homecare-physio",
+          "timeSlot": "11:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A63",
+          "phone": "+357 99 000 063",
+          "service": "massage",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 0,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Complimentary session"
+        },
+        {
+          "clientName": "Client A64",
+          "phone": "+357 99 000 064",
+          "service": "massage",
+          "timeSlot": "15:00",
+          "paymentType": "private",
+          "location": "physio",
+          "price": 0,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Complimentary session"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-31",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A65",
+          "phone": "+357 99 000 065",
+          "service": "massage",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 15,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Mr. Nikos",
+          "phone": "+357 99 000 029",
+          "service": "athlete-rehab",
+          "timeSlot": "15:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 15,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Special client - continued treatment"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Mr. Nikos",
+          "phone": "+357 99 000 029",
+          "service": "athlete-rehab",
+          "timeSlot": "10:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 0,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Special client - Saturday session"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalSessions": 21,
+    "totalRevenue": 396,
+    "breakdown": {
+      "gesyNew": {
+        "sessions": 12,
+        "revenue": 366
+      },
+      "gesyOld": {
+        "sessions": 0,
+        "revenue": 0
+      },
+      "private": {
+        "sessions": 9,
+        "revenue": 30
+      }
+    }
+  }
+}

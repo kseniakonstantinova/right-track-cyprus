@@ -1,0 +1,486 @@
+{
+  "period": "2026-01-12 to 2026-01-16",
+  "week": 3,
+  "bookings": [
+    {
+      "date": "2026-01-12",
+      "therapistId": "charalambos",
+      "sessions": [
+        {
+          "clientName": "Client C7",
+          "phone": "+357 99 000 107",
+          "service": "athlete-rehab",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "physio",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C8",
+          "phone": "+357 99 000 108",
+          "service": "massage",
+          "timeSlot": "10:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 16,
+          "source": "walkin",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C9",
+          "phone": "+357 99 000 109",
+          "service": "massage",
+          "timeSlot": "11:00",
+          "paymentType": "private",
+          "location": "physio",
+          "price": 16,
+          "source": "phone",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-12",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A19",
+          "phone": "+357 99 000 019",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 32,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A20",
+          "phone": "+357 99 000 020",
+          "service": "homecare-physio",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 32,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A21",
+          "phone": "+357 99 000 021",
+          "service": "massage",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "physio",
+          "price": 20,
+          "source": "walkin",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "therapistId": "charalambos",
+      "sessions": [
+        {
+          "clientName": "Client C10",
+          "phone": "+357 99 000 110",
+          "service": "athlete-rehab",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "gym",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A22",
+          "phone": "+357 99 000 022",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A23",
+          "phone": "+357 99 000 023",
+          "service": "homecare-physio",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-old",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A24",
+          "phone": "+357 99 000 024",
+          "service": "massage",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 25,
+          "source": "walkin",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A25",
+          "phone": "+357 99 000 025",
+          "service": "massage",
+          "timeSlot": "15:00",
+          "paymentType": "private",
+          "location": "physio",
+          "price": 25,
+          "source": "phone",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "therapistId": "charalambos",
+      "sessions": [
+        {
+          "clientName": "Client C11",
+          "phone": "+357 99 000 111",
+          "service": "athlete-rehab",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "physio",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C12",
+          "phone": "+357 99 000 112",
+          "service": "athlete-rehab",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "gym",
+          "price": 29,
+          "source": "walkin",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C13",
+          "phone": "+357 99 000 113",
+          "service": "athlete-rehab",
+          "timeSlot": "11:00",
+          "paymentType": "gesy-new",
+          "location": "physio",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C14",
+          "phone": "+357 99 000 114",
+          "service": "athlete-rehab",
+          "timeSlot": "14:00",
+          "paymentType": "gesy-new",
+          "location": "gym",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C15",
+          "phone": "+357 99 000 115",
+          "service": "massage",
+          "timeSlot": "15:00",
+          "paymentType": "private",
+          "location": "physio",
+          "price": 12,
+          "source": "walkin",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A26",
+          "phone": "+357 99 000 026",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A27",
+          "phone": "+357 99 000 027",
+          "service": "homecare-physio",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A28",
+          "phone": "+357 99 000 028",
+          "service": "homecare-physio",
+          "timeSlot": "11:00",
+          "paymentType": "gesy-old",
+          "location": "home",
+          "price": 29,
+          "source": "referral",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Mr. Nikos",
+          "phone": "+357 99 000 029",
+          "service": "athlete-rehab",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 0,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Special client - price to be determined"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "therapistId": "charalambos",
+      "sessions": [
+        {
+          "clientName": "Client C16",
+          "phone": "+357 99 000 116",
+          "service": "athlete-rehab",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "physio",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C17",
+          "phone": "+357 99 000 117",
+          "service": "athlete-rehab",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "gym",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A29",
+          "phone": "+357 99 000 030",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A30",
+          "phone": "+357 99 000 031",
+          "service": "homecare-physio",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A31",
+          "phone": "+357 99 000 032",
+          "service": "homecare-physio",
+          "timeSlot": "11:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "walkin",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "therapistId": "charalambos",
+      "sessions": [
+        {
+          "clientName": "Client C18",
+          "phone": "+357 99 000 118",
+          "service": "athlete-rehab",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "physio",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C19",
+          "phone": "+357 99 000 119",
+          "service": "athlete-rehab",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "gym",
+          "price": 29,
+          "source": "walkin",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C20",
+          "phone": "+357 99 000 120",
+          "service": "athlete-rehab",
+          "timeSlot": "11:00",
+          "paymentType": "gesy-new",
+          "location": "physio",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C21",
+          "phone": "+357 99 000 121",
+          "service": "massage",
+          "timeSlot": "14:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 16,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client C22",
+          "phone": "+357 99 000 122",
+          "service": "massage",
+          "timeSlot": "15:00",
+          "paymentType": "private",
+          "location": "physio",
+          "price": 16,
+          "source": "walkin",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "therapistId": "antonis",
+      "sessions": [
+        {
+          "clientName": "Client A32",
+          "phone": "+357 99 000 033",
+          "service": "homecare-physio",
+          "timeSlot": "08:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A33",
+          "phone": "+357 99 000 034",
+          "service": "homecare-physio",
+          "timeSlot": "09:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A34",
+          "phone": "+357 99 000 035",
+          "service": "homecare-physio",
+          "timeSlot": "10:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "walkin",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A35",
+          "phone": "+357 99 000 036",
+          "service": "homecare-physio",
+          "timeSlot": "11:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A36",
+          "phone": "+357 99 000 037",
+          "service": "homecare-physio",
+          "timeSlot": "12:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A37",
+          "phone": "+357 99 000 038",
+          "service": "homecare-physio",
+          "timeSlot": "14:00",
+          "paymentType": "gesy-new",
+          "location": "home",
+          "price": 29,
+          "source": "phone",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Client A38",
+          "phone": "+357 99 000 039",
+          "service": "massage",
+          "timeSlot": "15:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 30,
+          "source": "walkin",
+          "status": "confirmed"
+        },
+        {
+          "clientName": "Mr. Nikos",
+          "phone": "+357 99 000 029",
+          "service": "athlete-rehab",
+          "timeSlot": "16:00",
+          "paymentType": "private",
+          "location": "gym",
+          "price": 0,
+          "source": "walkin",
+          "status": "confirmed",
+          "notes": "Special client - continued treatment"
+        }
+      ]
+    }
+  ]
+}
