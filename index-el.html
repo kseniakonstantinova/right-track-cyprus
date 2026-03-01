@@ -4156,30 +4156,23 @@
             });
         });
 
-        // Mobile header scroll animation
+        // Header scroll animation (compact header on scroll)
         let lastScrollY = 0;
         const header = document.querySelector('header');
 
         function handleScroll() {
-            if (window.innerWidth <= 768) {
-                const scrollY = window.scrollY;
+            const scrollY = window.scrollY;
 
-                if (scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-
-                lastScrollY = scrollY;
+            if (scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
+
+            lastScrollY = scrollY;
         }
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                header.classList.remove('scrolled');
-            }
-        });
     </script>
 
     <!-- Scroll Position Preservation for Profile and Booking Pages -->
