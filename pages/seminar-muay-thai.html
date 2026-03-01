@@ -1190,12 +1190,16 @@
 
         const WORKER_URL = 'https://righttrack-telegram.righttrackphysio.workers.dev';
         const SEMINAR_NAME = 'Injury Prevention for Fighters — April 4, 2026';
+        const SEMINAR_DATE = 'Friday, April 4, 2026';
+        const SEMINAR_TIME = '11:00 – 13:00';
+        const SEMINAR_LOCATION = 'Muay Thai Warriors, Nicosia';
+        const SEMINAR_PRICE = '€15';
 
         // EmailJS config
         const EMAILJS_SERVICE_ID = 'service_apg3zoa';
         const EMAILJS_PUBLIC_KEY = '1cMf-T1krhUJoreWv';
-        const EMAILJS_TEMPLATE_NOTIFY = 'template_35sacxf';      // Business notification (existing booking template)
-        const EMAILJS_TEMPLATE_CONFIRM = 'template_0f0ms19';  // Client confirmation (Seminar Registration)
+        const EMAILJS_TEMPLATE_NOTIFY = 'template_35sacxf';
+        const EMAILJS_TEMPLATE_CONFIRM = 'template_0f0ms19';
 
         const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js');
         const { getFirestore, collection, addDoc } = await import('https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js');
@@ -1278,9 +1282,9 @@
                                 client_email: email,
                                 service_name: SEMINAR_NAME,
                                 therapist_name: 'Antonis Petri',
-                                payment_type: 'Pay at door — €15',
-                                booking_date: 'April 4, 2026',
-                                booking_time: '11:00 – 13:00',
+                                payment_type: `Pay at door — ${SEMINAR_PRICE}`,
+                                booking_date: SEMINAR_DATE,
+                                booking_time: SEMINAR_TIME,
                                 message: `Level: ${level}${gym ? ` | Gym: ${gym}` : ''}${injuries ? ` | Injuries: ${injuries}` : ''}`
                             }
                         })
@@ -1289,7 +1293,7 @@
 
                 // Confirmation email to registrant
                 try {
-                    const confirmRes = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                    await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
@@ -1301,13 +1305,13 @@
                                 to_name: name,
                                 seminar_name: SEMINAR_NAME,
                                 level: level,
-                                seminar_date: 'Friday, April 4, 2026',
-                                seminar_time: '11:00 – 13:00',
-                                seminar_location: 'Muay Thai Warriors, Nicosia'
+                                seminar_date: SEMINAR_DATE,
+                                seminar_time: SEMINAR_TIME,
+                                seminar_location: SEMINAR_LOCATION,
+                                seminar_price: SEMINAR_PRICE
                             }
                         })
                     });
-                    console.log('Confirmation email status:', confirmRes.status, await confirmRes.text());
                 } catch (confirmErr) { console.error('Confirmation email error:', confirmErr); }
 
                 // GA4 event
@@ -1327,7 +1331,7 @@
                 formError.textContent = 'Something went wrong. Please try again or call us.';
                 formError.style.display = 'block';
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Register Now — €15';
+                submitBtn.textContent = `Register Now — ${SEMINAR_PRICE}`;
             }
         });
     </script>
