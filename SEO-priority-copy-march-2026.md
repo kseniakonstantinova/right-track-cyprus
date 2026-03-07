@@ -69,3 +69,51 @@ Noindex candidates: legal pages (privacy/terms/cookies/disclaimer), temporary ca
 
 Recommended robots meta for non-SEO pages:
 `<meta name="robots" content="noindex,follow">`
+
+---
+
+## Changes Log — 7 March 2026
+
+### Commit 1: `cf962e8` — SEO overhaul
+**Homepage (index.html + index-el.html):**
+- Title: `Right Track | Physiotherapy & Performance Centre Cyprus` → `Physiotherapist in Nicosia | Right Track Physiotherapy & Rehab Centre`
+- Meta description: updated with target keywords (injury rehabilitation, pain treatment, sports physiotherapy)
+- H1: `Get back on the right track` → `Physiotherapist in Nicosia`
+- OG & Twitter meta tags updated accordingly
+- Service links: `Learn More about this service →` → keyword-rich anchors (`Sports Injury Rehabilitation in Nicosia →`, `Physiotherapy in Nicosia →`, etc.)
+
+**noindex added (16 files, EN + EL):**
+- community, cookies, disclaimer, padel-camp, paeek-partnership, privacy, seminar-muay-thai, terms
+- Tag: `<meta name="robots" content="noindex,follow">`
+
+**Sitemap (sitemap.xml):**
+- Removed legal/secondary pages from sitemap
+- Added `x-default` hreflang links
+- Updated `lastmod` dates to 2026-03-07
+- Cleaned up structure (removed comments, -389/+207 lines)
+
+### Commit 2: `f11e877` — H1 optimization on service pages
+**EN service pages:**
+| Page | Old H1 | New H1 |
+|------|--------|--------|
+| physiotherapy.html | Expert Physiotherapy | Physiotherapy in Nicosia |
+| athlete-rehabilitation.html | Athlete-Centred Rehabilitation | Sports Injury Rehabilitation Nicosia |
+| clinical-pilates.html | Clinical Pilates | Clinical Pilates in Nicosia |
+| homecare-physiotherapy.html | Recovery & Rehab at Home | Home Visit Physiotherapy Nicosia |
+| performance-training.html | Performance Training | Strength & Conditioning Nicosia |
+| sports-massage.html | Sports & Remedial Massage | Sports Massage in Nicosia |
+
+**EL service pages:**
+| Page | Old H1 | New H1 |
+|------|--------|--------|
+| physiotherapy-el.html | Εξειδικευμένη Φυσικοθεραπεία | Φυσικοθεραπεία στη Λευκωσία |
+| athlete-rehabilitation-el.html | Αθλητική Αποκατάσταση | Αποκατάσταση Αθλητικών Τραυματισμών Λευκωσία |
+| clinical-pilates-el.html | Κλινικό Pilates | Κλινικό Pilates στη Λευκωσία |
+| homecare-physiotherapy-el.html | Αποκατάσταση & Rehab στο Σπίτι | Φυσικοθεραπεία κατ' Οίκον Λευκωσία |
+| performance-training-el.html | Προπόνηση Απόδοσης | Ενδυνάμωση & Conditioning Λευκωσία |
+| sports-massage-el.html | Αθλητικό & Θεραπευτικό Μασάζ | Αθλητικό Μασάζ στη Λευκωσία |
+
+### GSC actions taken:
+- Sitemap resubmitted
+- URL Inspection → Request Indexing sent for 9 URLs (EN homepage + 6 EN services + EL homepage + physiotherapy-el)
+- Remaining 5 EL service URLs to be submitted tomorrow (daily limit ~10)
