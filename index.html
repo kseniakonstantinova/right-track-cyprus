@@ -50,6 +50,7 @@
         "name": "Right Track Physiotherapy & Performance Centre",
         "image": "https://righttrackphysio.com.cy/assets/images/logos/logo-no-bg.png",
         "url": "https://righttrackphysio.com.cy",
+        "description": "Professional physiotherapy and performance centre in Strovolos, Nicosia. Specializing in physiotherapy, clinical pilates, sports rehabilitation, and performance training. GESY accepted.",
         "telephone": "+35799126824",
         "email": "antonis@righttrackphysio.com.cy",
         "contactPoint": [
@@ -203,6 +204,20 @@
                 "reviewBody": "Άριστος επαγγελματίας, εξαιρετικός χαρακτήρας, λεβέντης, μπράβο σου — συνέχισε με τον ίδιο ζήλο!"
             }
         ]
+    }
+    </script>
+
+    <!-- Schema.org WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Right Track Physiotherapy & Performance Centre",
+        "url": "https://righttrackphysio.com.cy/",
+        "publisher": {
+            "@type": "Physiotherapy",
+            "name": "Right Track Physiotherapy & Performance Centre"
+        }
     }
     </script>
 
@@ -2561,6 +2576,70 @@
             }
         }
 
+        /* FAQ Section */
+        .faq-section {
+            padding: 120px 40px;
+            background: var(--off-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--orange);
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active::after {
+            content: '\2212';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 24px 20px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 80px 20px;
+            }
+        }
+
         /* Footer - Minimal */
         footer {
             background: var(--white);
@@ -4110,6 +4189,86 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="section-header">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Everything you need to know about our services</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">What services does Right Track Physiotherapy offer?</button>
+                <div class="faq-answer"><p>We offer physiotherapy, clinical pilates, sports rehabilitation, and performance training at our clinic in Strovolos, Nicosia.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you accept GESY insurance?</button>
+                <div class="faq-answer"><p>Yes, we accept GESY (General Healthcare System) as well as cash and credit card payments.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What are your opening hours?</button>
+                <div class="faq-answer"><p>We are open Monday to Friday from 8:00 AM to 8:00 PM, and Saturday from 9:00 AM to 2:00 PM.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Where is your clinic located?</button>
+                <div class="faq-answer"><p>Our clinic is located at Tseriou 32, Strovolos, 2042 Nicosia, Cyprus.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do I need a referral to visit a physiotherapist?</button>
+                <div class="faq-answer"><p>For GESY patients, a referral from your personal doctor is required. Private patients can book directly by calling or messaging us on WhatsApp.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What services does Right Track Physiotherapy offer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer physiotherapy, clinical pilates, sports rehabilitation, and performance training at our clinic in Strovolos, Nicosia."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you accept GESY insurance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we accept GESY (General Healthcare System) as well as cash and credit card payments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are your opening hours?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We are open Monday to Friday from 8:00 AM to 8:00 PM, and Saturday from 9:00 AM to 2:00 PM."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where is your clinic located?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our clinic is located at Tseriou 32, Strovolos, 2042 Nicosia, Cyprus."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a referral to visit a physiotherapist?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For GESY patients, a referral from your personal doctor is required. Private patients can book directly by calling or messaging us on WhatsApp."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-header">
@@ -4674,6 +4833,21 @@
             window.changeSlide = changeSlide;
             resetProgress();
         })();
+    </script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                var isOpen = this.classList.contains('active');
+                document.querySelectorAll('.faq-question').forEach(function(b) { b.classList.remove('active'); });
+                document.querySelectorAll('.faq-answer').forEach(function(a) { a.style.maxHeight = null; });
+                if (!isOpen) {
+                    this.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
     </script>
 
     <script src="assets/js/floating-cta.js"></script>
