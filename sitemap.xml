@@ -389,4 +389,167 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Team profiles -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/tony-profile.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/tony-profile.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/tony-profile-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/tony-profile.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/tony-profile-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/tony-profile.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/tony-profile-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/tony-profile.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/alice-profile.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/alice-profile.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/alice-profile-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/alice-profile.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/alice-profile-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/alice-profile.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/alice-profile-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/alice-profile.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Community & Events -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/community.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/community.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/community-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/community.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/community-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/community.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/community-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/community.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/paeek-partnership.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/paeek-partnership.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/paeek-partnership-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/paeek-partnership.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/paeek-partnership-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/paeek-partnership.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/paeek-partnership-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/paeek-partnership.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/padel-camp.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/padel-camp.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/padel-camp-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/padel-camp.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/padel-camp-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/padel-camp.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/padel-camp-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/padel-camp.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/seminar-muay-thai.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/seminar-muay-thai-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/seminar-muay-thai.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Additional blog posts -->
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus.html"/>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
