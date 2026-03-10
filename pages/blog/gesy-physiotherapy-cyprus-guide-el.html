@@ -41,16 +41,26 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": ["Article", "MedicalWebPage"],
         "headline": "Φυσιοθεραπεία μέσω ΓΕΣΥ στην Κύπρο: Όλα Όσα Πρέπει να Ξέρεις το 2026",
         "description": "Πώς λειτουργεί η φυσιοθεραπεία μέσω ΓΕΣΥ στην Κύπρο; Πόσες συνεδρίες δικαιούσαι; Χρειάζεσαι παραπεμπτικό; Όλα όσα πρέπει να ξέρεις για την πρόσβαση σε φυσιοθεραπεία μέσω του Γενικού Συστήματος Υγείας.",
+        "about": {
+            "@type": "MedicalTherapy",
+            "name": "GESY Physiotherapy Services",
+            "alternateName": "GHS Physiotherapy Cyprus"
+        },
         "author": {
             "@type": "Person",
             "name": "Antonis Petri",
             "jobTitle": "Lead Clinician",
+            "honorificSuffix": "BSc, OMPT",
             "worksFor": {
                 "@type": "Physiotherapy",
                 "name": "Right Track Physiotherapy & Performance Centre"
+            },
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Frederick University"
             }
         },
         "publisher": {
@@ -60,6 +70,64 @@
         },
         "datePublished": "2026-02-05",
         "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide-el.html"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Τι είδους παθήσεις καλύπτει η φυσιοθεραπεία ΓΕΣΥ;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Η φυσιοθεραπεία ΓΕΣΥ καλύπτει μυοσκελετικές παθήσεις (πόνο στη μέση, τραυματισμούς αρθρώσεων, αποκατάσταση μετά από κάταγμα), μετεγχειρητική αποκατάσταση (μετά από αρθροπλαστική γόνατος, ανακατασκευή ΠΧΣ, αποκατάσταση στροφικού πετάλου) και νευρολογικές παθήσεις. Δεν καλύπτει θεραπείες ευεξίας, προληπτικά προγράμματα ή προπόνηση απόδοσης."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Χρειάζομαι παραπεμπτικό γιατρού για φυσιοθεραπεία ΓΕΣΥ;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ναι. Χρειάζεσαι παραπεμπτικό από τον εγγεγραμμένο στο ΓΕΣΥ προσωπικό σου γιατρό (ΓΠ) ή από ειδικό γιατρό. Ο ΓΠ σου θα αξιολογήσει την κατάστασή σου και θα εκδώσει παραπεμπτικό για φυσιοθεραπευτικές υπηρεσίες. Στη συνέχεια μπορείς να επιλέξεις οποιονδήποτε εγγεγραμμένο στο ΓΕΣΥ φυσιοθεραπευτή, συμπεριλαμβανομένου του Right Track Physiotherapy στη Λευκωσία."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Μπορώ να επιλέξω ποιον φυσιοθεραπευτή θα επισκεφθώ μέσω ΓΕΣΥ;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ναι. Μέσω ΓΕΣΥ, έχεις ελευθερία επιλογής οποιουδήποτε εγγεγραμμένου φυσιοθεραπευτή. Δεν είσαι περιορισμένος σε συγκεκριμένο κλινικό ή τοποθεσία. Στο Right Track, οι Antonis Petri (Αρ. Μητρώου ΓΕΣΥ: A2825), Charalambos (A3522) και Alice (A3509) είναι εγγεγραμμένοι πάροχοι ΓΕΣΥ."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Πόσες συνεδρίες φυσιοθεραπείας δικαιούμαι μέσω ΓΕΣΥ;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Η κατανομή συνεδριών εξαρτάται από την πάθησή σου. Οι μυοσκελετικές παθήσεις λαμβάνουν συνήθως μέχρι 12 συνεδρίες. Η μετεγχειρητική αποκατάσταση μπορεί να λάβει μέχρι 24 συνεδρίες. Παρατάσεις είναι δυνατές όταν αιτιολογούνται κλινικά και υποστηρίζονται από τεκμηριωμένη πρόοδο. Ο φυσιοθεραπευτής σου διαχειρίζεται τη διαδικασία παράτασης."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Υπάρχει κόστος για τη φυσιοθεραπεία ΓΕΣΥ;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Η φυσιοθεραπεία ΓΕΣΥ απαιτεί μικρές συμμετοχές ανά συνεδρία, σημαντικά χαμηλότερες από τις ιδιωτικές τιμές. Η ακριβής συμμετοχή εξαρτάται από τον τύπο υπηρεσίας. Η ιδιωτική φυσιοθεραπεία είναι επίσης διαθέσιμη για ασθενείς που θέλουν ταχύτερη πρόσβαση, μεγαλύτερης διάρκειας συνεδρίες ή υπηρεσίες που δεν καλύπτονται από το ΓΕΣΥ."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ποια η διαφορά μεταξύ ΓΕΣΥ και ιδιωτικής φυσιοθεραπείας;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Η ποιότητα της κλινικής φροντίδας πρέπει να είναι η ίδια — οι φυσιοθεραπευτές ΓΕΣΥ είναι οι ίδιοι επαγγελματίες που προσφέρουν ιδιωτικές υπηρεσίες. Οι διαφορές είναι πρακτικές: το ΓΕΣΥ έχει όρια συνεδριών, συμμετοχές και απαιτεί παραπεμπτικό γιατρού. Η ιδιωτική φυσιοθεραπεία προσφέρει άμεση πρόσβαση, ευέλικτο πρόγραμμα, μεγαλύτερης διάρκειας συνεδρίες και κανένα όριο συνεδριών. Πολλοί ασθενείς συνδυάζουν και τα δύο."
+                }
+            }
+        ]
     }
     </script>
 
@@ -773,6 +841,53 @@
 
 
     </article>
+
+    <!-- FAQ Section -->
+    <section style="max-width: 740px; margin: 0 auto; padding: 0 24px 50px;">
+        <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 24px;">Συχνές Ερωτήσεις</h2>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Τι είδους παθήσεις καλύπτει η φυσιοθεραπεία ΓΕΣΥ;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Η φυσιοθεραπεία ΓΕΣΥ καλύπτει μυοσκελετικές παθήσεις (πόνο στη μέση, τραυματισμούς αρθρώσεων, αποκατάσταση μετά από κάταγμα), μετεγχειρητική αποκατάσταση (μετά από αρθροπλαστική γόνατος, ανακατασκευή ΠΧΣ, αποκατάσταση στροφικού πετάλου) και νευρολογικές παθήσεις. Δεν καλύπτει θεραπείες ευεξίας, προληπτικά προγράμματα ή προπόνηση απόδοσης.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Χρειάζομαι παραπεμπτικό γιατρού για φυσιοθεραπεία ΓΕΣΥ;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Ναι. Χρειάζεσαι παραπεμπτικό από τον εγγεγραμμένο στο ΓΕΣΥ προσωπικό σου γιατρό (ΓΠ) ή από ειδικό γιατρό. Ο ΓΠ σου θα αξιολογήσει την κατάστασή σου και θα εκδώσει παραπεμπτικό για φυσιοθεραπευτικές υπηρεσίες. Στη συνέχεια μπορείς να επιλέξεις οποιονδήποτε εγγεγραμμένο στο ΓΕΣΥ φυσιοθεραπευτή, συμπεριλαμβανομένου του Right Track Physiotherapy στη Λευκωσία.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Μπορώ να επιλέξω ποιον φυσιοθεραπευτή θα επισκεφθώ μέσω ΓΕΣΥ;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Ναι. Μέσω ΓΕΣΥ, έχεις ελευθερία επιλογής οποιουδήποτε εγγεγραμμένου φυσιοθεραπευτή. Δεν είσαι περιορισμένος σε συγκεκριμένο κλινικό ή τοποθεσία. Στο Right Track, οι Antonis Petri (Αρ. Μητρώου ΓΕΣΥ: A2825), Charalambos (A3522) και Alice (A3509) είναι εγγεγραμμένοι πάροχοι ΓΕΣΥ.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Πόσες συνεδρίες φυσιοθεραπείας δικαιούμαι μέσω ΓΕΣΥ;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Η κατανομή συνεδριών εξαρτάται από την πάθησή σου. Οι μυοσκελετικές παθήσεις λαμβάνουν συνήθως μέχρι 12 συνεδρίες. Η μετεγχειρητική αποκατάσταση μπορεί να λάβει μέχρι 24 συνεδρίες. Παρατάσεις είναι δυνατές όταν αιτιολογούνται κλινικά και υποστηρίζονται από τεκμηριωμένη πρόοδο. Ο φυσιοθεραπευτής σου διαχειρίζεται τη διαδικασία παράτασης.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Υπάρχει κόστος για τη φυσιοθεραπεία ΓΕΣΥ;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Η φυσιοθεραπεία ΓΕΣΥ απαιτεί μικρές συμμετοχές ανά συνεδρία, σημαντικά χαμηλότερες από τις ιδιωτικές τιμές. Η ακριβής συμμετοχή εξαρτάται από τον τύπο υπηρεσίας. Η ιδιωτική φυσιοθεραπεία είναι επίσης διαθέσιμη για ασθενείς που θέλουν ταχύτερη πρόσβαση, μεγαλύτερης διάρκειας συνεδρίες ή υπηρεσίες που δεν καλύπτονται από το ΓΕΣΥ.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Ποια η διαφορά μεταξύ ΓΕΣΥ και ιδιωτικής φυσιοθεραπείας;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Η ποιότητα της κλινικής φροντίδας πρέπει να είναι η ίδια — οι φυσιοθεραπευτές ΓΕΣΥ είναι οι ίδιοι επαγγελματίες που προσφέρουν ιδιωτικές υπηρεσίες. Οι διαφορές είναι πρακτικές: το ΓΕΣΥ έχει όρια συνεδριών, συμμετοχές και απαιτεί παραπεμπτικό γιατρού. Η ιδιωτική φυσιοθεραπεία προσφέρει άμεση πρόσβαση, ευέλικτο πρόγραμμα, μεγαλύτερης διάρκειας συνεδρίες και κανένα όριο συνεδριών. Πολλοί ασθενείς συνδυάζουν και τα δύο.
+            </div>
+        </details>
+    </section>
 
     <!-- Ιατρική Αποποίηση Ευθύνης -->
     <div style="max-width: 740px; margin: 0 auto 40px; padding: 20px 24px; background: #FFF3ED; border-left: 4px solid #FF6B35; border-radius: 0 12px 12px 0;">

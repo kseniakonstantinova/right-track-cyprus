@@ -36,20 +36,30 @@
     <meta property="article:author" content="Antonis Petri">
     <meta property="article:published_time" content="2026-02-01">
 
-    <!-- Schema.org Article -->
+    <!-- Schema.org MedicalWebPage + Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": ["Article", "MedicalWebPage"],
         "headline": "Προσκρουστικό Σύνδρομο Ώμου: Ο Τραυματισμός που Δεν Ξεχωρίζει Αθλητές από Μη Αθλητές",
         "description": "Πόνος στον ώμο όταν σηκώνετε το χέρι ψηλά; Ο φυσικοθεραπευτής Αντώνης Πέτρι εξηγεί γιατί το προσκρουστικό σύνδρομο ώμου επηρεάζει τους πάντες — και πώς να το αντιμετωπίσετε.",
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Shoulder Impingement Syndrome",
+            "alternateName": "Subacromial Pain Syndrome"
+        },
         "author": {
             "@type": "Person",
             "name": "Antonis Petri",
             "jobTitle": "Lead Clinician",
+            "honorificSuffix": "BSc, OMPT",
             "worksFor": {
                 "@type": "Physiotherapy",
                 "name": "Right Track Physiotherapy & Performance Centre"
+            },
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Frederick University"
             }
         },
         "publisher": {
@@ -58,7 +68,109 @@
             "url": "https://righttrackphysio.com.cy"
         },
         "datePublished": "2026-02-01",
-        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide-el.html"
+        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide-el.html",
+        "citation": [
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Arthroscopic subacromial decompression for subacromial shoulder pain (CSAW): a multicentre, pragmatic, parallel group, placebo-controlled, three-group, randomised surgical trial",
+                "author": "Beard DJ, Rees JL, Cook JA, et al.",
+                "datePublished": "2018",
+                "isPartOf": {"@type": "Periodical", "name": "The Lancet"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Subacromial decompression surgery for rotator cuff disease",
+                "author": "Karjalainen TV, Jain NB, Page CM, et al.",
+                "datePublished": "2019",
+                "isPartOf": {"@type": "Periodical", "name": "Cochrane Database of Systematic Reviews"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Effectiveness of conservative interventions including exercise, manual therapy and medical management in adults with shoulder impingement",
+                "author": "Steuri R, Sattelmayer M, Elsig S, et al.",
+                "datePublished": "2017",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Subacromial decompression versus diagnostic arthroscopy for shoulder impingement: randomised, placebo surgery controlled clinical trial",
+                "author": "Paavola M, Malmivaara A, Taimela S, et al.",
+                "datePublished": "2018",
+                "isPartOf": {"@type": "Periodical", "name": "BMJ"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Relationship Between Shoulder Impingement Syndrome and Thoracic Posture",
+                "author": "Hunter DJ, Rivett DA, McKeirnan S, et al.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "Physical Therapy"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "An Update of Systematic Reviews Examining the Effectiveness of Conservative Physical Therapy Interventions for Subacromial Shoulder Pain",
+                "author": "Pieters L, Lewis J, Kuppens K, et al.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "Journal of Orthopaedic & Sports Physical Therapy"}
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Χρειάζομαι μαγνητική τομογραφία για τη διάγνωση του συνδρόμου πρόσκρουσης ώμου;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Όχι. Το σύνδρομο πρόσκρουσης ώμου είναι μια κλινική διάγνωση που γίνεται μέσω φυσικής εξέτασης, όχι απεικόνισης. Η έρευνα δείχνει ότι σημαντικό ποσοστό ανθρώπων χωρίς πόνο έχουν ρήξεις στροφικού πετάλου και σημεία πρόσκρουσης στη μαγνητική τομογραφία. Η απεικόνιση είναι απαραίτητη μόνο αν τα συμπτώματα δεν ανταποκρίνονται στη φυσικοθεραπεία μετά από 6-8 εβδομάδες, ή αν υπάρχει υποψία τραυματικής ρήξης."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Είναι απαραίτητη η χειρουργική επέμβαση για το σύνδρομο πρόσκρουσης;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Στις περισσότερες περιπτώσεις, όχι. Ορόσημα κλινικές δοκιμές δημοσιευμένες στο The Lancet (CSAW, 2018) και στο BMJ (FIMPACT, 2018), μαζί με μια ανασκόπηση Cochrane (2019), διαπίστωσαν ότι η χειρουργική υπακρωμιακή αποσυμπίεση δεν προσφέρει κλινικά σημαντικό όφελος σε σύγκριση με τη χειρουργική εικονική επέμβαση ή τη φυσικοθεραπεία. Η δομημένη ασκησιοθεραπεία είναι η συνιστώμενη θεραπεία πρώτης γραμμής."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Μπορώ να ασκούμαι με σύνδρομο πρόσκρουσης ώμου;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ναι — και πρέπει. Η πλήρης ανάπαυση συχνά επιδεινώνει το πρόβλημα οδηγώντας σε δυσκαμψία και περαιτέρω αδυναμία του στροφικού πετάλου. Το κλειδί είναι η τροποποίηση της προπόνησης για αποφυγή θέσεων που επιδεινώνουν τα συμπτώματα, ενώ παράλληλα φορτίζετε σταδιακά τον ώμο μέσω ενός δομημένου προγράμματος αποκατάστασης. Ο πόνος πρέπει να καθοδηγεί την ένταση — ήπια ενόχληση κατά τη διάρκεια της άσκησης είναι αποδεκτή, ο οξύς πόνος όχι."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Πόσο διαρκεί η αποκατάσταση του συνδρόμου πρόσκρουσης ώμου;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Οι περισσότερες περιπτώσεις αποκαθίστανται εντός 6-12 εβδομάδων συνεπούς φυσικοθεραπείας. Ορισμένοι ασθενείς αισθάνονται σημαντική βελτίωση εντός 2-3 συνεδριών. Το χρονοδιάγραμμα εξαρτάται από τη διάρκεια του προβλήματος, τη σοβαρότητα τυχόν αλλαγών στους τένοντες, και τη συνέπεια στο πρόγραμμα ασκήσεων. Οι χρόνιες περιπτώσεις μπορεί να χρειαστούν περισσότερο χρόνο."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ποια η διαφορά μεταξύ πρόσκρουσης ώμου και ρήξης στροφικού πετάλου;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Η πρόσκρουση ώμου αναφέρεται στη συμπίεση των τενόντων στον υπακρωμιακό χώρο, προκαλώντας πόνο με υπερκεφαλικές κινήσεις. Η ρήξη στροφικού πετάλου είναι πραγματική δομική βλάβη σε έναν ή περισσότερους τένοντες. Ωστόσο, πολλές περιπτώσεις πρόσκρουσης περιλαμβάνουν πρώιμες αλλαγές στους τένοντες, και πολλές μικρές ρήξεις στροφικού πετάλου ανταποκρίνονται καλά στην ίδια φυσικοθεραπευτική προσέγγιση. Η διάκριση έχει μικρότερη σημασία από τη λειτουργική αξιολόγηση."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Μπορεί το σύνδρομο πρόσκρουσης να επανεμφανιστεί μετά τη θεραπεία;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Μπορεί, αν οι υποκείμενες αιτίες — αδύναμο στροφικό πέταλο, κακός ωμοπλατικός έλεγχος, θωρακική δυσκαμψία — δεν αντιμετωπιστούν πλήρως. Ένα ολοκληρωμένο πρόγραμμα αποκατάστασης πρέπει να διορθώνει τη μηχανική, όχι μόνο τα συμπτώματα. Η διατήρηση μιας τακτικής ρουτίνας συντήρησης ώμου (2-3 φορές την εβδομάδα) μειώνει σημαντικά τον κίνδυνο υποτροπής."
+                }
+            }
+        ]
     }
     </script>
 
@@ -771,6 +883,19 @@
 
         <p><strong>Ο ώμος σου είναι σχεδιασμένος να κινείται. Ας βεβαιωθούμε ότι μπορεί.</strong></p>
 
+        <!-- Πηγές & Περαιτέρω Ανάγνωση -->
+        <div style="margin-top: 40px; padding: 24px; background: var(--off-white); border-radius: 12px; border-left: 4px solid var(--navy);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--navy);">Πηγές & Περαιτέρω Ανάγνωση</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-gray); line-height: 2; margin-left: 20px;">
+                <li>Beard DJ, Rees JL, Cook JA, et al. "Arthroscopic subacromial decompression for subacromial shoulder pain (CSAW): a multicentre, pragmatic, parallel group, placebo-controlled, three-group, randomised surgical trial." <em>The Lancet</em>. 2018;391:329-338. DOI: 10.1016/S0140-6736(17)32457-1</li>
+                <li>Paavola M, Malmivaara A, Taimela S, et al. "Subacromial decompression versus diagnostic arthroscopy for shoulder impingement: randomised, placebo surgery controlled clinical trial." <em>BMJ</em>. 2018;362:k2860. DOI: 10.1136/bmj.k2860</li>
+                <li>Karjalainen TV, Jain NB, Page CM, et al. "Subacromial decompression surgery for rotator cuff disease." <em>Cochrane Database of Systematic Reviews</em>. 2019. DOI: 10.1002/14651858.CD005619.pub3</li>
+                <li>Steuri R, Sattelmayer M, Elsig S, et al. "Effectiveness of conservative interventions including exercise, manual therapy and medical management in adults with shoulder impingement: a systematic review and meta-analysis of RCTs." <em>British Journal of Sports Medicine</em>. 2017;51:1340-1347. DOI: 10.1136/bjsports-2016-096515</li>
+                <li>Pieters L, Lewis J, Kuppens K, et al. "An Update of Systematic Reviews Examining the Effectiveness of Conservative Physical Therapy Interventions for Subacromial Shoulder Pain." <em>Journal of Orthopaedic & Sports Physical Therapy</em>. 2020;50(3):131-141. DOI: 10.2519/jospt.2020.8498</li>
+                <li>Hunter DJ, Rivett DA, McKeirnan S, et al. "Relationship Between Shoulder Impingement Syndrome and Thoracic Posture." <em>Physical Therapy</em>. 2020;100(4):677-686. DOI: 10.1093/ptj/pzz182</li>
+            </ol>
+        </div>
+
         <div class="author-box">
             <a href="../tony-profile-el.html"><img src="../../assets/images/team/tony-photo.jpg" alt="Antonis Petri - Φυσιοθεραπευτής" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></a>
             <div>
@@ -794,6 +919,53 @@
 
 
     </article>
+
+    <!-- Συχνές Ερωτήσεις -->
+    <section style="max-width: 740px; margin: 0 auto; padding: 0 24px 50px;">
+        <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 24px;">Συχνές Ερωτήσεις</h2>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Χρειάζομαι μαγνητική τομογραφία για τη διάγνωση του συνδρόμου πρόσκρουσης ώμου;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Όχι. Το σύνδρομο πρόσκρουσης ώμου είναι μια κλινική διάγνωση που γίνεται μέσω φυσικής εξέτασης, όχι απεικόνισης. Η έρευνα δείχνει ότι σημαντικό ποσοστό ανθρώπων χωρίς πόνο έχουν ρήξεις στροφικού πετάλου και σημεία πρόσκρουσης στη μαγνητική τομογραφία. Η απεικόνιση είναι απαραίτητη μόνο αν τα συμπτώματα δεν ανταποκρίνονται στη φυσικοθεραπεία μετά από 6-8 εβδομάδες, ή αν υπάρχει υποψία τραυματικής ρήξης.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Είναι απαραίτητη η χειρουργική επέμβαση για το σύνδρομο πρόσκρουσης;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Στις περισσότερες περιπτώσεις, όχι. Ορόσημα κλινικές δοκιμές δημοσιευμένες στο The Lancet (CSAW, 2018) και στο BMJ (FIMPACT, 2018), μαζί με μια ανασκόπηση Cochrane (2019), διαπίστωσαν ότι η χειρουργική υπακρωμιακή αποσυμπίεση δεν προσφέρει κλινικά σημαντικό όφελος σε σύγκριση με τη χειρουργική εικονική επέμβαση ή τη φυσικοθεραπεία. Η δομημένη ασκησιοθεραπεία είναι η συνιστώμενη θεραπεία πρώτης γραμμής.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Μπορώ να ασκούμαι με σύνδρομο πρόσκρουσης ώμου;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Ναι — και πρέπει. Η πλήρης ανάπαυση συχνά επιδεινώνει το πρόβλημα οδηγώντας σε δυσκαμψία και περαιτέρω αδυναμία του στροφικού πετάλου. Το κλειδί είναι η τροποποίηση της προπόνησης για αποφυγή θέσεων που επιδεινώνουν τα συμπτώματα, ενώ παράλληλα φορτίζετε σταδιακά τον ώμο μέσω ενός δομημένου προγράμματος αποκατάστασης. Ο πόνος πρέπει να καθοδηγεί την ένταση — ήπια ενόχληση κατά τη διάρκεια της άσκησης είναι αποδεκτή, ο οξύς πόνος όχι.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Πόσο διαρκεί η αποκατάσταση του συνδρόμου πρόσκρουσης ώμου;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Οι περισσότερες περιπτώσεις αποκαθίστανται εντός 6-12 εβδομάδων συνεπούς φυσικοθεραπείας. Ορισμένοι ασθενείς αισθάνονται σημαντική βελτίωση εντός 2-3 συνεδριών. Το χρονοδιάγραμμα εξαρτάται από τη διάρκεια του προβλήματος, τη σοβαρότητα τυχόν αλλαγών στους τένοντες, και τη συνέπεια στο πρόγραμμα ασκήσεων. Οι χρόνιες περιπτώσεις μπορεί να χρειαστούν περισσότερο χρόνο.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Ποια η διαφορά μεταξύ πρόσκρουσης ώμου και ρήξης στροφικού πετάλου;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Η πρόσκρουση ώμου αναφέρεται στη συμπίεση των τενόντων στον υπακρωμιακό χώρο, προκαλώντας πόνο με υπερκεφαλικές κινήσεις. Η ρήξη στροφικού πετάλου είναι πραγματική δομική βλάβη σε έναν ή περισσότερους τένοντες. Ωστόσο, πολλές περιπτώσεις πρόσκρουσης περιλαμβάνουν πρώιμες αλλαγές στους τένοντες, και πολλές μικρές ρήξεις στροφικού πετάλου ανταποκρίνονται καλά στην ίδια φυσικοθεραπευτική προσέγγιση. Η διάκριση έχει μικρότερη σημασία από τη λειτουργική αξιολόγηση.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Μπορεί το σύνδρομο πρόσκρουσης να επανεμφανιστεί μετά τη θεραπεία;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Μπορεί, αν οι υποκείμενες αιτίες — αδύναμο στροφικό πέταλο, κακός ωμοπλατικός έλεγχος, θωρακική δυσκαμψία — δεν αντιμετωπιστούν πλήρως. Ένα ολοκληρωμένο πρόγραμμα αποκατάστασης πρέπει να διορθώνει τη μηχανική, όχι μόνο τα συμπτώματα. Η διατήρηση μιας τακτικής ρουτίνας συντήρησης ώμου (2-3 φορές την εβδομάδα) μειώνει σημαντικά τον κίνδυνο υποτροπής.
+            </div>
+        </details>
+    </section>
 
     <!-- Ιατρική Αποποίηση Ευθύνης -->
     <div style="max-width: 740px; margin: 0 auto 40px; padding: 20px 24px; background: #FFF3ED; border-left: 4px solid #FF6B35; border-radius: 0 12px 12px 0;">

@@ -37,20 +37,30 @@
     <meta property="article:author" content="Antonis Petri">
     <meta property="article:published_time" content="2026-02-03">
 
-    <!-- Schema.org Article -->
+    <!-- Schema.org MedicalWebPage + Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": ["Article", "MedicalWebPage"],
         "headline": "Γιατί το Stretching Μόνο Του Δεν Θα Φτιάξει τον Οπίσθιο Μηριαίο Σου (Τι Πραγματικά Λειτουργεί)",
         "description": "Κάνεις stretching στον οπίσθιο μηριαίο κάθε πρωί; Ο φυσιοθεραπευτής Antonis Petri εξηγεί γιατί η προσέγγιση μόνο με διατάσεις αποτυγχάνει και τι λέει η επιστήμη ότι πραγματικά λειτουργεί.",
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Hamstring Injury",
+            "alternateName": "Hamstring Strain and Tightness"
+        },
         "author": {
             "@type": "Person",
             "name": "Antonis Petri",
             "jobTitle": "Lead Clinician",
+            "honorificSuffix": "BSc, OMPT",
             "worksFor": {
                 "@type": "Physiotherapy",
                 "name": "Right Track Physiotherapy & Performance Centre"
+            },
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Frederick University"
             }
         },
         "publisher": {
@@ -59,7 +69,109 @@
             "url": "https://righttrackphysio.com.cy"
         },
         "datePublished": "2026-02-03",
-        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth-el.html"
+        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/hamstring-injury-stretching-myth-el.html",
+        "citation": [
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries",
+                "author": "van Dyk N, Behan FP, Whiteley R.",
+                "datePublished": "2019",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Evidence-Based Hamstring Injury Prevention and Risk Factor Management: A Systematic Review and Meta-analysis",
+                "author": "Rudisill SS, Varady NH, Kucharik MP, et al.",
+                "datePublished": "2023",
+                "isPartOf": {"@type": "Periodical", "name": "American Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Differential movement of the sciatic nerve and hamstrings during the straight leg raise with ankle dorsiflexion",
+                "author": "Bueno-Gracia E, Perez-Bellmunt A, Estebanez-de-Miguel E, et al.",
+                "datePublished": "2019",
+                "isPartOf": {"@type": "Periodical", "name": "Musculoskeletal Science and Practice"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "The mechanism of hamstring injuries — a systematic review",
+                "author": "Danielsson A, Horvath A, Senorski C, et al.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "BMC Musculoskeletal Disorders"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Hamstring Strain Injury Rehabilitation",
+                "author": "Hickey JT, Opar DA, Weiss LJ, Heiderscheit BC.",
+                "datePublished": "2022",
+                "isPartOf": {"@type": "Periodical", "name": "Journal of Athletic Training"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Recalibrating the risk of hamstring strain injury: A 2020 systematic review and meta-analysis of risk factors",
+                "author": "Green B, Bourne MN, van Dyk N, Pizzari T.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Πόσο χρόνο πρέπει να κάνω διατάσεις στο οπίσθιο μηριαίο μέχρι να δω αποτελέσματα;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Αν 2-3 εβδομάδες καθημερινής διάτασης δεν έχουν βοηθήσει, πιθανότατα δεν πρόκειται για πρόβλημα ευλυγισίας. Το σφίξιμο πιθανόν προκαλείται από μυϊκή αδυναμία, νευρική τάση ή αντισταθμιστικό μοτίβο. Μια αξιολόγηση φυσιοθεραπείας μπορεί να εντοπίσει την πραγματική αιτία και να σας κατευθύνει σε αποτελεσματική θεραπεία."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Μπορεί ένα σφιγμένο οπίσθιο μηριαίο να είναι στην πραγματικότητα αδύναμο;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ναι. Ένας αδύναμος μυς συχνά αισθάνεται σφιχτός επειδή το νευρικό σύστημα δημιουργεί προστατευτική τάση ως μηχανισμός αποφυγής τραυματισμού. Αυτός είναι ένας από τους πιο συνηθισμένους λόγους που η διάταση αποτυγχάνει — τεντώνεις έναν μυ που χρειάζεται ενδυνάμωση, όχι επιμήκυνση. Οι έκκεντρες ασκήσεις όπως τα Nordic hamstring curls αντιμετωπίζουν ταυτόχρονα τη δύναμη και το λειτουργικό μήκος."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Πόσο συχνά πρέπει να κάνω Nordic hamstring curls;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Για πρόληψη τραυματισμών, 2-3 προπονήσεις την εβδομάδα με 3-4 σετ των 5-8 επαναλήψεων είναι η σύσταση βάσει τεκμηρίωσης. Ξεκινήστε με υποβοηθούμενες παραλλαγές αν δεν μπορείτε να ελέγξετε ολόκληρη την κίνηση. Η έρευνα δείχνει ότι η ένταξη των Nordic curls στα προπονητικά προγράμματα μειώνει τα ποσοστά τραυματισμών οπίσθιων μηριαίων κατά περίπου 51%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ποιες ασκήσεις είναι ασφαλείς για αποκατάσταση του οπίσθιου μηριαίου;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Η πιο ασφαλής προσέγγιση είναι η προοδευτική φόρτιση που ξεκινά με ισομετρικές συσπάσεις, προχωρά σε αργές έκκεντρες ασκήσεις (Nordic curls, Romanian deadlifts) και σταδιακά προσθέτει ταχύτητα και αθλητικές κινήσεις. Η διάταση μπορεί να συμπεριληφθεί αλλά δεν πρέπει να είναι η κύρια παρέμβαση. Ένας φυσιοθεραπευτής μπορεί να σχεδιάσει μια προσαρμοσμένη προοδευτική εξέλιξη βάσει κριτηρίων."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Πότε πρέπει να επισκεφθώ φυσιοθεραπευτή για σφίξιμο στο οπίσθιο μηριαίο;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Επισκεφθείτε φυσιοθεραπευτή αν: το σφίξιμο επιστρέφει μέσα σε ώρες μετά τη διάταση, αισθάνεστε μυρμήγκιασμα ή μούδιασμα, το σφίξιμο ξεκίνησε μετά από τραυματισμό στη μέση, έχετε υποστεί προηγούμενη θλάση οπίσθιου μηριαίου ή το πρόβλημα επιμένει πάνω από ένα μήνα παρά τη διάταση. Αυτά τα σημάδια υποδεικνύουν ότι η αιτία υπερβαίνει το απλό μυϊκό σφίξιμο."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Μπορεί η σφίξη στο οπίσθιο μηριαίο να είναι σημάδι σοβαρού τραυματισμού;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Η σφίξη στον οπίσθιο μηριαίο σπάνια είναι σοβαρή από μόνη της, αλλά μπορεί να αποτελεί σύμπτωμα άλλων καταστάσεων, όπως ερεθισμός του ισχιακού νεύρου, προβλήματα οσφυϊκού δίσκου ή προηγούμενη μυϊκή ρήξη που δεν έχει αποθεραπευτεί πλήρως. Αν το σφίξιμο συνοδεύεται από μούδιασμα, αδυναμία ή ακτινοβολούντα πόνο, συνιστάται κλινική αξιολόγηση για να αποκλειστούν αυτές οι αιτίες."
+                }
+            }
+        ]
     }
     </script>
 
@@ -739,6 +851,19 @@
 
         <p><strong>Σταμάτα να κυνηγάς το σύμπτωμα. Αντιμετώπισε την αιτία. Ο οπίσθιος μηριαίος σου θα σε ευχαριστήσει.</strong></p>
 
+        <!-- Sources & Further Reading -->
+        <div style="margin-top: 40px; padding: 24px; background: var(--off-white); border-radius: 12px; border-left: 4px solid var(--navy);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--navy);">Πηγές & Περαιτέρω Ανάγνωση</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-gray); line-height: 2; margin-left: 20px;">
+                <li>van Dyk N, Behan FP, Whiteley R. "Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: a systematic review and meta-analysis of 8459 athletes." <em>British Journal of Sports Medicine</em>. 2019;53(21):1362-1370. DOI: 10.1136/bjsports-2018-100045</li>
+                <li>Rudisill SS, Varady NH, Kucharik MP, et al. "Evidence-Based Hamstring Injury Prevention and Risk Factor Management: A Systematic Review and Meta-analysis of Randomized Controlled Trials." <em>American Journal of Sports Medicine</em>. 2023;51(7):1927-1942. DOI: 10.1177/03635465221083998</li>
+                <li>Bueno-Gracia E, Perez-Bellmunt A, Estebanez-de-Miguel E, et al. "Differential movement of the sciatic nerve and hamstrings during the straight leg raise with ankle dorsiflexion." <em>Musculoskeletal Science and Practice</em>. 2019;43:91-95. DOI: 10.1016/j.msksp.2019.07.011</li>
+                <li>Danielsson A, Horvath A, Senorski C, et al. "The mechanism of hamstring injuries — a systematic review." <em>BMC Musculoskeletal Disorders</em>. 2020;21(1):641. DOI: 10.1186/s12891-020-03658-8</li>
+                <li>Hickey JT, Opar DA, Weiss LJ, Heiderscheit BC. "Hamstring Strain Injury Rehabilitation." <em>Journal of Athletic Training</em>. 2022;57(2):125-135. DOI: 10.4085/1062-6050-0707.20</li>
+                <li>Green B, Bourne MN, van Dyk N, Pizzari T. "Recalibrating the risk of hamstring strain injury (HSI): A 2020 systematic review and meta-analysis of risk factors for index and recurrent hamstring strain injury in sport." <em>British Journal of Sports Medicine</em>. 2020;54(18):1081-1088. DOI: 10.1136/bjsports-2019-100983</li>
+            </ol>
+        </div>
+
         <div class="author-box">
             <a href="../tony-profile-el.html"><img src="../../assets/images/team/tony-photo.jpg" alt="Antonis Petri - Φυσιοθεραπευτής" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></a>
             <div>
@@ -762,6 +887,53 @@
 
 
     </article>
+
+    <!-- FAQ Section -->
+    <section style="max-width: 740px; margin: 0 auto; padding: 0 24px 50px;">
+        <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 24px;">Συχνές Ερωτήσεις</h2>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Πόσο χρόνο πρέπει να κάνω διατάσεις στο οπίσθιο μηριαίο μέχρι να δω αποτελέσματα;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Αν 2-3 εβδομάδες καθημερινής διάτασης δεν έχουν βοηθήσει, πιθανότατα δεν πρόκειται για πρόβλημα ευλυγισίας. Το σφίξιμο πιθανόν προκαλείται από μυϊκή αδυναμία, νευρική τάση ή αντισταθμιστικό μοτίβο. Μια αξιολόγηση φυσιοθεραπείας μπορεί να εντοπίσει την πραγματική αιτία και να σας κατευθύνει σε αποτελεσματική θεραπεία.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Μπορεί ένα σφιγμένο οπίσθιο μηριαίο να είναι στην πραγματικότητα αδύναμο;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Ναι. Ένας αδύναμος μυς συχνά αισθάνεται σφιχτός επειδή το νευρικό σύστημα δημιουργεί προστατευτική τάση ως μηχανισμός αποφυγής τραυματισμού. Αυτός είναι ένας από τους πιο συνηθισμένους λόγους που η διάταση αποτυγχάνει — τεντώνεις έναν μυ που χρειάζεται ενδυνάμωση, όχι επιμήκυνση. Οι έκκεντρες ασκήσεις όπως τα Nordic hamstring curls αντιμετωπίζουν ταυτόχρονα τη δύναμη και το λειτουργικό μήκος.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Πόσο συχνά πρέπει να κάνω Nordic hamstring curls;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Για πρόληψη τραυματισμών, 2-3 προπονήσεις την εβδομάδα με 3-4 σετ των 5-8 επαναλήψεων είναι η σύσταση βάσει τεκμηρίωσης. Ξεκινήστε με υποβοηθούμενες παραλλαγές αν δεν μπορείτε να ελέγξετε ολόκληρη την κίνηση. Η έρευνα δείχνει ότι η ένταξη των Nordic curls στα προπονητικά προγράμματα μειώνει τα ποσοστά τραυματισμών οπίσθιων μηριαίων κατά περίπου 51%.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Ποιες ασκήσεις είναι ασφαλείς για αποκατάσταση του οπίσθιου μηριαίου;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Η πιο ασφαλής προσέγγιση είναι η προοδευτική φόρτιση που ξεκινά με ισομετρικές συσπάσεις, προχωρά σε αργές έκκεντρες ασκήσεις (Nordic curls, Romanian deadlifts) και σταδιακά προσθέτει ταχύτητα και αθλητικές κινήσεις. Η διάταση μπορεί να συμπεριληφθεί αλλά δεν πρέπει να είναι η κύρια παρέμβαση. Ένας φυσιοθεραπευτής μπορεί να σχεδιάσει μια προσαρμοσμένη προοδευτική εξέλιξη βάσει κριτηρίων.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Πότε πρέπει να επισκεφθώ φυσιοθεραπευτή για σφίξιμο στο οπίσθιο μηριαίο;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Επισκεφθείτε φυσιοθεραπευτή αν: το σφίξιμο επιστρέφει μέσα σε ώρες μετά τη διάταση, αισθάνεστε μυρμήγκιασμα ή μούδιασμα, το σφίξιμο ξεκίνησε μετά από τραυματισμό στη μέση, έχετε υποστεί προηγούμενη θλάση οπίσθιου μηριαίου ή το πρόβλημα επιμένει πάνω από ένα μήνα παρά τη διάταση. Αυτά τα σημάδια υποδεικνύουν ότι η αιτία υπερβαίνει το απλό μυϊκό σφίξιμο.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Μπορεί η σφίξη στο οπίσθιο μηριαίο να είναι σημάδι σοβαρού τραυματισμού;</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Η σφίξη στον οπίσθιο μηριαίο σπάνια είναι σοβαρή από μόνη της, αλλά μπορεί να αποτελεί σύμπτωμα άλλων καταστάσεων, όπως ερεθισμός του ισχιακού νεύρου, προβλήματα οσφυϊκού δίσκου ή προηγούμενη μυϊκή ρήξη που δεν έχει αποθεραπευτεί πλήρως. Αν το σφίξιμο συνοδεύεται από μούδιασμα, αδυναμία ή ακτινοβολούντα πόνο, συνιστάται κλινική αξιολόγηση για να αποκλειστούν αυτές οι αιτίες.
+            </div>
+        </details>
+    </section>
 
     <!-- Ιατρική Αποποίηση Ευθύνης -->
     <div style="max-width: 740px; margin: 0 auto 40px; padding: 20px 24px; background: #FFF3ED; border-left: 4px solid #FF6B35; border-radius: 0 12px 12px 0;">

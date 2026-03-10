@@ -34,20 +34,30 @@
     <meta property="article:author" content="Antonis Petri">
     <meta property="article:published_time" content="2026-02-01">
 
-    <!-- Schema.org Article -->
+    <!-- Schema.org MedicalWebPage + Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": ["Article", "MedicalWebPage"],
         "headline": "Shoulder Impingement: The Injury That Doesn't Care If You're an Athlete",
         "description": "Shoulder pain when reaching overhead? Physiotherapist Antonis Petri explains why shoulder impingement affects everyone — and how to fix it.",
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Shoulder Impingement Syndrome",
+            "alternateName": "Subacromial Pain Syndrome"
+        },
         "author": {
             "@type": "Person",
             "name": "Antonis Petri",
             "jobTitle": "Lead Clinician",
+            "honorificSuffix": "BSc, OMPT",
             "worksFor": {
                 "@type": "Physiotherapy",
                 "name": "Right Track Physiotherapy & Performance Centre"
+            },
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Frederick University"
             }
         },
         "publisher": {
@@ -56,7 +66,109 @@
             "url": "https://righttrackphysio.com.cy"
         },
         "datePublished": "2026-02-01",
-        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide.html"
+        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide.html",
+        "citation": [
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Arthroscopic subacromial decompression for subacromial shoulder pain (CSAW): a multicentre, pragmatic, parallel group, placebo-controlled, three-group, randomised surgical trial",
+                "author": "Beard DJ, Rees JL, Cook JA, et al.",
+                "datePublished": "2018",
+                "isPartOf": {"@type": "Periodical", "name": "The Lancet"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Subacromial decompression surgery for rotator cuff disease",
+                "author": "Karjalainen TV, Jain NB, Page CM, et al.",
+                "datePublished": "2019",
+                "isPartOf": {"@type": "Periodical", "name": "Cochrane Database of Systematic Reviews"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Effectiveness of conservative interventions including exercise, manual therapy and medical management in adults with shoulder impingement",
+                "author": "Steuri R, Sattelmayer M, Elsig S, et al.",
+                "datePublished": "2017",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Subacromial decompression versus diagnostic arthroscopy for shoulder impingement: randomised, placebo surgery controlled clinical trial",
+                "author": "Paavola M, Malmivaara A, Taimela S, et al.",
+                "datePublished": "2018",
+                "isPartOf": {"@type": "Periodical", "name": "BMJ"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Relationship Between Shoulder Impingement Syndrome and Thoracic Posture",
+                "author": "Hunter DJ, Rivett DA, McKeirnan S, et al.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "Physical Therapy"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "An Update of Systematic Reviews Examining the Effectiveness of Conservative Physical Therapy Interventions for Subacromial Shoulder Pain",
+                "author": "Pieters L, Lewis J, Kuppens K, et al.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "Journal of Orthopaedic & Sports Physical Therapy"}
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Do I need an MRI to diagnose shoulder impingement?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Shoulder impingement is a clinical diagnosis made through physical examination, not imaging. Research shows that a significant percentage of pain-free people have rotator cuff tears and impingement signs on MRI. Imaging is only necessary if symptoms don't respond to physiotherapy after 6-8 weeks, or if a traumatic tear is suspected."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is surgery necessary for shoulder impingement?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In most cases, no. Landmark trials published in The Lancet (CSAW, 2018) and BMJ (FIMPACT, 2018), plus a Cochrane review (2019), found that subacromial decompression surgery provides no clinically important benefit over placebo surgery or physiotherapy for shoulder impingement. Structured exercise therapy is the recommended first-line treatment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I exercise with shoulder impingement?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — and you should. Complete rest often worsens the problem by leading to stiffness and further weakening of the rotator cuff. The key is modifying your training to avoid aggravating positions while progressively loading the shoulder through a structured rehab programme. Pain should guide intensity — mild discomfort during exercise is acceptable, sharp pain is not."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does shoulder impingement rehabilitation take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most cases resolve within 6-12 weeks of consistent physiotherapy. Some patients feel significant improvement within 2-3 sessions. The timeline depends on how long the problem has been present, the severity of any tendon changes, and consistency with the exercise programme. Chronic cases may take longer."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between shoulder impingement and a rotator cuff tear?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Shoulder impingement refers to compression of tendons in the subacromial space, causing pain with overhead movements. A rotator cuff tear is actual structural damage to one or more tendons. However, many impingement cases involve early tendon changes, and many small rotator cuff tears respond well to the same physiotherapy approach. The distinction matters less than the functional assessment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can shoulder impingement come back after treatment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It can if the underlying causes — weak rotator cuff, poor scapular control, thoracic stiffness — aren't fully addressed. A comprehensive rehabilitation programme should fix the mechanics, not just the symptoms. Maintaining a regular shoulder maintenance routine (2-3 times per week) significantly reduces recurrence risk."
+                }
+            }
+        ]
     }
     </script>
 
@@ -769,6 +881,19 @@
 
         <p><strong>Your shoulder is designed to move. Let's make sure it can.</strong></p>
 
+        <!-- Sources & Further Reading -->
+        <div style="margin-top: 40px; padding: 24px; background: var(--off-white); border-radius: 12px; border-left: 4px solid var(--navy);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--navy);">Sources & Further Reading</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-gray); line-height: 2; margin-left: 20px;">
+                <li>Beard DJ, Rees JL, Cook JA, et al. "Arthroscopic subacromial decompression for subacromial shoulder pain (CSAW): a multicentre, pragmatic, parallel group, placebo-controlled, three-group, randomised surgical trial." <em>The Lancet</em>. 2018;391:329-338. DOI: 10.1016/S0140-6736(17)32457-1</li>
+                <li>Paavola M, Malmivaara A, Taimela S, et al. "Subacromial decompression versus diagnostic arthroscopy for shoulder impingement: randomised, placebo surgery controlled clinical trial." <em>BMJ</em>. 2018;362:k2860. DOI: 10.1136/bmj.k2860</li>
+                <li>Karjalainen TV, Jain NB, Page CM, et al. "Subacromial decompression surgery for rotator cuff disease." <em>Cochrane Database of Systematic Reviews</em>. 2019. DOI: 10.1002/14651858.CD005619.pub3</li>
+                <li>Steuri R, Sattelmayer M, Elsig S, et al. "Effectiveness of conservative interventions including exercise, manual therapy and medical management in adults with shoulder impingement: a systematic review and meta-analysis of RCTs." <em>British Journal of Sports Medicine</em>. 2017;51:1340-1347. DOI: 10.1136/bjsports-2016-096515</li>
+                <li>Pieters L, Lewis J, Kuppens K, et al. "An Update of Systematic Reviews Examining the Effectiveness of Conservative Physical Therapy Interventions for Subacromial Shoulder Pain." <em>Journal of Orthopaedic & Sports Physical Therapy</em>. 2020;50(3):131-141. DOI: 10.2519/jospt.2020.8498</li>
+                <li>Hunter DJ, Rivett DA, McKeirnan S, et al. "Relationship Between Shoulder Impingement Syndrome and Thoracic Posture." <em>Physical Therapy</em>. 2020;100(4):677-686. DOI: 10.1093/ptj/pzz182</li>
+            </ol>
+        </div>
+
         <div class="author-box">
             <a href="../tony-profile.html"><img src="../../assets/images/team/tony-photo.jpg" alt="Antonis Petri — Physiotherapist" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></a>
             <div>
@@ -792,6 +917,53 @@
 
 
     </article>
+
+    <!-- FAQ Section -->
+    <section style="max-width: 740px; margin: 0 auto; padding: 0 24px 50px;">
+        <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 24px;">Frequently Asked Questions</h2>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Do I need an MRI to diagnose shoulder impingement?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                No. Shoulder impingement is a clinical diagnosis made through physical examination, not imaging. Research shows that a significant percentage of pain-free people have rotator cuff tears and impingement signs on MRI. Imaging is only necessary if symptoms don't respond to physiotherapy after 6-8 weeks, or if a traumatic tear is suspected.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Is surgery necessary for shoulder impingement?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                In most cases, no. Landmark trials published in The Lancet (CSAW, 2018) and BMJ (FIMPACT, 2018), plus a Cochrane review (2019), found that subacromial decompression surgery provides no clinically important benefit over placebo surgery or physiotherapy for shoulder impingement. Structured exercise therapy is the recommended first-line treatment.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Can I exercise with shoulder impingement?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Yes — and you should. Complete rest often worsens the problem by leading to stiffness and further weakening of the rotator cuff. The key is modifying your training to avoid aggravating positions while progressively loading the shoulder through a structured rehab programme. Pain should guide intensity — mild discomfort during exercise is acceptable, sharp pain is not.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">How long does shoulder impingement rehabilitation take?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Most cases resolve within 6-12 weeks of consistent physiotherapy. Some patients feel significant improvement within 2-3 sessions. The timeline depends on how long the problem has been present, the severity of any tendon changes, and consistency with the exercise programme. Chronic cases may take longer.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">What's the difference between shoulder impingement and a rotator cuff tear?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Shoulder impingement refers to compression of tendons in the subacromial space, causing pain with overhead movements. A rotator cuff tear is actual structural damage to one or more tendons. However, many impingement cases involve early tendon changes, and many small rotator cuff tears respond well to the same physiotherapy approach. The distinction matters less than the functional assessment.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Can shoulder impingement come back after treatment?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                It can if the underlying causes — weak rotator cuff, poor scapular control, thoracic stiffness — aren't fully addressed. A comprehensive rehabilitation programme should fix the mechanics, not just the symptoms. Maintaining a regular shoulder maintenance routine (2-3 times per week) significantly reduces recurrence risk.
+            </div>
+        </details>
+    </section>
 
     <!-- Medical Disclaimer -->
     <div style="max-width: 740px; margin: 0 auto 40px; padding: 20px 24px; background: #FFF3ED; border-left: 4px solid #FF6B35; border-radius: 0 12px 12px 0;">

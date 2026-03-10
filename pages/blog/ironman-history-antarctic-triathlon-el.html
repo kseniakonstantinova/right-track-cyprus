@@ -35,6 +35,7 @@
     <meta property="og:type" content="article">
     <meta property="og:locale" content="el_CY">
     <meta property="article:published_time" content="2026-03-01">
+    <meta property="article:author" content="Right Track Team">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -60,6 +61,56 @@
         },
         "datePublished": "2026-03-01",
         "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/ironman-history-antarctic-triathlon-el.html"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Ποιες είναι οι αποστάσεις σε ένα πλήρες Ironman;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ένα πλήρες Ironman περιλαμβάνει 3,86 χλμ κολύμβηση, 180,25 χλμ ποδηλασία και 42,2 χλμ τρέξιμο — συνολικά 226,31 χλμ. Το χρονικό όριο ολοκλήρωσης είναι 17 ώρες."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Πόσο χρόνο χρειάζεται για να ολοκληρώσεις ένα Ironman;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Οι επαγγελματίες αθλητές ολοκληρώνουν σε περίπου 8 ώρες, ενώ οι ερασιτέχνες χρειάζονται 10-15 ώρες. Ο μέσος χρόνος τερματισμού είναι 12-13 ώρες."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ποια η διαφορά μεταξύ Ironman και Ironman 70.3;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Το Ironman 70.3 (Half Ironman) έχει τις μισές αποστάσεις: 1,93 χλμ κολύμβηση, 90,12 χλμ ποδηλασία και 21,1 χλμ τρέξιμο."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Τι είναι το πρόγραμμα Α100 Antarctic triathlon;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Το A100 είναι ένα ultra-endurance τρίαθλο που δημιουργήθηκε από τον Ilya Slepov. Προγραμματίζεται για 27 Φεβρουαρίου — 8 Μαρτίου 2027 στην Ανταρκτική, με 50 αθλητές να αγωνίζονται σε 100 χλμ (1 χλμ κολύμβηση, 66 χλμ ποδηλασία, 33 χλμ τρέξιμο) σε ακραίες συνθήκες."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Πόσοι αθλητές ολοκληρώνουν ένα Ironman κάθε χρόνο;",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Πάνω από 100.000 αθλητές ολοκληρώνουν αγώνες Ironman κάθε χρόνο, σε περισσότερες από 40 χώρες παγκοσμίως. Τα παγκόσμια πρωταθλήματα διεξάγονται στην Kona (Χαβάη) και τη Νίκαια (Γαλλία)."
+                }
+            }
+        ]
     }
     </script>
 
@@ -693,6 +744,65 @@
             transform: translateY(-2px);
         }
 
+        /* FAQ Section */
+        .faq-section {
+            margin: 40px 0;
+        }
+
+        .faq-section h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .faq-section details {
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-section summary {
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--navy);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .faq-section summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-section summary::after {
+            content: '+';
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--orange);
+            transition: transform 0.2s;
+        }
+
+        .faq-section details[open] summary::after {
+            content: '\2212';
+        }
+
+        .faq-section summary:hover {
+            background: var(--off-white);
+        }
+
+        .faq-section .faq-answer {
+            padding: 0 20px 16px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
         /* Credit Box */
         .credit-box {
             background: var(--off-white);
@@ -902,6 +1012,36 @@
         </div>
 
     </article>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" style="max-width: 740px; margin: 0 auto; padding: 0 24px 40px;">
+        <h2>Συχνές Ερωτήσεις</h2>
+
+        <details>
+            <summary>Ποιες είναι οι αποστάσεις σε ένα πλήρες Ironman;</summary>
+            <div class="faq-answer">Ένα πλήρες Ironman περιλαμβάνει 3,86 χλμ κολύμβηση, 180,25 χλμ ποδηλασία και 42,2 χλμ τρέξιμο — συνολικά 226,31 χλμ. Το χρονικό όριο ολοκλήρωσης είναι 17 ώρες.</div>
+        </details>
+
+        <details>
+            <summary>Πόσο χρόνο χρειάζεται για να ολοκληρώσεις ένα Ironman;</summary>
+            <div class="faq-answer">Οι επαγγελματίες αθλητές ολοκληρώνουν σε περίπου 8 ώρες, ενώ οι ερασιτέχνες χρειάζονται 10-15 ώρες. Ο μέσος χρόνος τερματισμού είναι 12-13 ώρες.</div>
+        </details>
+
+        <details>
+            <summary>Ποια η διαφορά μεταξύ Ironman και Ironman 70.3;</summary>
+            <div class="faq-answer">Το Ironman 70.3 (Half Ironman) έχει τις μισές αποστάσεις: 1,93 χλμ κολύμβηση, 90,12 χλμ ποδηλασία και 21,1 χλμ τρέξιμο.</div>
+        </details>
+
+        <details>
+            <summary>Τι είναι το πρόγραμμα Α100 Antarctic triathlon;</summary>
+            <div class="faq-answer">Το A100 είναι ένα ultra-endurance τρίαθλο που δημιουργήθηκε από τον Ilya Slepov. Προγραμματίζεται για 27 Φεβρουαρίου — 8 Μαρτίου 2027 στην Ανταρκτική, με 50 αθλητές να αγωνίζονται σε 100 χλμ (1 χλμ κολύμβηση, 66 χλμ ποδηλασία, 33 χλμ τρέξιμο) σε ακραίες συνθήκες.</div>
+        </details>
+
+        <details>
+            <summary>Πόσοι αθλητές ολοκληρώνουν ένα Ironman κάθε χρόνο;</summary>
+            <div class="faq-answer">Πάνω από 100.000 αθλητές ολοκληρώνουν αγώνες Ironman κάθε χρόνο, σε περισσότερες από 40 χώρες παγκοσμίως. Τα παγκόσμια πρωταθλήματα διεξάγονται στην Kona (Χαβάη) και τη Νίκαια (Γαλλία).</div>
+        </details>
+    </section>
 
     <!-- CTA -->
     <section class="article-cta">

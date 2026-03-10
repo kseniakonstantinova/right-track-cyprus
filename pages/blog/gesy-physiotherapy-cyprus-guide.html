@@ -35,20 +35,30 @@
     <meta property="article:author" content="Antonis Petri">
     <meta property="article:published_time" content="2026-02-05">
 
-    <!-- Schema.org Article -->
+    <!-- Schema.org MedicalWebPage + Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": ["Article", "MedicalWebPage"],
         "headline": "GESY Physiotherapy in Cyprus: Everything You Need to Know in 2026",
         "description": "How does GESY physiotherapy work in Cyprus? How many sessions do you get? Do you need a referral? Everything you need to know about accessing physiotherapy through the national health system.",
+        "about": {
+            "@type": "MedicalTherapy",
+            "name": "GESY Physiotherapy Services",
+            "alternateName": "GHS Physiotherapy Cyprus"
+        },
         "author": {
             "@type": "Person",
             "name": "Antonis Petri",
             "jobTitle": "Lead Clinician",
+            "honorificSuffix": "BSc, OMPT",
             "worksFor": {
                 "@type": "Physiotherapy",
                 "name": "Right Track Physiotherapy & Performance Centre"
+            },
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Frederick University"
             }
         },
         "publisher": {
@@ -58,6 +68,64 @@
         },
         "datePublished": "2026-02-05",
         "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/gesy-physiotherapy-cyprus-guide.html"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What types of conditions does GESY physiotherapy cover?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GESY covers physiotherapy for musculoskeletal conditions (back pain, joint injuries, post-fracture rehabilitation), post-surgical rehabilitation (after knee replacement, ACL reconstruction, rotator cuff repair), and neurological conditions. It does not cover wellness treatments, preventive programmes, or performance training."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a doctor's referral for GESY physiotherapy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You need a referral from your registered GESY GP (general practitioner) or a specialist doctor. Your GP will assess your condition and issue a referral to physiotherapy services. You can then choose any GESY-registered physiotherapist, including Right Track Physiotherapy in Nicosia."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I choose which physiotherapist I see under GESY?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Under GESY, you have the freedom to choose any registered physiotherapist. You are not restricted to a specific clinic or location. At Right Track, both Antonis Petri (GESY Reg: 576) and Ksenia Konstantinova (GESY Reg: 1636) are registered GESY providers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many GESY physiotherapy sessions do I get?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Session allocation depends on your condition. Musculoskeletal conditions typically receive up to 12 sessions. Post-surgical rehabilitation can receive up to 24 sessions. Extensions are possible when clinically justified and supported by documented progress. Your physiotherapist handles the extension process."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there a cost for GESY physiotherapy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GESY physiotherapy requires small co-payments per session, significantly less than private rates. The exact co-payment depends on the service type. Private physiotherapy is also available for patients who want faster access, longer sessions, or services not covered under GESY."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between GESY and private physiotherapy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The quality of clinical care should be the same — GESY physiotherapists are the same professionals who offer private services. The differences are practical: GESY has session limits, co-payments, and requires a GP referral. Private physiotherapy offers immediate access, flexible scheduling, longer sessions, and no session limits. Many patients combine both — using GESY for core treatment and private sessions for additional work."
+                }
+            }
+        ]
     }
     </script>
 
@@ -771,6 +839,53 @@
 
 
     </article>
+
+    <!-- FAQ Section -->
+    <section style="max-width: 740px; margin: 0 auto; padding: 0 24px 50px;">
+        <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 24px;">Frequently Asked Questions</h2>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">What types of conditions does GESY physiotherapy cover?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                GESY covers physiotherapy for musculoskeletal conditions (back pain, joint injuries, post-fracture rehabilitation), post-surgical rehabilitation (after knee replacement, ACL reconstruction, rotator cuff repair), and neurological conditions. It does not cover wellness treatments, preventive programmes, or performance training.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Do I need a doctor's referral for GESY physiotherapy?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Yes. You need a referral from your registered GESY GP (general practitioner) or a specialist doctor. Your GP will assess your condition and issue a referral to physiotherapy services. You can then choose any GESY-registered physiotherapist, including Right Track Physiotherapy in Nicosia.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Can I choose which physiotherapist I see under GESY?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Yes. Under GESY, you have the freedom to choose any registered physiotherapist. You are not restricted to a specific clinic or location. At Right Track, both Antonis Petri (GESY Reg: 576) and Ksenia Konstantinova (GESY Reg: 1636) are registered GESY providers.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">How many GESY physiotherapy sessions do I get?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Session allocation depends on your condition. Musculoskeletal conditions typically receive up to 12 sessions. Post-surgical rehabilitation can receive up to 24 sessions. Extensions are possible when clinically justified and supported by documented progress. Your physiotherapist handles the extension process.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Is there a cost for GESY physiotherapy?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                GESY physiotherapy requires small co-payments per session, significantly less than private rates. The exact co-payment depends on the service type. Private physiotherapy is also available for patients who want faster access, longer sessions, or services not covered under GESY.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">What's the difference between GESY and private physiotherapy?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                The quality of clinical care should be the same — GESY physiotherapists are the same professionals who offer private services. The differences are practical: GESY has session limits, co-payments, and requires a GP referral. Private physiotherapy offers immediate access, flexible scheduling, longer sessions, and no session limits. Many patients combine both — using GESY for core treatment and private sessions for additional work.
+            </div>
+        </details>
+    </section>
 
     <!-- Medical Disclaimer -->
     <div style="max-width: 740px; margin: 0 auto 40px; padding: 20px 24px; background: #FFF3ED; border-left: 4px solid #FF6B35; border-radius: 0 12px 12px 0;">

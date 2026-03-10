@@ -34,20 +34,30 @@
     <meta property="article:author" content="Antonis Petri">
     <meta property="article:published_time" content="2026-01-30">
 
-    <!-- Schema.org Article -->
+    <!-- Schema.org MedicalWebPage + Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": ["Article", "MedicalWebPage"],
         "headline": "From Torn Meniscus to Match Day: A Footballer's Recovery Story",
         "description": "How a 28-year-old amateur footballer returned to competitive play 16 weeks after a meniscus tear. Case study by physiotherapist Antonis Petri.",
+        "about": {
+            "@type": "MedicalCondition",
+            "name": "Meniscus Tear",
+            "alternateName": "Meniscal Injury"
+        },
         "author": {
             "@type": "Person",
             "name": "Antonis Petri",
             "jobTitle": "Lead Clinician",
+            "honorificSuffix": "BSc, OMPT",
             "worksFor": {
                 "@type": "Physiotherapy",
                 "name": "Right Track Physiotherapy & Performance Centre"
+            },
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Frederick University"
             }
         },
         "publisher": {
@@ -56,7 +66,109 @@
             "url": "https://righttrackphysio.com.cy"
         },
         "datePublished": "2026-01-30",
-        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study.html"
+        "mainEntityOfPage": "https://righttrackphysio.com.cy/pages/blog/meniscus-tear-recovery-case-study.html",
+        "citation": [
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Arthroscopic partial meniscectomy for a degenerative meniscus tear: a 5-year follow-up of the placebo-surgery controlled FIDELITY trial",
+                "author": "Sihvonen R, Paavola M, Malmivaara A, et al.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Management of traumatic meniscus tears: the 2019 ESSKA meniscus consensus",
+                "author": "Kopf S, Beaufils P, Hirschmann MT, et al.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "Knee Surgery, Sports Traumatology, Arthroscopy"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Simple decision rules can reduce reinjury risk by 84% after ACL reconstruction: the Delaware-Oslo ACL cohort study",
+                "author": "Grindem H, Snyder-Mackler L, Moksnes H, et al.",
+                "datePublished": "2016",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Likelihood of ACL graft rupture: not meeting six clinical discharge criteria before return to sport is associated with a four times greater risk of rupture",
+                "author": "Kyritsis P, Bahr R, Landreau P, et al.",
+                "datePublished": "2016",
+                "isPartOf": {"@type": "Periodical", "name": "British Journal of Sports Medicine"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "Limb Symmetry Indexes Can Overestimate Knee Function After Anterior Cruciate Ligament Injury",
+                "author": "Wellsandt E, Failla MJ, Snyder-Mackler L.",
+                "datePublished": "2017",
+                "isPartOf": {"@type": "Periodical", "name": "Journal of Orthopaedic & Sports Physical Therapy"}
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "name": "The effects of partial meniscectomy and meniscal repair on the knee proprioception and function",
+                "author": "Basar B, Basar G, Aybar A, et al.",
+                "datePublished": "2020",
+                "isPartOf": {"@type": "Periodical", "name": "Journal of Orthopaedic Surgery"}
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does it take to recover from a meniscus tear?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Recovery time depends on the type and location of the tear, whether surgery is required, and your rehabilitation commitment. Conservative (non-surgical) management typically takes 6-12 weeks for return to daily activities. Full return to sport after a meniscal injury takes 12-20 weeks with criteria-based rehabilitation. Surgical cases may take longer depending on the procedure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do all meniscus tears need surgery?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Many meniscus tears — particularly degenerative tears — respond well to conservative management with physiotherapy. The FIDELITY trial showed that arthroscopic partial meniscectomy was no better than placebo surgery for degenerative tears at 5-year follow-up. Traumatic tears in younger patients may benefit from surgical repair depending on location and type."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What exercises are safe during meniscus tear recovery?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Safe exercises progress through phases: initially isometric quadriceps activation and range of motion work, progressing to closed-chain exercises (leg press, squats, step-ups), then to dynamic exercises (lunges, single-leg work) and finally plyometrics and sport-specific training. The progression should be guided by symptoms and objective criteria, not arbitrary timelines."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I know when I'm ready to return to sport after a meniscus injury?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Return-to-sport readiness should be determined by objective criteria, not timelines. Key benchmarks include: quadriceps strength within 90% of the uninjured side, hop test symmetry above 90%, completion of sport-specific drills without pain or apprehension, and psychological readiness. Research shows that not meeting these criteria increases reinjury risk by up to 4 times."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can a meniscus tear heal without surgery?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, depending on the tear's location. Tears in the outer third of the meniscus (the 'red zone') have good blood supply and healing potential. Tears in the inner third ('white zone') have limited blood supply and are less likely to heal on their own. However, even tears that don't fully heal structurally can become functionally stable with proper rehabilitation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between conservative and surgical meniscus treatment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Conservative treatment involves physiotherapy-led rehabilitation without surgery: progressive strengthening, range of motion work, and gradual return to activity. Surgical options include partial meniscectomy (removing damaged tissue) or meniscal repair (stitching the tear). Current evidence strongly favours meniscal preservation — repair over removal — and conservative management over surgery for degenerative tears."
+                }
+            }
+        ]
     }
     </script>
 
@@ -775,6 +887,19 @@
 
         <p><strong>If you're dealing with a knee injury -- meniscus, ACL, or anything else -- the rehab you do determines the outcome you get. Don't settle for "good enough." Demand a proper return-to-sport process.</strong></p>
 
+        <!-- Sources & Further Reading -->
+        <div style="margin-top: 40px; padding: 24px; background: var(--off-white); border-radius: 12px; border-left: 4px solid var(--navy);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--navy);">Sources & Further Reading</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-gray); line-height: 2; margin-left: 20px;">
+                <li>Sihvonen R, Paavola M, Malmivaara A, et al. "Arthroscopic partial meniscectomy for a degenerative meniscus tear: a 5-year follow-up of the placebo-surgery controlled FIDELITY trial." <em>British Journal of Sports Medicine</em>. 2020;54(22):1332-1339. DOI: 10.1136/bjsports-2020-102813</li>
+                <li>Kopf S, Beaufils P, Hirschmann MT, et al. "Management of traumatic meniscus tears: the 2019 ESSKA meniscus consensus." <em>Knee Surgery, Sports Traumatology, Arthroscopy</em>. 2020;28(4):1177-1194. DOI: 10.1007/s00167-020-05847-3</li>
+                <li>Grindem H, Snyder-Mackler L, Moksnes H, et al. "Simple decision rules can reduce reinjury risk by 84% after ACL reconstruction: the Delaware-Oslo ACL cohort study." <em>British Journal of Sports Medicine</em>. 2016;50(13):804-808. DOI: 10.1136/bjsports-2016-096031</li>
+                <li>Kyritsis P, Bahr R, Landreau P, et al. "Likelihood of ACL graft rupture: not meeting six clinical discharge criteria before return to sport is associated with a four times greater risk of rupture." <em>British Journal of Sports Medicine</em>. 2016;50(15):946-951. DOI: 10.1136/bjsports-2015-095908</li>
+                <li>Wellsandt E, Failla MJ, Snyder-Mackler L. "Limb Symmetry Indexes Can Overestimate Knee Function After Anterior Cruciate Ligament Injury." <em>Journal of Orthopaedic & Sports Physical Therapy</em>. 2017;47(5):334-338. DOI: 10.2519/jospt.2017.7285</li>
+                <li>Basar B, Basar G, Aybar A, et al. "The effects of partial meniscectomy and meniscal repair on the knee proprioception and function." <em>Journal of Orthopaedic Surgery</em>. 2020;28(1):2309499019894915. DOI: 10.1177/2309499019894915</li>
+            </ol>
+        </div>
+
         <div class="author-box">
             <a href="../tony-profile.html"><img src="../../assets/images/team/tony-photo.jpg" alt="Antonis Petri — Physiotherapist" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></a>
             <div>
@@ -798,6 +923,53 @@
 
 
     </article>
+
+    <!-- FAQ Section -->
+    <section style="max-width: 740px; margin: 0 auto; padding: 0 24px 50px;">
+        <h2 style="font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 24px;">Frequently Asked Questions</h2>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">How long does it take to recover from a meniscus tear?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Recovery time depends on the type and location of the tear, whether surgery is required, and your rehabilitation commitment. Conservative management typically takes 6-12 weeks for return to daily activities. Full return to sport takes 12-20 weeks with criteria-based rehabilitation. Surgical cases may take longer depending on the procedure.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Do all meniscus tears need surgery?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                No. Many meniscus tears — particularly degenerative tears — respond well to conservative management with physiotherapy. The FIDELITY trial showed that arthroscopic partial meniscectomy was no better than placebo surgery for degenerative tears at 5-year follow-up. Traumatic tears in younger patients may benefit from surgical repair depending on location and type.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">What exercises are safe during meniscus tear recovery?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Safe exercises progress through phases: initially isometric quadriceps activation and range of motion work, progressing to closed-chain exercises (leg press, squats, step-ups), then to dynamic exercises (lunges, single-leg work) and finally plyometrics and sport-specific training. The progression should be guided by symptoms and objective criteria, not arbitrary timelines.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">How do I know when I'm ready to return to sport after a meniscus injury?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Return-to-sport readiness should be determined by objective criteria, not timelines. Key benchmarks include: quadriceps strength within 90% of the uninjured side, hop test symmetry above 90%, completion of sport-specific drills without pain or apprehension, and psychological readiness. Research shows that not meeting these criteria increases reinjury risk by up to 4 times.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">Can a meniscus tear heal without surgery?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Yes, depending on the tear's location. Tears in the outer third of the meniscus (the "red zone") have good blood supply and healing potential. Tears in the inner third ("white zone") have limited blood supply and are less likely to heal on their own. However, even tears that don't fully heal structurally can become functionally stable with proper rehabilitation.
+            </div>
+        </details>
+
+        <details style="margin-bottom: 16px; border: 1px solid var(--light-gray); border-radius: 12px; overflow: hidden;">
+            <summary style="padding: 16px 20px; font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--navy); background: var(--off-white);">What's the difference between conservative and surgical meniscus treatment?</summary>
+            <div style="padding: 16px 20px; font-size: 1rem; line-height: 1.8; color: var(--text-dark);">
+                Conservative treatment involves physiotherapy-led rehabilitation without surgery: progressive strengthening, range of motion work, and gradual return to activity. Surgical options include partial meniscectomy (removing damaged tissue) or meniscal repair (stitching the tear). Current evidence strongly favours meniscal preservation — repair over removal — and conservative management over surgery for degenerative tears.
+            </div>
+        </details>
+    </section>
 
     <!-- Medical Disclaimer -->
     <div style="max-width: 740px; margin: 0 auto 40px; padding: 20px 24px; background: #FFF3ED; border-left: 4px solid #FF6B35; border-radius: 0 12px 12px 0;">
