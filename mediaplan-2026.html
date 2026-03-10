@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIGHT TRACK — Media Plan 2026</title>
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-light: #132038;
+            --navy-mid: #1a2d4a;
+            --orange: #FF6B35;
+            --orange-light: #FF8A5C;
+            --orange-dark: #e05a28;
+            --white: #F8F9FA;
+            --gray: #8892A0;
+            --gray-light: #CBD2DA;
+            --green: #2ECC71;
+            --blue: #3498DB;
+            --purple: #9B59B6;
+            --red: #E74C3C;
+            --yellow: #F1C40F;
+            --teal: #1ABC9C;
+            --pink: #E91E63;
+
+            /* Theme variables (dark default) */
+            --bg: var(--navy);
+            --bg-card: var(--navy-light);
+            --bg-card-alt: var(--navy-mid);
+            --text: var(--white);
+            --text-secondary: var(--gray-light);
+            --text-muted: var(--gray);
+            --border: var(--navy-mid);
+            --border-dotted: rgba(255,255,255,0.05);
+            --hover-row: rgba(255,255,255,0.02);
+            --shadow-tooltip: rgba(0,0,0,0.5);
+            --gantt-bar-hover-shadow: rgba(0,0,0,0.4);
+        }
+
+        [data-theme="light"] {
+            --bg: #F5F6F8;
+            --bg-card: #FFFFFF;
+            --bg-card-alt: #EEF0F4;
+            --text: #1a1a2e;
+            --text-secondary: #444;
+            --text-muted: #777;
+            --border: #ddd;
+            --border-dotted: rgba(0,0,0,0.06);
+            --hover-row: rgba(0,0,0,0.02);
+            --shadow-tooltip: rgba(0,0,0,0.15);
+            --gantt-bar-hover-shadow: rgba(0,0,0,0.2);
+            --orange: #E85A20;
+            --orange-light: #FF8A5C;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* THEME TOGGLE */
+        .theme-toggle {
+            position: fixed;
+            top: 16px;
+            right: 20px;
+            z-index: 999;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 6px 14px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            user-select: none;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--orange);
+        }
+
+        .theme-toggle .label {
+            font-size: 0.75em;
+            color: var(--text-muted);
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--orange);
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            color: var(--orange);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            color: var(--text-muted);
+        }
+
+        .header .status-bar {
+            margin-top: 16px;
+            padding: 12px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: inline-block;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: var(--orange-light);
+        }
+
+        /* SECTIONS */
+        .section { margin-bottom: 50px; }
+
+        .section-title {
+            font-size: 1.5em;
+            color: var(--orange);
+            border-left: 4px solid var(--orange);
+            padding-left: 16px;
+            margin-bottom: 24px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        /* STRATEGY CARDS */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .card:hover { border-color: var(--orange); }
+
+        .card h3 {
+            color: var(--orange);
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .card p, .card li {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .card ul { list-style: none; padding: 0; }
+
+        .card ul li {
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+        }
+
+        .highlight-card {
+            border-color: var(--orange);
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-card-alt));
+        }
+
+        .brand-promise {
+            font-size: 1.3em;
+            color: var(--text);
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-card-alt));
+            border-radius: 12px;
+            border: 2px solid var(--orange);
+            margin: 20px 0 30px;
+            line-height: 1.5;
+        }
+
+        /* CHANNELS TABLE */
+        .channels-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .channels-table th {
+            background: var(--bg-card-alt);
+            color: var(--orange);
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .channels-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95em;
+        }
+
+        .channels-table tr:hover { background: var(--hover-row); }
+
+        .priority-badge {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        .p1 { background: var(--orange); color: white; }
+        .p2 { background: var(--green); color: white; }
+        .p3 { background: var(--blue); color: white; }
+        .p4 { background: var(--purple); color: white; }
+        .p5 { background: var(--teal); color: white; }
+        .p6 { background: var(--yellow); color: #333; }
+        .p7 { background: var(--gray); color: white; }
+
+        /* GANTT CHART */
+        .gantt-wrapper {
+            overflow-x: auto;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .gantt {
+            min-width: 1200px;
+            background: var(--bg-card);
+        }
+
+        .gantt-header {
+            display: grid;
+            grid-template-columns: 200px repeat(10, 1fr);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .gantt-header-cell {
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            border-right: 1px solid var(--border);
+        }
+
+        .gantt-header-cell:first-child {
+            text-align: left;
+            padding-left: 16px;
+            color: var(--orange);
+        }
+
+        .gantt-phases {
+            display: grid;
+            grid-template-columns: 200px repeat(10, 1fr);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .gantt-phase-label {
+            padding: 6px 8px;
+            text-align: center;
+            font-size: 0.75em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phase-1-bg { background: rgba(255, 107, 53, 0.15); color: var(--orange); }
+        .phase-2-bg { background: rgba(46, 204, 113, 0.15); color: var(--green); }
+        .phase-3-bg { background: rgba(52, 152, 219, 0.15); color: var(--blue); }
+        .phase-4-bg { background: rgba(155, 89, 182, 0.15); color: var(--purple); }
+
+        .gantt-row {
+            display: grid;
+            grid-template-columns: 200px repeat(10, 1fr);
+            border-bottom: 1px solid var(--border);
+            min-height: 52px;
+            align-items: center;
+        }
+
+        .gantt-row:hover { background: var(--hover-row); }
+
+        .gantt-label {
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-right: 1px solid var(--border);
+        }
+
+        .gantt-label .icon { font-size: 1.2em; }
+
+        .gantt-cell {
+            padding: 4px 3px;
+            position: relative;
+            border-right: 1px dotted var(--border-dotted);
+        }
+
+        .gantt-bar {
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 0.7em;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .gantt-bar:hover {
+            transform: scaleY(1.15);
+            box-shadow: 0 2px 12px var(--gantt-bar-hover-shadow);
+            z-index: 10;
+        }
+
+        .bar-orange { background: var(--orange); color: white; }
+        .bar-green { background: var(--green); color: white; }
+        .bar-blue { background: var(--blue); color: white; }
+        .bar-purple { background: var(--purple); color: white; }
+        .bar-teal { background: var(--teal); color: white; }
+        .bar-yellow { background: var(--yellow); color: #333; }
+        .bar-pink { background: var(--pink); color: white; }
+        .bar-gray { background: var(--gray); color: white; }
+
+        .kpi-marker {
+            display: inline-block;
+            font-size: 0.65em;
+            background: var(--yellow);
+            color: #333;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        /* CONTENT CALENDAR */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .cal-day {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 16px 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .cal-day:hover { border-color: var(--orange); }
+
+        .cal-day .day-name {
+            font-weight: bold;
+            color: var(--orange);
+            font-size: 0.85em;
+            margin-bottom: 8px;
+        }
+
+        .cal-day .channel {
+            font-size: 0.75em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .cal-day .content-type {
+            font-size: 0.85em;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .cal-day .pillar {
+            font-size: 0.7em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 6px;
+        }
+
+        .pillar-edu { background: rgba(52, 152, 219, 0.2); color: var(--blue); }
+        .pillar-proof { background: rgba(46, 204, 113, 0.2); color: var(--green); }
+        .pillar-personal { background: rgba(155, 89, 182, 0.2); color: var(--purple); }
+        .pillar-social { background: rgba(241, 196, 15, 0.2); color: #b8960f; }
+        .pillar-loyalty { background: rgba(255, 107, 53, 0.2); color: var(--orange); }
+
+        /* KPI TABLE */
+        .kpi-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .kpi-table th {
+            background: var(--bg-card-alt);
+            color: var(--orange);
+            padding: 12px 10px;
+            text-align: center;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border);
+        }
+
+        .kpi-table th:first-child {
+            text-align: left;
+            min-width: 200px;
+        }
+
+        .kpi-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--border);
+            font-size: 0.85em;
+        }
+
+        .kpi-table tr:hover { background: var(--hover-row); }
+
+        .kpi-category {
+            background: var(--bg-card-alt) !important;
+            color: var(--orange);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8em !important;
+            letter-spacing: 1px;
+        }
+
+        .kpi-target { color: var(--green); font-weight: 600; }
+        .kpi-current { color: var(--text-muted); }
+
+        /* BUDGET */
+        .budget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .budget-item {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .budget-item .amount { font-size: 1.4em; font-weight: bold; color: var(--orange); }
+        .budget-item .label { color: var(--text-muted); font-size: 0.85em; margin-top: 4px; }
+        .budget-item .note { color: var(--text-secondary); font-size: 0.8em; margin-top: 8px; }
+
+        .budget-total {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-card-alt));
+            border-left-color: var(--green);
+        }
+
+        /* FUNNEL */
+        .funnel { max-width: 700px; margin: 0 auto 30px; }
+        .funnel-step { display: flex; align-items: center; margin-bottom: 4px; }
+
+        .funnel-bar {
+            height: 44px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        .funnel-bar:hover { transform: scaleX(1.02); }
+
+        .funnel-desc {
+            margin-left: 16px;
+            font-size: 0.8em;
+            color: var(--text-muted);
+            min-width: 200px;
+        }
+
+        .funnel-arrow {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.2em;
+            margin: 2px 0 2px 40px;
+        }
+
+        /* TOOLTIP */
+        .tooltip {
+            display: none;
+            position: fixed;
+            background: var(--bg-card);
+            border: 1px solid var(--orange);
+            border-radius: 8px;
+            padding: 12px 16px;
+            max-width: 320px;
+            z-index: 1000;
+            font-size: 0.85em;
+            box-shadow: 0 8px 32px var(--shadow-tooltip);
+            pointer-events: none;
+        }
+
+        .tooltip h4 { color: var(--orange); margin-bottom: 6px; }
+        .tooltip p { color: var(--text-secondary); font-size: 0.9em; }
+
+        /* PRINT */
+        @media print {
+            body { background: white !important; color: #333 !important; }
+            .theme-toggle { display: none; }
+            .card, .gantt, .channels-table, .kpi-table { border: 1px solid #ddd; }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container { padding: 12px; }
+            .header h1 { font-size: 1.4em; }
+            .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+            .strategy-grid { grid-template-columns: 1fr; }
+            .gantt-wrapper { font-size: 0.85em; }
+            .theme-toggle { top: 8px; right: 8px; padding: 4px 10px; }
+        }
+
+        /* Phase indicator */
+        .phase-indicator {
+            display: flex;
+            gap: 0;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .phase-block {
+            flex: 1;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: filter 0.3s;
+        }
+
+        .phase-block:hover { filter: brightness(1.2); }
+        .phase-block .phase-num { font-size: 1.4em; display: block; margin-bottom: 2px; }
+        .phase-block .phase-dates { font-size: 0.85em; font-weight: normal; opacity: 0.8; }
+
+        .gantt-cell-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- THEME TOGGLE -->
+    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+        <span id="themeIcon">&#9790;</span>
+        <span class="label" id="themeLabel">Light</span>
+    </div>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>RIGHT TRACK &mdash; MEDIA PLAN 2026</h1>
+            <div class="subtitle">Roadmap: From Zero Awareness to #1 Physiotherapy Brand in Cyprus</div>
+            <div class="status-bar">
+                [&#127919; PROTOCOL: STRATEGIST | &#129504; MODE: UNCOMPROMISING | &#128197; 2026]<br>
+                [&#128205; PHASE: FOUNDATION &rarr; DOMINATION | &#127919; PROJECT: PHYSIO #1 | &#128293; FOCUS: ANTONIS PETRI]
+            </div>
+        </div>
+
+        <!-- PHASE INDICATOR -->
+        <div class="phase-indicator">
+            <div class="phase-block phase-1-bg">
+                <span class="phase-num">I</span>
+                FOUNDATION
+                <span class="phase-dates">Mar&ndash;Apr</span>
+            </div>
+            <div class="phase-block phase-2-bg">
+                <span class="phase-num">II</span>
+                GROWTH
+                <span class="phase-dates">May&ndash;Jul</span>
+            </div>
+            <div class="phase-block phase-3-bg">
+                <span class="phase-num">III</span>
+                SCALE
+                <span class="phase-dates">Aug&ndash;Oct</span>
+            </div>
+            <div class="phase-block phase-4-bg">
+                <span class="phase-num">IV</span>
+                DOMINATION
+                <span class="phase-dates">Nov&ndash;Dec</span>
+            </div>
+        </div>
+
+        <!-- SECTION 1: STRATEGY -->
+        <div class="section">
+            <h2 class="section-title">STRATEGIC FOUNDATION</h2>
+
+            <div class="brand-promise">
+                &laquo;Right Track brings athletes and active people in Cyprus back to a pain-free life &mdash; through evidence-based physiotherapy, a personalised approach, and real results, not promises.&raquo;
+            </div>
+
+            <div class="strategy-grid">
+                <div class="card highlight-card">
+                    <h3>&#127919; POSITIONING</h3>
+                    <p><strong>Niche:</strong> Evidence-based sports rehabilitation &amp; physiotherapy</p>
+                    <p style="margin-top:8px"><strong>Territory:</strong> Cyprus, focus &mdash; Nicosia, expansion to Limassol</p>
+                    <p style="margin-top:8px"><strong>Differentiation:</strong> Not &ldquo;just another clinic&rdquo; &mdash; the #1 sports physiotherapist trusted by academies and athletes</p>
+                </div>
+
+                <div class="card">
+                    <h3>&#128101; TARGET AUDIENCE</h3>
+                    <ul>
+                        <li><strong>Segment A &mdash; Athletes:</strong> Padel, combat sports, running, football. 18&ndash;45 y.o. Injuries, prevention, performance</li>
+                        <li><strong>Segment B &mdash; Active Adults 30&ndash;55:</strong> Back/neck/joint pain. Searching &ldquo;best physio near me&rdquo;. GESY covered</li>
+                        <li><strong>Segment C &mdash; Post-Surgery:</strong> Knee, shoulder operations, joint replacements. Rehabilitation needed</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>&#128483;&#65039; BRAND VOICE</h3>
+                    <ul>
+                        <li><strong>Tone:</strong> Expert yet accessible. No medical jargon</li>
+                        <li><strong>Energy:</strong> Athletic, confident, direct</li>
+                        <li><strong>Archetype:</strong> Sage + Hero (knowledge + action)</li>
+                        <li><strong>Forbidden:</strong> Stock photos, &ldquo;we&rsquo;re the best&rdquo;, empty promises</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>&#127942; USP &mdash; WHY RIGHT TRACK</h3>
+                    <ul>
+                        <li>Antonis Petri &mdash; Clinical Supervisor at Frederick University</li>
+                        <li>Partnership with PAEEK Academy / Dragon Force / FC Porto</li>
+                        <li>Evidence-based approach (not &ldquo;just a massage&rdquo;)</li>
+                        <li>GESY coverage (accessibility + trust)</li>
+                        <li>Real case studies and proven results</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUNNEL -->
+        <div class="section">
+            <h2 class="section-title">TRUST FUNNEL</h2>
+            <p class="section-subtitle">&ldquo;Content is not posts. It&rsquo;s a system for converting strangers into patients.&rdquo;</p>
+
+            <div class="funnel">
+                <div class="funnel-step">
+                    <div class="funnel-bar" style="width:100%; background: var(--orange);">STRANGER</div>
+                    <div class="funnel-desc">SEO / Reels / friend&rsquo;s recommendation</div>
+                </div>
+                <div class="funnel-arrow">&darr;</div>
+                <div class="funnel-step">
+                    <div class="funnel-bar" style="width:85%; background: var(--blue);">VIEWER</div>
+                    <div class="funnel-desc">Educational content, myth-busting</div>
+                </div>
+                <div class="funnel-arrow">&darr;</div>
+                <div class="funnel-step">
+                    <div class="funnel-bar" style="width:70%; background: var(--green);">FOLLOWER</div>
+                    <div class="funnel-desc">Case studies, reviews, Antonis&rsquo;s expertise</div>
+                </div>
+                <div class="funnel-arrow">&darr;</div>
+                <div class="funnel-step">
+                    <div class="funnel-bar" style="width:50%; background: var(--purple);">LEAD</div>
+                    <div class="funnel-desc">Offer, booking, consultation</div>
+                </div>
+                <div class="funnel-arrow">&darr;</div>
+                <div class="funnel-step">
+                    <div class="funnel-bar" style="width:35%; background: var(--teal);">PATIENT</div>
+                    <div class="funnel-desc">Results, retention, LTV</div>
+                </div>
+                <div class="funnel-arrow">&darr;</div>
+                <div class="funnel-step">
+                    <div class="funnel-bar" style="width:25%; background: var(--yellow); color: #333;">BRAND ADVOCATE</div>
+                    <div class="funnel-desc">Reviews, referrals, UGC</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHANNELS TABLE -->
+        <div class="section">
+            <h2 class="section-title">CHANNELS &amp; PRIORITIES</h2>
+            <p class="section-subtitle">&ldquo;Being everywhere = being nowhere. Dominate 2&ndash;3 channels first, then scale.&rdquo;</p>
+
+            <table class="channels-table">
+                <thead>
+                    <tr>
+                        <th style="width:50px">#</th>
+                        <th>Channel</th>
+                        <th>Funnel Role</th>
+                        <th>Frequency</th>
+                        <th>Target by Dec 2026</th>
+                        <th>Start</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="priority-badge p1">1</span></td>
+                        <td><strong>Google Business + Maps</strong></td>
+                        <td>Conversion. &ldquo;Physio near me&rdquo; &rarr; call</td>
+                        <td>Reviews: 3&ndash;5/week</td>
+                        <td class="kpi-target">100+ reviews, 5.0 rating, top-3 Maps</td>
+                        <td>Now</td>
+                    </tr>
+                    <tr>
+                        <td><span class="priority-badge p1">1</span></td>
+                        <td><strong>Website + SEO Blog</strong></td>
+                        <td>Search traffic capture</td>
+                        <td>2 articles/month</td>
+                        <td class="kpi-target">30+ articles, 2,000+ organic visits/mo</td>
+                        <td>Now</td>
+                    </tr>
+                    <tr>
+                        <td><span class="priority-badge p2">2</span></td>
+                        <td><strong>Instagram / Reels</strong></td>
+                        <td>Personal brand + trust</td>
+                        <td>4&ndash;5 posts/week</td>
+                        <td class="kpi-target">3,000+ followers, 50K+ reach/mo</td>
+                        <td>Now</td>
+                    </tr>
+                    <tr>
+                        <td><span class="priority-badge p3">3</span></td>
+                        <td><strong>YouTube Shorts</strong></td>
+                        <td>Cold reach, viral potential</td>
+                        <td>3 Shorts/week</td>
+                        <td class="kpi-target">1,000+ subscribers</td>
+                        <td>May</td>
+                    </tr>
+                    <tr>
+                        <td><span class="priority-badge p4">4</span></td>
+                        <td><strong>Facebook</strong></td>
+                        <td>Local community, events</td>
+                        <td>3 posts/week</td>
+                        <td class="kpi-target">500+ followers, group engagement</td>
+                        <td>Now</td>
+                    </tr>
+                    <tr>
+                        <td><span class="priority-badge p5">5</span></td>
+                        <td><strong>Telegram</strong></td>
+                        <td>Loyal base, direct contact</td>
+                        <td>2&ndash;3 posts/week</td>
+                        <td class="kpi-target">300+ subscribers</td>
+                        <td>May</td>
+                    </tr>
+                    <tr>
+                        <td><span class="priority-badge p6">6</span></td>
+                        <td><strong>LinkedIn</strong></td>
+                        <td>B2B, partnerships, thought leadership</td>
+                        <td>2 posts/week</td>
+                        <td class="kpi-target">500+ Antonis connections</td>
+                        <td>June</td>
+                    </tr>
+                    <tr>
+                        <td><span class="priority-badge p7">7</span></td>
+                        <td><strong>Google Ads</strong></td>
+                        <td>Scale conversions</td>
+                        <td>Always-on</td>
+                        <td class="kpi-target">CPA &lt; &euro;20, ROAS 5x</td>
+                        <td>July</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- GANTT CHART -->
+        <div class="section">
+            <h2 class="section-title">ROADMAP &mdash; GANTT CHART</h2>
+            <p class="section-subtitle">Hover over blocks for details. Each row = channel, each colour = activity type.</p>
+
+            <div class="gantt-wrapper">
+                <div class="gantt">
+                    <div class="gantt-header">
+                        <div class="gantt-header-cell">CHANNEL</div>
+                        <div class="gantt-header-cell">MAR</div>
+                        <div class="gantt-header-cell">APR</div>
+                        <div class="gantt-header-cell">MAY</div>
+                        <div class="gantt-header-cell">JUN</div>
+                        <div class="gantt-header-cell">JUL</div>
+                        <div class="gantt-header-cell">AUG</div>
+                        <div class="gantt-header-cell">SEP</div>
+                        <div class="gantt-header-cell">OCT</div>
+                        <div class="gantt-header-cell">NOV</div>
+                        <div class="gantt-header-cell">DEC</div>
+                    </div>
+
+                    <div class="gantt-phases">
+                        <div class="gantt-header-cell" style="font-size:0.7em; color: var(--text-muted)">PHASE</div>
+                        <div class="gantt-phase-label phase-1-bg">&#9664; FOUNDATION</div>
+                        <div class="gantt-phase-label phase-1-bg">FOUNDATION &#9654;</div>
+                        <div class="gantt-phase-label phase-2-bg">&#9664; GROWTH</div>
+                        <div class="gantt-phase-label phase-2-bg">GROWTH</div>
+                        <div class="gantt-phase-label phase-2-bg">GROWTH &#9654;</div>
+                        <div class="gantt-phase-label phase-3-bg">&#9664; SCALE</div>
+                        <div class="gantt-phase-label phase-3-bg">SCALE</div>
+                        <div class="gantt-phase-label phase-3-bg">SCALE &#9654;</div>
+                        <div class="gantt-phase-label phase-4-bg">&#9664; DOMIN.</div>
+                        <div class="gantt-phase-label phase-4-bg">DOMIN. &#9654;</div>
+                    </div>
+
+                    <!-- ROW: Google Business -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#128205;</span> Google Business</div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-orange" data-tip="Profile optimisation: clinic photos, services, hours, description. Add all services as Products.">Optimise</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-green" data-tip="Launch review collection system: QR code in clinic, follow-up SMS/WhatsApp after visits, ask for reviews.">Reviews: start</div>
+                            <div class="kpi-marker">50 reviews</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Continue review collection. Google Posts: 2/week with promotions and blog articles.">Reviews + Posts</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Google Posts regularly. Photo updates. Reply to ALL reviews within 24h.">Posts + replies</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Competitor analysis in Maps. Adjust keywords in description. Build Q&A section.">Analysis + Q&A</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Review growth. Add patient photos (with consent). Clinic video tours.">UGC photos</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Continue. Monitor Maps positions for target queries.">Monitoring</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-green" data-tip="80+ reviews. Analyse: which keywords drive clicks.">80+ reviews</div>
+                            <div class="kpi-marker">80 reviews</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Goal: 100+ reviews. Dominate local pack for target queries.">Domination</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-purple" data-tip="100+ reviews achieved. Plan 2027 strategy.">100+ &#10003;</div>
+                            <div class="kpi-marker">&#127942; 100+</div>
+                        </div></div>
+                    </div>
+
+                    <!-- ROW: SEO Blog -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#128221;</span> Website / SEO Blog</div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-orange" data-tip="2 new SEO articles: 'physiotherapy nicosia', 'sports rehabilitation cyprus'. Schema markup check.">+2 articles</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-orange" data-tip="2 articles: 'GESY physiotherapy guide', 'padel injuries cyprus'. Internal linking across all articles.">+2 articles</div>
+                            <div class="kpi-marker">18 articles</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="2 long-tail articles: 'knee pain after running cyprus', 'shoulder rehab exercises'. Optimise old articles.">+2 + optimise</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="2 articles: 'back pain office workers', 'post surgery physiotherapy'. Add FAQ schema to all articles.">+2 + FAQ</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-blue" data-tip="2 articles. Analyse Search Console: which queries grow. Create content clusters.">+2 + analytics</div>
+                            <div class="kpi-marker">24 articles</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="2 articles targeting growing queries from Search Console. Case study with video.">+2 + case study</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="2 articles. Update old articles with fresh data. Internal linking audit.">+2 + update</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-green" data-tip="30+ articles on site. Check positions for all target queries.">30+ articles &#10003;</div>
+                            <div class="kpi-marker">&#127942; 30+</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Content plan 2027. Video content for site. New service pages.">Plan 2027</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Final SEO audit. Lock positions. Plan scaling strategy.">SEO audit</div></div>
+                    </div>
+
+                    <!-- ROW: Instagram -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#128248;</span> Instagram / Reels</div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-orange" data-tip="Launch content system: 4 posts/week. 2 Reels (myth + exercise) + 1 carousel (case) + Stories. Profile setup, highlights.">Launch 4/wk</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-orange" data-tip="Content from Combat Sports seminar. 'Physio Myths' series. Behind-the-scenes clinic. First collabs.">Seminar + myths</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-green" data-tip="Growth via Reels: 3/week minimum. Trends + expert content. Collabs with PAEEK athletes.">3 Reels/wk</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="'Day in the life of a physio' series. Patient video testimonials (2-3). Instagram Lives: Q&A.">Lives + reviews</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-blue" data-tip="Paid boost on best Reels (EUR200/mo). Analyse what works. UGC from patients.">Boost + UGC</div>
+                            <div class="kpi-marker">1,500 foll.</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Scale: 5 posts/week. Before/after case series. Collabs with Cyprus influencers.">5/wk + collabs</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Giveaways with partners (gyms, sports shops). 'Sports Without Injury' series.">Giveaways + series</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-purple" data-tip="3,000+ followers achieved. Stable 50K+ reach/mo. Antonis = face of physio Cyprus.">3,000+ foll.</div>
+                            <div class="kpi-marker">&#127942; 3,000+</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Scale ads on best content. Retarget website visitors.">Paid ads</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Year in review. Best-of content. Plan Instagram strategy 2027.">Best-of + plan</div></div>
+                    </div>
+
+                    <!-- ROW: YouTube -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#127909;</span> YouTube Shorts</div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Not yet. Focus on primary channels.">&mdash;</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Prep: create channel, branding, description. Upload first 5 Shorts from best Reels.">Preparation</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-green" data-tip="LAUNCH: 3 Shorts/wk. Repost best Reels + unique content. Format: '60 sec with a physiotherapist'.">&#128640; LAUNCH 3/wk</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Growth: exercises, myths, cases. Optimise titles and thumbnails.">Growth + optimise</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Analyse which Shorts perform. First long video (5-10 min) - case breakdown.">First long video</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Stable Shorts + 1 long video/month. 'Physio Answers' series.">+ long videos</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Subscriber growth. Create playlists by topic. SEO-optimise all videos.">Playlists + SEO</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-blue" data-tip="1,000+ subscribers. Steady view stream. Videos ranking in YouTube search.">1,000+ subs</div>
+                            <div class="kpi-marker">&#127942; 1,000+</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Scale. Cross-channel collaborations.">Scale</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Year review. Best-of. Plan YouTube strategy 2027.">Review + plan</div></div>
+                    </div>
+
+                    <!-- ROW: Facebook -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#128101;</span> Facebook</div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-orange" data-tip="Page optimisation. Cross-post from Instagram. 3 posts/wk. Join local Nicosia groups.">Optimise</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-orange" data-tip="Combat Sports seminar event on Facebook. Cross-post from Instagram. Activity in groups.">Event + groups</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Regular cross-post. Reply in groups as expert (Antonis). Facebook Events for Padel Camp.">Expert in groups</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Continue. Test Facebook Ads on local audience (EUR100 test).">Test Ads</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Analyse Ads results. Optimise. Grow page through Events and groups.">Optimise</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Scale what works. Retarget website visitors.">Retargeting</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Steady operation. Focus on Events and community.">Community</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Continue. Prepare winter promotions.">Promotions</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Winter campaigns. New Year offers.">Winter campaigns</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-purple" data-tip="500+ followers. Active community.">500+ &#10003;</div>
+                            <div class="kpi-marker">500+</div>
+                        </div></div>
+                    </div>
+
+                    <!-- ROW: Telegram -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#9992;&#65039;</span> Telegram</div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Not launched. Focus on core channels.">&mdash;</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Preparation: create channel, description, first 5 draft posts.">Preparation</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-green" data-tip="LAUNCH channel. Announce on all socials. Weekly digest: best of the week + exclusive tip.">&#128640; LAUNCH</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="2-3 posts/wk: digest, health tip, behind-the-scenes. Mini blog article summaries with link.">Digest + tips</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Growth via cross-promo. Exclusive subscriber content. Polls.">Cross-promo</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="'Ask a Physiotherapist' feature. Mini case studies. Links to new articles.">Q&A feature</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Growth. Instagram Stories linking to Telegram. Event announcements.">Integration</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="200+ subscribers. Stable content.">200+ subs</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Exclusive offers for subscribers. Holiday promotions.">Exclusive</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-purple" data-tip="300+ subscribers. Loyal base established.">300+ &#10003;</div>
+                            <div class="kpi-marker">300+</div>
+                        </div></div>
+                    </div>
+
+                    <!-- ROW: LinkedIn -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#128188;</span> LinkedIn</div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Not active yet. Focus on priority channels.">&mdash;</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Preparation. Optimise Antonis's profile.">&mdash;</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Optimise Antonis profile: photo, headline 'Sports Physiotherapist | Clinical Supervisor | Evidence-Based Rehab'.">Profile</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-green" data-tip="LAUNCH: 2 posts/wk from Antonis. Professional insights, cases, opinions. Network with Cyprus doctors.">&#128640; LAUNCH</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Sports medicine posts. Comment on colleagues' posts. LinkedIn articles.">Articles + network</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Posts about PAEEK partnership. Rehab case studies. Industry opinions.">Partnerships</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Thought leadership: articles on the future of physiotherapy. Networking events.">Thought leader</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Grow network. Collaborations with orthopaedists, sports doctors.">Collaborations</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Antonis as key expert. Invitations to speak, podcasts.">Speaker</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-purple" data-tip="500+ connections. Antonis = thought leader in Cyprus physiotherapy.">500+ &#10003;</div>
+                            <div class="kpi-marker">500+</div>
+                        </div></div>
+                    </div>
+
+                    <!-- ROW: Ads -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#128176;</span> Paid Ads</div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Too early. Organic first.">&mdash;</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Too early. Building foundation.">&mdash;</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-gray" data-tip="Too early. Waiting for organic results.">&mdash;</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-orange" data-tip="Test Facebook Ads: EUR100. Audience: Nicosia, 25-50 y.o., interests sport/health. Goal: website traffic.">FB test &euro;100</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-green" data-tip="Google Ads launch: EUR300/mo. Keywords: physiotherapy nicosia, sports rehab cyprus. + Instagram boost EUR200/mo.">&#128640; Google Ads</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Campaign optimisation. A/B tests. Retarget website visitors. Budget: EUR500/mo.">Optimise &euro;500</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Scale best campaigns. New audiences. Budget: EUR500-700/mo.">Scale &euro;700</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Seasonal campaigns (autumn = athlete injuries). Budget: EUR500-700/mo.">Seasonal &euro;700</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Winter campaigns. New Year offers. Budget: EUR500/mo.">Winter &euro;500</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Final ROI analysis. Plan 2027 budget.">ROI analysis</div></div>
+                    </div>
+
+                    <!-- ROW: PR & Partnerships -->
+                    <div class="gantt-row">
+                        <div class="gantt-label"><span class="icon">&#129309;</span> PR / Partnerships</div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-orange" data-tip="PAEEK Partnership active. Content from academy training sessions.">PAEEK content</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-orange" data-tip="Combat Sports Seminar (Apr 4). Padel Camp (Apr 13-19). Maximum content from both events.">&#127908; Seminar + Camp</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Find 2-3 new partnerships: CrossFit gyms, Padel clubs, running clubs.">New partners</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Sign partnerships. Joint events. Cross-promotion.">Signing</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Press release about partnerships. Contact local media (Cyprus Mail, In-Cyprus).">Press release</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-blue" data-tip="Local media coverage. Antonis as press commentator on sports injuries.">&#128240; Media</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Seminar #2 (topic based on demand). Partnership with new sports club.">Seminar #2</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="3+ active partnerships. Antonis as invited speaker at sports events.">3+ partnerships</div></div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-purple" data-tip="Antonis speaks at a conference/event. Major PR event.">&#127908; Conference</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Year-end seminar. Plan 2027 events. Press review of yearly results.">Review + plan</div></div>
+                    </div>
+
+                    <!-- ROW: Content Production -->
+                    <div class="gantt-row" style="background: rgba(255,107,53,0.03);">
+                        <div class="gantt-label"><span class="icon">&#127909;</span> Video Production</div>
+                        <div class="gantt-cell"><div class="gantt-cell-content">
+                            <div class="gantt-bar bar-orange" data-tip="Setup: phone + tripod + ring light. Content bank: shoot 10-15 short videos in 1 day at clinic.">Content bank</div>
+                        </div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-orange" data-tip="Shoot at seminar and Padel Camp. 2nd content bank day at clinic. First video testimonials.">Seminar + bank</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Weekly shooting: 1 batch day = content for the week. 2-3 video testimonials.">Batch 1 day/wk</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Continue. First before/after cases (with patient consent). Instagram Lives.">Before/after cases</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-green" data-tip="Stable rhythm. Content bank 2-3 weeks ahead.">Stable rhythm</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="First long YouTube video (10 min case breakdown). Continue Shorts/Reels.">Long format</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="'Athlete + Physiotherapist' series with athletes from partner clubs.">Collab series</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-blue" data-tip="Professional shoot: 1 day with a videographer for premium brand content.">Pro shoot</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Create clinic promo video (1-2 min). Best-of reel of the year.">Promo video</div></div>
+                        <div class="gantt-cell"><div class="gantt-bar bar-purple" data-tip="Video strategy review. Content bank for January 2027.">Bank for 2027</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT CALENDAR -->
+        <div class="section">
+            <h2 class="section-title">CONTENT CALENDAR (Weekly Template)</h2>
+            <p class="section-subtitle">Every post is tied to the funnel and a content pillar. No random posts.</p>
+
+            <div class="calendar-grid">
+                <div class="cal-day">
+                    <div class="day-name">MONDAY</div>
+                    <div class="channel">&#128248; Instagram Reel</div>
+                    <div class="content-type">Myth-busting / Quick tip</div>
+                    <div class="pillar pillar-edu">Education</div>
+                </div>
+                <div class="cal-day">
+                    <div class="day-name">TUESDAY</div>
+                    <div class="channel">&#128221; Blog (biweekly)</div>
+                    <div class="content-type">SEO article on target keyword</div>
+                    <div class="pillar pillar-edu">Education</div>
+                </div>
+                <div class="cal-day">
+                    <div class="day-name">WEDNESDAY</div>
+                    <div class="channel">&#128248; Instagram Carousel</div>
+                    <div class="content-type">Before/after case or breakdown</div>
+                    <div class="pillar pillar-proof">Proof</div>
+                </div>
+                <div class="cal-day">
+                    <div class="day-name">THURSDAY</div>
+                    <div class="channel">&#127909; YouTube Short + Reel</div>
+                    <div class="content-type">Exercise / technique / Q&A</div>
+                    <div class="pillar pillar-edu">Education</div>
+                </div>
+                <div class="cal-day">
+                    <div class="day-name">FRIDAY</div>
+                    <div class="channel">&#128248; Instagram Reel</div>
+                    <div class="content-type">Behind the scenes / day in the life</div>
+                    <div class="pillar pillar-personal">Personality</div>
+                </div>
+                <div class="cal-day">
+                    <div class="day-name">SATURDAY</div>
+                    <div class="channel">&#128248; Stories + &#9992;&#65039; Telegram</div>
+                    <div class="content-type">Patient testimonial / Q&A</div>
+                    <div class="pillar pillar-social">Social Proof</div>
+                </div>
+                <div class="cal-day">
+                    <div class="day-name">SUNDAY</div>
+                    <div class="channel">&#9992;&#65039; Telegram + &#128101; Facebook</div>
+                    <div class="content-type">Weekly digest + health hack</div>
+                    <div class="pillar pillar-loyalty">Loyalty</div>
+                </div>
+            </div>
+
+            <div class="strategy-grid" style="margin-top:20px">
+                <div class="card">
+                    <h3>&#128218; BLOG &rarr; SOCIAL MEDIA REPURPOSING</h3>
+                    <p>Each of the 14+ articles = a micro-content source:</p>
+                    <ul>
+                        <li>1 article &rarr; 3&ndash;5 carousel posts (key takeaways)</li>
+                        <li>1 article &rarr; 2&ndash;3 Reels (top myths / tips)</li>
+                        <li>1 article &rarr; 1 Telegram digest with link</li>
+                        <li>1 article &rarr; 1 LinkedIn post (professional angle)</li>
+                    </ul>
+                    <p style="margin-top:8px; color: var(--orange)"><strong>= 14 articles &times; 7 pieces = ~100 posts ready to go</strong></p>
+                </div>
+
+                <div class="card">
+                    <h3>&#127909; BATCH SHOOTING AT THE CLINIC</h3>
+                    <p>1 shooting day = 2 weeks of content:</p>
+                    <ul>
+                        <li>5&ndash;7 short Reels/Shorts (30&ndash;60 sec)</li>
+                        <li>2&ndash;3 Stories series</li>
+                        <li>1 patient video testimonial</li>
+                        <li>Photos for carousel posts</li>
+                        <li>Behind-the-scenes content</li>
+                    </ul>
+                    <p style="margin-top:8px; color: var(--orange)"><strong>Minimum gear: phone + tripod + ring light</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPI DASHBOARD -->
+        <div class="section">
+            <h2 class="section-title">KPI DASHBOARD &mdash; TARGET METRICS BY MONTH</h2>
+            <p class="section-subtitle">&ldquo;If you don&rsquo;t measure it, you can&rsquo;t manage it. Intuition is not a strategy.&rdquo;</p>
+
+            <div style="overflow-x: auto;">
+                <table class="kpi-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Current</th>
+                            <th>Apr</th>
+                            <th>Jun</th>
+                            <th>Aug</th>
+                            <th>Oct</th>
+                            <th>Dec &#127919;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="kpi-category"><td colspan="7">&#128205; GOOGLE / SEO</td></tr>
+                        <tr>
+                            <td style="text-align:left">Google Reviews</td>
+                            <td class="kpi-current">28</td>
+                            <td>45</td>
+                            <td>60</td>
+                            <td>75</td>
+                            <td>90</td>
+                            <td class="kpi-target">100+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Google Rating</td>
+                            <td class="kpi-current">5.0</td>
+                            <td>5.0</td>
+                            <td>4.9+</td>
+                            <td>4.9+</td>
+                            <td>4.9+</td>
+                            <td class="kpi-target">4.9+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Blog Articles</td>
+                            <td class="kpi-current">14</td>
+                            <td>18</td>
+                            <td>22</td>
+                            <td>26</td>
+                            <td>30</td>
+                            <td class="kpi-target">34+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Organic Visits/mo (site)</td>
+                            <td class="kpi-current">~300</td>
+                            <td>500</td>
+                            <td>800</td>
+                            <td>1,200</td>
+                            <td>1,700</td>
+                            <td class="kpi-target">2,000+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Ranking &ldquo;physio nicosia&rdquo;</td>
+                            <td class="kpi-current">?</td>
+                            <td>Top 20</td>
+                            <td>Top 10</td>
+                            <td>Top 5</td>
+                            <td>Top 3</td>
+                            <td class="kpi-target">Top 3</td>
+                        </tr>
+
+                        <tr class="kpi-category"><td colspan="7">&#128248; INSTAGRAM</td></tr>
+                        <tr>
+                            <td style="text-align:left">Followers</td>
+                            <td class="kpi-current">~200</td>
+                            <td>500</td>
+                            <td>1,000</td>
+                            <td>1,800</td>
+                            <td>2,500</td>
+                            <td class="kpi-target">3,000+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Reach/mo</td>
+                            <td class="kpi-current">~2K</td>
+                            <td>8K</td>
+                            <td>18K</td>
+                            <td>30K</td>
+                            <td>40K</td>
+                            <td class="kpi-target">50K+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Reels/week</td>
+                            <td class="kpi-current">0&ndash;1</td>
+                            <td>2&ndash;3</td>
+                            <td>3</td>
+                            <td>3&ndash;4</td>
+                            <td>3&ndash;4</td>
+                            <td class="kpi-target">3&ndash;4</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Saves/post</td>
+                            <td class="kpi-current">?</td>
+                            <td>5+</td>
+                            <td>15+</td>
+                            <td>25+</td>
+                            <td>35+</td>
+                            <td class="kpi-target">40+</td>
+                        </tr>
+
+                        <tr class="kpi-category"><td colspan="7">&#127909; YOUTUBE</td></tr>
+                        <tr>
+                            <td style="text-align:left">Subscribers</td>
+                            <td class="kpi-current">0</td>
+                            <td>&mdash;</td>
+                            <td>200</td>
+                            <td>500</td>
+                            <td>800</td>
+                            <td class="kpi-target">1,000+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Shorts/week</td>
+                            <td class="kpi-current">0</td>
+                            <td>&mdash;</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td class="kpi-target">3</td>
+                        </tr>
+
+                        <tr class="kpi-category"><td colspan="7">&#9992;&#65039; TELEGRAM</td></tr>
+                        <tr>
+                            <td style="text-align:left">Subscribers</td>
+                            <td class="kpi-current">0</td>
+                            <td>&mdash;</td>
+                            <td>80</td>
+                            <td>150</td>
+                            <td>220</td>
+                            <td class="kpi-target">300+</td>
+                        </tr>
+
+                        <tr class="kpi-category"><td colspan="7">&#128176; CONVERSION</td></tr>
+                        <tr>
+                            <td style="text-align:left">Website Leads/mo</td>
+                            <td class="kpi-current">~5</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>30</td>
+                            <td>40</td>
+                            <td class="kpi-target">50+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">New Patients/mo</td>
+                            <td class="kpi-current">~10</td>
+                            <td>15</td>
+                            <td>25</td>
+                            <td>35</td>
+                            <td>45</td>
+                            <td class="kpi-target">50+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Return Visit Rate</td>
+                            <td class="kpi-current">?</td>
+                            <td>40%</td>
+                            <td>50%</td>
+                            <td>55%</td>
+                            <td>60%</td>
+                            <td class="kpi-target">65%+</td>
+                        </tr>
+
+                        <tr class="kpi-category"><td colspan="7">&#129309; PARTNERSHIPS / PR</td></tr>
+                        <tr>
+                            <td style="text-align:left">Active Partnerships</td>
+                            <td class="kpi-current">1 (PAEEK)</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td class="kpi-target">5+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Media Mentions</td>
+                            <td class="kpi-current">0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td class="kpi-target">5+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left">Antonis Speaking Events</td>
+                            <td class="kpi-current">0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td class="kpi-target">5+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- BUDGET -->
+        <div class="section">
+            <h2 class="section-title">BUDGET ESTIMATE (Monthly)</h2>
+
+            <div class="budget-grid">
+                <div class="budget-item">
+                    <div class="amount">&euro;300&ndash;500</div>
+                    <div class="label">Google Ads</div>
+                    <div class="note">From July. Keywords: physiotherapy nicosia, sports rehab cyprus, GESY physio</div>
+                </div>
+                <div class="budget-item">
+                    <div class="amount">&euro;200&ndash;300</div>
+                    <div class="label">Instagram / Facebook Ads</div>
+                    <div class="note">From July. Boost best Reels + retarget website visitors</div>
+                </div>
+                <div class="budget-item">
+                    <div class="amount">&euro;0</div>
+                    <div class="label">Video Production</div>
+                    <div class="note">Phone + tripod + ring light (~&euro;50 one-time purchase)</div>
+                </div>
+                <div class="budget-item">
+                    <div class="amount">~&euro;12</div>
+                    <div class="label">Canva Pro</div>
+                    <div class="note">Design carousel posts, Stories, covers</div>
+                </div>
+                <div class="budget-item">
+                    <div class="amount">&euro;200</div>
+                    <div class="label">Professional Shoot (one-time)</div>
+                    <div class="note">Once in October &mdash; premium brand content for the year</div>
+                </div>
+                <div class="budget-item budget-total">
+                    <div class="amount" style="color: var(--green)">~&euro;550&ndash;850/mo</div>
+                    <div class="label">TOTAL (from July)</div>
+                    <div class="note">Mar&ndash;Jun: ~&euro;12/mo (organic). Jul&ndash;Dec: &euro;550&ndash;850/mo (organic + paid)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIRST STEPS -->
+        <div class="section">
+            <h2 class="section-title">&#9889; FIRST STEP &mdash; DO TODAY</h2>
+
+            <div class="strategy-grid">
+                <div class="card highlight-card">
+                    <h3>1. Google Business Profile</h3>
+                    <ul>
+                        <li>Verify and update all information</li>
+                        <li>Upload 10+ real clinic photos (no stock)</li>
+                        <li>Add all services as Products</li>
+                        <li>Write first Google Post</li>
+                        <li>Create review QR code &rarr; print for the clinic</li>
+                    </ul>
+                </div>
+                <div class="card highlight-card">
+                    <h3>2. Instagram: Setup + 3 Posts</h3>
+                    <ul>
+                        <li>Bio: &ldquo;Sports Physiotherapy | Evidence-Based Rehab | Nicosia &#128205;&rdquo;</li>
+                        <li>Highlights: Services, Reviews, GESY, About Us</li>
+                        <li>Post 1: Reel &ldquo;3 Physio Myths Debunked&rdquo; (from blog)</li>
+                        <li>Post 2: Carousel &ldquo;Case: Meniscus Recovery&rdquo; (from blog)</li>
+                        <li>Post 3: Reel &ldquo;Day in the Life of a Physiotherapist&rdquo;</li>
+                    </ul>
+                </div>
+                <div class="card highlight-card">
+                    <h3>3. Blog: 2 Articles This Month</h3>
+                    <ul>
+                        <li>Article 1: &ldquo;Best Physiotherapy in Nicosia&rdquo; (direct SEO hit)</li>
+                        <li>Article 2: &ldquo;Sports Rehabilitation Cyprus: Complete Guide&rdquo;</li>
+                        <li>Each article &rarr; 3 micro-posts for Instagram</li>
+                        <li>Update sitemap.xml</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- STOP LIST -->
+        <div class="section">
+            <h2 class="section-title">&#9888;&#65039; STOP LIST &mdash; WHAT NOT TO DO</h2>
+
+            <div class="strategy-grid">
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3 style="color: var(--red);">&#128683; DO NOT buy followers</h3>
+                    <p>Kills algorithmic reach. Dead followers = your content isn&rsquo;t shown to real people.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3 style="color: var(--red);">&#128683; DO NOT post without strategy</h3>
+                    <p>Every post = a step in the funnel. &ldquo;Just post regularly&rdquo; is not a strategy, it&rsquo;s a hope.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3 style="color: var(--red);">&#128683; DO NOT copy competitors</h3>
+                    <p>Copying = position #2 forever. We create our own category: evidence-based sports rehab.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3 style="color: var(--red);">&#128683; DO NOT run ads without a foundation</h3>
+                    <p>Ads without content = wasted budget. 3 months of organic first, then scale with ads.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3 style="color: var(--red);">&#128683; DO NOT use stock photos</h3>
+                    <p>In 2026 authenticity = currency. Real clinic, real Antonis, real patients (with consent).</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3 style="color: var(--red);">&#128683; DO NOT be &ldquo;for everyone&rdquo;</h3>
+                    <p>Focus: athletes and active people. Narrow the positioning, expand reach through expertise.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="text-align:center; padding: 40px 20px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85em;">
+            <p>RIGHT TRACK PHYSIOTHERAPY &mdash; Media Plan 2026</p>
+            <p style="margin-top:4px">Created: March 2026 | Updated: <span id="update-date"></span></p>
+            <p style="margin-top:8px; color: var(--orange); font-style:italic;">&ldquo;A brand is not a logo. It&rsquo;s a monopoly on trust inside the patient&rsquo;s mind.&rdquo;</p>
+        </div>
+    </div>
+
+    <!-- TOOLTIP -->
+    <div class="tooltip" id="tooltip">
+        <h4 id="tooltip-title"></h4>
+        <p id="tooltip-text"></p>
+    </div>
+
+    <script>
+        // Update date
+        document.getElementById('update-date').textContent = new Date().toLocaleDateString('en-GB', {
+            year: 'numeric', month: 'long', day: 'numeric'
+        });
+
+        // Theme toggle
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('themeIcon');
+            const label = document.getElementById('themeLabel');
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                icon.innerHTML = '\u263E';
+                label.textContent = 'Light';
+                localStorage.setItem('rt-theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                icon.innerHTML = '\u2600';
+                label.textContent = 'Dark';
+                localStorage.setItem('rt-theme', 'light');
+            }
+        }
+
+        // Restore saved theme
+        (function() {
+            var saved = localStorage.getItem('rt-theme');
+            if (saved === 'light') {
+                document.body.setAttribute('data-theme', 'light');
+                document.getElementById('themeIcon').innerHTML = '\u2600';
+                document.getElementById('themeLabel').textContent = 'Dark';
+            }
+        })();
+
+        // Tooltip functionality
+        const tooltip = document.getElementById('tooltip');
+        const tooltipTitle = document.getElementById('tooltip-title');
+        const tooltipText = document.getElementById('tooltip-text');
+
+        document.querySelectorAll('.gantt-bar[data-tip]').forEach(function(bar) {
+            bar.addEventListener('mouseenter', function(e) {
+                tooltipTitle.textContent = bar.textContent.trim();
+                tooltipText.textContent = bar.getAttribute('data-tip');
+                tooltip.style.display = 'block';
+            });
+
+            bar.addEventListener('mousemove', function(e) {
+                var x = e.clientX + 15;
+                var y = e.clientY - 10;
+                var tooltipRect = tooltip.getBoundingClientRect();
+                var maxX = window.innerWidth - tooltipRect.width - 20;
+                var maxY = window.innerHeight - tooltipRect.height - 20;
+                tooltip.style.left = Math.min(x, maxX) + 'px';
+                tooltip.style.top = Math.min(y, maxY) + 'px';
+            });
+
+            bar.addEventListener('mouseleave', function() {
+                tooltip.style.display = 'none';
+            });
+        });
+
+        // Phase block click - scroll to gantt
+        document.querySelectorAll('.phase-block').forEach(function(block) {
+            block.addEventListener('click', function() {
+                document.querySelector('.gantt-wrapper').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
