@@ -683,8 +683,78 @@
             margin-top: -8px;
         }
     </style>
+    </style>
+    <style id="lockStyles">
+        .lock-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0A1628;
+        }
+        .lock-box {
+            background: #132038;
+            border: 1px solid #1a2d4a;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+        }
+        .lock-box h2 { color: #FF6B35; margin-bottom: 8px; font-size: 1.3em; }
+        .lock-box p { color: #8892A0; font-size: 0.85em; margin-bottom: 20px; }
+        .lock-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #1a2d4a;
+            border-radius: 8px;
+            background: #0A1628;
+            color: #F8F9FA;
+            font-size: 1em;
+            text-align: center;
+            letter-spacing: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .lock-input:focus { border-color: #FF6B35; }
+        .lock-input.error { border-color: #E74C3C; animation: shake 0.4s; }
+        @keyframes shake {
+            0%,100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+        .lock-btn {
+            margin-top: 16px;
+            width: 100%;
+            padding: 12px;
+            background: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .lock-btn:hover { background: #e05a28; }
+        .app-content { display: none; }
+        .app-content.unlocked { display: block; }
+    </style>
 </head>
 <body>
+    <!-- PASSWORD SCREEN -->
+    <div class="lock-screen" id="lockScreen">
+        <div class="lock-box">
+            <h2>&#128274; RIGHT TRACK</h2>
+            <p>Internal Media Plan &mdash; Enter password to access</p>
+            <input type="password" class="lock-input" id="lockInput" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autofocus>
+            <button class="lock-btn" onclick="tryUnlock()">Unlock</button>
+        </div>
+    </div>
+
+    <div class="app-content" id="appContent">
     <!-- THEME TOGGLE -->
     <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
         <span id="themeIcon">&#9790;</span>
@@ -1708,6 +1778,39 @@
                 });
             });
         });
+        // === PASSWORD LOCK ===
+        var PASS_HASH = '1a54400fa90388e342cc310378d00d230889893d35ff15ba7dadb639020201e5';
+
+        async function sha256(str) {
+            var buf = new TextEncoder().encode(str);
+            var hash = await crypto.subtle.digest('SHA-256', buf);
+            return Array.from(new Uint8Array(hash)).map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+        }
+
+        async function tryUnlock() {
+            var input = document.getElementById('lockInput');
+            var hash = await sha256(input.value);
+            if (hash === PASS_HASH) {
+                document.getElementById('lockScreen').style.display = 'none';
+                document.getElementById('appContent').classList.add('unlocked');
+                sessionStorage.setItem('rt-mp-auth', '1');
+            } else {
+                input.classList.add('error');
+                input.value = '';
+                setTimeout(function() { input.classList.remove('error'); }, 500);
+            }
+        }
+
+        document.getElementById('lockInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') tryUnlock();
+        });
+
+        // Auto-unlock if already authenticated this session
+        if (sessionStorage.getItem('rt-mp-auth') === '1') {
+            document.getElementById('lockScreen').style.display = 'none';
+            document.getElementById('appContent').classList.add('unlocked');
+        }
     </script>
+    </div><!-- /app-content -->
 </body>
 </html>
