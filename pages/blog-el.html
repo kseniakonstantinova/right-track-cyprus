@@ -541,6 +541,55 @@
 	            transform: translateY(0);
 	        }
 
+	        .share-menu {
+	            position: absolute;
+	            bottom: calc(100% + 8px);
+	            right: 0;
+	            min-width: 180px;
+	            background: var(--white, #fff);
+	            border-radius: 12px;
+	            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+	            padding: 6px;
+	            opacity: 0;
+	            visibility: hidden;
+	            transform: translateY(6px);
+	            transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+	            z-index: 100;
+	        }
+
+	        .share-menu.is-open {
+	            opacity: 1;
+	            visibility: visible;
+	            transform: translateY(0);
+	        }
+
+	        .share-menu-item {
+	            display: flex;
+	            align-items: center;
+	            gap: 10px;
+	            width: 100%;
+	            padding: 10px 14px;
+	            border: none;
+	            border-radius: 8px;
+	            background: none;
+	            color: var(--navy, #0a1628);
+	            font-size: 0.875rem;
+	            font-weight: 500;
+	            cursor: pointer;
+	            transition: background 0.12s ease;
+	            white-space: nowrap;
+	        }
+
+	        .share-menu-item:hover {
+	            background: rgba(10, 22, 40, 0.06);
+	        }
+
+	        .share-menu-item svg {
+	            width: 18px;
+	            height: 18px;
+	            flex-shrink: 0;
+	        }
+
         /* CTA Section */
         .blog-cta {
             background: linear-gradient(135deg, var(--navy) 0%, #1a2940 100%);
@@ -775,7 +824,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -810,7 +859,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -845,7 +894,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -880,7 +929,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -915,7 +964,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -950,7 +999,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -985,7 +1034,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -1020,7 +1069,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -1055,7 +1104,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -1090,7 +1139,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -1125,7 +1174,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -1160,7 +1209,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
@@ -1195,7 +1244,7 @@
 	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
 	                	</svg>
 	                	</button>
-	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" aria-label="Κοινοποίηση" title="Κοινοποίηση">
+	                	<button class="blog-card-share" type="button" data-feedback="Αντιγράφηκε" data-label-share="Κοινοποίηση" data-label-copy="Αντιγραφή συνδέσμου" data-label-whatsapp="WhatsApp" data-label-telegram="Telegram" data-label-email="Email" aria-label="Κοινοποίηση" title="Κοινοποίηση">
 	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 	                	<circle cx="18" cy="5" r="3"></circle>
 	                	<circle cx="6" cy="12" r="3"></circle>
