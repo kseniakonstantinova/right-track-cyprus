@@ -25,6 +25,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/images/logos/logo-no-bg.png">
     <link rel="stylesheet" href="../assets/css/cookie-consent.css">
+    <link rel="stylesheet" href="../assets/css/blog-actions.css">
     <!-- Open Graph -->
     <meta property="og:title" content="Blog | Right Track Physiotherapy Cyprus">
     <meta property="og:description" content="Sports injury insights, rehabilitation tips, and expert physiotherapy advice from Nicosia, Cyprus.">
@@ -297,28 +298,33 @@
             gap: 30px;
         }
 
-        .blog-card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--light-gray);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
+	        .blog-card {
+	            background: var(--white);
+	            border-radius: 16px;
+	            overflow: hidden;
+	            border: 1px solid var(--light-gray);
+	            transition: all 0.3s ease;
+	            display: block;
+	            cursor: pointer;
+	        }
 
-        .blog-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--orange);
-        }
+	        .blog-card:hover {
+	            transform: translateY(-4px);
+	            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+	            border-color: var(--orange);
+	        }
 
-        .blog-card-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background: var(--light-gray);
+	        .blog-card-link {
+	            display: block;
+	            text-decoration: none;
+	            color: inherit;
+	        }
+
+	        .blog-card-image {
+	            width: 100%;
+	            height: 220px;
+	            object-fit: cover;
+	            background: var(--light-gray);
             text-transform: uppercase;
             display: flex;
             align-items: center;
@@ -331,9 +337,10 @@
             padding: 20px;
         }
 
-        .blog-card-content {
-            padding: 24px;
-        }
+	        .blog-card-content {
+	            padding: 24px;
+	            padding-bottom: 14px;
+	        }
 
         .blog-card-tag {
             display: inline-block;
@@ -361,13 +368,14 @@
             margin-bottom: 16px;
         }
 
-        .blog-card-meta {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.85rem;
-            color: var(--text-gray);
-        }
+	        .blog-card-meta {
+	            display: flex;
+	            align-items: center;
+	            gap: 10px;
+	            font-size: 0.85rem;
+	            color: var(--text-gray);
+	            min-width: 0;
+	        }
 
         .blog-card-meta img {
             width: 32px;
@@ -376,10 +384,110 @@
             object-fit: cover;
         }
 
-        .blog-card-meta .author-name {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
+	        .blog-card-meta .author-name {
+	            font-weight: 600;
+	            color: var(--text-dark);
+	        }
+
+	        .blog-card-footer {
+	            display: flex;
+	            align-items: center;
+	            justify-content: space-between;
+	            gap: 12px;
+	            padding: 0 24px 22px;
+	        }
+
+	        .blog-card-actions {
+	            display: flex;
+	            align-items: center;
+	            gap: 10px;
+	        }
+
+	        .blog-card-share,
+	        .blog-card-like {
+	            position: relative;
+	            width: 36px;
+	            height: 36px;
+	            border-radius: 999px;
+	            border: 1px solid var(--light-gray);
+	            background: rgba(10, 22, 40, 0.03);
+	            color: var(--navy);
+	            display: inline-flex;
+	            align-items: center;
+	            justify-content: center;
+	            cursor: pointer;
+	            transition: all 0.18s ease;
+	            flex: 0 0 auto;
+	        }
+
+	        .blog-card-share svg,
+	        .blog-card-like svg {
+	            width: 18px;
+	            height: 18px;
+	        }
+
+	        .blog-card-share:hover,
+	        .blog-card-like:hover {
+	            transform: translateY(-1px);
+	            background: rgba(255, 107, 53, 0.08);
+	            border-color: var(--orange);
+	            color: var(--orange);
+	        }
+
+	        .blog-card-share:active,
+	        .blog-card-like:active {
+	            transform: translateY(0);
+	        }
+
+	        .blog-card-share:focus-visible,
+	        .blog-card-like:focus-visible {
+	            outline: 3px solid rgba(255, 107, 53, 0.25);
+	            outline-offset: 2px;
+	        }
+
+	        .blog-card-like svg {
+	            fill: none;
+	        }
+
+	        .blog-card-like.is-on {
+	            background: rgba(255, 107, 53, 0.12);
+	            border-color: rgba(255, 107, 53, 0.45);
+	            color: var(--orange);
+	        }
+
+	        .blog-card-like.is-on svg {
+	            fill: currentColor;
+	        }
+
+	        .blog-card-share::after,
+	        .blog-card-like::after {
+	            content: attr(data-feedback);
+	            position: absolute;
+	            top: -38px;
+	            right: 0;
+	            padding: 6px 10px;
+	            border-radius: 10px;
+	            font-size: 0.75rem;
+	            font-weight: 700;
+	            background: var(--navy);
+	            color: var(--white);
+	            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+	            opacity: 0;
+	            transform: translateY(6px);
+	            transition: opacity 0.15s ease, transform 0.15s ease;
+	            pointer-events: none;
+	            white-space: nowrap;
+	        }
+
+	        .blog-card-share.is-copied::after {
+	            opacity: 1;
+	            transform: translateY(0);
+	        }
+
+	        .blog-card-like.is-saved::after {
+	            opacity: 1;
+	            transform: translateY(0);
+	        }
 
         /* CTA Section */
         .blog-cta {
@@ -651,218 +759,498 @@
         <button class="filter-btn" data-filter="community">Community</button>
     </div>
 
-    <!-- Blog Grid -->
-    <div class="blog-grid">
+	    <!-- Blog Grid -->
+	    <div class="blog-grid">
 
-        <!-- Article: Office Ergonomics -->
-        <a href="blog/office-ergonomics-neck-back-wrist-pain.html" class="blog-card" data-category="science">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #2D5AA0 0%, #1a3d6d 100%);">OFFICE<br>ERGONOMICS</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Behind the Science</span>
-                <h3>Office Ergonomics: Why Your Desk Setup Is Causing Your Neck, Back & Wrist Pain</h3>
-                <p>Your chair isn't the problem — your habits are. The evidence-based approach to desk-related pain, and why exercise beats ergonomics every time.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>10 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Office Ergonomics -->
+	        <article class="blog-card" data-category="science">
+	            <a href="blog/office-ergonomics-neck-back-wrist-pain.html" class="blog-card-link" aria-label="Office Ergonomics: Why Your Desk Setup Is Causing Your Neck, Back & Wrist Pain">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #2D5AA0 0%, #1a3d6d 100%);">OFFICE<br>ERGONOMICS</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Behind the Science</span>
+	                    <h3>Office Ergonomics: Why Your Desk Setup Is Causing Your Neck, Back & Wrist Pain</h3>
+	                    <p>Your chair isn't the problem — your habits are. The evidence-based approach to desk-related pain, and why exercise beats ergonomics every time.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>10 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Joint Replacement Rehabilitation -->
-        <a href="blog/joint-replacement-rehabilitation-cyprus.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%);">JOINT<br>REPLACEMENT</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>Joint Replacement Rehabilitation: What Most Patients Get Wrong</h3>
-                <p>Your surgeon did their job. Now the real work begins. The evidence-based approach to knee and hip replacement recovery — and the 5 mistakes that sabotage results.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>12 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Joint Replacement Rehabilitation -->
+	        <article class="blog-card" data-category="injury">
+	            <a href="blog/joint-replacement-rehabilitation-cyprus.html" class="blog-card-link" aria-label="Joint Replacement Rehabilitation: What Most Patients Get Wrong">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%);">JOINT<br>REPLACEMENT</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Injury Decoded</span>
+	                    <h3>Joint Replacement Rehabilitation: What Most Patients Get Wrong</h3>
+	                    <p>Your surgeon did their job. Now the real work begins. The evidence-based approach to knee and hip replacement recovery — and the 5 mistakes that sabotage results.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>12 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Padel Elbow -->
-        <a href="blog/padel-elbow-causes-prevention-treatment.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%);">PADEL<br>ELBOW</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>Padel Elbow: Causes, Prevention & Treatment</h3>
-                <p>The elbow is the #1 injury site in padel. Here's why it happens, what doesn't work, and the evidence-based rehab protocol that does.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>7 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Padel Elbow -->
+	        <article class="blog-card" data-category="injury">
+	            <a href="blog/padel-elbow-causes-prevention-treatment.html" class="blog-card-link" aria-label="Padel Elbow: Causes, Prevention and Treatment">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%);">PADEL<br>ELBOW</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Injury Decoded</span>
+	                    <h3>Padel Elbow: Causes, Prevention & Treatment</h3>
+	                    <p>The elbow is the #1 injury site in padel. Here's why it happens, what doesn't work, and the evidence-based rehab protocol that does.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>7 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Padel Warm-Up Guide -->
-        <a href="blog/padel-warmup-guide.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%);">PADEL<br>WARM-UP</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Training Tips</span>
-                <h3>The Complete Warm-Up Guide for Padel Players</h3>
-                <p>A 10-minute evidence-based protocol that reduces injury risk by 36%. Stop gambling with your body — warm up the right way.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>6 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Padel Warm-Up Guide -->
+	        <article class="blog-card" data-category="tips">
+	            <a href="blog/padel-warmup-guide.html" class="blog-card-link" aria-label="The Complete Warm-Up Guide for Padel Players">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%);">PADEL<br>WARM-UP</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Training Tips</span>
+	                    <h3>The Complete Warm-Up Guide for Padel Players</h3>
+	                    <p>A 10-minute evidence-based protocol that reduces injury risk by 36%. Stop gambling with your body — warm up the right way.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>6 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Ironman History & Antarctic 100 -->
-        <a href="blog/ironman-history-antarctic-triathlon.html" class="blog-card" data-category="community">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #FF6B35 100%);">Ironman<br>& A100</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Community</span>
-                <h3>From a Drunken Bet to a Global Religion: 48 Years of Ironman</h3>
-                <p>How a bar argument on Waikiki Beach became the ultimate test of endurance — and our meeting with Ironman 70.3 Age Group World Champion Ilya Slepov and his Antarctic triathlon project A100.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Right Track Team</span>
-                    <span>|</span>
-                    <span>7 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Ironman History & Antarctic 100 -->
+	        <article class="blog-card" data-category="community">
+	            <a href="blog/ironman-history-antarctic-triathlon.html" class="blog-card-link" aria-label="From a Drunken Bet to a Global Religion: 48 Years of Ironman">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #FF6B35 100%);">Ironman<br>& A100</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Community</span>
+	                    <h3>From a Drunken Bet to a Global Religion: 48 Years of Ironman</h3>
+	                    <p>How a bar argument on Waikiki Beach became the ultimate test of endurance — and our meeting with Ironman 70.3 Age Group World Champion Ilya Slepov and his Antarctic triathlon project A100.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Right Track Team</span>
+	                    <span>|</span>
+	                    <span>7 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Combat Sports Injury Prevention -->
-        <a href="blog/injury-prevention-combat-sports.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #e55a2b 100%);">Combat<br>Sports</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>Injury Prevention for Combat Sports: What Every Fighter Must Know</h3>
-                <p>Combat sports injuries are different. Generic advice doesn't cut it. Here's what actually works for fighters, from warm-up to recovery.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>8 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Combat Sports Injury Prevention -->
+	        <article class="blog-card" data-category="injury">
+	            <a href="blog/injury-prevention-combat-sports.html" class="blog-card-link" aria-label="Injury Prevention for Combat Sports: What Every Fighter Must Know">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #e55a2b 100%);">Combat<br>Sports</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Injury Decoded</span>
+	                    <h3>Injury Prevention for Combat Sports: What Every Fighter Must Know</h3>
+	                    <p>Combat sports injuries are different. Generic advice doesn't cut it. Here's what actually works for fighters, from warm-up to recovery.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>8 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: ACL Recovery -->
-        <a href="blog/acl-recovery-athletes-cyprus.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%);">ACL</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>ACL Tears: What 90% of Athletes Get Wrong About Recovery</h3>
-                <p>The timeline most physios give you is wrong. Here's what the latest research actually says about returning to sport after ACL reconstruction.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>8 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: ACL Recovery -->
+	        <article class="blog-card" data-category="injury">
+	            <a href="blog/acl-recovery-athletes-cyprus.html" class="blog-card-link" aria-label="ACL Tears: What 90% of Athletes Get Wrong About Recovery">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%);">ACL</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Injury Decoded</span>
+	                    <h3>ACL Tears: What 90% of Athletes Get Wrong About Recovery</h3>
+	                    <p>The timeline most physios give you is wrong. Here's what the latest research actually says about returning to sport after ACL reconstruction.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>8 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Ankle Sprain -->
-        <a href="blog/ankle-sprain-rehabilitation-guide.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%);">Ankle<br>Sprains</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>Why Your Ankle Sprain Keeps Coming Back (And How to Fix It for Good)</h3>
-                <p>That ankle you "rolled" 3 years ago? It's still affecting your performance. Here's the rehab protocol athletes actually need.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>6 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Ankle Sprain -->
+	        <article class="blog-card" data-category="injury">
+	            <a href="blog/ankle-sprain-rehabilitation-guide.html" class="blog-card-link" aria-label="Why Your Ankle Sprain Keeps Coming Back (And How to Fix It for Good)">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a2940 100%);">Ankle<br>Sprains</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Injury Decoded</span>
+	                    <h3>Why Your Ankle Sprain Keeps Coming Back (And How to Fix It for Good)</h3>
+	                    <p>That ankle you "rolled" 3 years ago? It's still affecting your performance. Here's the rehab protocol athletes actually need.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>6 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Runner Exercises -->
-        <a href="blog/runner-injury-prevention-exercises.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #ff8c5a 100%);">5 Runner<br>Exercises</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Tips & Guides</span>
-                <h3>The 5 Exercises Every Runner in Cyprus Should Be Doing</h3>
-                <p>Running is simple — until injuries stop you. These 5 exercises take 15 minutes and prevent the most common running injuries.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>6 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Runner Exercises -->
+	        <article class="blog-card" data-category="tips">
+	            <a href="blog/runner-injury-prevention-exercises.html" class="blog-card-link" aria-label="The 5 Exercises Every Runner in Cyprus Should Be Doing">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B35 0%, #ff8c5a 100%);">5 Runner<br>Exercises</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Tips & Guides</span>
+	                    <h3>The 5 Exercises Every Runner in Cyprus Should Be Doing</h3>
+	                    <p>Running is simple — until injuries stop you. These 5 exercises take 15 minutes and prevent the most common running injuries.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>6 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: When to See a Physio -->
-        <a href="blog/when-to-see-physiotherapist.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #2c3e5a 100%);">Physio<br>or Wait?</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Tips & Guides</span>
-                <h3>When to See a Physio vs When to Wait It Out (A Honest Guide)</h3>
-                <p>Not every ache needs a physiotherapist. But some do. Here's how to tell the difference.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>5 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: When to See a Physio -->
+	        <article class="blog-card" data-category="tips">
+	            <a href="blog/when-to-see-physiotherapist.html" class="blog-card-link" aria-label="When to See a Physio vs When to Wait It Out (A Honest Guide)">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #2c3e5a 100%);">Physio<br>or Wait?</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Tips & Guides</span>
+	                    <h3>When to See a Physio vs When to Wait It Out (A Honest Guide)</h3>
+	                    <p>Not every ache needs a physiotherapist. But some do. Here's how to tell the difference.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>5 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: GESY Guide -->
-        <a href="blog/gesy-physiotherapy-cyprus-guide.html" class="blog-card" data-category="tips">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a3a5c 100%);">GESY<br>Guide</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Tips & Guides</span>
-                <h3>GESY Physiotherapy in Cyprus: Everything You Need to Know in 2026</h3>
-                <p>How many sessions do you get? Do you need a referral? Everything about accessing physiotherapy through the national health system.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>5 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: GESY Guide -->
+	        <article class="blog-card" data-category="tips">
+	            <a href="blog/gesy-physiotherapy-cyprus-guide.html" class="blog-card-link" aria-label="GESY Physiotherapy in Cyprus: Everything You Need to Know in 2026">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #1a3a5c 100%);">GESY<br>Guide</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Tips & Guides</span>
+	                    <h3>GESY Physiotherapy in Cyprus: Everything You Need to Know in 2026</h3>
+	                    <p>How many sessions do you get? Do you need a referral? Everything about accessing physiotherapy through the national health system.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>5 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Hamstring Myth -->
-        <a href="blog/hamstring-injury-stretching-myth.html" class="blog-card" data-category="science">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #e55a2b 0%, #c44a20 100%);">Hamstring<br>Myth</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Behind the Science</span>
-                <h3>Why Stretching Alone Won't Fix Your Hamstring (What Actually Works)</h3>
-                <p>Still stretching every morning? Here's why the stretch-only approach fails and what the evidence says actually works.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>6 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Hamstring Myth -->
+	        <article class="blog-card" data-category="science">
+	            <a href="blog/hamstring-injury-stretching-myth.html" class="blog-card-link" aria-label="Why Stretching Alone Won't Fix Your Hamstring (What Actually Works)">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #e55a2b 0%, #c44a20 100%);">Hamstring<br>Myth</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Behind the Science</span>
+	                    <h3>Why Stretching Alone Won't Fix Your Hamstring (What Actually Works)</h3>
+	                    <p>Still stretching every morning? Here's why the stretch-only approach fails and what the evidence says actually works.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>6 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Shoulder Impingement -->
-        <a href="blog/shoulder-impingement-treatment-guide.html" class="blog-card" data-category="injury">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #243447 100%);">Shoulder<br>Pain</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Injury Decoded</span>
-                <h3>Shoulder Impingement: The Injury That Doesn't Care If You're an Athlete</h3>
-                <p>Shoulder pain when reaching overhead? It affects everyone from desk workers to swimmers. Here's how to fix it.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>7 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Shoulder Impingement -->
+	        <article class="blog-card" data-category="injury">
+	            <a href="blog/shoulder-impingement-treatment-guide.html" class="blog-card-link" aria-label="Shoulder Impingement: The Injury That Doesn't Care If You're an Athlete">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #0A1628 0%, #243447 100%);">Shoulder<br>Pain</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Injury Decoded</span>
+	                    <h3>Shoulder Impingement: The Injury That Doesn't Care If You're an Athlete</h3>
+	                    <p>Shoulder pain when reaching overhead? It affects everyone from desk workers to swimmers. Here's how to fix it.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>7 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
-        <!-- Article: Meniscus Case Study -->
-        <a href="blog/meniscus-tear-recovery-case-study.html" class="blog-card" data-category="case-study">
-            <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #0A1628 100%);">Case<br>Study</div>
-            <div class="blog-card-content">
-                <span class="blog-card-tag">Case Study</span>
-                <h3>From Torn Meniscus to Match Day: A Footballer's Recovery Story</h3>
-                <p>How a 28-year-old amateur footballer returned to competitive play 16 weeks after a meniscus tear.</p>
-                <div class="blog-card-meta">
-                    <span class="author-name">Antonis Petri</span>
-                    <span>|</span>
-                    <span>7 min read</span>
-                </div>
-            </div>
-        </a>
+	        <!-- Article: Meniscus Case Study -->
+	        <article class="blog-card" data-category="case-study">
+	            <a href="blog/meniscus-tear-recovery-case-study.html" class="blog-card-link" aria-label="From Torn Meniscus to Match Day: A Footballer's Recovery Story">
+	                <div class="blog-card-image" style="background: linear-gradient(135deg, #1a2940 0%, #0A1628 100%);">Case<br>Study</div>
+	                <div class="blog-card-content">
+	                    <span class="blog-card-tag">Case Study</span>
+	                    <h3>From Torn Meniscus to Match Day: A Footballer's Recovery Story</h3>
+	                    <p>How a 28-year-old amateur footballer returned to competitive play 16 weeks after a meniscus tear.</p>
+	                </div>
+	            </a>
+	            <div class="blog-card-footer">
+	                <div class="blog-card-meta">
+	                    <span class="author-name">Antonis Petri</span>
+	                    <span>|</span>
+	                    <span>7 min read</span>
+	                </div>
+	                <div class="blog-card-actions">
+	                	<button class="blog-card-like" type="button" data-feedback="Saved" data-feedback-on="Saved" data-feedback-off="Removed" data-label-on="Saved" data-label-off="Save" aria-label="Save" title="Save" aria-pressed="false">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+	                	</svg>
+	                	</button>
+	                	<button class="blog-card-share" type="button" data-feedback="Copied" data-label-share="Share" data-label-copy="Copy link" aria-label="Share" title="Share">
+	                	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	                	<circle cx="18" cy="5" r="3"></circle>
+	                	<circle cx="6" cy="12" r="3"></circle>
+	                	<circle cx="18" cy="19" r="3"></circle>
+	                	<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+	                	<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+	                	</svg>
+	                	</button>
+	                </div>
+	            </div>
+	        </article>
 
     </div>
 
@@ -927,6 +1315,7 @@
         });
     </script>
 
+    <script src="../assets/js/blog-actions.js"></script>
     <script src="../assets/js/floating-cta.js"></script>
     <script src="../assets/js/cookie-consent.js"></script>
 </body>
