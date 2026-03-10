@@ -117,6 +117,21 @@
   transform: translateY(0);
 }
 
+/* Share button on dark hero backgrounds (services & profiles) */
+.service-hero .blog-card-share,
+.profile-hero .blog-card-share {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+
+.service-hero .blog-card-share:hover,
+.profile-hero .blog-card-share:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--orange);
+}
+
 /* Share dropdown menu */
 .share-menu {
   position: absolute;
