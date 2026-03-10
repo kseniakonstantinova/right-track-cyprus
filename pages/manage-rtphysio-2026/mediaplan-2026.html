@@ -592,6 +592,96 @@
             flex-direction: column;
             gap: 3px;
         }
+
+        /* DONE STATE */
+        .gantt-bar.done {
+            opacity: 0.55;
+            text-decoration: line-through;
+            position: relative;
+        }
+
+        .gantt-bar.done::after {
+            content: '\2713';
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1em;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .card li.done-item {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .card li {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .card li::before {
+            transition: content 0.2s;
+        }
+
+        .card li.done-item::before {
+            content: '\2713' !important;
+            color: var(--green) !important;
+        }
+
+        /* PROGRESS BAR */
+        .progress-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .progress-wrapper .progress-label {
+            font-weight: 600;
+            color: var(--orange);
+            font-size: 0.95em;
+            min-width: 140px;
+        }
+
+        .progress-track {
+            flex: 1;
+            height: 20px;
+            background: var(--bg-card-alt);
+            border-radius: 10px;
+            overflow: hidden;
+            min-width: 200px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--orange), var(--green));
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            min-width: 0;
+        }
+
+        .progress-text {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--text);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .progress-hint {
+            width: 100%;
+            font-size: 0.75em;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: -8px;
+        }
     </style>
 </head>
 <body>
@@ -635,6 +725,18 @@
                 DOMINATION
                 <span class="phase-dates">Nov&ndash;Dec</span>
             </div>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="progress-wrapper">
+            <div class="progress-label">&#128200; Overall Progress</div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+            <div class="progress-text" id="progressText">0%</div>
+        </div>
+        <div class="progress-wrapper" style="padding: 8px 24px; margin-top: -22px; border-top: none; border-radius: 0 0 12px 12px;">
+            <div class="progress-hint">Click on Gantt bars or checklist items to mark as done. Progress is saved automatically.</div>
         </div>
 
         <!-- SECTION 1: STRATEGY -->
@@ -1490,14 +1592,94 @@
             }
         })();
 
-        // Tooltip functionality
-        const tooltip = document.getElementById('tooltip');
-        const tooltipTitle = document.getElementById('tooltip-title');
-        const tooltipText = document.getElementById('tooltip-text');
+        // === PROGRESS TRACKING ===
+        var STORAGE_KEY = 'rt-mediaplan-done';
+
+        function loadDone() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+            catch(e) { return {}; }
+        }
+
+        function saveDone(state) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        }
+
+        function updateProgress() {
+            var bars = document.querySelectorAll('.gantt-bar[data-tip]');
+            var items = document.querySelectorAll('.trackable-item');
+            var total = bars.length + items.length;
+            var doneCount = document.querySelectorAll('.gantt-bar.done').length +
+                            document.querySelectorAll('.trackable-item.done-item').length;
+            var pct = total > 0 ? Math.round((doneCount / total) * 100) : 0;
+            document.getElementById('progressFill').style.width = pct + '%';
+            document.getElementById('progressText').textContent = doneCount + '/' + total + ' (' + pct + '%)';
+        }
+
+        // Assign IDs to gantt bars and restore state
+        (function() {
+            var state = loadDone();
+            var bars = document.querySelectorAll('.gantt-bar[data-tip]');
+            bars.forEach(function(bar, i) {
+                var id = 'gantt-' + i;
+                bar.setAttribute('data-id', id);
+                if (state[id]) bar.classList.add('done');
+            });
+
+            // Make action items trackable
+            var sections = document.querySelectorAll('.highlight-card ul li, .card:not([style]) ul li');
+            var actionItems = document.querySelectorAll('.highlight-card ul li');
+            actionItems.forEach(function(li, i) {
+                var id = 'action-' + i;
+                li.classList.add('trackable-item');
+                li.setAttribute('data-id', id);
+                if (state[id]) li.classList.add('done-item');
+            });
+
+            updateProgress();
+        })();
+
+        // Click on gantt bar to toggle done
+        document.querySelectorAll('.gantt-bar[data-tip]').forEach(function(bar) {
+            bar.addEventListener('click', function(e) {
+                e.stopPropagation();
+                bar.classList.toggle('done');
+                var state = loadDone();
+                var id = bar.getAttribute('data-id');
+                if (bar.classList.contains('done')) {
+                    state[id] = true;
+                } else {
+                    delete state[id];
+                }
+                saveDone(state);
+                updateProgress();
+            });
+        });
+
+        // Click on action items to toggle done
+        document.querySelectorAll('.trackable-item').forEach(function(li) {
+            li.addEventListener('click', function(e) {
+                li.classList.toggle('done-item');
+                var state = loadDone();
+                var id = li.getAttribute('data-id');
+                if (li.classList.contains('done-item')) {
+                    state[id] = true;
+                } else {
+                    delete state[id];
+                }
+                saveDone(state);
+                updateProgress();
+            });
+        });
+
+        // === TOOLTIP ===
+        var tooltip = document.getElementById('tooltip');
+        var tooltipTitle = document.getElementById('tooltip-title');
+        var tooltipText = document.getElementById('tooltip-text');
 
         document.querySelectorAll('.gantt-bar[data-tip]').forEach(function(bar) {
             bar.addEventListener('mouseenter', function(e) {
-                tooltipTitle.textContent = bar.textContent.trim();
+                var status = bar.classList.contains('done') ? ' \u2705' : '';
+                tooltipTitle.textContent = bar.textContent.trim() + status;
                 tooltipText.textContent = bar.getAttribute('data-tip');
                 tooltip.style.display = 'block';
             });
