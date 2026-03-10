@@ -4,5 +4,8 @@ Allow: /
 # Block admin panel from indexing
 Disallow: /pages/manage-rtphysio-2026/
 
+# Block media plan from indexing
+Disallow: /mediaplan-2026.html
+
 # Sitemap
 Sitemap: https://righttrackphysio.com.cy/sitemap.xml
