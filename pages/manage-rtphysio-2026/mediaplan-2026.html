@@ -1789,7 +1789,7 @@
 
         async function tryUnlock() {
             var input = document.getElementById('lockInput');
-            var hash = await sha256(input.value);
+            var hash = await sha256(input.value.trim());
             if (hash === PASS_HASH) {
                 document.getElementById('lockScreen').style.display = 'none';
                 document.getElementById('appContent').classList.add('unlocked');
