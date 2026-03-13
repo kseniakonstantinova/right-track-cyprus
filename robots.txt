@@ -7,9 +7,5 @@ Disallow: /pages/manage-rtphysio-2026/
 # Block media plan from indexing
 Disallow: /mediaplan-2026.html
 
-# Block Charalambos profile from indexing
-Disallow: /pages/charalambos-profile.html
-Disallow: /pages/charalambos-profile-el.html
-
 # Sitemap
 Sitemap: https://righttrackphysio.com.cy/sitemap.xml

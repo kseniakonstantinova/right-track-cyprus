@@ -96,19 +96,6 @@ const THERAPISTS = [
         isActive: true
     },
     {
-        id: 'charalambos',
-        name: 'Charalambos Gregoriou',
-        nameEl: 'Χαράλαμπος Γρηγορίου',
-        title: 'Co-Founder & Clinical Director',
-        titleEl: 'Συνιδρυτής & Κλινικός Διευθυντής',
-        gesyCode: 'A0000',
-        email: 'righttrackphysio@gmail.com',
-        calendarEmail: 'righttrackphysio@gmail.com',
-        photo: '/assets/images/team/charalambos-photo.jpg',
-        services: ['physiotherapy', 'athlete-rehab', 'performance-training', 'massage'],
-        isActive: true
-    },
-    {
         id: 'alice',
         name: 'Alice Kazanjian',
         nameEl: 'Alice Kazanjian',
