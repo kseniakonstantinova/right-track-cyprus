@@ -56,7 +56,7 @@ const SERVICES = [
     {
         id: 'homecare-physio',
         name: 'Recovery & Rehab at Home',
-        nameEl: 'Αποκατάσταση & Rehab στο Σπίτι',
+        nameEl: 'Φυσιοθεραπεία & Αποκατάσταση στο Σπίτι',
         description: 'Post-surgery recovery, Return-to-sport rehab at home',
         pricing: {
             type: 'fixed',
