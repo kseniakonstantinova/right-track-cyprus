@@ -1,0 +1,67 @@
+name: Update Sitemap lastmod
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'sitemap.xml'
+      - '.github/**'
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update sitemap lastmod dates
+        run: |
+          SITE="https://righttrackphysio.com.cy"
+          CHANGED=false
+
+          # For each <loc> in sitemap.xml, update <lastmod> with git date
+          while IFS= read -r line; do
+            if echo "$line" | grep -q '<loc>'; then
+              URL=$(echo "$line" | sed 's/.*<loc>//;s/<\/loc>.*//' | xargs)
+
+              # Map URL to local file path
+              FILE_PATH=$(echo "$URL" | sed "s|${SITE}/||;s|${SITE}$|index.html|")
+              [ "$FILE_PATH" = "" ] && FILE_PATH="index.html"
+
+              if [ -f "$FILE_PATH" ]; then
+                # Get last commit date for this file (YYYY-MM-DD)
+                GIT_DATE=$(git log -1 --format=%aI -- "$FILE_PATH" 2>/dev/null | cut -d'T' -f1)
+
+                if [ -n "$GIT_DATE" ]; then
+                  CURRENT_LASTMOD=$(grep -A5 "<loc>${URL}</loc>" sitemap.xml | grep '<lastmod>' | sed 's/.*<lastmod>//;s/<\/lastmod>.*//' | xargs)
+
+                  if [ "$GIT_DATE" != "$CURRENT_LASTMOD" ]; then
+                    echo "Updating $FILE_PATH: $CURRENT_LASTMOD -> $GIT_DATE"
+                    # Use perl for reliable in-place replacement
+                    perl -i -0pe "s|(<loc>\Q${URL}\E</loc>.*?<lastmod>)\d{4}-\d{2}-\d{2}(</lastmod>)|\${1}${GIT_DATE}\${2}|s" sitemap.xml
+                    CHANGED=true
+                  fi
+                fi
+              fi
+            fi
+          done < sitemap.xml
+
+          if [ "$CHANGED" = true ]; then
+            echo "SITEMAP_CHANGED=true" >> $GITHUB_ENV
+          else
+            echo "No sitemap changes needed"
+            echo "SITEMAP_CHANGED=false" >> $GITHUB_ENV
+          fi
+
+      - name: Commit updated sitemap
+        if: env.SITEMAP_CHANGED == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "chore: auto-update sitemap lastmod dates"
+          git push
