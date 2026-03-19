@@ -7,5 +7,15 @@ Disallow: /pages/manage-rtphysio-2026/
 # Block media plan from indexing
 Disallow: /mediaplan-2026.html
 
+# Block legal/policy pages — save crawl budget
+Disallow: /pages/cookies.html
+Disallow: /pages/cookies-el.html
+Disallow: /pages/disclaimer.html
+Disallow: /pages/disclaimer-el.html
+Disallow: /pages/privacy.html
+Disallow: /pages/privacy-el.html
+Disallow: /pages/terms.html
+Disallow: /pages/terms-el.html
+
 # Sitemap
 Sitemap: https://righttrackphysio.com.cy/sitemap.xml
