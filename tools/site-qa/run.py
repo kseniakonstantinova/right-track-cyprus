@@ -121,6 +121,14 @@ class PageData:
     local_refs: List[Tuple[str, str]] = field(default_factory=list)
     json_ld_blocks: List[str] = field(default_factory=list)
     raw_text: str = ""
+    # Step 2: deep pair comparison fields
+    prices: List[str] = field(default_factory=list)
+    booking_links: List[str] = field(default_factory=list)
+    json_ld_parsed: List[dict] = field(default_factory=list)
+    gesy_numbers: List[str] = field(default_factory=list)
+
+
+RE_PRICE = re.compile(r"€\s*\d+(?:[.,]\d+)?")
 
 
 class PageParser(HTMLParser):
@@ -160,6 +168,10 @@ class PageParser(HTMLParser):
                 self.data.hreflangs[attr_map["hreflang"]] = href
             if href:
                 self.data.local_refs.append(("href", href))
+        if tag == "a":
+            href = attr_map.get("href", "").strip()
+            if "booking" in href.lower():
+                self.data.booking_links.append(href)
         if tag in ("script", "img", "source", "iframe"):
             src = attr_map.get("src", "").strip()
             if src:
@@ -199,6 +211,16 @@ class PageParser(HTMLParser):
 
     def finalize(self) -> PageData:
         self.data.raw_text = "\n".join(self._text_chunks)
+        # Extract prices from visible text
+        self.data.prices = sorted(set(RE_PRICE.findall(self.data.raw_text)))
+        # Extract GESY registration numbers (near GESY labels)
+        self.data.gesy_numbers = sorted(set(RE_GESY_LABEL.findall(self.data.raw_text)))
+        # Parse JSON-LD blocks
+        for block in self.data.json_ld_blocks:
+            try:
+                self.data.json_ld_parsed.append(json.loads(block))
+            except json.JSONDecodeError:
+                pass
         return self.data
 
 
@@ -289,6 +311,78 @@ def check_page(data: PageData, config: dict, findings: List[dict]) -> None:
         add_finding(findings, "medium", "structure", "duplicate-id", data.path, f"Duplicate id '{element_id}' appears {data.ids[element_id]} times.", "Make DOM ids unique within the page.")
 
 
+def _extract_schema_field(schema: dict, field: str):
+    """Extract a field from a JSON-LD object, handling @graph wrappers."""
+    if "@graph" in schema:
+        for item in schema["@graph"]:
+            val = item.get(field)
+            if val is not None:
+                return val
+    return schema.get(field)
+
+
+def _collect_schema_dates(schema: dict) -> List[str]:
+    """Recursively collect all date values from JSON-LD."""
+    dates = []
+    if isinstance(schema, dict):
+        for key, val in schema.items():
+            if key in ("datePublished", "dateModified", "dateCreated", "startDate", "endDate"):
+                if isinstance(val, str):
+                    dates.append(f"{key}={val}")
+            else:
+                dates.extend(_collect_schema_dates(val))
+    elif isinstance(schema, list):
+        for item in schema:
+            dates.extend(_collect_schema_dates(item))
+    return dates
+
+
+def _collect_schema_prices(schema: dict) -> List[str]:
+    """Recursively collect price/priceCurrency pairs from JSON-LD."""
+    prices = []
+    if isinstance(schema, dict):
+        if "price" in schema:
+            price = str(schema["price"])
+            currency = schema.get("priceCurrency", "")
+            prices.append(f"{currency}{price}")
+        for val in schema.values():
+            prices.extend(_collect_schema_prices(val))
+    elif isinstance(schema, list):
+        for item in schema:
+            prices.extend(_collect_schema_prices(item))
+    return prices
+
+
+def _collect_schema_ratings(schema: dict) -> List[str]:
+    """Recursively collect aggregateRating values from JSON-LD."""
+    ratings = []
+    if isinstance(schema, dict):
+        if schema.get("@type") == "AggregateRating":
+            rv = schema.get("ratingValue", "")
+            rc = schema.get("reviewCount", schema.get("ratingCount", ""))
+            ratings.append(f"{rv}/{rc}")
+        for val in schema.values():
+            ratings.extend(_collect_schema_ratings(val))
+    elif isinstance(schema, list):
+        for item in schema:
+            ratings.extend(_collect_schema_ratings(item))
+    return ratings
+
+
+def _normalize_booking_params(links: List[str]) -> set:
+    """Extract query parameter sets from booking links, stripping lang= param."""
+    params = set()
+    for link in links:
+        qs = link.split("?", 1)[1] if "?" in link else ""
+        if qs:
+            # Remove lang= parameter (expected to differ between EN/EL)
+            parts = [p for p in qs.split("&") if not p.startswith("lang=")]
+            normalized = "&".join(sorted(parts))
+            if normalized:
+                params.add(normalized)
+    return params
+
+
 def check_pairs(page_map: Dict[Path, PageData], config: dict, findings: List[dict]) -> None:
     processed = set()
     for path, data in page_map.items():
@@ -312,6 +406,65 @@ def check_pairs(page_map: Dict[Path, PageData], config: dict, findings: List[dic
                 present_b = [v for v in variants if v in other.raw_text]
                 if bool(present_a) != bool(present_b):
                     add_finding(findings, "high", "business-data", f"pair-{label}-presence", path, f"{label} appears in one language version but not the other.", "Align the shared business contact data across the paired pages.", pair_path=pair_path)
+
+            # --- Step 2: Deep pair checks ---
+
+            # 1. Price parity (visible text)
+            if sorted(data.prices) != sorted(other.prices):
+                add_finding(findings, "high", "translation-parity", "pair-prices", path,
+                    f"Prices differ between language versions: {data.prices} vs {other.prices}.",
+                    "Ensure all € amounts match across both language versions.",
+                    pair_path=pair_path)
+
+            # 2. GESY registration numbers
+            if sorted(data.gesy_numbers) != sorted(other.gesy_numbers):
+                add_finding(findings, "high", "business-data", "pair-gesy-numbers", path,
+                    f"GESY numbers differ: {data.gesy_numbers} vs {other.gesy_numbers}.",
+                    "Ensure GESY registration numbers match across both language versions.",
+                    pair_path=pair_path)
+
+            # 3. Booking link query parameters (service=, therapist= should match)
+            params_a = _normalize_booking_params(data.booking_links)
+            params_b = _normalize_booking_params(other.booking_links)
+            if params_a != params_b:
+                add_finding(findings, "high", "translation-parity", "pair-booking-params", path,
+                    f"Booking link parameters differ: {sorted(params_a)} vs {sorted(params_b)}.",
+                    "Ensure booking links pass the same service/therapist parameters in both versions.",
+                    pair_path=pair_path)
+
+            # 4. Schema dates parity
+            all_dates_a = sorted(set(d for s in data.json_ld_parsed for d in _collect_schema_dates(s)))
+            all_dates_b = sorted(set(d for s in other.json_ld_parsed for d in _collect_schema_dates(s)))
+            if all_dates_a != all_dates_b:
+                diff_a = set(all_dates_a) - set(all_dates_b)
+                diff_b = set(all_dates_b) - set(all_dates_a)
+                diff_parts = []
+                if diff_a:
+                    diff_parts.append(f"only in EN: {sorted(diff_a)}")
+                if diff_b:
+                    diff_parts.append(f"only in EL: {sorted(diff_b)}")
+                add_finding(findings, "high", "schema", "pair-schema-dates", path,
+                    f"Schema dates differ between language versions: {'; '.join(diff_parts)}.",
+                    "Keep datePublished, dateModified, dateCreated identical in both language versions.",
+                    pair_path=pair_path)
+
+            # 5. Schema prices parity
+            schema_prices_a = sorted(set(p for s in data.json_ld_parsed for p in _collect_schema_prices(s)))
+            schema_prices_b = sorted(set(p for s in other.json_ld_parsed for p in _collect_schema_prices(s)))
+            if schema_prices_a != schema_prices_b:
+                add_finding(findings, "high", "schema", "pair-schema-prices", path,
+                    f"Schema prices differ: {schema_prices_a} vs {schema_prices_b}.",
+                    "Keep prices in JSON-LD identical across both language versions.",
+                    pair_path=pair_path)
+
+            # 6. Schema ratings parity
+            ratings_a = sorted(set(r for s in data.json_ld_parsed for r in _collect_schema_ratings(s)))
+            ratings_b = sorted(set(r for s in other.json_ld_parsed for r in _collect_schema_ratings(s)))
+            if ratings_a != ratings_b:
+                add_finding(findings, "high", "schema", "pair-schema-ratings", path,
+                    f"Schema ratings differ: {ratings_a} vs {ratings_b}.",
+                    "Keep aggregateRating values identical across both language versions.",
+                    pair_path=pair_path)
 
 
 def parse_sitemap_urls(site_url: str) -> List[str]:
