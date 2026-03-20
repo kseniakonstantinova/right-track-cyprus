@@ -689,14 +689,15 @@ nav a:hover {
     margin: 0 auto;
 }
 
-.faq-item {
+/* FAQ: <details>/<summary> pattern (service & blog pages) */
+details.faq-item {
     margin-bottom: 16px;
     border: 1px solid var(--light-gray);
     border-radius: 12px;
     overflow: hidden;
 }
 
-.faq-item summary {
+details.faq-item summary {
     padding: 18px 24px;
     font-weight: 600;
     font-size: 1.05rem;
@@ -709,11 +710,11 @@ nav a:hover {
     align-items: center;
 }
 
-.faq-item summary::-webkit-details-marker {
+details.faq-item summary::-webkit-details-marker {
     display: none;
 }
 
-.faq-item summary::after {
+details.faq-item summary::after {
     content: '+';
     font-size: 1.4rem;
     font-weight: 300;
@@ -721,11 +722,11 @@ nav a:hover {
     transition: transform 0.3s ease;
 }
 
-.faq-item[open] summary::after {
+details.faq-item[open] summary::after {
     transform: rotate(45deg);
 }
 
-.faq-item .faq-answer {
+details.faq-item .faq-answer {
     padding: 18px 24px;
     font-size: 1rem;
     line-height: 1.8;
