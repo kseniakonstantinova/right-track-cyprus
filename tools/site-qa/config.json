@@ -1,0 +1,31 @@
+{
+  "site_url": "https://righttrackphysio.com.cy",
+  "languages": ["en", "el"],
+  "default_language": "en",
+  "pair_suffix": "-el",
+  "required_hreflangs_for_paired_pages": ["en", "el", "x-default"],
+  "sitemap": {
+    "skip_page_types": ["legal"],
+    "skip_when_meta_robots_contains": ["noindex"]
+  },
+  "meta_description": {
+    "min_length": 70,
+    "max_length": 180
+  },
+  "shared_business_data": {
+    "phone_variants": ["+35799126824", "+357 99 126 824"],
+    "email_variants": ["antonis@righttrackphysio.com.cy", "pilates@righttrackphysio.com.cy"],
+    "address_variants": [
+      "Tseriou 32",
+      "Tseriou 32, Strovolos",
+      "Tseriou 32, Strovolos 2042, Nicosia, Cyprus",
+      "Τσερίου 32",
+      "Τσερίου 32, Στρόβολος",
+      "Τσερίου 32, Στρόβολος 2042, Λευκωσία, Κύπρος"
+    ],
+    "analytics_ids": ["G-XQT03Q3821"]
+  },
+  "ignore_files": [
+    ".DS_Store"
+  ]
+}

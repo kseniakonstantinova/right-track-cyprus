@@ -1,0 +1,23 @@
+name: Site QA
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "tools/site-qa/output/**"
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+
+      - name: Run deterministic site QA
+        run: python3 tools/site-qa/run.py

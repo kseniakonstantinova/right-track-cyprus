@@ -12,6 +12,9 @@ admin/*.credentials.*
 *.secret
 *.secrets
 
+# Personal / legal documents
+loan-agreement*
+
 # Internal docs (not for deploy)
 инфраструктурные/
 
@@ -28,6 +31,7 @@ Thumbs.db
 # Build output
 dist/
 build/
+tools/site-qa/output/
 
 # Logs
 *.log
