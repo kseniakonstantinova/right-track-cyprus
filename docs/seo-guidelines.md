@@ -1,81 +1,104 @@
-# SEO Guidelines — Right Track Physiotherapy
+# SEO Guidelines
 
-> Стандарт для всех страниц righttrackphysio.com.cy.
-> Цель: каждая важная страница должна быть индексируемой, канонической, связанной с языковой парой, встроенной во внутреннюю перелинковку.
+## Purpose
+Стандарт для всех новых страниц `righttrackphysio.com.cy`.
+Цель: каждая важная страница должна быть индексируемой, канонической, связанной с языковой парой, встроенной во внутреннюю перелинковку и поддерживать коммерческий или информационный спрос.
 
 ---
 
-## 1. Типы страниц
+## 1. Page Types
 
-Разрешённые SEO-типы:
+Разрешённые SEO-типы страниц:
 - Homepage
+- Services hub
 - Service page
-- Blog hub / Blog article
-- Team / clinician profile
+- Condition page
+- Blog hub
+- Blog article
+- Team / clinician page
 - Community / event page
-- Booking page
-- Legal page (noindex)
+- Contact / booking page
+- Legal page
 
-Каждый важный search intent должен иметь отдельный URL.
+Правила:
+- каждый важный search intent должен иметь отдельный URL
+- не каждый page type обязан быть индексируемым
+- `contact / booking page` индексируется только если имеет самостоятельный search intent
+- utility-страницы не создаются как SEO landing pages без причины
 
 ---
 
 ## 2. URL Rules
 
-- Только `https://righttrackphysio.com.cy`
-- Без `www`
-- Только lowercase, дефисы в slug
+- только `https://righttrackphysio.com.cy`
+- без `www`
+- только lowercase
+- дефисы в slug
 - EN: `page-name.html`
 - EL: `page-name-el.html`
-- Не создавать индексируемые дубли через query params
+- не создавать индексируемые дубли через query params
 - `?lang=`, `?utm=`, `?gclid=`, `?fbclid=` не должны становиться отдельными индексируемыми URL
+- query URLs должны канонизироваться на чистый URL
+- query URLs не попадают в sitemap
+- не создавать EN/EL пары искусственно, если эквивалентной страницы нет
 
 ---
 
 ## 3. Indexation Rules
 
-### `index, follow` (или без meta robots)
-- homepage, services, blog hub, blog posts
-- team profiles, community, booking
+### `index, follow`
+- homepage
+- services
+- conditions
+- blog hub
+- blog posts
+- team pages
+- community pages
+- contact / booking pages, только если полезны в поиске
 
 ### `noindex, follow`
-- privacy, terms, disclaimer, cookies
-- thank-you pages, admin, utility pages
-- campaign/event pages без долгосрочной SEO-ценности (padel-camp, seminar, paeek-partnership)
+- privacy
+- terms
+- disclaimer
+- cookies
+- thank-you pages
+- internal docs
+- admin / utility pages
+- filter/search URLs без самостоятельной SEO-ценности
 
-Не использовать `robots.txt` вместо `noindex`.
+Правила:
+- не использовать `robots.txt` вместо `noindex`, если Google должен читать мета-тег страницы
+- не держать low-value utility pages в индексе без SEO-основания
 
 ---
 
-## 4. Обязательные теги в `<head>`
+## 4. Required Head Tags
+
+На каждой индексируемой странице:
 
 ```html
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Primary Intent | Right Track Physiotherapy Cyprus</title>
-<meta name="description" content="Unique summary, 120–160 символов">
+<meta name="description" content="Unique summary of page value">
 <link rel="canonical" href="https://righttrackphysio.com.cy/exact-page-path.html">
 ```
 
-### Title
-- Формат: `Тема | Right Track Physiotherapy Cyprus`
-- Длина: 50–60 символов
-- Ключевые слова ближе к началу
-
-### Meta Description
-- 120–160 символов
-- Содержит CTA или уникальное предложение
-- Уникальна для каждой страницы
-
 ### Robots
-- Индексируемые: можно не указывать или `index, follow`
-- Неиндексируемые: `<meta name="robots" content="noindex, follow">`
+- индексируемые страницы: можно не указывать или `index, follow`
+- неиндексируемые страницы: `noindex, follow`
+
+Правила:
+- canonical должен указывать только на финальный self-referencing canonical URL или на утверждённый canonical target
+- canonical не должен вести на redirecting URL
+- canonical URL должен отдавать `200 OK`
 
 ---
 
-## 5. Hreflang (EN + EL)
+## 5. Hreflang Rules
 
-Каждая страница содержит 3 тега:
+Для реальных EN/EL пар:
+
 ```html
 <link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/page.html">
 <link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/page-el.html">
@@ -84,23 +107,25 @@
 
 Правила:
 - hreflang ставится только между эквивалентными страницами
-- Если пары нет — не указывать фиктивную альтернативу
+- обе страницы должны взаимно ссылаться друг на друга
+- если пары нет, не указывать фиктивную альтернативу
+- если страница существует только на одном языке, `hreflang` не ставить
 - `x-default` всегда указывает на EN
-- Дублируется в sitemap.xml
 
 ---
 
-## 6. Open Graph & Twitter Cards
+## 6. Social Metadata
 
 На всех публичных страницах:
+
 ```html
 <meta property="og:title" content="...">
 <meta property="og:description" content="...">
-<meta property="og:image" content="https://righttrackphysio.com.cy/assets/images/...">
+<meta property="og:image" content="https://righttrackphysio.com.cy/images/...">
 <meta property="og:url" content="https://righttrackphysio.com.cy/...">
-<meta property="og:type" content="website">  <!-- или "article" для блога -->
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Right Track Physiotherapy">
-<meta property="og:locale" content="en_CY">  <!-- или el_CY -->
+<meta property="og:locale" content="en_CY">
 <meta property="og:locale:alternate" content="el_CY">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -109,203 +134,306 @@
 <meta name="twitter:image" content="...">
 ```
 
----
-
-## 7. Structured Data (JSON-LD)
-
-### Homepage — MedicalClinic
-```
-@type: MedicalClinic
-- name, description, url, logo, image
-- medicalSpecialty: PhysicalTherapy
-- address (Strovolos, Nicosia), geo (35.1475, 33.3565)
-- telephone, email
-- openingHoursSpecification (Mon-Fri 08-20, Sat 09-14)
-- paymentAccepted: Cash, Credit Card, GESY
-- aggregateRating
-- sameAs (Instagram, Facebook, LinkedIn)
-```
-
-### Service Pages — Service
-```
-@type: Service
-- name, description, provider (MedicalClinic)
-- areaServed, serviceType
-- offers с ценой
-```
-
-### Blog — Article + MedicalWebPage
-```
-@type: ["Article", "MedicalWebPage"]
-- headline, description, image
-- author (@type: Person — имя, должность, аффилиация)
-- datePublished, dateModified
-- publisher (Organization)
-- citation (ссылки на научные статьи)
-```
-
-### Events — EducationEvent
-```
-@type: EducationEvent
-- name, startDate, endDate, location
-- organizer, performer, offers
-```
-
-### FAQ — FAQPage
-- На всех сервисных страницах (6–8 FAQ)
-- На всех блог-постах (5–7 FAQ)
-- Используется только для уникальных, реально присутствующих на странице вопросов
-
----
-
-## 8. Контент
-
-На каждой SEO-странице:
-- Один `h1` с ключевым словом
-- Логичная структура `h2-h3`
-- `<main>` элемент
-- Контент соответствует одному чёткому intent
-- Внутренние ссылки на релевантные страницы
-- Входящие ссылки с hub-страниц
-- Язык контента совпадает с `lang` страницы
-
 Для blog articles:
-- Автор обязателен
-- `datePublished` и `dateModified`
-- Блок `reviewed by` если есть reviewer
-- Ссылки на связанные service pages обязательны
-
----
-
-## 9. Internal Linking
-
-Обязательно:
-- homepage → key service pages
-- service pages → related conditions + booking
-- blog posts → related service + related posts
-- footer → legal + contact + core sections
+- `og:type="article"`
+- желательно `article:published_time`
+- желательно `article:modified_time`
+- желательно `article:author`
+- при наличии taxonomy желательно `article:section` и `article:tag`
 
 Правила:
-- Важная страница не глубже 3 кликов от homepage
-- Не оставлять orphan pages
-- Каждый новый URL должен получить минимум 2 внутренних ссылки
-- Booking ссылки с параметрами: `booking.html?service=athlete-rehab`
-
-Якорные тексты для перелинковки:
-- `physiotherapist in Nicosia`
-- `sports physiotherapy in Cyprus`
-- `home visit physiotherapy Nicosia`
-- `clinical Pilates in Nicosia`
-- `sports massage in Nicosia`
+- locale должен соответствовать языку страницы
+- OG image должен быть отдельным и осмысленным для ключевых страниц и статей
 
 ---
 
-## 10. Local SEO
+## 7. Structured Data
+
+### Homepage / Clinic Pages
+Использовать:
+- `MedicalClinic`
+- `Organization`
+- `WebSite`
+
+Минимум:
+- `name`
+- `url`
+- `logo`
+- `image`
+- `description`
+- `address`
+- `geo`
+- `telephone`
+- `email`
+- `openingHoursSpecification`
+- `sameAs`
+
+Желательно:
+- `hasMap`
+- связь `sameAs` с Google Business Profile и основными соцпрофилями
+
+### Service Pages
+Использовать:
+- `Service`
+- `BreadcrumbList`
+
+Минимум:
+- `name`
+- `description`
+- `serviceType`
+- `provider`
+- `areaServed`
+
+### Condition Pages
+Использовать:
+- `MedicalWebPage` или подходящий page-level schema type
+- `BreadcrumbList`
+
+Дополнительно:
+- `MedicalCondition` использовать только если страница действительно описывает конкретное состояние
+
+### Blog Articles
+Использовать:
+- `Article` или `BlogPosting`
+- `BreadcrumbList`
+
+Минимум:
+- `headline`
+- `description`
+- `image`
+- `author`
+- `publisher`
+- `datePublished`
+- `dateModified`
+- `mainEntityOfPage`
+
+Желательно:
+- `reviewedBy`, если reviewer реально есть и указан на странице
+- `MedicalCondition` или `MedicalTherapy` только если статья действительно соответствует этим сущностям
+
+### Team / Clinician Pages
+Использовать:
+- `Person` или `ProfilePage`
+
+Минимум:
+- `name`
+- `jobTitle`
+- `description`
+- `image`
+- `url`
+
+Желательно:
+- `hasCredential`
+- `alumniOf`
+- `knowsAbout`
+- `sameAs`
+
+### FAQ
+Использовать только если FAQ:
+- уникален
+- реально есть на странице
+- не копируется массово по шаблону
+
+Правила:
+- не добавлять schema, которая не отражена в реальном visible content
+- не размечать все статьи advanced medical schema по умолчанию
+- для внутренних SEO-страниц `BreadcrumbList` является стандартом
+
+---
+
+## 8. Content Rules
+
+На каждой SEO-странице:
+- один `h1`
+- логичная структура `h2-h3`
+- есть `<main>`
+- контент соответствует одному чёткому intent
+- есть внутренние ссылки на релевантные страницы
+- есть входящие ссылки с hub-страниц
+- язык контента совпадает с `lang` страницы
+
+Для blog articles:
+- автор обязателен
+- желательно `datePublished` и `dateModified`
+- желательно блок `reviewed by`, если есть reviewer
+- ссылки на связанные service pages обязательны
+- желательно ссылка минимум на 1 related article
+
+Для medical / YMYL content:
+- желательно указывать квалификацию автора или reviewer
+- если есть reviewer, он должен быть видим на странице, а не только в schema
+- для важных статей желательно `last reviewed` или `last updated`
+- утверждения медицинского характера должны быть аккуратными и не вводить в заблуждение
+
+---
+
+## 9. Internal Linking Rules
+
+Обязательно:
+- homepage -> key service pages
+- services hub -> все важные услуги
+- service pages -> related conditions + booking
+- condition pages -> related service + related articles
+- blog posts -> related service + related posts
+- footer -> legal + contact + core sections
+
+Правила:
+- важная страница не глубже 3 кликов от homepage
+- не оставлять orphan pages
+- каждый новый URL должен получить минимум 2 внутренних ссылки
+- каждый blog post должен ссылаться минимум на 1 service page и 1 related article
+- каждый service page должен иметь входящие ссылки минимум с 1 hub и 2 тематически релевантных страниц
+
+---
+
+## 10. Local SEO Rules
 
 На сайте должны быть:
-- Единый NAP (Name, Address, Phone)
-- Адрес клиники
-- Кликабельный телефон
-- Локальные модификаторы в page titles (Nicosia, Cyprus)
-- Связь clinic entity со всеми service pages
-- Связь сайта с Google Business Profile
+- единый NAP
+- адрес клиники
+- кликабельный телефон
+- локальные модификаторы в ключевых page titles и copy, где это уместно
+- связь clinic entity со всеми service pages
+- связь сайта с Google Business Profile
+
+Правила:
+- связь сайта с GBP реализуется через `sameAs`, карту и консистентные business details
+- локальные модификаторы не должны превращать titles и copy в keyword stuffing
 
 ---
 
-## 11. Изображения
+## 11. Images
 
-- `alt` обязателен, на языке страницы
-- WebP через `<picture>` с fallback
+- `alt` обязателен и на языке страницы
+- использовать WebP/AVIF где возможно
 - `loading="lazy"` для below-the-fold
-- Задавать `width` и `height`
-- `srcset` для responsive variants
-- Для важных страниц — отдельное OG-image
+- задавать `width` и `height`
+- использовать `srcset`, если есть responsive variants
+- для важных страниц и статей желательно отдельное OG-image
+
+Правила:
+- LCP / hero image не должен быть lazy-loaded
+- для hero / LCP image желательно `fetchpriority="high"`
+- если preload используется, он должен соответствовать реально критичному ресурсу
 
 ---
 
-## 12. Sitemap
+## 12. CSS & Render Performance
 
-`/sitemap.xml` — только canonical, indexable, 200 OK URLs.
-
-### Приоритеты
-| Тип страницы | Priority | Changefreq |
-|---|---|---|
-| Главная (EN/EL) | 1.0 | monthly |
-| Сервисы | 0.9 | monthly |
-| Блог | 0.7 | monthly |
-| Команда | 0.7 | monthly |
-| Legal | 0.3 | yearly |
-
-Каждый URL содержит:
-- `<loc>`, `<lastmod>`, `<changefreq>`, `<priority>`
-- `<xhtml:link>` для en, el, x-default
-
-Автообновление `lastmod` через GitHub Actions (`update-sitemap.yml`).
+Правила:
+- общий повторяющийся CSS должен выноситься в shared stylesheet, а не дублироваться массово в каждой HTML-странице
+- inline CSS допустим только для небольшого critical CSS или точечных page-specific overrides
+- нельзя повторять на десятках страниц одни и те же reset, CSS variables, footer, buttons, language switcher, common cards и media queries
+- shared CSS должен быть cacheable и подключаться на всех релевантных страницах
+- не создавать CSS-архитектуру, которая заметно раздувает HTML без реальной пользы для first render
+- после изменений в CSS нужно проверять, что не ухудшились mobile rendering, LCP и другие Core Web Vitals
 
 ---
 
-## 13. robots.txt
+## 13. Sitemap
+
+`/sitemap.xml` должен содержать только:
+- canonical
+- indexable
+- `200 OK` URLs
+
+Для каждого URL:
+- `<loc>`
+- `<lastmod>`
+- `xhtml:link` для `en`, `el`, `x-default` если есть языковая пара
+
+Опционально:
+- `<changefreq>`
+- `<priority>`
+
+Правила:
+- `lastmod` должен отражать реальную дату значимого обновления страницы
+- query URLs не включаются
+- redirecting, `noindex` и non-canonical URLs не включаются
+
+---
+
+## 14. robots.txt
+
+Пример:
 
 ```txt
 User-agent: *
 Allow: /
 
 Disallow: /pages/manage-rtphysio-2026/
+Disallow: /mediaplan-2026.html
 
 Sitemap: https://righttrackphysio.com.cy/sitemap.xml
 ```
 
-Не блокировать CSS/JS/assets, нужные для рендера.
+Правила:
+- не блокировать CSS/JS/assets, нужные для рендера
+- не использовать `Disallow` как замену `noindex`
 
 ---
 
-## 14. Аналитика
+## 15. Analytics
 
 Обязательно:
-- GA4 (`G-XQT03Q3821`) на всех публичных страницах
+- GA4 на всех публичных страницах
 - Google Search Console подключен
-- Sitemap отправлен в GSC
+- sitemap отправлен в GSC
 
 Желательно:
-- Tracking кликов по booking
-- Tracking phone clicks
-- Tracking form submits
+- tracking кликов по booking
+- tracking phone clicks
+- tracking form submits
 
 ---
 
-## 15. Чеклист: новая страница
+## 16. Lifecycle Rules
 
-### HTML `<head>`
-- [ ] Title (50–60 символов, ключевые слова в начале)
-- [ ] Meta description (120–160 символов)
-- [ ] Meta robots (`index, follow` или `noindex, follow`)
-- [ ] Canonical URL (self-referencing)
-- [ ] Hreflang (en + el + x-default)
-- [ ] OG-теги (title, description, image, url, type, locale)
-- [ ] Twitter Card теги
-- [ ] Viewport + charset
-- [ ] Favicon
-- [ ] GA4 скрипт
+### New Page
+- создать URL
+- создать EN/EL пару, если это core page
+- добавить `title`, `description`, canonical
+- добавить hreflang
+- добавить schema
+- встроить во внутреннюю перелинковку
+- добавить в sitemap
+- проверить indexability
 
-### Structured Data
-- [ ] Основная схема по типу страницы (Service / Article / Event)
-- [ ] FAQPage schema (5–8 вопросов)
-- [ ] Для блога: author, datePublished, citation
+### Update Page
+- обновить `dateModified`
+- обновить `lastmod` в sitemap
+- проверить internal links
 
-### Контент
-- [ ] H1 — один на страницу, с ключевым словом
-- [ ] Alt-теги на всех изображениях
-- [ ] WebP через `<picture>`
-- [ ] Lazy loading на below-the-fold
-- [ ] Внутренние ссылки на релевантные сервисы/статьи
+### Remove Page
+- если есть замена: `301`
+- если замены нет: `410` или удаление с cleanup links
+- не оставлять важные legacy URLs без стратегии
 
-### Файлы
-- [ ] Создать EN + EL версии
-- [ ] Добавить обе в sitemap.xml с hreflang
-- [ ] Проверить robots.txt (не блокирует)
+### Post-Release Validation
+- проверить URL через GSC URL Inspection
+- проверить schema / rich results validation
+- проверить, что страница получила реальные внутренние ссылки
 
-### После деплоя
-- [ ] Проверить в Google Search Console
-- [ ] Валидировать Schema через schema.org validator
-- [ ] Проверить OG через Facebook Sharing Debugger
-- [ ] Mobile rendering проверен
+---
+
+## 17. Release Checklist
+
+- [ ] URL канонический и отдаёт `200`
+- [ ] страница не дублирует существующий intent
+- [ ] `title` уникален
+- [ ] `description` уникальна
+- [ ] canonical корректен
+- [ ] robots корректен
+- [ ] hreflang корректен
+- [ ] OG / Twitter заполнены
+- [ ] `h1` один
+- [ ] есть `<main>`
+- [ ] есть внутренние ссылки in/out
+- [ ] schema валидна
+- [ ] страница добавлена в sitemap
+- [ ] страница не блокируется `robots.txt`
+- [ ] page pair EN/EL связана корректно
+- [ ] mobile rendering проверен
+- [ ] shared CSS / critical CSS strategy не создаёт лишнего дублирования и не ухудшает рендер
+- [ ] для YMYL content указан author / reviewer, если применимо
+- [ ] для внутренних SEO-страниц добавлен `BreadcrumbList`
