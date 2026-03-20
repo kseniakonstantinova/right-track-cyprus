@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Right Track — Blog Article & Blog Hub Components
+   Used by: /pages/blog/*.html, /pages/blog.html, /pages/blog-el.html
+   Requires: shared.css loaded first
+   ========================================================================== */
+
+/* ---------- Article Hero ---------- */
+
+.article-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2940 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+}
+
+.article-hero .tag {
+    display: inline-block;
+    padding: 4px 16px;
+    background: rgba(255, 107, 53, 0.2);
+    color: var(--orange);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.article-hero h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 800;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.2;
+}
+
+.article-hero .meta {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+.article-hero .meta strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------- Article Body ---------- */
+
+.article-body {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 50px 24px 60px;
+}
+
+.article-body h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 40px 0 16px;
+}
+
+.article-body h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 30px 0 12px;
+}
+
+.article-body p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.article-body ul,
+.article-body ol {
+    margin: 0 0 20px 24px;
+}
+
+.article-body li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.article-body strong {
+    color: var(--navy);
+}
+
+/* ---------- Author Box ---------- */
+
+.author-box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: var(--off-white);
+    padding: 24px;
+    border-radius: 16px;
+    margin-top: 50px;
+}
+
+.author-box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-box .author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.author-box h4 {
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+.author-box p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 0;
+}
+
+/* ---------- Article CTA ---------- */
+
+.article-cta {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2940 100%);
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.article-cta h2 {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.article-cta h2 span {
+    color: var(--orange);
+}
+
+.article-cta p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+}
+
+.article-cta .btn-book {
+    display: inline-block;
+    padding: 14px 40px;
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+
+/* ---------- Social Sharing ---------- */
+
+.share-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--light-gray);
+}
+
+.share-buttons span {
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.95rem;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--off-white);
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background: var(--orange);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+    .article-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .article-body {
+        padding: 30px 20px 40px;
+    }
+
+    .author-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
