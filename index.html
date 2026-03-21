@@ -1858,6 +1858,197 @@
             left: 0;
         }
 
+        /* GESY Hero Stats */
+        .gesy-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .gesy-stat {
+            text-align: center;
+            padding: 30px 20px;
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+        }
+
+        .gesy-stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--orange);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .gesy-stat-label {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        /* GESY vs Private Comparison Teaser */
+        .gesy-comparison {
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.85) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gesy-comparison::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .gesy-comparison-header {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .gesy-comparison-header h3 {
+            font-size: 1.4rem;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .gesy-comparison-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+        }
+
+        .gesy-comparison-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .gesy-comparison-col h4 .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .tag-gesy { background: rgba(255,107,53,0.2); color: var(--orange); }
+        .tag-private { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+
+        .gesy-comparison-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.9rem;
+        }
+
+        .gesy-comparison-row .label {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .gesy-comparison-row .value {
+            font-weight: 600;
+            color: white;
+        }
+
+        .gesy-comparison-cta {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .gesy-comparison-cta a {
+            color: var(--orange);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .gesy-comparison-cta a:hover {
+            color: #ff8c5c;
+            text-decoration: underline;
+        }
+
+        /* GESY Blog Articles */
+        .gesy-articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .gesy-article-card {
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.5) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .gesy-article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            border-color: rgba(255,107,53,0.3);
+        }
+
+        .gesy-article-card .article-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--orange);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .gesy-article-card h4 {
+            font-size: 1.15rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .gesy-article-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .gesy-article-card .read-more {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 1024px) {
             .gesy-steps {
                 grid-template-columns: repeat(2, 1fr);
@@ -1870,6 +2061,15 @@
             .gesy-highlight {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            .gesy-comparison {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .gesy-articles {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1887,6 +2087,19 @@
             }
 
             .gesy-highlight {
+                padding: 25px;
+            }
+
+            .gesy-hero-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .gesy-stat-value {
+                font-size: 2rem;
+            }
+
+            .gesy-comparison {
                 padding: 25px;
             }
         }
@@ -3532,7 +3745,23 @@
         <div class="gesy-container">
             <div class="section-header">
                 <h2>Physiotherapy via <span>GESY</span></h2>
-                <p>Government covers most of your treatment costs</p>
+                <p>Quality physiotherapy covered by the national health system</p>
+            </div>
+
+            <!-- Hero Stats -->
+            <div class="gesy-hero-stats">
+                <div class="gesy-stat">
+                    <div class="gesy-stat-value">€10</div>
+                    <div class="gesy-stat-label">per session co-payment<br>Government covers the rest</div>
+                </div>
+                <div class="gesy-stat">
+                    <div class="gesy-stat-value">€150</div>
+                    <div class="gesy-stat-label">annual cap on your expenses<br>€75 for pensioners</div>
+                </div>
+                <div class="gesy-stat">
+                    <div class="gesy-stat-value">12</div>
+                    <div class="gesy-stat-label">sessions per year<br>Extensions available</div>
+                </div>
             </div>
 
             <!-- Steps -->
@@ -3591,26 +3820,6 @@
                 </div>
 
                 <div class="gesy-card">
-                    <h3>Co-payment (your expenses)</h3>
-                    <ul>
-                        <li>€10 per session</li>
-                        <li>Annual cap: €150 (you won't pay more)</li>
-                        <li>Annual cap: €75 (less for pensioners)</li>
-                        <li>Government pays 100% when cap is reached</li>
-                    </ul>
-                </div>
-
-                <div class="gesy-card">
-                    <h3>Session Limits</h3>
-                    <ul>
-                        <li>Max 12 sessions per year</li>
-                        <li>Extensions available for serious cases</li>
-                        <li>Doctor can request additional sessions</li>
-                        <li>Private sessions: no limits</li>
-                    </ul>
-                </div>
-
-                <div class="gesy-card">
                     <h3>What's Covered</h3>
                     <ul>
                         <li>Musculoskeletal & joint pain</li>
@@ -3621,12 +3830,84 @@
                 </div>
             </div>
 
+            <!-- GESY vs Private Comparison -->
+            <div class="gesy-comparison">
+                <div class="gesy-comparison-header">
+                    <h3>GESY vs Private Physiotherapy</h3>
+                    <p>Understanding your options at a glance</p>
+                </div>
+                <div class="gesy-comparison-col">
+                    <h4>GESY <span class="tag tag-gesy">Government</span></h4>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Cost</span>
+                        <span class="value">€10/session</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Session length</span>
+                        <span class="value">30 min</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Wait time</span>
+                        <span class="value">1-3 weeks</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Referral</span>
+                        <span class="value">Required</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Sessions/year</span>
+                        <span class="value">Up to 12</span>
+                    </div>
+                </div>
+                <div class="gesy-comparison-col">
+                    <h4>Private <span class="tag tag-private">Self-pay</span></h4>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Cost</span>
+                        <span class="value">€40-60/session</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Session length</span>
+                        <span class="value">45-60 min</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Wait time</span>
+                        <span class="value">Same week</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Referral</span>
+                        <span class="value">Not needed</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Sessions/year</span>
+                        <span class="value">Unlimited</span>
+                    </div>
+                </div>
+                <div class="gesy-comparison-cta">
+                    <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html">Read the full comparison guide &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Blog Articles -->
+            <div class="gesy-articles">
+                <a href="pages/blog/gesy-physiotherapy-cyprus-guide.html" class="gesy-article-card">
+                    <span class="article-tag">Complete Guide</span>
+                    <h4>GESY Physiotherapy in Cyprus: Everything You Need to Know</h4>
+                    <p>Referrals, sessions, coverage, costs, and what to expect in practice. The most practical guide to navigating GESY physiotherapy.</p>
+                    <span class="read-more">Read the guide &rarr;</span>
+                </a>
+                <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html" class="gesy-article-card">
+                    <span class="article-tag">Cost Comparison</span>
+                    <h4>GESY vs Private Physiotherapy: Costs, Wait Times & What's Covered</h4>
+                    <p>An honest side-by-side comparison to help you decide which option — or combination — works best for your situation.</p>
+                    <span class="read-more">Read the comparison &rarr;</span>
+                </a>
+            </div>
+
             <!-- Highlight Box -->
             <div class="gesy-highlight">
                 <div class="gesy-highlight-content">
                     <h3>Need Help with GESY?</h3>
-                    <p>Contact us for guidance on the referral process. We're here to help you access affordable care.</p>
-                    <p style="margin-top: 10px;"><a href="pages/blog/gesy-physiotherapy-cyprus-guide.html" style="color: var(--orange); font-weight: 600; text-decoration: underline;">Read our complete GESY physiotherapy guide &rarr;</a></p>
+                    <p>Not sure if you qualify, or confused about referral codes? Contact us — we'll walk you through the entire process.</p>
                 </div>
                 <a href="tel:+35799126824" class="btn btn-primary" style="white-space: nowrap;">Call +357 99 126 824</a>
             </div>
