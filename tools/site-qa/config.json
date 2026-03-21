@@ -23,7 +23,8 @@
       "Τσερίου 32, Στρόβολος",
       "Τσερίου 32, Στρόβολος 2042, Λευκωσία, Κύπρος"
     ],
-    "analytics_ids": ["G-XQT03Q3821"]
+    "analytics_ids": ["G-XQT03Q3821"],
+    "gesy_numbers": ["A2825", "A3509", "A3522"]
   },
   "ignore_files": [
     ".DS_Store"
