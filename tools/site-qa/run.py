@@ -129,6 +129,7 @@ class PageData:
 
 
 RE_PRICE = re.compile(r"€\s*\d+(?:[.,]\d+)?")
+RE_GESY_LABEL = re.compile(r"\bA\d{4}\b")
 
 
 class PageParser(HTMLParser):
