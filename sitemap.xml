@@ -632,6 +632,26 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus.html"/>
+        <lastmod>2026-03-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus.html"/>
+        <lastmod>2026-03-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Legal pages removed from sitemap — noindex + blocked in robots.txt -->
 
 </urlset>
