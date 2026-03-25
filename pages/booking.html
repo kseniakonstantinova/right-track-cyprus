@@ -135,7 +135,7 @@ body {
     </head>
 <body>
     <!-- Language Switcher -->
-    <div class="language-switcher">
+    <div class="lang-switcher">
         <button class="lang-btn active" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="el">ΕΛ</button>
     </div>
@@ -235,10 +235,15 @@ body {
             });
         });
 
-        // Set initial language
-        const savedLang = localStorage.getItem('language') || 'en';
+        // Set initial language — URL ?lang= takes priority over localStorage
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
+        const initialLang = (urlLang === 'el') ? 'el' : (localStorage.getItem('language') || 'en');
+        if (urlLang === 'el' && localStorage.getItem('language') !== 'el') {
+            localStorage.setItem('language', 'el');
+            window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: 'el' } }));
+        }
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === savedLang);
+            btn.classList.toggle('active', btn.dataset.lang === initialLang);
         });
     </script>
 
