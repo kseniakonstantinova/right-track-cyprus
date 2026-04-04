@@ -406,7 +406,7 @@
             direction: ltr;
         }
 
-        .feature-text h2 {
+        .feature-text h3 {
             font-size: 3rem;
             font-weight: 800;
             color: var(--navy);
@@ -415,7 +415,7 @@
             letter-spacing: -1.5px;
         }
 
-        .feature-text h2 span {
+        .feature-text h3 span {
             color: var(--orange);
         }
 
@@ -2460,7 +2460,7 @@
                 font-size: 3rem;
             }
 
-            .feature-text h2,
+            .feature-text h3,
             .section-header h2,
             .cta-banner h2 {
                 font-size: 2.5rem;
@@ -2609,7 +2609,7 @@
                 font-size: 2rem;
             }
 
-            .feature-text h2 {
+            .feature-text h3 {
                 font-size: 1.8rem;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
@@ -2847,7 +2847,7 @@
             50% { opacity: 0.5; transform: scale(1.2); }
         }
 
-        .promo-slide-text h2 {
+        .promo-slide-text .promo-heading {
             font-size: 2.8rem;
             font-weight: 800;
             line-height: 1.1;
@@ -2855,7 +2855,7 @@
             color: var(--white);
         }
 
-        .promo-slide-text h2 span {
+        .promo-slide-text .promo-heading span {
             color: var(--orange);
         }
 
@@ -3054,7 +3054,7 @@
                 text-align: center;
             }
 
-            .promo-slide-text h2 {
+            .promo-slide-text .promo-heading {
                 font-size: 2.2rem;
             }
 
@@ -3072,7 +3072,7 @@
         }
 
         @media (max-width: 768px) {
-            .promo-slide-text h2 {
+            .promo-slide-text .promo-heading {
                 font-size: 1.8rem;
             }
 
@@ -3117,7 +3117,7 @@
                 padding: 30px 20px;
             }
 
-            .promo-slide-text h2 {
+            .promo-slide-text .promo-heading {
                 font-size: 1.5rem;
             }
 
@@ -3201,18 +3201,18 @@
     <!-- Promo Carousel -->
     <section class="promo-carousel" id="promoCarousel">
 
-        <!-- Slide 1: Muay Thai Seminar -->
+        <!-- Slide 1: Injury Prevention Guide -->
         <div class="promo-slide active" data-slide="0">
             <div class="promo-slide-content">
                 <div class="promo-slide-text">
                     <div class="promo-badge">
                         <span class="pulse"></span>
-                        Upcoming Seminar
+                        Free Resource
                     </div>
-                    <h2>Train Hard. Fight Smart.<br><span>Stay Injury-Free.</span></h2>
-                    <p class="subtitle">2-hour injury prevention seminar for combat sports athletes. By physiotherapist Antonis Petri.</p>
+                    <p class="promo-heading">Train Hard. Fight Smart.<br><span>Stay Injury-Free.</span></p>
+                    <p class="subtitle">Free injury prevention guide for combat sports athletes. Evidence-based warm-ups, joint protection &amp; recovery strategies.</p>
                     <div class="promo-cta-group">
-                        <a href="pages/seminar-muay-thai.html" class="promo-cta">Register Now — €15 →</a>
+                        <a href="pages/seminar-muay-thai.html" class="promo-cta">View Free Guide →</a>
                     </div>
                 </div>
                 <div class="promo-slide-image">
@@ -3235,7 +3235,7 @@
                         <span class="pulse"></span>
                         Research 2026
                     </div>
-                    <h2>We Surveyed Padel Players.<br><span>100% Reported Pain.</span></h2>
+                    <p class="promo-heading">We Surveyed Padel Players.<br><span>100% Reported Pain.</span></p>
                     <p class="subtitle"><strong>100%</strong> of players surveyed reported pain or injury. <strong>86%</strong> missed playing time. <strong>57%</strong> never stretch post-game. Help us grow this study.</p>
                     <div class="promo-cta-group">
                         <a href="https://forms.gle/fiwJAQ4PcHeQvg5k9" target="_blank" rel="noopener noreferrer" class="promo-cta">Take the 3-min Survey →</a>
@@ -3260,7 +3260,7 @@
                         <span class="pulse"></span>
                         April 13–19, 2026
                     </div>
-                    <h2>The Padel Camp<br><span>Cyprus 2026</span></h2>
+                    <p class="promo-heading">The Padel Camp<br><span>Cyprus 2026</span></p>
                     <p class="subtitle">5-day intensive padel camp with on-site sports physio. Recovery, injury prevention & performance optimization.</p>
                     <div class="promo-cta-group">
                         <a href="pages/padel-camp.html" class="promo-cta">Learn More →</a>
@@ -3286,7 +3286,7 @@
                         <span class="pulse"></span>
                         New Classes Available
                     </div>
-                    <h2>Clinical <span>Mat Pilates</span><br>with Alice</h2>
+                    <p class="promo-heading">Clinical <span>Mat Pilates</span><br>with Alice</p>
                     <p class="subtitle">Physio-led Pilates for rehabilitation, strength & mobility. Small groups, big results.</p>
                     <div class="promo-cta-group">
                         <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="promo-cta">Book from €80/month →</a>
@@ -3365,7 +3365,7 @@
 
         <div class="feature-container">
             <div class="feature-text">
-                <h2>Athlete-Centred <span>Rehabilitation</span></h2>
+                <h3>Athlete-Centred <span>Rehabilitation</span></h3>
                 <p>Specialized programs for athletes and active individuals. Whether you're recovering from injury or preparing for competition — we get you back to peak performance.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Return to Sport Programs</li>
@@ -3390,7 +3390,7 @@
 
         <div class="feature-container reverse">
             <div class="feature-text">
-                <h2>General <span>Physiotherapy</span></h2>
+                <h3>General <span>Physiotherapy</span></h3>
                 <p>Expert care for everyday aches, chronic pain, and age-related conditions. From office workers with back pain to seniors improving mobility — personalized treatment for real life.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Back, Neck & Joint Pain</li>
@@ -3415,7 +3415,7 @@
 
         <div class="feature-container">
             <div class="feature-text">
-                <h2>Performance <span>Training</span></h2>
+                <h3>Performance <span>Training</span></h3>
                 <p>Sport-specific strength, conditioning, and power development. For athletes serious about results.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Sport-specific programming</li>
@@ -3439,7 +3439,7 @@
 
         <div class="feature-container reverse">
             <div class="feature-text">
-                <h2>Sports & Remedial <span>Massage</span></h2>
+                <h3>Sports & Remedial <span>Massage</span></h3>
                 <p>Therapeutic massage tailored to your needs. From desk workers to elite athletes—release tension, accelerate recovery, enhance performance.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Sports massage for athletes</li>
@@ -3464,7 +3464,7 @@
 
         <div class="feature-container">
             <div class="feature-text">
-                <h2>Clinical <span>Pilates</span> that works</h2>
+                <h3>Clinical <span>Pilates</span> that works</h3>
                 <p>Physio-led mat Pilates combining therapeutic principles with dynamic movement. Small groups, big results.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Small group sessions (max 4)</li>
@@ -3489,7 +3489,7 @@
 
         <div class="feature-container reverse">
             <div class="feature-text">
-                <h2>Recovery & Rehab <span>at Home</span></h2>
+                <h3>Recovery & Rehab <span>at Home</span></h3>
                 <p>Sports recovery and rehabilitation delivered to your door. Same clinical expertise, same results — in the comfort of your home.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Sports injury recovery at home</li>

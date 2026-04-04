@@ -406,7 +406,7 @@
             direction: ltr;
         }
 
-        .feature-text h2 {
+        .feature-text h3 {
             font-size: 3rem;
             font-weight: 800;
             color: var(--navy);
@@ -415,7 +415,7 @@
             letter-spacing: -1.5px;
         }
 
-        .feature-text h2 span {
+        .feature-text h3 span {
             color: var(--orange);
         }
 
@@ -2443,7 +2443,7 @@
                 font-size: 3rem;
             }
 
-            .feature-text h2,
+            .feature-text h3,
             .section-header h2,
             .cta-banner h2 {
                 font-size: 2.5rem;
@@ -2592,7 +2592,7 @@
                 font-size: 2rem;
             }
 
-            .feature-text h2 {
+            .feature-text h3 {
                 font-size: 1.8rem;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
@@ -2812,7 +2812,7 @@
             50% { opacity: 0.5; transform: scale(1.2); }
         }
 
-        .promo-slide-text h2 {
+        .promo-slide-text .promo-heading {
             font-size: 2.8rem;
             font-weight: 800;
             line-height: 1.1;
@@ -2820,7 +2820,7 @@
             color: var(--white);
         }
 
-        .promo-slide-text h2 span {
+        .promo-slide-text .promo-heading span {
             color: var(--orange);
         }
 
@@ -3018,7 +3018,7 @@
                 text-align: center;
             }
 
-            .promo-slide-text h2 {
+            .promo-slide-text .promo-heading {
                 font-size: 2.2rem;
             }
 
@@ -3036,7 +3036,7 @@
         }
 
         @media (max-width: 768px) {
-            .promo-slide-text h2 {
+            .promo-slide-text .promo-heading {
                 font-size: 1.8rem;
             }
 
@@ -3081,7 +3081,7 @@
                 padding: 30px 20px;
             }
 
-            .promo-slide-text h2 {
+            .promo-slide-text .promo-heading {
                 font-size: 1.5rem;
             }
 
@@ -3166,18 +3166,18 @@
     <!-- Promo Carousel -->
     <section class="promo-carousel" id="promoCarousel">
 
-        <!-- Slide 1: Σεμινάριο Muay Thai -->
+        <!-- Slide 1: Οδηγός Πρόληψης Τραυματισμών -->
         <div class="promo-slide active" data-slide="0">
             <div class="promo-slide-content">
                 <div class="promo-slide-text">
                     <div class="promo-badge">
                         <span class="pulse"></span>
-                        Επερχόμενο Σεμινάριο
+                        Δωρεάν Υλικό
                     </div>
-                    <h2>Προπονήσου. Αγωνίσου.<br><span>Μείνε Αλώβητος.</span></h2>
-                    <p class="subtitle">Σεμινάριο πρόληψης τραυματισμών 2 ωρών για μαχητές. Από τον φυσιοθεραπευτή Αντώνη Πέτρη.</p>
+                    <p class="promo-heading">Προπονήσου. Αγωνίσου.<br><span>Μείνε Αλώβητος.</span></p>
+                    <p class="subtitle">Δωρεάν οδηγός πρόληψης τραυματισμών για μαχητές. Τεκμηριωμένη προθέρμανση, προστασία αρθρώσεων &amp; στρατηγικές αποκατάστασης.</p>
                     <div class="promo-cta-group">
-                        <a href="pages/seminar-muay-thai-el.html" class="promo-cta">Εγγραφή — €15 →</a>
+                        <a href="pages/seminar-muay-thai-el.html" class="promo-cta">Δες τον Δωρεάν Οδηγό →</a>
                     </div>
                 </div>
                 <div class="promo-slide-image">
@@ -3200,7 +3200,7 @@
                         <span class="pulse"></span>
                         Έρευνα 2026
                     </div>
-                    <h2>Ρωτήσαμε Παίκτες Padel.<br><span>Το 100% Ανέφερε Πόνο.</span></h2>
+                    <p class="promo-heading">Ρωτήσαμε Παίκτες Padel.<br><span>Το 100% Ανέφερε Πόνο.</span></p>
                     <p class="subtitle"><strong>100%</strong> των παικτών ανέφεραν πόνο ή τραυματισμό. <strong>86%</strong> έχασαν χρόνο παιχνιδιού. <strong>57%</strong> δεν κάνουν ποτέ διατάσεις. Βοήθησε μας να μεγαλώσουμε αυτή την έρευνα.</p>
                     <div class="promo-cta-group">
                         <a href="https://forms.gle/b4CKKXroahmNNcLE7" target="_blank" class="promo-cta">Συμπλήρωσε το Ερωτηματολόγιο (3 λεπτά) →</a>
@@ -3225,7 +3225,7 @@
                         <span class="pulse"></span>
                         13–19 Απριλίου 2026
                     </div>
-                    <h2>The Padel Camp<br><span>Cyprus 2026</span></h2>
+                    <p class="promo-heading">The Padel Camp<br><span>Cyprus 2026</span></p>
                     <p class="subtitle">5ήμερο εντατικό camp padel με φυσιοθεραπευτή επί τόπου. Αποκατάσταση, πρόληψη τραυματισμών & βελτιστοποίηση απόδοσης.</p>
                     <div class="promo-cta-group">
                         <a href="pages/padel-camp-el.html" class="promo-cta">Μάθετε Περισσότερα →</a>
@@ -3252,7 +3252,7 @@
                         <span class="pulse"></span>
                         Νέα Τμήματα Διαθέσιμα
                     </div>
-                    <h2>Κλινικό <span>Mat Pilates</span><br>με την Alice</h2>
+                    <p class="promo-heading">Κλινικό <span>Mat Pilates</span><br>με την Alice</p>
                     <p class="subtitle">Pilates καθοδηγούμενο από φυσιοθεραπευτή για αποκατάσταση, δύναμη & κινητικότητα. Μικρές ομάδες, μεγάλα αποτελέσματα.</p>
                     <div class="promo-cta-group">
                         <a href="pages/booking.html?service=clinical-pilates&therapist=alice&lang=el" class="promo-cta">Κράτηση από €80/μήνα →</a>
@@ -3331,7 +3331,7 @@
 
         <div class="feature-container">
             <div class="feature-text">
-                <h2>Αποκατάσταση <span>Αθλητών</span></h2>
+                <h3>Αποκατάσταση <span>Αθλητών</span></h3>
                 <p>Εξειδικευμένα προγράμματα για αθλητές και δραστήρια άτομα. Είτε ανακάμπτετε από τραυματισμό είτε προετοιμάζεστε για αγώνα — σας επαναφέρουμε στην κορυφαία σας απόδοση.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Προγράμματα Επιστροφής στον Αθλητισμό</li>
@@ -3356,7 +3356,7 @@
 
         <div class="feature-container reverse">
             <div class="feature-text">
-                <h2>Γενική <span>Φυσιοθεραπεία</span></h2>
+                <h3>Γενική <span>Φυσιοθεραπεία</span></h3>
                 <p>Εξειδικευμένη φροντίδα για καθημερινούς πόνους, χρόνιες παθήσεις και προβλήματα που σχετίζονται με την ηλικία. Από εργαζόμενους γραφείου με πόνους στη μέση έως ηλικιωμένους που θέλουν να βελτιώσουν την κινητικότητά τους — εξατομικευμένη θεραπεία για την πραγματική ζωή.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Πόνος στη Μέση, Αυχένα & Αρθρώσεις</li>
@@ -3381,7 +3381,7 @@
 
         <div class="feature-container">
             <div class="feature-text">
-                <h2>Προπόνηση <span>Απόδοσης</span> για απαιτητικούς αθλητές</h2>
+                <h3>Προπόνηση <span>Απόδοσης</span> για απαιτητικούς αθλητές</h3>
                 <p>Δομημένα προγράμματα δύναμης, ισχύος και ελέγχου, σχεδιασμένα ανά άθλημα, για αθλητές που αντιμετωπίζουν την απόδοση ως επένδυση.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Εξατομικευμένος προγραμματισμός ανά άθλημα</li>
@@ -3405,7 +3405,7 @@
 
         <div class="feature-container reverse">
             <div class="feature-text">
-                <h2>Αθλητικό & Θεραπευτικό <span>Μασάζ</span></h2>
+                <h3>Αθλητικό & Θεραπευτικό <span>Μασάζ</span></h3>
                 <p>Θεραπευτικό μασάζ προσαρμοσμένο στις ανάγκες σας. Από εργαζόμενους γραφείου έως επαγγελματίες αθλητές—απελευθερώστε την ένταση, επιταχύνετε την ανάρρωση, βελτιώστε την απόδοση.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Αθλητικό μασάζ για αθλητές</li>
@@ -3430,7 +3430,7 @@
 
         <div class="feature-container">
             <div class="feature-text">
-                <h2>Κλινικό <span>Pilates</span> με ιατρική ακρίβεια</h2>
+                <h3>Κλινικό <span>Pilates</span> με ιατρική ακρίβεια</h3>
                 <p>Mat Pilates σχεδιασμένο και καθοδηγούμενο από φυσιοθεραπευτή, ενσωματωμένο σε εξατομικευμένα πλάνα αποκατάστασης και λειτουργικής ενδυνάμωσης.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Μικρές ομάδες έως 4 άτομα για απόλυτη επίβλεψη</li>
@@ -3455,7 +3455,7 @@
 
         <div class="feature-container reverse">
             <div class="feature-text">
-                <h2>Φυσιοθεραπεία & Αποκατάσταση <span>στο Σπίτι</span></h2>
+                <h3>Φυσιοθεραπεία & Αποκατάσταση <span>στο Σπίτι</span></h3>
                 <p>Αθλητική αποκατάσταση στην πόρτα σας. Η ίδια κλινική εμπειρία, τα ίδια αποτελέσματα — στην άνεση του σπιτιού σας.</p>
                 <ul style="margin-top: 15px; line-height: 1.8;">
                     <li>Αποκατάσταση αθλητικών τραυματισμών</li>
