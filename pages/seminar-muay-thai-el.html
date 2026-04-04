@@ -479,8 +479,18 @@
         }
 
         @media (max-width: 768px) {
-            .seminar-hero { padding: 60px 20px 50px; }
-            .seminar-hero h1 { font-size: 2rem; }
+            .seminar-hero {
+                padding: 60px 16px 40px;
+                background-position: center top;
+                background-size: cover;
+            }
+            .seminar-hero h1 { font-size: 1.65rem; }
+            .seminar-hero .subtitle { font-size: 1rem; margin-bottom: 20px; }
+            .seminar-hero .download-card { padding: 24px 16px !important; margin-top: 16px !important; }
+            .seminar-hero .download-card .download-icon { width: 50px !important; height: 50px !important; margin-bottom: 14px !important; }
+            .seminar-hero .download-card .download-icon svg { width: 28px; height: 28px; }
+            .seminar-hero .download-card .btn-register { padding: 14px 36px; font-size: 1rem; }
+            .seminar-hero .hero-price { font-size: 0.85rem; margin-top: 12px; }
             .section { padding: 50px 20px; }
             .speaker-section { flex-direction: column; text-align: center; }
             .speaker-photo { width: 150px; height: 150px; }
@@ -491,6 +501,8 @@
         }
 
         @media (max-width: 480px) {
+            .seminar-hero h1 { font-size: 1.4rem; }
+            .seminar-hero .subtitle { font-size: 0.9rem; }
             .audience-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -564,8 +576,8 @@
         <div class="collab-badge">Right Track &times; Muay Thai Warriors</div>
         <h1>Οδηγός <span>Πρόληψης</span> Τραυματισμών Muay Thai</h1>
         <p class="subtitle">Τεκμηριωμένες στρατηγικές για μαχητές που θέλουν να μείνουν χωρίς τραυματισμούς. Η πλήρης παρουσίαση &mdash; δωρεάν λήψη.</p>
-        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; max-width: 600px; margin: 28px auto 0;">
-            <div style="width: 70px; height: 70px; background: rgba(255,107,53,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+        <div class="download-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; max-width: 600px; margin: 28px auto 0;">
+            <div class="download-icon" style="width: 70px; height: 70px; background: rgba(255,107,53,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </div>
             <a href="../assets/downloads/muay-thai-injury-prevention-guide-el.pdf" class="btn-register" download style="margin-bottom: 12px;">
