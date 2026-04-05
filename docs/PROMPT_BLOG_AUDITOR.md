@@ -33,6 +33,24 @@ Every article already serves these strategic purposes. **Do NOT remove or dilute
 4. **Conversion** — Each article has a CTA (Book Assessment). Preserve or strengthen the conversion path.
 5. **Shareability** — Articles are designed to be shared by athletes with teammates, coaches, and parents. The engaging, myth-busting angle is intentional.
 
+### SEARCH-INTENT OVERRIDE (CRITICAL)
+
+Right Track blog articles are **not magazine features**. They are search-first assets that may also be engaging.
+
+This means:
+- The **primary keyword / question must be obvious in the title, H1, intro, and subheadings**
+- Curiosity-driven, witty, or editorial phrasing is allowed **only after** the search intent is made explicit
+- If a title sounds clickable but does **not** clearly match the query a patient would type into Google, treat it as a weakness
+- When in doubt, choose **clarity over cleverness**
+
+Examples:
+- Better: `Office Ergonomics for Neck and Back Pain: What Actually Helps`
+- Worse: `Why Your Desk Setup Is Causing Pain`
+- Better: `ACL Recovery Timeline for Athletes: What to Expect After Surgery`
+- Worse: `What 90% of Athletes Get Wrong About Recovery`
+- Better: `GESY Physiotherapy in Cyprus: Referral, Sessions, Cost, Coverage`
+- Worse: `Everything You Need to Know About GESY`
+
 ---
 
 ## WHAT TO AUDIT (YOUR DELIVERABLES)
@@ -98,9 +116,13 @@ For each article, suggest improvements in these categories:
 
 **D. Structural SEO**
 - Is the heading hierarchy optimal for search intent?
+- Does the title/H1 clearly match the primary query, or is it written like an editorial feature?
+- Is the opening paragraph explicitly aligned with the query within the first 100 words?
+- Is the article targeting **one primary intent** and a small set of closely related secondary intents, rather than trying to rank for multiple unrelated themes?
 - Are there featured snippet opportunities (definition boxes, numbered lists, tables)?
 - Are internal links to other blog articles or service pages present?
 - Is the meta description compelling and within 155 characters?
+- Does the article create a clear bridge from informational intent to a relevant local/commercial next step in Nicosia or Cyprus?
 
 ### 3. REFERENCE INTEGRATION RECOMMENDATIONS
 
@@ -160,6 +182,12 @@ When verifying claims or finding sources:
 9. **DO** suggest Schema.org improvements for the article structured data when relevant (e.g., adding `citation` property, `MedicalWebPage` type)
 10. **DO** consider that each article exists in both English and Greek — note if evidence integration approach should differ by language
 11. **DO** flag articles with fewer than 5 cited sources with DOI — minimum 5 real references per article is a hard requirement
+12. **DO** flag headlines that are too editorial, too vague, or too curiosity-led for the target query
+13. **DO** recommend a replacement trio whenever needed: `SEO title`, `visible H1`, and `meta description`
+14. **DO** prefer query-matching patterns such as `condition + treatment`, `condition + causes`, `condition + recovery timeline`, `service + location`, `GESY + process/cost/referral`
+15. **DO NOT** let a Community / awareness angle dominate an article that is supposed to capture clinical or commercial search demand
+16. **DO** check whether the article introduction establishes local relevance naturally when appropriate (`in Cyprus`, `in Nicosia`, `at our clinic in Strovolos`)
+17. **DO** recommend demoting, merging, or deprioritizing articles whose primary value is brand/community rather than patient search demand
 
 ---
 
@@ -185,6 +213,16 @@ URL: [Article URL]
 
 ✏️ CONTENT IMPROVEMENTS
 [Categorized suggestions]
+
+🔎 SEARCH INTENT ALIGNMENT
+- Primary query: [...]
+- Secondary queries: [...]
+- Intent match score: [X/10]
+- Current title/H1 issue: [...]
+- Recommended SEO title: [...]
+- Recommended H1: [...]
+- Recommended meta description: [...]
+- Recommended opening paragraph angle: [...]
 
 📚 REFERENCE INTEGRATION PLAN
 [Recommended approach with examples]

@@ -240,6 +240,56 @@
 - Минимум: `headline`, `description`, `image`, `author`, `publisher`, `datePublished`, `dateModified`, `mainEntityOfPage`
 - Желательно: `reviewedBy` (если reviewer указан на странице)
 
+---
+
+## 8. Blog Search-Intent Rules
+
+### Блог-статьи пишутся под поиск, а не как editorial features
+
+- у каждой статьи должен быть **один primary query**
+- title и H1 должны явно отражать этот query
+- curiosity-driven формулировка допустима только как вторичный слой, но не вместо query match
+- если пользователь не может по title сразу понять, что статья отвечает именно на его запрос, title считается слабым
+
+### Формула для blog titles
+
+Предпочтительные паттерны:
+- `Condition + Treatment`
+- `Condition + Causes`
+- `Condition + Recovery Timeline`
+- `Condition + Exercises`
+- `Service / Topic + Cyprus`
+- `Service / Topic + Nicosia`
+- `GESY + referral / cost / sessions / coverage`
+
+Примеры:
+- хорошо: `ACL Recovery Timeline for Athletes in Cyprus`
+- хорошо: `Office Ergonomics for Neck and Back Pain: What Actually Helps`
+- хорошо: `GESY Physiotherapy in Cyprus: Referral, Sessions and Cost`
+- слабо: `What 90% of Athletes Get Wrong About Recovery`
+- слабо: `Why Your Desk Setup Is Causing Pain`
+
+### Правила для intro
+
+- первый абзац должен назвать primary query или его близкий вариант в явной форме
+- в первых 100 словах нужно подтвердить intent: что это за проблема, для кого статья, что читатель узнает
+- для локально ценных тем желательно естественно добавить `Cyprus`, `Nicosia` или `Strovolos`, если это помогает intent и не выглядит спамно
+
+### Rule: one article, one intent
+
+- не смешивать в одной статье несколько равноправных intent'ов
+- community / brand storytelling не должно доминировать над search intent, если статья индексируется как SEO asset
+- если контент в первую очередь брендовый или событийный, он не должен маскироваться под high-intent clinical article
+
+### CTA bridge
+
+- каждая blog-статья должна иметь следующий шаг, логически связанный с intent страницы
+- пример:
+  - GESY article → помощь с referral / booking under GESY
+  - ACL article → sports rehab assessment
+  - office ergonomics article → back/neck pain physio booking
+  - padel article → sports physio / injury assessment
+
 ### Team / Clinician Pages
 - `Person` или `ProfilePage`
 - Минимум: `name`, `jobTitle`, `description`, `image`, `url`

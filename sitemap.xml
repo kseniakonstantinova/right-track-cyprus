@@ -652,6 +652,26 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings.html"/>
+        <lastmod>2026-04-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings-el.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings.html"/>
+        <xhtml:link rel="alternate" hreflang="el" href="https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings-el.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings.html"/>
+        <lastmod>2026-04-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Resources: muay-thai-injury-prevention-guide removed — canonical is seminar-muay-thai -->
 
     <!-- Legal pages removed from sitemap — noindex + blocked in robots.txt -->

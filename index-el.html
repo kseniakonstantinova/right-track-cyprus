@@ -164,25 +164,25 @@
                 "@type": "Review",
                 "author": {"@type": "Person", "name": "Igor Sharafutdinov"},
                 "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-                "reviewBody": "I play padel and at some point developed plantar fasciitis. I underwent a course of physiotherapy at Right Track, and after just two sessions, I noticed a significant increase in range of motion, the pain started to subside, and I was on the mend. I received a personalized set of exercises, and after a few months of regular independent practice, the problem completely resolved."
+                "reviewBody": "Παίζω padel και κάποια στιγμή ανέπτυξα πελματιαία απονευρωσίτιδα. Έκανα φυσικοθεραπεία στο Right Track και μετά από μόλις δύο συνεδρίες, παρατήρησα σημαντική αύξηση στο εύρος κίνησης, ο πόνος άρχισε να υποχωρεί και ήμουν σε καλό δρόμο. Έλαβα ένα εξατομικευμένο σετ ασκήσεων και μετά από λίγους μήνες τακτικής αυτόνομης εξάσκησης, το πρόβλημα λύθηκε πλήρως."
             },
             {
                 "@type": "Review",
                 "author": {"@type": "Person", "name": "Ksenia Konstantinova"},
                 "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-                "reviewBody": "Went to Antonis with my lower back. It had been bothering me for about two weeks, couldn't sit properly or bend down without wincing. He sorted it out in two sessions: some exercises, some electrical stimulation, and a massage at the end of each one. He's got hands that actually find where the tension is. By the second session it was noticeably better. Now he's my go-to — if anything hurts, there's no question who I'm seeing."
+                "reviewBody": "Πήγα στον Αντώνη με πρόβλημα στη μέση. Με ενοχλούσε περίπου δύο εβδομάδες, δεν μπορούσα να κάτσω σωστά ούτε να σκύψω χωρίς πόνο. Το έλυσε σε δύο συνεδρίες: κάποιες ασκήσεις, ηλεκτροθεραπεία και μασάζ στο τέλος κάθε μίας. Έχει χέρια που βρίσκουν ακριβώς πού είναι η ένταση. Από τη δεύτερη συνεδρία ήταν αισθητά καλύτερα. Τώρα είναι ο μόνιμος φυσικοθεραπευτής μου — αν πονάω κάπου, δεν υπάρχει ερώτημα σε ποιον θα πάω."
             },
             {
                 "@type": "Review",
                 "author": {"@type": "Person", "name": "Antrea Demetriou"},
                 "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-                "reviewBody": "Came to the physio two days ago with no expectations. I had a pain at the outside of my foot for 3 months now. After only one session, the difference was phenomenal. Highly recommend."
+                "reviewBody": "Πήγα στον φυσικοθεραπευτή πριν δύο μέρες χωρίς προσδοκίες. Είχα πόνο στο εξωτερικό του ποδιού μου εδώ και 3 μήνες. Μετά από μία μόνο συνεδρία, η διαφορά ήταν εντυπωσιακή. Το συνιστώ ανεπιφύλακτα."
             },
             {
                 "@type": "Review",
                 "author": {"@type": "Person", "name": "Dem Att"},
                 "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-                "reviewBody": "Great physios! Very friendly and they helped me a lot with my knee! Highly recommended!!"
+                "reviewBody": "Εξαιρετικοί φυσικοθεραπευτές! Πολύ φιλικοί και με βοήθησαν πάρα πολύ με το γόνατό μου! Τους συνιστώ ανεπιφύλακτα!!"
             },
             {
                 "@type": "Review",
@@ -312,70 +312,44 @@
             flex-wrap: wrap;
         }
 
-        
-
-        /* Stats Section */
-        .stats {
+        /* Trust Bar */
+        .trust-bar {
             background: var(--navy);
-            padding: 80px 40px;
+            padding: 0;
         }
-
-        .stats-container {
+        .trust-bar-container {
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
-            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
         }
-
-        .stat-item {
-            background: var(--navy);
-            padding: 50px 40px;
+        .trust-bar-item {
+            flex: 1;
+            padding: 40px 20px;
             text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
-
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--orange);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+        .trust-bar-item:last-child {
+            border-right: none;
         }
-
-        .stat-item:hover::before {
-            transform: scaleX(1);
-        }
-
-        .stat-item:hover {
-            background: rgba(255, 107, 53, 0.05);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
+        .trust-bar-item .accent {
+            color: var(--orange);
             font-weight: 800;
-            color: var(--orange);
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-            line-height: 1;
+            font-size: 1.8rem;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
         }
-
-        .stat-number span {
-            color: var(--orange);
-        }
-
-        .stat-label {
-            font-size: 1.05rem;
+        .trust-bar-item .label {
             color: var(--white);
+            font-size: 0.95rem;
             font-weight: 500;
-            line-height: 1.5;
-            opacity: 0.9;
+            opacity: 0.85;
         }
 
         /* Feature Section */
@@ -2449,8 +2423,12 @@
                 font-size: 2.5rem;
             }
 
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
+            .trust-bar-container {
+                flex-wrap: wrap;
+            }
+            .trust-bar-item {
+                flex: 1 1 45%;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
             .contact-grid {
@@ -2606,9 +2584,10 @@
                 padding: 0;
             }
 
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .trust-bar-item {
+                flex: 1 1 100%;
+                font-size: 0.85rem;
+                padding: 14px 16px;
             }
 
             .feature-section {
@@ -2745,385 +2724,6 @@
             }
         }
 
-        /* Promo Carousel */
-        .promo-carousel {
-            position: relative;
-            overflow: hidden;
-            background: var(--navy);
-        }
-
-        .promo-slide {
-            background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.6s ease;
-        }
-
-        .promo-slide.active {
-            position: relative;
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .promo-slide-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            height: 420px;
-            overflow: hidden;
-        }
-
-        .promo-slide-text {
-            padding: 60px 40px;
-            color: var(--white);
-        }
-
-        .promo-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--orange);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .promo-badge .pulse {
-            width: 8px;
-            height: 8px;
-            background: var(--white);
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .promo-slide-text .promo-heading {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            color: var(--white);
-        }
-
-        .promo-slide-text .promo-heading span {
-            color: var(--orange);
-        }
-
-        .promo-slide-text .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-
-        .promo-cta-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .promo-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--orange);
-            color: var(--white);
-            padding: 16px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
-        }
-
-        .promo-cta:hover {
-            background: var(--white);
-            color: var(--navy);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
-        }
-
-        .promo-cta-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            opacity: 0.85;
-            transition: opacity 0.3s;
-        }
-
-        .promo-cta-secondary:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        .promo-slide-image {
-            height: 100%;
-            min-height: 400px;
-            position: relative;
-        }
-
-        .promo-slide-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
-
-        .promo-features {
-            position: absolute;
-            left: 20px;
-            top: 30%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 2;
-        }
-
-        .promo-feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--navy);
-            padding: 10px 18px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: none;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .instructor-profile-link {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            color: var(--white);
-            background: rgba(0,0,0,0.5);
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.3s;
-            z-index: 2;
-        }
-
-        .instructor-profile-link:hover {
-            background: rgba(0,0,0,0.7);
-        }
-
-        /* Carousel Navigation */
-        .carousel-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 0;
-        }
-
-        .carousel-dot.active {
-            background: var(--orange);
-            border-color: var(--orange);
-            transform: scale(1.2);
-        }
-
-        .carousel-dot:hover {
-            background: rgba(255, 255, 255, 0.7);
-        }
-
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.3);
-            color: var(--white);
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            font-size: 1.3rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .carousel-arrow:hover {
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .carousel-arrow.prev {
-            left: 15px;
-        }
-
-        .carousel-arrow.next {
-            right: 15px;
-        }
-
-        .carousel-progress {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-            background: var(--orange);
-            z-index: 10;
-            transition: width 0.1s linear;
-        }
-
-        @media (max-width: 1024px) {
-            .promo-slide-content {
-                grid-template-columns: 1fr;
-                height: auto;
-            }
-
-            .promo-slide-text {
-                padding: 40px 30px;
-                text-align: center;
-            }
-
-            .promo-slide-text .promo-heading {
-                font-size: 2.2rem;
-            }
-
-            .promo-cta-group {
-                justify-content: center;
-            }
-
-            .promo-features {
-                left: 15px;
-            }
-
-            .promo-slide-image {
-                min-height: 300px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .promo-slide-text .promo-heading {
-                font-size: 1.8rem;
-            }
-
-            .promo-slide-text .subtitle {
-                font-size: 1rem;
-            }
-
-            .promo-feature {
-                font-size: 0.85rem;
-                padding: 8px 14px;
-            }
-
-            .promo-features {
-                left: 10px;
-            }
-
-            .promo-slide-image {
-                min-height: 250px;
-                position: relative;
-            }
-
-            .instructor-profile-link {
-                bottom: 10px;
-                right: 10px;
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-
-            .carousel-arrow {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-
-            .carousel-dots {
-                bottom: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .promo-slide-text {
-                padding: 30px 20px;
-            }
-
-            .promo-slide-text .promo-heading {
-                font-size: 1.5rem;
-            }
-
-            .promo-slide-text .subtitle {
-                font-size: 0.9rem;
-            }
-
-            .promo-features {
-                gap: 6px;
-                left: 8px;
-            }
-
-            .promo-feature {
-                font-size: 0.75rem;
-                padding: 5px 10px;
-            }
-
-            .promo-cta {
-                padding: 14px 24px;
-                font-size: 1rem;
-            }
-
-            .promo-slide-image {
-                min-height: 200px;
-            }
-
-            .instructor-profile-link {
-                bottom: 8px;
-                right: 8px;
-                padding: 5px 10px;
-                font-size: 0.75rem;
-            }
-
-            .carousel-arrow {
-                width: 32px;
-                height: 32px;
-                font-size: 0.9rem;
-            }
-
-            .carousel-arrow.prev { left: 8px; }
-            .carousel-arrow.next { right: 8px; }
-        }
     </style>
 </head>
 <body>
@@ -3163,132 +2763,12 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
 
-    <!-- Promo Carousel -->
-    <section class="promo-carousel" id="promoCarousel">
-
-        <!-- Slide 1: Οδηγός Πρόληψης Τραυματισμών -->
-        <div class="promo-slide active" data-slide="0">
-            <div class="promo-slide-content">
-                <div class="promo-slide-text">
-                    <div class="promo-badge">
-                        <span class="pulse"></span>
-                        Δωρεάν Υλικό
-                    </div>
-                    <p class="promo-heading">Προπονήσου.<br>Αγωνίσου.<br><span>Μείνε Αλώβητος.</span></p>
-                    <p class="subtitle" style="margin-top: 24px; font-size: 1.05rem;">Πρόληψη Τραυματισμών &amp; Απόδοση<br><span style="font-size: 0.85rem; opacity: 0.7;">Στιγμιότυπα Σεμιναρίου &middot; 4 Απριλίου 2026</span></p>
-                </div>
-                <div class="promo-slide-image" style="position: relative;">
-                    <picture><source srcset="assets/images/banners/seminar-muay-thai.webp" type="image/webp"><img src="assets/images/banners/seminar-muay-thai.jpg" alt="Σεμινάριο Πρόληψης Τραυματισμών για Μαχητές — Αντώνης Πέτρης" width="1600" height="1200" fetchpriority="high"></picture>
-                    <div style="position: absolute; inset: 0; background: rgba(10,22,40,0.6); border-radius: inherit; display: flex; align-items: center; justify-content: center;">
-                        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 48px 40px; text-align: center; max-width: 500px; width: 90%;">
-                            <div style="width: 80px; height: 80px; background: rgba(255,107,53,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            </div>
-                            <a href="assets/downloads/Fighter_Screening_Seminar_GR.pdf" class="promo-cta" download style="display: inline-block; padding: 16px 48px; background: var(--orange); color: #fff; font-weight: 700; border-radius: 50px; text-decoration: none; font-size: 1.1rem;">Κατέβασε τον Οδηγό</a>
-                            <p style="margin-top: 16px; color: rgba(255,255,255,0.6); font-size: 0.9rem;">PDF &middot; Δωρεάν &middot; Χωρίς εγγραφή</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 2: Έρευνα Τραυματισμών Padel -->
-        <div class="promo-slide" data-slide="1">
-            <div class="promo-slide-content">
-                <div class="promo-slide-text">
-                    <div class="promo-badge">
-                        <span class="pulse"></span>
-                        Έρευνα 2026
-                    </div>
-                    <p class="promo-heading">Ρωτήσαμε Παίκτες Padel.<br><span>Το 100% Ανέφερε Πόνο.</span></p>
-                    <p class="subtitle"><strong>100%</strong> των παικτών ανέφεραν πόνο ή τραυματισμό. <strong>86%</strong> έχασαν χρόνο παιχνιδιού. <strong>57%</strong> δεν κάνουν ποτέ διατάσεις. Βοήθησε μας να μεγαλώσουμε αυτή την έρευνα.</p>
-                    <div class="promo-cta-group">
-                        <a href="https://forms.gle/b4CKKXroahmNNcLE7" target="_blank" class="promo-cta">Συμπλήρωσε το Ερωτηματολόγιο (3 λεπτά) →</a>
-                    </div>
-                </div>
-                <div class="promo-slide-image">
-                    <picture><source srcset="assets/images/banners/padel-research.webp" type="image/webp"><img src="assets/images/banners/padel-research.jpg" alt="Έρευνα Τραυματισμών Padel 2026 — Right Track Physio" width="1280" height="853" loading="lazy"></picture>
-                    <div class="promo-features">
-                        <span class="promo-feature">100% Είχαν Πόνο</span>
-                        <span class="promo-feature">57% Χωρίς Διατάσεις</span>
-                        <span class="promo-feature">Ανώνυμη Έρευνα</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3: Padel Camp -->
-        <div class="promo-slide" data-slide="2">
-            <div class="promo-slide-content">
-                <div class="promo-slide-text">
-                    <div class="promo-badge">
-                        <span class="pulse"></span>
-                        13–19 Απριλίου 2026
-                    </div>
-                    <p class="promo-heading">The Padel Camp<br><span>Cyprus 2026</span></p>
-                    <p class="subtitle">5ήμερο εντατικό camp padel με φυσιοθεραπευτή επί τόπου. Αποκατάσταση, πρόληψη τραυματισμών & βελτιστοποίηση απόδοσης.</p>
-                    <div class="promo-cta-group">
-                        <a href="pages/padel-camp-el.html" class="promo-cta">Μάθετε Περισσότερα →</a>
-                        <a href="pages/tony-profile-el.html" class="promo-cta-secondary">Γνωρίστε τον Φυσιοθεραπευτή →</a>
-                    </div>
-                </div>
-                <div class="promo-slide-image">
-                    <picture><source srcset="assets/images/banners/padel-camp-banner.webp" type="image/webp"><img src="assets/images/banners/padel-camp-banner.jpg" alt="The Padel Camp Cyprus 2026 — Αθλητική Φυσιοθεραπεία επί Τόπου" width="1101" height="769" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></picture>
-                    <div class="promo-features">
-                        <span class="promo-feature">5ήμερο Camp</span>
-                        <span class="promo-feature">Φυσιοθεραπεία επί Τόπου</span>
-                        <span class="promo-feature">Λεμεσός</span>
-                    </div>
-                    <a href="pages/tony-profile-el.html" class="instructor-profile-link">Προφίλ Εκπαιδευτή</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: Κλινικό Pilates -->
-        <div class="promo-slide" data-slide="3">
-            <div class="promo-slide-content">
-                <div class="promo-slide-text">
-                    <div class="promo-badge">
-                        <span class="pulse"></span>
-                        Νέα Τμήματα Διαθέσιμα
-                    </div>
-                    <p class="promo-heading">Κλινικό <span>Mat Pilates</span><br>με την Alice</p>
-                    <p class="subtitle">Pilates καθοδηγούμενο από φυσιοθεραπευτή για αποκατάσταση, δύναμη & κινητικότητα. Μικρές ομάδες, μεγάλα αποτελέσματα.</p>
-                    <div class="promo-cta-group">
-                        <a href="pages/booking.html?service=clinical-pilates&therapist=alice&lang=el" class="promo-cta">Κράτηση από €80/μήνα →</a>
-                        <a href="pages/alice-profile-el.html" class="promo-cta-secondary">Γνωρίστε την Alice →</a>
-                    </div>
-                </div>
-                <div class="promo-slide-image">
-                    <picture><source srcset="assets/images/banners/pilates-launch-alice.webp" type="image/webp"><img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian — Εκπαιδεύτρια Κλινικού Pilates" width="1280" height="853" loading="lazy"></picture>
-                    <div class="promo-features">
-                        <span class="promo-feature">Προγεννητικό & Μεταγεννητικό</span>
-                        <span class="promo-feature">Αρχάριοι Ευπρόσδεκτοι</span>
-                        <span class="promo-feature">Μικρές Ομάδες</span>
-                    </div>
-                    <a href="pages/alice-profile-el.html" class="instructor-profile-link">Προφίλ Εκπαιδευτή</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-arrow prev" onclick="changeSlide(-1)" aria-label="Προηγούμενο slide">&#10094;</button>
-        <button class="carousel-arrow next" onclick="changeSlide(1)" aria-label="Επόμενο slide">&#10095;</button>
-        <div class="carousel-dots">
-            <button class="carousel-dot active" data-slide="0" onclick="goToSlide(0)" aria-label="Slide 1"></button>
-            <button class="carousel-dot" data-slide="1" onclick="goToSlide(1)" aria-label="Slide 2"></button>
-            <button class="carousel-dot" data-slide="2" onclick="goToSlide(2)" aria-label="Slide 3"></button>
-            <button class="carousel-dot" data-slide="3" onclick="goToSlide(3)" aria-label="Slide 4"></button>
-        </div>
-        <div class="carousel-progress" id="carouselProgress"></div>
-    </section>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Φυσιοθεραπευτής στη <span class="highlight">Λευκωσία</span></h1>
-                <p>Το Right Track είναι κέντρο φυσιοθεραπείας και αποκατάστασης στην Κύπρο για τραυματισμούς, διαχείριση πόνου και ασφαλή επιστροφή στην άσκηση.</p>
+                <p>Το Right Track είναι κέντρο φυσιοθεραπείας και αθλητικής αποκατάστασης στον Στρόβολο, Λευκωσία. Αποκατάσταση τραυματισμών, διαχείριση πόνου και επιστροφή στην άσκηση — με μετρήσιμα αποτελέσματα.</p>
                 <div class="cta-buttons">
                     <a href="pages/booking.html?lang=el" class="btn btn-primary">Κλείστε Ραντεβού Online</a>
                     <a href="#services" class="btn btn-secondary">Εξερευνήστε τις Υπηρεσίες</a>
@@ -3300,25 +2780,13 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number">Αποτελέσματα</div>
-                <div class="stat-label">Προσανατολισμός</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">ΓΕΣΥ</div>
-                <div class="stat-label">Εγγεγραμμένοι</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Κρατήσεις</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">Για όλους</div>
-                <div class="stat-label">Αθλητές & Ενεργοί</div>
-            </div>
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-bar-container">
+            <div class="trust-bar-item"><span class="accent">5.0★</span><span class="label">Κριτικές Google</span></div>
+            <div class="trust-bar-item"><span class="accent">ΓΕΣΥ</span><span class="label">Εγγεγραμμένοι</span></div>
+            <div class="trust-bar-item"><span class="accent">Στρόβολος</span><span class="label">Λευκωσία, Κύπρος</span></div>
+            <div class="trust-bar-item"><span class="accent">24/7</span><span class="label">Ηλεκτρονικές Κρατήσεις</span></div>
         </div>
     </section>
 
@@ -3474,234 +2942,6 @@
             </div>
             <div class="feature-visual">
                 <picture><source srcset="assets/images/services/homecare-rehab.webp" type="image/webp"><img src="assets/images/services/homecare-rehab.jpeg" alt="Φυσιοθεραπεία κατ' Οίκον" width="1536" height="1024" loading="lazy"></picture>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="section-header">
-            <h2>Τι λένε οι <span>πελάτες μας</span></h2>
-            <a class="google-rating-summary" href="https://www.google.com/maps/place/Right+Track/@35.1393578,33.3390011,17z/data=!4m8!3m7!1s0x14de1b003aee3f73:0x3db6b21329549c82!8m2!3d35.1393578!4d33.3415814!9m1!1b1!16s%2Fg%2F11ygqh2wv5?hl=en&entry=ttu&g_ep=EgoyMDI2MDIxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-                <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                <span class="google-rating-number">5.0</span>
-                <div class="google-rating-details">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="review-count">Δείτε όλες τις κριτικές μας στο Google &#8594;</span>
-                </div>
-            </a>
-        </div>
-
-        <div class="testimonials-wrapper">
-            <button class="testimonials-nav testimonials-nav--prev" aria-label="Προηγούμενες κριτικές">&#10094;</button>
-            <button class="testimonials-nav testimonials-nav--next" aria-label="Επόμενες κριτικές">&#10095;</button>
-        <div class="testimonials-container">
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text">"I play padel and at some point developed plantar fasciitis. I underwent a course of physiotherapy at Right Track, and after just two sessions, I noticed a significant increase in range of motion, the pain started to subside, and I was on the mend. I received a personalized set of exercises, and after a few months of regular independent practice, the problem completely resolved."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">IS</div>
-                    <div class="testimonial-info">
-                        <h4>Igor Sharafutdinov</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 2 εβδομάδες πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text" lang="el">"Εξαιρετικός επαγγελματίας! Επισκέφτηκα το φυσικοθεραπευτήριο για έναν έντονο πόνο στο γόνατο. Μετά από ενδελεχή αξιολόγηση, ακολουθήσαμε ένα στοχευμένο πρόγραμμα θεραπείας. Ο Αντώνης είναι γνώστης, ευγενικός και πραγματικά νοιάζεται για την αποκατάσταση του ασθενή. Τον συνιστώ ανεπιφύλακτα!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">AM</div>
-                    <div class="testimonial-info">
-                        <h4>Anastasis Markou</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 3 εβδομάδες πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text" lang="el">"Εξαιρετικός επαγγελματίας! Μετά από λίγες συνεδρίες, νιώθω πολύ καλύτερα! Ο χώρος είναι πεντακάθαρος και ο θεραπευτής επεξήγησε αναλυτικά το πρόγραμμα αποκατάστασης. Συστήνεται ανεπιφύλακτα για την εξειδικευμένη γνώση και την ευγένειά του!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">IK</div>
-                    <div class="testimonial-info">
-                        <h4>Iwsifina Koumettou</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text">"Went to Antonis with my lower back. It had been bothering me for about two weeks, couldn’t sit properly or bend down without wincing. He sorted it out in two sessions: some exercises, some electrical stimulation, and a massage at the end of each one. He’s got hands that actually find where the tension is. By the second session it was noticeably better. Now he’s my go-to — if anything hurts, there’s no question who I’m seeing."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">KK</div>
-                    <div class="testimonial-info">
-                        <h4>Ksenia Konstantinova</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text">"Came to the physio two days ago with no expectations. I had a pain at the outside of my foot for 3 months now. After only one session, the difference was phenomenal. Highly recommend."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">AD</div>
-                    <div class="testimonial-info">
-                        <h4>Antrea Demetriou</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text">"Great physios! Very friendly and they helped me a lot with my knee! Highly recommended!!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">DA</div>
-                    <div class="testimonial-info">
-                        <h4>Dem Att</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 2 μήνες πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text" lang="el">"Καταπληκτικός φυσιοθεραπευτής! Με βοήθησε πάρα πολύ και με έκανε να νιώσω άνετα από την πρώτη στιγμή. Τον συστήνω ανεπιφύλακτα!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">ES</div>
-                    <div class="testimonial-info">
-                        <h4>Evagoras Savva</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 2 μήνες πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text" lang="el">"Είμαι ο πατέρας του Αντώνη. Θα προσπαθήσω να είμαι όσο πιο αληθινός, αντικειμενικός για το δικό του καλό. Έκανα 2 χειρουργίες — πρόσκρουση ώμου κ ρήξη μηνίσκου, ACL, MCL και κύστη Baker. Ανέλαβε πλήρως τη ευθύνη αποκατάστασης μου αν και είχα τους ενδοιασμούς μου, ειδικά στο ώμο — ήταν στον 1 χρόνο της επαγγελματικής του σταδιοδρομίας... Όμως η αυτοπεποίθησή του και ο τρόπος διαχείρισης της κατάστασής μου εξάλειψε άμεσα οποιαδήποτε φοβίες και ανασφάλειες. Η απάντηση ήταν το αποτέλεσμα. Το ίδιο ακολούθησε 2 χρόνια μετά με το γόνατο. Και πιστέψετε με — δεν είναι εύκολο να πείσεις ένα πατέρα. Μπορώ να εγγυηθώ για την εντιμότητα κ το αληθινό του Αντώνη."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">MP</div>
-                    <div class="testimonial-info">
-                        <h4>Michali Petri</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 3 μήνες πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text" lang="el">"Άριστος επαγγελματίας, εξαιρετικός χαρακτήρας, λεβέντης, μπράβο σου — συνέχισε με τον ίδιο ζήλο!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">PP</div>
-                    <div class="testimonial-info">
-                        <h4>Panayiotis Polycarpou</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 3 μήνες πριν</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
-                </div>
-                <p class="testimonial-text">"I was taking a few massage sessions to fix my backache and it’s really helped a lot. Recommend!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">RT</div>
-                    <div class="testimonial-info">
-                        <h4>Receipt Tenerife</h4>
-                        <p>Κριτική Google <span class="testimonial-date">· 4 μήνες πριν</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <!-- CTA Banner -->
-    <section class="cta-banner">
-        <div class="cta-banner-container">
-            <div class="cta-banner-content">
-                <h2>Όταν η αποκατάσταση <span>γίνεται στρατηγική.</span></h2>
-                <div class="cta-buttons">
-                    <a href="pages/booking.html?lang=el" class="btn btn-primary">Κλείστε Online 24/7</a>
-                    <a href="#contact" class="btn btn-secondary">Επικοινωνήστε μαζί μας</a>
-                </div>
-            </div>
-            <div class="cta-banner-image">
-                <picture><source srcset="assets/images/logos/rt-badge.webp" type="image/webp"><img src="assets/images/logos/rt-badge.png" alt="Right Track" width="409" height="230" loading="lazy"></picture>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="section-header">
-            <h2>Γνωρίστε την <span>ομάδα μας</span></h2>
-            <p>Ειδικοί κλινικοί αφοσιωμένοι στην ανάρρωση και απόδοσή σας</p>
-        </div>
-
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="team-photo">
-                    <picture><source srcset="assets/images/team/tony-photo.webp" type="image/webp"><img src="assets/images/team/tony-photo.jpg" alt="Αντώνης Πέτρη" width="712" height="800" loading="lazy"></picture>
-                </div>
-                <div class="team-content">
-                    <h3>Αντώνης Πέτρη</h3>
-                    <p class="role">Συνιδρυτής & Επικεφαλής Κλινικός</p>
-                    <div class="team-credentials">
-                        <p>BSc Φυσιοθεραπεία, Ειδικός Αθλητικής & Ορθοπεδικής Αποκατάστασης. Επόπτης Κλινικής Πρακτικής στο Πανεπιστήμιο Frederick (Καρδιο, Μυοσκελετική, Νευρο Αποκατάσταση).</p>
-                    </div>
-                    <p class="gesy-reg"><a href="https://www.gesy.org.cy" target="_blank" rel="noopener noreferrer">ΓΕΣΥ</a> Αρ.: A2825</p>
-                    <p class="team-affiliations" style="font-size: 0.85rem; color: var(--text-gray); margin: 5px 0;">Clinical Supervisor at <a href="https://www.frederick.ac.cy" target="_blank" rel="noopener noreferrer">Frederick University</a></p>
-                    <a href="pages/tony-profile-el.html">Δείτε το Πλήρες Προφίλ →</a>
-                </div>
-            </div>
-
-            <div class="team-member">
-                <div class="team-photo">
-                    <picture><source srcset="assets/images/team/alice-photo.webp" type="image/webp"><img src="assets/images/team/alice-photo.jpg" alt="Alice Kazanjian" width="579" height="750" loading="lazy"></picture>
-                </div>
-                <div class="team-content">
-                    <h3>Alice Kazanjian</h3>
-                    <p class="role">Εκπαιδεύτρια Κλινικού Pilates</p>
-                    <div class="team-credentials">
-                        <p>Πιστοποιημένη εκπαιδεύτρια κλινικού Pilates με εξειδίκευση σε mat Pilates υπό την καθοδήγηση φυσιοθεραπευτή, κίνηση εστιασμένη στην αποκατάσταση και αθλητική προετοιμασία για βελτιωμένη δύναμη και κινητικότητα.</p>
-                    </div>
-                    <p class="gesy-reg"><a href="https://www.gesy.org.cy" target="_blank" rel="noopener noreferrer">ΓΕΣΥ</a> Αρ.: A3509</p>
-                    <a href="pages/alice-profile-el.html">Δείτε το Πλήρες Προφίλ →</a>
-                </div>
             </div>
         </div>
     </section>
@@ -3876,6 +3116,219 @@
                     <p>Δεν είστε σίγουροι αν δικαιούστε, ή μπερδεύεστε με τους κωδικούς παραπομπής; Επικοινωνήστε μαζί μας — θα σας καθοδηγήσουμε σε όλη τη διαδικασία.</p>
                 </div>
                 <a href="tel:+35799126824" class="btn btn-primary" style="white-space: nowrap;">Καλέστε +357 99 126 824</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>Τι λένε οι <span>πελάτες μας</span></h2>
+            <a class="google-rating-summary" href="https://www.google.com/maps/place/Right+Track/@35.1393578,33.3390011,17z/data=!4m8!3m7!1s0x14de1b003aee3f73:0x3db6b21329549c82!8m2!3d35.1393578!4d33.3415814!9m1!1b1!16s%2Fg%2F11ygqh2wv5?hl=en&entry=ttu&g_ep=EgoyMDI2MDIxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <span class="google-rating-number">5.0</span>
+                <div class="google-rating-details">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="review-count">Δείτε όλες τις κριτικές μας στο Google &#8594;</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="testimonials-wrapper">
+            <button class="testimonials-nav testimonials-nav--prev" aria-label="Προηγούμενες κριτικές">&#10094;</button>
+            <button class="testimonials-nav testimonials-nav--next" aria-label="Επόμενες κριτικές">&#10095;</button>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Παίζω padel και κάποια στιγμή ανέπτυξα πελματιαία απονευρωσίτιδα. Έκανα φυσικοθεραπεία στο Right Track και μετά από μόλις δύο συνεδρίες, παρατήρησα σημαντική αύξηση στο εύρος κίνησης, ο πόνος άρχισε να υποχωρεί και ήμουν σε καλό δρόμο. Έλαβα ένα εξατομικευμένο σετ ασκήσεων και μετά από λίγους μήνες τακτικής αυτόνομης εξάσκησης, το πρόβλημα λύθηκε πλήρως."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">IS</div>
+                    <div class="testimonial-info">
+                        <h4>Igor Sharafutdinov</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 2 εβδομάδες πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Εξαιρετικός επαγγελματίας! Επισκέφτηκα το φυσικοθεραπευτήριο για έναν έντονο πόνο στο γόνατο. Μετά από ενδελεχή αξιολόγηση, ακολουθήσαμε ένα στοχευμένο πρόγραμμα θεραπείας. Ο Αντώνης είναι γνώστης, ευγενικός και πραγματικά νοιάζεται για την αποκατάσταση του ασθενή. Τον συνιστώ ανεπιφύλακτα!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AM</div>
+                    <div class="testimonial-info">
+                        <h4>Anastasis Markou</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 3 εβδομάδες πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Εξαιρετικός επαγγελματίας! Μετά από λίγες συνεδρίες, νιώθω πολύ καλύτερα! Ο χώρος είναι πεντακάθαρος και ο θεραπευτής επεξήγησε αναλυτικά το πρόγραμμα αποκατάστασης. Συστήνεται ανεπιφύλακτα για την εξειδικευμένη γνώση και την ευγένειά του!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">IK</div>
+                    <div class="testimonial-info">
+                        <h4>Iwsifina Koumettou</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Πήγα στον Αντώνη με πρόβλημα στη μέση. Με ενοχλούσε περίπου δύο εβδομάδες, δεν μπορούσα να κάτσω σωστά ούτε να σκύψω χωρίς πόνο. Το έλυσε σε δύο συνεδρίες: κάποιες ασκήσεις, ηλεκτροθεραπεία και μασάζ στο τέλος κάθε μίας. Έχει χέρια που βρίσκουν ακριβώς πού είναι η ένταση. Από τη δεύτερη συνεδρία ήταν αισθητά καλύτερα. Τώρα είναι ο μόνιμος φυσικοθεραπευτής μου — αν πονάω κάπου, δεν υπάρχει ερώτημα σε ποιον θα πάω."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">KK</div>
+                    <div class="testimonial-info">
+                        <h4>Ksenia Konstantinova</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Πήγα στον φυσικοθεραπευτή πριν δύο μέρες χωρίς προσδοκίες. Είχα πόνο στο εξωτερικό του ποδιού μου εδώ και 3 μήνες. Μετά από μία μόνο συνεδρία, η διαφορά ήταν εντυπωσιακή. Το συνιστώ ανεπιφύλακτα."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AD</div>
+                    <div class="testimonial-info">
+                        <h4>Antrea Demetriou</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 1 μήνα πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Εξαιρετικοί φυσικοθεραπευτές! Πολύ φιλικοί και με βοήθησαν πάρα πολύ με το γόνατό μου! Τους συνιστώ ανεπιφύλακτα!!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">DA</div>
+                    <div class="testimonial-info">
+                        <h4>Dem Att</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 2 μήνες πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Καταπληκτικός φυσιοθεραπευτής! Με βοήθησε πάρα πολύ και με έκανε να νιώσω άνετα από την πρώτη στιγμή. Τον συστήνω ανεπιφύλακτα!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">ES</div>
+                    <div class="testimonial-info">
+                        <h4>Evagoras Savva</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 2 μήνες πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Είμαι ο πατέρας του Αντώνη. Θα προσπαθήσω να είμαι όσο πιο αληθινός, αντικειμενικός για το δικό του καλό. Έκανα 2 χειρουργίες — πρόσκρουση ώμου κ ρήξη μηνίσκου, ACL, MCL και κύστη Baker. Ανέλαβε πλήρως τη ευθύνη αποκατάστασης μου αν και είχα τους ενδοιασμούς μου, ειδικά στο ώμο — ήταν στον 1 χρόνο της επαγγελματικής του σταδιοδρομίας... Όμως η αυτοπεποίθησή του και ο τρόπος διαχείρισης της κατάστασής μου εξάλειψε άμεσα οποιαδήποτε φοβίες και ανασφάλειες. Η απάντηση ήταν το αποτέλεσμα. Το ίδιο ακολούθησε 2 χρόνια μετά με το γόνατο. Και πιστέψετε με — δεν είναι εύκολο να πείσεις ένα πατέρα. Μπορώ να εγγυηθώ για την εντιμότητα κ το αληθινό του Αντώνη."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MP</div>
+                    <div class="testimonial-info">
+                        <h4>Michali Petri</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 3 μήνες πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Άριστος επαγγελματίας, εξαιρετικός χαρακτήρας, λεβέντης, μπράβο σου — συνέχισε με τον ίδιο ζήλο!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">PP</div>
+                    <div class="testimonial-info">
+                        <h4>Panayiotis Polycarpou</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 3 μήνες πριν</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="google-badge"><svg class="google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span>
+                </div>
+                <p class="testimonial-text" lang="el">"Έκανα μερικές συνεδρίες μασάζ για τον πόνο στην πλάτη μου και πραγματικά με βοήθησε πολύ. Το συνιστώ!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">RT</div>
+                    <div class="testimonial-info">
+                        <h4>Receipt Tenerife</h4>
+                        <p>Κριτική Google <span class="testimonial-date">· 4 μήνες πριν</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="section-header">
+            <h2>Γνωρίστε την <span>ομάδα μας</span></h2>
+            <p>Ειδικοί κλινικοί αφοσιωμένοι στην ανάρρωση και απόδοσή σας</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-photo">
+                    <picture><source srcset="assets/images/team/tony-photo.webp" type="image/webp"><img src="assets/images/team/tony-photo.jpg" alt="Αντώνης Πέτρη" width="712" height="800" loading="lazy"></picture>
+                </div>
+                <div class="team-content">
+                    <h3>Αντώνης Πέτρη</h3>
+                    <p class="role">Συνιδρυτής & Επικεφαλής Κλινικός</p>
+                    <div class="team-credentials">
+                        <p>BSc Φυσιοθεραπεία, Ειδικός Αθλητικής & Ορθοπεδικής Αποκατάστασης. Επόπτης Κλινικής Πρακτικής στο Πανεπιστήμιο Frederick (Καρδιο, Μυοσκελετική, Νευρο Αποκατάσταση).</p>
+                    </div>
+                    <p class="gesy-reg"><a href="https://www.gesy.org.cy" target="_blank" rel="noopener noreferrer">ΓΕΣΥ</a> Αρ.: A2825</p>
+                    <p class="team-affiliations" style="font-size: 0.85rem; color: var(--text-gray); margin: 5px 0;">Clinical Supervisor at <a href="https://www.frederick.ac.cy" target="_blank" rel="noopener noreferrer">Frederick University</a></p>
+                    <a href="pages/tony-profile-el.html">Δείτε το Πλήρες Προφίλ →</a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="team-photo">
+                    <picture><source srcset="assets/images/team/alice-photo.webp" type="image/webp"><img src="assets/images/team/alice-photo.jpg" alt="Alice Kazanjian" width="579" height="750" loading="lazy"></picture>
+                </div>
+                <div class="team-content">
+                    <h3>Alice Kazanjian</h3>
+                    <p class="role">Εκπαιδεύτρια Κλινικού Pilates</p>
+                    <div class="team-credentials">
+                        <p>Πιστοποιημένη εκπαιδεύτρια κλινικού Pilates με εξειδίκευση σε mat Pilates υπό την καθοδήγηση φυσιοθεραπευτή, κίνηση εστιασμένη στην αποκατάσταση και αθλητική προετοιμασία για βελτιωμένη δύναμη και κινητικότητα.</p>
+                    </div>
+                    <p class="gesy-reg"><a href="https://www.gesy.org.cy" target="_blank" rel="noopener noreferrer">ΓΕΣΥ</a> Αρ.: A3509</p>
+                    <a href="pages/alice-profile-el.html">Δείτε το Πλήρες Προφίλ →</a>
+                </div>
             </div>
         </div>
     </section>
@@ -4530,72 +3983,6 @@
         });
     </script>
 
-    <!-- Promo Carousel Script -->
-    <script>
-        (function() {
-            var currentSlide = 0;
-            var slides = document.querySelectorAll('.promo-slide');
-            var dots = document.querySelectorAll('.carousel-dot');
-            var progressBar = document.getElementById('carouselProgress');
-            var totalSlides = slides.length;
-            var interval = 6000;
-            var autoplayTimer = null;
-
-            function goToSlide(index) {
-                slides[currentSlide].classList.remove('active');
-                dots[currentSlide].classList.remove('active');
-                currentSlide = (index + totalSlides) % totalSlides;
-                slides[currentSlide].classList.add('active');
-                dots[currentSlide].classList.add('active');
-                resetProgress();
-            }
-
-            function changeSlide(dir) {
-                goToSlide(currentSlide + dir);
-            }
-
-            function resetProgress() {
-                if (progressBar) {
-                    progressBar.style.transition = 'none';
-                    progressBar.style.width = '0%';
-                    void progressBar.offsetWidth;
-                    progressBar.style.transition = 'width ' + interval + 'ms linear';
-                    progressBar.style.width = '100%';
-                }
-                clearInterval(autoplayTimer);
-                autoplayTimer = setInterval(function() {
-                    goToSlide(currentSlide + 1);
-                }, interval);
-            }
-
-            // Touch / swipe
-            var touchStartX = 0;
-            var carousel = document.getElementById('promoCarousel');
-            if (carousel) {
-                carousel.addEventListener('touchstart', function(e) {
-                    touchStartX = e.changedTouches[0].screenX;
-                }, { passive: true });
-                carousel.addEventListener('touchend', function(e) {
-                    var diff = touchStartX - e.changedTouches[0].screenX;
-                    if (Math.abs(diff) > 50) {
-                        changeSlide(diff > 0 ? 1 : -1);
-                    }
-                }, { passive: true });
-                carousel.addEventListener('mouseenter', function() {
-                    clearInterval(autoplayTimer);
-                    if (progressBar) {
-                        progressBar.style.transition = 'none';
-                    }
-                });
-                carousel.addEventListener('mouseleave', function() {
-                    resetProgress();
-                });
-            }
-
-            window.goToSlide = goToSlide;
-            window.changeSlide = changeSlide;
-            resetProgress();
-        })();
     </script>
 
     <script>

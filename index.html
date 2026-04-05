@@ -314,68 +314,44 @@
 
         
 
-        /* Stats Section */
-        .stats {
+        /* Trust Bar */
+        .trust-bar {
             background: var(--navy);
-            padding: 80px 40px;
+            padding: 0;
         }
-
-        .stats-container {
+        .trust-bar-container {
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
-            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
         }
-
-        .stat-item {
-            background: var(--navy);
-            padding: 50px 40px;
+        .trust-bar-item {
+            flex: 1;
+            padding: 40px 20px;
             text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
-
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--orange);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+        .trust-bar-item:last-child {
+            border-right: none;
         }
-
-        .stat-item:hover::before {
-            transform: scaleX(1);
-        }
-
-        .stat-item:hover {
-            background: rgba(255, 107, 53, 0.05);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
+        .trust-bar-item .accent {
+            color: var(--orange);
             font-weight: 800;
-            color: var(--orange);
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-            line-height: 1;
+            font-size: 1.8rem;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
         }
-
-        .stat-number span {
-            color: var(--orange);
-        }
-
-        .stat-label {
-            font-size: 1.05rem;
+        .trust-bar-item .label {
             color: var(--white);
+            font-size: 0.95rem;
             font-weight: 500;
-            line-height: 1.5;
-            opacity: 0.9;
+            opacity: 0.85;
         }
 
         /* Feature Section */
@@ -2466,8 +2442,12 @@
                 font-size: 2.5rem;
             }
 
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
+            .trust-bar-container {
+                flex-wrap: wrap;
+            }
+            .trust-bar-item {
+                flex: 1 1 45%;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
             .contact-grid {
@@ -2623,9 +2603,10 @@
                 padding: 0;
             }
 
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .trust-bar-item {
+                flex: 1 1 100%;
+                font-size: 0.85rem;
+                padding: 14px 16px;
             }
 
             .feature-section {
@@ -2780,386 +2761,6 @@
             }
         }
 
-        /* Promo Carousel */
-        .promo-carousel {
-            position: relative;
-            overflow: hidden;
-            background: var(--navy);
-        }
-
-        .promo-slide {
-            background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.6s ease;
-        }
-
-        .promo-slide.active {
-            position: relative;
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .promo-slide-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            height: 420px;
-            overflow: hidden;
-        }
-
-        .promo-slide-text {
-            padding: 60px 40px;
-            color: var(--white);
-        }
-
-        .promo-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--orange);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .promo-badge .pulse {
-            width: 8px;
-            height: 8px;
-            background: var(--white);
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .promo-slide-text .promo-heading {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            color: var(--white);
-        }
-
-        .promo-slide-text .promo-heading span {
-            color: var(--orange);
-        }
-
-        .promo-slide-text .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-
-        .promo-cta-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .promo-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--orange);
-            color: var(--white);
-            padding: 16px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
-        }
-
-        .promo-cta:hover {
-            background: var(--white);
-            color: var(--navy);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
-        }
-
-        .promo-cta-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            opacity: 0.85;
-            transition: opacity 0.3s;
-        }
-
-        .promo-cta-secondary:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        .promo-slide-image {
-            height: 100%;
-            min-height: 400px;
-            position: relative;
-        }
-
-        .promo-slide-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
-
-        .promo-features {
-            position: absolute;
-            left: 20px;
-            top: 30%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 2;
-        }
-
-        .promo-feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--navy);
-            padding: 10px 18px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: none;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .instructor-profile-link {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            color: var(--white);
-            background: rgba(0,0,0,0.5);
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.3s;
-            z-index: 2;
-        }
-
-        .instructor-profile-link:hover {
-            background: rgba(0,0,0,0.7);
-        }
-
-        /* Carousel Navigation */
-        .carousel-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 0;
-        }
-
-        .carousel-dot.active {
-            background: var(--orange);
-            border-color: var(--orange);
-            transform: scale(1.2);
-        }
-
-        .carousel-dot:hover {
-            background: rgba(255, 255, 255, 0.7);
-        }
-
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.3);
-            color: var(--white);
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            font-size: 1.3rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .carousel-arrow:hover {
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .carousel-arrow.prev {
-            left: 15px;
-        }
-
-        .carousel-arrow.next {
-            right: 15px;
-        }
-
-        /* Carousel progress bar */
-        .carousel-progress {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-            background: var(--orange);
-            z-index: 10;
-            transition: width 0.1s linear;
-        }
-
-        @media (max-width: 1024px) {
-            .promo-slide-content {
-                grid-template-columns: 1fr;
-                height: auto;
-            }
-
-            .promo-slide-text {
-                padding: 40px 30px;
-                text-align: center;
-            }
-
-            .promo-slide-text .promo-heading {
-                font-size: 2.2rem;
-            }
-
-            .promo-cta-group {
-                justify-content: center;
-            }
-
-            .promo-features {
-                left: 15px;
-            }
-
-            .promo-slide-image {
-                min-height: 300px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .promo-slide-text .promo-heading {
-                font-size: 1.8rem;
-            }
-
-            .promo-slide-text .subtitle {
-                font-size: 1rem;
-            }
-
-            .promo-feature {
-                font-size: 0.85rem;
-                padding: 8px 14px;
-            }
-
-            .promo-features {
-                left: 10px;
-            }
-
-            .promo-slide-image {
-                min-height: 250px;
-                position: relative;
-            }
-
-            .instructor-profile-link {
-                bottom: 10px;
-                right: 10px;
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-
-            .carousel-arrow {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-
-            .carousel-dots {
-                bottom: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .promo-slide-text {
-                padding: 30px 20px;
-            }
-
-            .promo-slide-text .promo-heading {
-                font-size: 1.5rem;
-            }
-
-            .promo-slide-text .subtitle {
-                font-size: 0.9rem;
-            }
-
-            .promo-features {
-                gap: 6px;
-                left: 8px;
-            }
-
-            .promo-feature {
-                font-size: 0.75rem;
-                padding: 5px 10px;
-            }
-
-            .promo-cta {
-                padding: 14px 24px;
-                font-size: 1rem;
-            }
-
-            .promo-slide-image {
-                min-height: 200px;
-            }
-
-            .instructor-profile-link {
-                bottom: 8px;
-                right: 8px;
-                padding: 5px 10px;
-                font-size: 0.75rem;
-            }
-
-            .carousel-arrow {
-                width: 32px;
-                height: 32px;
-                font-size: 0.9rem;
-            }
-
-            .carousel-arrow.prev { left: 8px; }
-            .carousel-arrow.next { right: 8px; }
-        }
     </style>
 </head>
 <body>
@@ -3198,131 +2799,12 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
 
-    <!-- Promo Carousel -->
-    <section class="promo-carousel" id="promoCarousel">
-
-        <!-- Slide 1: Injury Prevention Guide -->
-        <div class="promo-slide active" data-slide="0">
-            <div class="promo-slide-content">
-                <div class="promo-slide-text">
-                    <div class="promo-badge">
-                        <span class="pulse"></span>
-                        Free Resource
-                    </div>
-                    <p class="promo-heading">Train Hard.<br>Fight Smart.<br><span>Stay Injury-Free.</span></p>
-                    <p class="subtitle" style="margin-top: 24px; font-size: 1.05rem;">Injury Prevention &amp; Performance<br><span style="font-size: 0.85rem; opacity: 0.7;">Seminar Highlights &middot; April 4, 2026</span></p>
-                </div>
-                <div class="promo-slide-image" style="position: relative;">
-                    <picture><source srcset="assets/images/banners/seminar-muay-thai.webp" type="image/webp"><img src="assets/images/banners/seminar-muay-thai.jpg" alt="Injury Prevention Seminar for Fighters — Antonis Petri" width="1600" height="1200" fetchpriority="high"></picture>
-                    <div style="position: absolute; inset: 0; background: rgba(10,22,40,0.6); border-radius: inherit; display: flex; align-items: center; justify-content: center;">
-                        <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 48px 40px; text-align: center; max-width: 500px; width: 90%;">
-                            <div style="width: 80px; height: 80px; background: rgba(255,107,53,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            </div>
-                            <a href="assets/downloads/Fighter_Screening_Seminar_EN.pdf" class="promo-cta" download style="display: inline-block; padding: 16px 48px; background: var(--orange); color: #fff; font-weight: 700; border-radius: 50px; text-decoration: none; font-size: 1.1rem;">Download Guide</a>
-                            <p style="margin-top: 16px; color: rgba(255,255,255,0.6); font-size: 0.9rem;">PDF &middot; Free &middot; No signup</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 2: Padel Injury Research -->
-        <div class="promo-slide" data-slide="1">
-            <div class="promo-slide-content">
-                <div class="promo-slide-text">
-                    <div class="promo-badge">
-                        <span class="pulse"></span>
-                        Research 2026
-                    </div>
-                    <p class="promo-heading">We Surveyed Padel Players.<br><span>100% Reported Pain.</span></p>
-                    <p class="subtitle"><strong>100%</strong> of players surveyed reported pain or injury. <strong>86%</strong> missed playing time. <strong>57%</strong> never stretch post-game. Help us grow this study.</p>
-                    <div class="promo-cta-group">
-                        <a href="https://forms.gle/fiwJAQ4PcHeQvg5k9" target="_blank" rel="noopener noreferrer" class="promo-cta">Take the 3-min Survey →</a>
-                    </div>
-                </div>
-                <div class="promo-slide-image">
-                    <picture><source srcset="assets/images/banners/padel-research.webp" type="image/webp"><img src="assets/images/banners/padel-research.jpg" alt="Padel Injury Research 2026 — Right Track Physio" width="1280" height="853" loading="lazy"></picture>
-                    <div class="promo-features">
-                        <span class="promo-feature">100% Had Pain</span>
-                        <span class="promo-feature">57% Never Stretch</span>
-                        <span class="promo-feature">Anonymous Survey</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3: Padel Camp -->
-        <div class="promo-slide" data-slide="2">
-            <div class="promo-slide-content">
-                <div class="promo-slide-text">
-                    <div class="promo-badge">
-                        <span class="pulse"></span>
-                        April 13–19, 2026
-                    </div>
-                    <p class="promo-heading">The Padel Camp<br><span>Cyprus 2026</span></p>
-                    <p class="subtitle">5-day intensive padel camp with on-site sports physio. Recovery, injury prevention & performance optimization.</p>
-                    <div class="promo-cta-group">
-                        <a href="pages/padel-camp.html" class="promo-cta">Learn More →</a>
-                    </div>
-                </div>
-                <div class="promo-slide-image">
-                    <picture><source srcset="assets/images/banners/padel-camp-banner.webp" type="image/webp"><img src="assets/images/banners/padel-camp-banner.jpg" alt="The Padel Camp Cyprus 2026 — On-Site Sports Physio" width="1101" height="769" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></picture>
-                    <div class="promo-features">
-                        <span class="promo-feature">5-Day Camp</span>
-                        <span class="promo-feature">On-Site Physio</span>
-                        <span class="promo-feature">Limassol</span>
-                    </div>
-                    <a href="pages/tony-profile.html" class="instructor-profile-link">Trainer Profile</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: Clinical Pilates -->
-        <div class="promo-slide" data-slide="3">
-            <div class="promo-slide-content">
-                <div class="promo-slide-text">
-                    <div class="promo-badge">
-                        <span class="pulse"></span>
-                        New Classes Available
-                    </div>
-                    <p class="promo-heading">Clinical <span>Mat Pilates</span><br>with Alice</p>
-                    <p class="subtitle">Physio-led Pilates for rehabilitation, strength & mobility. Small groups, big results.</p>
-                    <div class="promo-cta-group">
-                        <a href="pages/booking.html?service=clinical-pilates&therapist=alice" class="promo-cta">Book from €80/month →</a>
-                        <a href="pages/alice-profile.html" class="promo-cta-secondary">Meet Alice →</a>
-                    </div>
-                </div>
-                <div class="promo-slide-image">
-                    <picture><source srcset="assets/images/banners/pilates-launch-alice.webp" type="image/webp"><img src="assets/images/banners/pilates-launch-alice.jpg" alt="Alice Kazanjian — Clinical Pilates Instructor" width="1280" height="853" loading="lazy"></picture>
-                    <div class="promo-features">
-                        <span class="promo-feature">Pre & Post-natal</span>
-                        <span class="promo-feature">Beginners Welcome</span>
-                        <span class="promo-feature">Small Groups</span>
-                    </div>
-                    <a href="pages/alice-profile.html" class="instructor-profile-link">Trainer Profile</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-arrow prev" onclick="changeSlide(-1)" aria-label="Previous slide">&#10094;</button>
-        <button class="carousel-arrow next" onclick="changeSlide(1)" aria-label="Next slide">&#10095;</button>
-        <div class="carousel-dots">
-            <button class="carousel-dot active" data-slide="0" onclick="goToSlide(0)" aria-label="Slide 1"></button>
-            <button class="carousel-dot" data-slide="1" onclick="goToSlide(1)" aria-label="Slide 2"></button>
-            <button class="carousel-dot" data-slide="2" onclick="goToSlide(2)" aria-label="Slide 3"></button>
-            <button class="carousel-dot" data-slide="3" onclick="goToSlide(3)" aria-label="Slide 4"></button>
-        </div>
-        <div class="carousel-progress" id="carouselProgress"></div>
-    </section>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Physiotherapist in <span class="highlight">Nicosia</span></h1>
-                <p>Right Track is a physiotherapy rehabilitation centre in Cyprus for injury recovery, pain management, and return-to-sport with measurable results.</p>
+                <p>Right Track is a physiotherapy and sports rehabilitation centre in Strovolos, Nicosia. Injury recovery, pain management, and return-to-sport — with measurable results.</p>
                 <div class="cta-buttons">
                     <a href="pages/booking.html" class="btn btn-primary">Book Your Appointment Online</a>
                     <a href="#services" class="btn btn-secondary">Explore Services</a>
@@ -3334,25 +2816,13 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number">Results</div>
-                <div class="stat-label">Focused</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">Gesy</div>
-                <div class="stat-label">Registered</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Booking</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">All Ages</div>
-                <div class="stat-label">Athletes & Active People</div>
-            </div>
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-bar-container">
+            <div class="trust-bar-item"><span class="accent">5.0★</span><span class="label">Google Reviews</span></div>
+            <div class="trust-bar-item"><span class="accent">GESY</span><span class="label">Registered</span></div>
+            <div class="trust-bar-item"><span class="accent">Strovolos</span><span class="label">Nicosia, Cyprus</span></div>
+            <div class="trust-bar-item"><span class="accent">24/7</span><span class="label">Online Booking</span></div>
         </div>
     </section>
 
@@ -3508,6 +2978,180 @@
             </div>
             <div class="feature-visual">
                 <picture><source srcset="assets/images/services/homecare-rehab.webp" type="image/webp"><img src="assets/images/services/homecare-rehab.jpeg" alt="Home-care Physiotherapy" width="1536" height="1024" loading="lazy"></picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- GESY Section -->
+    <section class="gesy-section" id="gesy">
+        <div class="gesy-container">
+            <div class="section-header">
+                <h2>Physiotherapy via <span>GESY</span></h2>
+                <p>Quality physiotherapy covered by the national health system</p>
+            </div>
+
+            <!-- Hero Stats -->
+            <div class="gesy-hero-stats">
+                <div class="gesy-stat">
+                    <div class="gesy-stat-value">€10</div>
+                    <div class="gesy-stat-label">per session co-payment<br>Government covers the rest</div>
+                </div>
+                <div class="gesy-stat">
+                    <div class="gesy-stat-value">€150</div>
+                    <div class="gesy-stat-label">annual cap on your expenses<br>€75 for pensioners</div>
+                </div>
+                <div class="gesy-stat">
+                    <div class="gesy-stat-value">12</div>
+                    <div class="gesy-stat-label">sessions per year<br>Extensions available</div>
+                </div>
+            </div>
+
+            <!-- Steps -->
+            <div class="gesy-steps">
+                <div class="gesy-step">
+                    <div class="gesy-step-number">1</div>
+                    <h4>Visit Your GP</h4>
+                    <p>See your personal doctor or specialist</p>
+                </div>
+                <div class="gesy-step">
+                    <div class="gesy-step-number">2</div>
+                    <h4>Get Referral</h4>
+                    <p>Request a physiotherapy referral</p>
+                </div>
+                <div class="gesy-step">
+                    <div class="gesy-step-number">3</div>
+                    <h4>Choose Provider</h4>
+                    <p>Select Right Track as your clinic</p>
+                </div>
+                <div class="gesy-step">
+                    <div class="gesy-step-number">4</div>
+                    <h4>Book & Attend</h4>
+                    <p>Schedule your appointment</p>
+                </div>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="gesy-important">
+                <h4>Important: Ensure Your Referral is Correct — Without a valid GESY referral, sessions will be charged at private rates.</h4>
+                <ul>
+                    <li>Your referral must contain the correct diagnostic code for physiotherapy coverage</li>
+                    <li>If the code is incorrect, contact your doctor to correct it before your appointment</li>
+                    <li>Neurological or Rheumatological patients must be registered in the respective GESY catalog to receive specialized treatment codes</li>
+                    <li>We're here to help — contact us if you need guidance on referral codes</li>
+                </ul>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="gesy-grid" style="margin-top: 50px;">
+                <div class="gesy-card">
+                    <h3>Session Amounts</h3>
+                    <ul>
+                        <li>Minimum: 3 sessions</li>
+                        <li>Maximum: 9 sessions</li>
+                    </ul>
+                    <p style="font-size: 0.9rem; color: #6c757d; margin-top: 12px; font-style: italic;">Your doctor determines the exact number based on your condition and needs</p>
+                </div>
+
+                <div class="gesy-card">
+                    <h3>Referral Types</h3>
+                    <ul>
+                        <li>Short-term: 3 months</li>
+                        <li>Medium-term: 6 months</li>
+                        <li>Long-term: 12 months</li>
+                    </ul>
+                </div>
+
+                <div class="gesy-card">
+                    <h3>What's Covered</h3>
+                    <ul>
+                        <li>Musculoskeletal & joint pain</li>
+                        <li>Sports injuries</li>
+                        <li>Post-surgical rehabilitation</li>
+                        <li>Neurological conditions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GESY vs Private Comparison -->
+            <div class="gesy-comparison">
+                <div class="gesy-comparison-header">
+                    <h3>GESY vs Private Physiotherapy</h3>
+                    <p>Understanding your options at a glance</p>
+                </div>
+                <div class="gesy-comparison-col">
+                    <h4>GESY <span class="tag tag-gesy">Government</span></h4>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Cost</span>
+                        <span class="value">€10/session</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Session length</span>
+                        <span class="value">30 min</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Wait time</span>
+                        <span class="value">1-3 weeks</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Referral</span>
+                        <span class="value">Required</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Sessions/year</span>
+                        <span class="value">Up to 12</span>
+                    </div>
+                </div>
+                <div class="gesy-comparison-col">
+                    <h4>Private <span class="tag tag-private">Self-pay</span></h4>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Cost</span>
+                        <span class="value">€40-60/session</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Session length</span>
+                        <span class="value">45-60 min</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Wait time</span>
+                        <span class="value">Same week</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Referral</span>
+                        <span class="value">Not needed</span>
+                    </div>
+                    <div class="gesy-comparison-row">
+                        <span class="label">Sessions/year</span>
+                        <span class="value">Unlimited</span>
+                    </div>
+                </div>
+                <div class="gesy-comparison-cta">
+                    <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html">Read the full comparison guide &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Blog Articles -->
+            <div class="gesy-articles">
+                <a href="pages/blog/gesy-physiotherapy-cyprus-guide.html" class="gesy-article-card">
+                    <span class="article-tag">Complete Guide</span>
+                    <h4>GESY Physiotherapy in Cyprus: Everything You Need to Know</h4>
+                    <p>Referrals, sessions, coverage, costs, and what to expect in practice. The most practical guide to navigating GESY physiotherapy.</p>
+                    <span class="read-more">Read the guide &rarr;</span>
+                </a>
+                <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html" class="gesy-article-card">
+                    <span class="article-tag">Cost Comparison</span>
+                    <h4>GESY vs Private Physiotherapy: Costs, Wait Times & What's Covered</h4>
+                    <p>An honest side-by-side comparison to help you decide which option — or combination — works best for your situation.</p>
+                    <span class="read-more">Read the comparison &rarr;</span>
+                </a>
+            </div>
+
+            <!-- Highlight Box -->
+            <div class="gesy-highlight">
+                <div class="gesy-highlight-content">
+                    <h3>Need Help with GESY?</h3>
+                    <p>Not sure if you qualify, or confused about referral codes? Contact us — we'll walk you through the entire process.</p>
+                </div>
+                <a href="tel:+35799126824" class="btn btn-primary" style="white-space: nowrap;">Call +357 99 126 824</a>
             </div>
         </div>
     </section>
@@ -3683,21 +3327,6 @@
         </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="cta-banner">
-        <div class="cta-banner-container">
-            <div class="cta-banner-content">
-                <h2>Let's get you back <span>on track</span></h2>
-                <div class="cta-buttons">
-                    <a href="pages/booking.html" class="btn btn-primary">Book Online 24/7</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="cta-banner-image">
-                <picture><source srcset="assets/images/logos/rt-badge.webp" type="image/webp"><img src="assets/images/logos/rt-badge.png" alt="Right Track" width="409" height="230" loading="lazy"></picture>
-            </div>
-        </div>
-    </section>
 
     <!-- Team Section -->
     <section class="team" id="team">
@@ -3736,180 +3365,6 @@
                     <p class="gesy-reg"><a href="https://www.gesy.org.cy" target="_blank" rel="noopener noreferrer">GESY</a> Reg. No: A3509</p>
                     <a href="pages/alice-profile.html">View Full Profile →</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GESY Section -->
-    <section class="gesy-section" id="gesy">
-        <div class="gesy-container">
-            <div class="section-header">
-                <h2>Physiotherapy via <span>GESY</span></h2>
-                <p>Quality physiotherapy covered by the national health system</p>
-            </div>
-
-            <!-- Hero Stats -->
-            <div class="gesy-hero-stats">
-                <div class="gesy-stat">
-                    <div class="gesy-stat-value">€10</div>
-                    <div class="gesy-stat-label">per session co-payment<br>Government covers the rest</div>
-                </div>
-                <div class="gesy-stat">
-                    <div class="gesy-stat-value">€150</div>
-                    <div class="gesy-stat-label">annual cap on your expenses<br>€75 for pensioners</div>
-                </div>
-                <div class="gesy-stat">
-                    <div class="gesy-stat-value">12</div>
-                    <div class="gesy-stat-label">sessions per year<br>Extensions available</div>
-                </div>
-            </div>
-
-            <!-- Steps -->
-            <div class="gesy-steps">
-                <div class="gesy-step">
-                    <div class="gesy-step-number">1</div>
-                    <h4>Visit Your GP</h4>
-                    <p>See your personal doctor or specialist</p>
-                </div>
-                <div class="gesy-step">
-                    <div class="gesy-step-number">2</div>
-                    <h4>Get Referral</h4>
-                    <p>Request a physiotherapy referral</p>
-                </div>
-                <div class="gesy-step">
-                    <div class="gesy-step-number">3</div>
-                    <h4>Choose Provider</h4>
-                    <p>Select Right Track as your clinic</p>
-                </div>
-                <div class="gesy-step">
-                    <div class="gesy-step-number">4</div>
-                    <h4>Book & Attend</h4>
-                    <p>Schedule your appointment</p>
-                </div>
-            </div>
-
-            <!-- Important Notice -->
-            <div class="gesy-important">
-                <h4>Important: Ensure Your Referral is Correct — Without a valid GESY referral, sessions will be charged at private rates.</h4>
-                <ul>
-                    <li>Your referral must contain the correct diagnostic code for physiotherapy coverage</li>
-                    <li>If the code is incorrect, contact your doctor to correct it before your appointment</li>
-                    <li>Neurological or Rheumatological patients must be registered in the respective GESY catalog to receive specialized treatment codes</li>
-                    <li>We're here to help — contact us if you need guidance on referral codes</li>
-                </ul>
-            </div>
-
-            <!-- Info Cards -->
-            <div class="gesy-grid" style="margin-top: 50px;">
-                <div class="gesy-card">
-                    <h3>Session Amounts</h3>
-                    <ul>
-                        <li>Minimum: 3 sessions</li>
-                        <li>Maximum: 9 sessions</li>
-                    </ul>
-                    <p style="font-size: 0.9rem; color: #6c757d; margin-top: 12px; font-style: italic;">Your doctor determines the exact number based on your condition and needs</p>
-                </div>
-
-                <div class="gesy-card">
-                    <h3>Referral Types</h3>
-                    <ul>
-                        <li>Short-term: 3 months</li>
-                        <li>Medium-term: 6 months</li>
-                        <li>Long-term: 12 months</li>
-                    </ul>
-                </div>
-
-                <div class="gesy-card">
-                    <h3>What's Covered</h3>
-                    <ul>
-                        <li>Musculoskeletal & joint pain</li>
-                        <li>Sports injuries</li>
-                        <li>Post-surgical rehabilitation</li>
-                        <li>Neurological conditions</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- GESY vs Private Comparison -->
-            <div class="gesy-comparison">
-                <div class="gesy-comparison-header">
-                    <h3>GESY vs Private Physiotherapy</h3>
-                    <p>Understanding your options at a glance</p>
-                </div>
-                <div class="gesy-comparison-col">
-                    <h4>GESY <span class="tag tag-gesy">Government</span></h4>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Cost</span>
-                        <span class="value">€10/session</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Session length</span>
-                        <span class="value">30 min</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Wait time</span>
-                        <span class="value">1-3 weeks</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Referral</span>
-                        <span class="value">Required</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Sessions/year</span>
-                        <span class="value">Up to 12</span>
-                    </div>
-                </div>
-                <div class="gesy-comparison-col">
-                    <h4>Private <span class="tag tag-private">Self-pay</span></h4>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Cost</span>
-                        <span class="value">€40-60/session</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Session length</span>
-                        <span class="value">45-60 min</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Wait time</span>
-                        <span class="value">Same week</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Referral</span>
-                        <span class="value">Not needed</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Sessions/year</span>
-                        <span class="value">Unlimited</span>
-                    </div>
-                </div>
-                <div class="gesy-comparison-cta">
-                    <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html">Read the full comparison guide &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Blog Articles -->
-            <div class="gesy-articles">
-                <a href="pages/blog/gesy-physiotherapy-cyprus-guide.html" class="gesy-article-card">
-                    <span class="article-tag">Complete Guide</span>
-                    <h4>GESY Physiotherapy in Cyprus: Everything You Need to Know</h4>
-                    <p>Referrals, sessions, coverage, costs, and what to expect in practice. The most practical guide to navigating GESY physiotherapy.</p>
-                    <span class="read-more">Read the guide &rarr;</span>
-                </a>
-                <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html" class="gesy-article-card">
-                    <span class="article-tag">Cost Comparison</span>
-                    <h4>GESY vs Private Physiotherapy: Costs, Wait Times & What's Covered</h4>
-                    <p>An honest side-by-side comparison to help you decide which option — or combination — works best for your situation.</p>
-                    <span class="read-more">Read the comparison &rarr;</span>
-                </a>
-            </div>
-
-            <!-- Highlight Box -->
-            <div class="gesy-highlight">
-                <div class="gesy-highlight-content">
-                    <h3>Need Help with GESY?</h3>
-                    <p>Not sure if you qualify, or confused about referral codes? Contact us — we'll walk you through the entire process.</p>
-                </div>
-                <a href="tel:+35799126824" class="btn btn-primary" style="white-space: nowrap;">Call +357 99 126 824</a>
             </div>
         </div>
     </section>
@@ -4564,74 +4019,6 @@
         });
     </script>
 
-    <!-- Promo Carousel Script -->
-    <script>
-        (function() {
-            var currentSlide = 0;
-            var slides = document.querySelectorAll('.promo-slide');
-            var dots = document.querySelectorAll('.carousel-dot');
-            var progressBar = document.getElementById('carouselProgress');
-            var totalSlides = slides.length;
-            var interval = 6000;
-            var autoplayTimer = null;
-
-            function goToSlide(index) {
-                slides[currentSlide].classList.remove('active');
-                dots[currentSlide].classList.remove('active');
-                currentSlide = (index + totalSlides) % totalSlides;
-                slides[currentSlide].classList.add('active');
-                dots[currentSlide].classList.add('active');
-                resetProgress();
-            }
-
-            function changeSlide(dir) {
-                goToSlide(currentSlide + dir);
-            }
-
-            function resetProgress() {
-                if (progressBar) {
-                    progressBar.style.transition = 'none';
-                    progressBar.style.width = '0%';
-                    void progressBar.offsetWidth;
-                    progressBar.style.transition = 'width ' + interval + 'ms linear';
-                    progressBar.style.width = '100%';
-                }
-                clearInterval(autoplayTimer);
-                autoplayTimer = setInterval(function() {
-                    goToSlide(currentSlide + 1);
-                }, interval);
-            }
-
-            // Touch / swipe
-            var touchStartX = 0;
-            var carousel = document.getElementById('promoCarousel');
-            if (carousel) {
-                carousel.addEventListener('touchstart', function(e) {
-                    touchStartX = e.changedTouches[0].screenX;
-                }, { passive: true });
-                carousel.addEventListener('touchend', function(e) {
-                    var diff = touchStartX - e.changedTouches[0].screenX;
-                    if (Math.abs(diff) > 50) {
-                        changeSlide(diff > 0 ? 1 : -1);
-                    }
-                }, { passive: true });
-                // Pause on hover
-                carousel.addEventListener('mouseenter', function() {
-                    clearInterval(autoplayTimer);
-                    if (progressBar) {
-                        progressBar.style.transition = 'none';
-                    }
-                });
-                carousel.addEventListener('mouseleave', function() {
-                    resetProgress();
-                });
-            }
-
-            window.goToSlide = goToSlide;
-            window.changeSlide = changeSlide;
-            resetProgress();
-        })();
-    </script>
 
     <script>
         document.querySelectorAll('.faq-question').forEach(function(btn) {
