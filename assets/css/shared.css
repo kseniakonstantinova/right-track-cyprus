@@ -26,7 +26,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 140px;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
 /* ---------- 2. Header & Navigation (glass effect) ---------- */
 
 header {
-    padding: 1.2rem 0;
+    padding: 0.6rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -56,11 +56,6 @@ header {
         0 4px 30px rgba(0, 0, 0, 0.05),
         inset 0 1px 0 rgba(255, 255, 255, 0.8),
         inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-    transition: padding 0.3s ease;
-}
-
-header.scrolled {
-    padding: 0.6rem 0;
 }
 
 nav {
@@ -79,13 +74,8 @@ nav {
 }
 
 .logo img {
-    height: 120px;
-    width: auto;
-    transition: height 0.3s ease;
-}
-
-header.scrolled .logo img {
     height: 60px;
+    width: auto;
 }
 
 .logo-text {
