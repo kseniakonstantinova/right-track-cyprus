@@ -298,6 +298,13 @@
             background: var(--off-white);
         }
 
+        .hero-visual picture,
+        .feature-visual picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
         .hero-visual img {
             width: 100%;
             height: 100%;
@@ -2560,7 +2567,7 @@
             }
 
             .hero-visual img {
-                object-fit: contain;
+                object-fit: cover;
                 object-position: center;
             }
 
@@ -2569,7 +2576,7 @@
             }
 
             .feature-visual img {
-                object-fit: contain;
+                object-fit: cover;
                 object-position: center;
             }
 
@@ -2975,162 +2982,16 @@
         <div class="gesy-container">
             <div class="section-header">
                 <h2>Physiotherapy via <span>GESY</span></h2>
-                <p>Quality physiotherapy covered by the national health system</p>
             </div>
-
-            <!-- Hero Stats -->
-            <div class="gesy-hero-stats">
-                <div class="gesy-stat">
-                    <div class="gesy-stat-value">€10</div>
-                    <div class="gesy-stat-label">per session co-payment<br>Government covers the rest</div>
-                </div>
-                <div class="gesy-stat">
-                    <div class="gesy-stat-value">€150</div>
-                    <div class="gesy-stat-label">annual cap on your expenses<br>€75 for pensioners</div>
-                </div>
-                <div class="gesy-stat">
-                    <div class="gesy-stat-value">12</div>
-                    <div class="gesy-stat-label">sessions per referral<br>Extensions available</div>
-                </div>
+            <p style="max-width: 640px; margin: 0 auto 28px; text-align: center; color: var(--text-gray); line-height: 1.8; font-size: 1.05rem;">Right Track is a GESY-registered physiotherapy clinic in Strovolos, Nicosia. If you have a referral, you can choose us as your provider and book your appointment directly.</p>
+            <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 32px;">
+                <span style="font-size: 0.95rem; color: var(--navy); font-weight: 600;">&#10003; GESY-registered clinic</span>
+                <span style="font-size: 0.95rem; color: var(--navy); font-weight: 600;">&#10003; Nicosia, Strovolos</span>
+                <span style="font-size: 0.95rem; color: var(--navy); font-weight: 600;">&#10003; Private option also available</span>
             </div>
-
-            <!-- Steps -->
-            <div class="gesy-steps">
-                <div class="gesy-step">
-                    <div class="gesy-step-number">1</div>
-                    <h4>Visit Your GP</h4>
-                    <p>See your personal doctor or specialist</p>
-                </div>
-                <div class="gesy-step">
-                    <div class="gesy-step-number">2</div>
-                    <h4>Get Referral</h4>
-                    <p>Request a physiotherapy referral</p>
-                </div>
-                <div class="gesy-step">
-                    <div class="gesy-step-number">3</div>
-                    <h4>Choose Provider</h4>
-                    <p>Select Right Track as your clinic</p>
-                </div>
-                <div class="gesy-step">
-                    <div class="gesy-step-number">4</div>
-                    <h4>Book & Attend</h4>
-                    <p>Schedule your appointment</p>
-                </div>
-            </div>
-
-            <!-- Info Cards -->
-            <div class="gesy-grid" style="margin-top: 50px;">
-                <a href="pages/services/gesy-physiotherapy-nicosia.html" class="gesy-card" style="text-decoration: none;">
-                    <h3>Book Through Right Track</h3>
-                    <ul>
-                        <li>See how GESY booking works at our clinic</li>
-                        <li>Check what to bring before your first visit</li>
-                        <li>Choose a GESY physiotherapist in Nicosia</li>
-                    </ul>
-                    <p style="font-size: 0.95rem; color: var(--orange); margin-top: 12px; font-weight: 600;">Open the GESY service page &rarr;</p>
-                </a>
-
-                <a href="pages/blog/gesy-physiotherapy-cyprus-guide.html" class="gesy-card" style="text-decoration: none;">
-                    <h3>Understand the GESY Process</h3>
-                    <ul>
-                        <li>Referral process and provider choice</li>
-                        <li>Session allocations and co-payments</li>
-                        <li>What GESY covers and what it does not</li>
-                    </ul>
-                    <p style="font-size: 0.95rem; color: var(--orange); margin-top: 12px; font-weight: 600;">Read the guide &rarr;</p>
-                </a>
-
-                <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html" class="gesy-card" style="text-decoration: none;">
-                    <h3>Compare GESY vs Private</h3>
-                    <ul>
-                        <li>See where GESY is enough</li>
-                        <li>Understand when private adds value</li>
-                        <li>Decide whether a hybrid route fits</li>
-                    </ul>
-                    <p style="font-size: 0.95rem; color: var(--orange); margin-top: 12px; font-weight: 600;">Read the comparison &rarr;</p>
-                </a>
-            </div>
-
-            <!-- GESY vs Private Comparison -->
-            <div class="gesy-comparison">
-                <div class="gesy-comparison-header">
-                    <h3>GESY vs Private Physiotherapy</h3>
-                    <p>Understanding your options at a glance</p>
-                </div>
-                <div class="gesy-comparison-col">
-                    <h4>GESY <span class="tag tag-gesy">Government</span></h4>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Cost</span>
-                        <span class="value">€10/session</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Access</span>
-                        <span class="value">Referral required</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Session limits</span>
-                        <span class="value">Yes</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Typical allocation</span>
-                        <span class="value">Up to 12 per referral</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Best for</span>
-                        <span class="value">Core covered rehab</span>
-                    </div>
-                </div>
-                <div class="gesy-comparison-col">
-                    <h4>Private <span class="tag tag-private">Self-pay</span></h4>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Cost</span>
-                        <span class="value">From €35/session</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Access</span>
-                        <span class="value">Direct booking</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Session limits</span>
-                        <span class="value">No</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Specialised services</span>
-                        <span class="value">Available</span>
-                    </div>
-                    <div class="gesy-comparison-row">
-                        <span class="label">Best for</span>
-                        <span class="value">Faster or extended care</span>
-                    </div>
-                </div>
-                <div class="gesy-comparison-cta">
-                    <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html">Read the full comparison guide &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Blog Articles -->
-            <div class="gesy-articles">
-                <a href="pages/services/gesy-physiotherapy-nicosia.html" class="gesy-article-card">
-                    <span class="article-tag">Book with GESY</span>
-                    <h4>GESY Physiotherapy in Nicosia at Right Track</h4>
-                    <p>Need a clinic that accepts GESY in Nicosia? See how the process works at Right Track and what to do next.</p>
-                    <span class="read-more">Open service page &rarr;</span>
-                </a>
-                <a href="pages/blog/gesy-vs-private-physiotherapy-prices-cyprus.html" class="gesy-article-card">
-                    <span class="article-tag">Compare Options</span>
-                    <h4>GESY vs Private Physiotherapy in Cyprus</h4>
-                    <p>A practical side-by-side comparison to help you decide whether GESY, private, or a hybrid route fits your situation.</p>
-                    <span class="read-more">Read the comparison &rarr;</span>
-                </a>
-            </div>
-
-            <!-- Highlight Box -->
-            <div class="gesy-highlight">
-                <div class="gesy-highlight-content">
-                    <h3>Need a GESY Physiotherapist in Nicosia?</h3>
-                    <p>Use our GESY service page to see how booking works at Right Track, then contact us if you need help with the next step.</p>
-                </div>
-                <a href="pages/services/gesy-physiotherapy-nicosia.html" class="btn btn-primary" style="white-space: nowrap;">Open GESY Service Page</a>
+            <div style="text-align: center;">
+                <a href="pages/services/gesy-physiotherapy-nicosia.html" class="btn btn-primary" style="margin-bottom: 14px;">Book Through GESY at Right Track &rarr;</a>
+                <p style="margin: 0; font-size: 0.9rem;"><a href="pages/blog/gesy-physiotherapy-cyprus-guide.html" style="color: var(--orange); font-weight: 600; text-decoration: none;">Want to understand how GESY works first? Read the guide &rarr;</a></p>
             </div>
         </div>
     </section>
