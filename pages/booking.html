@@ -157,6 +157,25 @@ body {
             </div>
         </div>
 
+        <section class="booking-info-section" style="margin-top: 24px;">
+            <div class="info-card" style="max-width: 1200px; margin: 0 auto;">
+                <h3 class="gesy-helper-heading">Booking through GESY?</h3>
+                <p class="gesy-helper-body">If you already have a GESY referral for physiotherapy, book your appointment and bring your referral details with you. If your referral is still pending and you want the clinic-specific process first, visit our </p>
+                <p style="margin-top: 8px;"><a href="services/gesy-physiotherapy-nicosia.html" class="gesy-helper-link" style="color: var(--orange); font-weight: 600;">GESY physiotherapy in Nicosia page →</a></p>
+            </div>
+        </section>
+        <script>
+        (function() {
+            if (new URLSearchParams(window.location.search).get('lang') !== 'el') return;
+            var h = document.querySelector('.gesy-helper-heading');
+            var b = document.querySelector('.gesy-helper-body');
+            var a = document.querySelector('.gesy-helper-link');
+            if (h) h.textContent = 'Κράτηση μέσω ΓΕΣΥ;';
+            if (b) b.textContent = 'Αν έχετε ήδη παραπομπή ΓΕΣΥ για φυσιοθεραπεία, κλείστε το ραντεβού σας και φέρτε τα στοιχεία της παραπομπής. Αν η παραπομπή σας εκκρεμεί και θέλετε πρώτα τη διαδικασία της κλινικής:';
+            if (a) { a.href = 'services/gesy-physiotherapy-nicosia-el.html'; a.textContent = 'Σελίδα φυσιοθεραπείας ΓΕΣΥ στη Λευκωσία →'; }
+        })();
+        </script>
+
         <!-- Info Cards -->
         <section class="booking-info-section">
             <div class="booking-info">
