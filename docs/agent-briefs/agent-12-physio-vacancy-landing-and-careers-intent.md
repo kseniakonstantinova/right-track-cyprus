@@ -244,6 +244,129 @@ Recommended event split:
 
 Do not leave all hiring intent collapsed into one vague homepage event if the new landing page becomes the main path.
 
+### 11. Internal linking and direct-share readiness
+The vacancy page must work as a standalone URL that can be:
+- sent directly in WhatsApp / Instagram / LinkedIn / email outreach
+- used in paid campaigns
+- used in recruiter outreach or manual DM
+
+This means the page must **not** rely on the homepage for context in order to make sense.
+
+The homepage CTA is only one discovery path, not the only valid access path.
+
+The page must not be an orphan.
+At minimum, support it with internal links from:
+- homepage `Join Team` teaser
+- footer
+- team-related section or equivalent trust-building area
+
+Recommended implementation:
+- keep the homepage `Join Team` block linking to the vacancy landing page
+- add a small footer link such as `We're Hiring` / `Physiotherapist Role`
+- add one secondary contextual link from the team section or adjacent clinician-trust section
+
+Do not overdo this.
+Do not add job links into every service page or every blog article.
+Use a small number of strong, intentional internal links.
+
+### 12. Homepage role after the vacancy page exists
+The homepage should not try to repeat the full vacancy page.
+
+Its job is:
+- to signal growth
+- to qualify interest
+- to route high-intent users to the dedicated vacancy page
+
+The homepage `Join Team` block should therefore remain:
+- short
+- role-specific
+- brand-aligned
+- CTA-led
+
+It should not contain:
+- a full long-form application form
+- duplicated FAQ
+- duplicated full role description
+
+### 13. Specific SEO/content improvements required before sign-off
+Even if the vacancy page exists, the implementation is not complete until the following are checked and corrected where needed.
+
+#### 13.1 H1 alignment with primary intent
+The vacancy page H1 must align closely with the page's main SEO intent.
+
+Recommended pattern:
+- EN: `Physiotherapist Job in <span>Nicosia</span>`
+- EL: `Θέση <span>Φυσιοθεραπευτή</span> στη Λευκωσία`
+
+The growth/sports-performance narrative should move into the subtitle, not replace the main H1 intent.
+
+Reason:
+- title, slug, canonical, and visible H1 should reinforce the same primary page intent
+- this reduces ambiguity for both users and search engines
+
+#### 13.2 Remove dead homepage hiring-form tracking
+If the homepage no longer contains the old join-team form, remove any dead analytics code targeting that removed form.
+
+Do not leave:
+- stale selectors
+- event hooks for non-existent forms
+- old conversion events that no longer represent the real hiring funnel
+
+#### 13.3 Be careful with query-parameter booking links
+If homepage CTAs now point to booking URLs with query parameters, confirm that:
+- the canonical booking page remains the clean URL
+- query URLs are not being treated as separate indexable URLs
+- the use of query parameters is justified by UX, not accidental drift
+
+If query parameters are not essential, prefer the clean canonical booking URL in major internal links.
+
+#### 13.4 Validate asset availability
+If the vacancy page uses:
+- videos
+- posters
+- PDF downloads
+- any new media assets
+
+confirm that all referenced assets:
+- exist in the repo
+- are deployed
+- do not 404 on the live site
+
+Broken media on a primary conversion page is unacceptable.
+
+#### 13.5 Keep schema conservative and factual
+If `JobPosting`, `FAQPage`, or any other structured data is used:
+- it must reflect visible content
+- it must not overstate uncertain operational details
+- it must not include claims the business cannot confidently support
+
+Be especially careful with:
+- licensing implications
+- GESY-related claims
+- transport requirements
+- hiring-process promises
+
+## Internal Link Copy Suggestions
+Use these as direction, not mandatory exact copy.
+
+### Homepage `Join Team` CTA
+- EN: `See Full Role & Apply`
+- EL: `Δείτε τον Ρόλο & Κάντε Αίτηση`
+
+### Footer link
+- EN: `We're Hiring`
+- EN alt: `Physiotherapist Role`
+- EL: `Προσλαμβάνουμε`
+- EL alt: `Θέση Φυσιοθεραπευτή`
+
+### Team-section contextual link
+- EN: `Interested in joining the team? View the open physiotherapist role.`
+- EL: `Σας ενδιαφέρει να ενταχθείτε στην ομάδα; Δείτε τη διαθέσιμη θέση φυσιοθεραπευτή.`
+
+### Small trust-section link
+- EN: `We're growing our clinical team.`
+- EL: `Αναπτύσσουμε την κλινική μας ομάδα.`
+
 ## Content Constraints
 - do not present the role as sports-only
 - do not hide homecare, elderly, or neurological work
@@ -281,6 +404,11 @@ Your work is done when:
 - the page clearly explains the bridge-role reality: clinic + homecare now, sports/performance growth over time
 - the page includes strong self-selection and pre-screening logic
 - the page includes a credible brand-growth section referencing recent investment in marketing/digital capability
+- the vacancy page can be sent as a direct standalone URL without needing homepage context
+- the page is supported by a small but intentional internal linking structure
+- H1, title, slug, canonical, and page purpose are aligned
+- no dead analytics code remains from the removed homepage form flow
+- media assets referenced by the vacancy page are confirmed live and non-broken
 - metadata, canonical, hreflang logic, and sitemap treatment follow the SEO guide
 - CTA language and messaging align with the brand/content guide
 
@@ -288,7 +416,9 @@ Your work is done when:
 When done, report:
 - which vacancy page(s) you created
 - what you changed on the homepage
+- which internal links now support the vacancy page
 - how you positioned the bridge-role narrative
 - how the form pre-screens candidate fit
 - how you communicated Right Track's investment in clinician visibility and brand growth
+- which SEO cleanups were required to make the page production-ready
 - any recommended next-step work, such as a future careers hub or thank-you page
