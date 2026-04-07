@@ -3234,14 +3234,13 @@
         <div class="newsletter-container">
             <div class="newsletter-content">
                 <h2>Δωρεάν: <span>Οδηγός Πρόληψης Αθλητικών Τραυματισμών</span></h2>
-                <p>Λάβετε τις κορυφαίες ασκήσεις και συμβουλές του Αντώνη για την πρόληψη των 5 πιο συχνών αθλητικών τραυματισμών. Επίσης εβδομαδιαίες πληροφορίες για αποκατάσταση, απόδοση και πρόληψη τραυματισμών.</p>
+                <p>Λάβετε τις κορυφαίες ασκήσεις και συμβουλές του Αντώνη για την πρόληψη των 5 πιο συχνών αθλητικών τραυματισμών.</p>
             </div>
-            <form class="newsletter-form" action="https://formspree.io/f/maqekzeq" method="POST">
+            <form class="newsletter-form" id="lead-magnet-form">
                 <input type="email" name="email" placeholder="Η διεύθυνση email σας" required>
-                <input type="hidden" name="_subject" value="Newsletter Signup - Right Track">
                 <button type="submit">Λήψη Οδηγού</button>
             </form>
-            <p class="newsletter-disclaimer">Χωρίς spam. Διαγραφή ανά πάσα στιγμή. Σεβόμαστε το απόρρητό σας.</p>
+            <p class="newsletter-disclaimer">Θα σας στέλνουμε περιστασιακά χρήσιμες συμβουλές αποκατάστασης και απόδοσης — χωρίς spam, διαγραφή με ένα κλικ.</p>
         </div>
     </section>
 
@@ -3778,16 +3777,47 @@
                 });
             });
 
-            // Track newsletter signup
-            var newsletterForm = document.querySelector('.newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function() {
+            // Lead magnet: instant PDF download + email to Formspree
+            var leadForm = document.getElementById('lead-magnet-form');
+            if (leadForm) {
+                leadForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var emailInput = leadForm.querySelector('input[type="email"]');
+                    var email = emailInput.value;
+                    var btn = leadForm.querySelector('button');
+                    btn.disabled = true;
+                    btn.textContent = 'Λήψη…';
+
+                    // Trigger PDF download immediately
+                    var link = document.createElement('a');
+                    link.href = 'assets/downloads/Sports_Injury_Prevention_Guide_GR.pdf';
+                    link.download = 'Sports_Injury_Prevention_Guide_RightTrack.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    // Send email to Formspree in background
+                    fetch('https://formspree.io/f/maqekzeq', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({ email: email, _subject: 'Lead Magnet Download - Sports Injury Guide (GR)' })
+                    }).catch(function() {});
+
+                    // GA4 event
                     if (typeof gtag === 'function') {
-                        gtag('event', 'newsletter_signup', {
+                        gtag('event', 'lead_magnet_download', {
                             event_category: 'conversion',
-                            event_label: 'sports_injury_guide'
+                            event_label: 'sports_injury_guide_gr'
                         });
                     }
+
+                    // Show success state
+                    btn.textContent = '✓ Ο οδηγός κατέβηκε!';
+                    emailInput.value = '';
+                    setTimeout(function() {
+                        btn.textContent = 'Λήψη Οδηγού';
+                        btn.disabled = false;
+                    }, 3000);
                 });
             }
 
