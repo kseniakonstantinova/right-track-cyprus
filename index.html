@@ -3270,14 +3270,13 @@
         <div class="newsletter-container">
             <div class="newsletter-content">
                 <h2>Free: <span>Sports Injury Prevention Guide</span></h2>
-                <p>Get Antonis's top exercises and tips to prevent the 5 most common sports injuries. Plus weekly insights on rehabilitation, performance, and staying injury-free.</p>
+                <p>Get Antonis's top exercises and tips to prevent the 5 most common sports injuries.</p>
             </div>
-            <form class="newsletter-form" action="https://formspree.io/f/maqekzeq" method="POST">
+            <form class="newsletter-form" id="lead-magnet-form">
                 <input type="email" name="email" placeholder="Your email address" required>
-                <input type="hidden" name="_subject" value="Newsletter Signup - Right Track">
                 <button type="submit">Get Free Guide</button>
             </form>
-            <p class="newsletter-disclaimer">No spam. Unsubscribe anytime. We respect your privacy.</p>
+            <p class="newsletter-disclaimer">We'll email you occasionally with useful rehab and performance tips — no spam, unsubscribe with one click.</p>
         </div>
     </section>
 
@@ -3814,16 +3813,47 @@
                 });
             });
 
-            // Track newsletter signup
-            var newsletterForm = document.querySelector('.newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function() {
+            // Lead magnet: instant PDF download + email to Formspree
+            var leadForm = document.getElementById('lead-magnet-form');
+            if (leadForm) {
+                leadForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var emailInput = leadForm.querySelector('input[type="email"]');
+                    var email = emailInput.value;
+                    var btn = leadForm.querySelector('button');
+                    btn.disabled = true;
+                    btn.textContent = 'Downloading…';
+
+                    // Trigger PDF download immediately
+                    var link = document.createElement('a');
+                    link.href = 'assets/downloads/Sports_Injury_Prevention_Guide_EN.pdf';
+                    link.download = 'Sports_Injury_Prevention_Guide_RightTrack.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    // Send email to Formspree in background
+                    fetch('https://formspree.io/f/maqekzeq', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({ email: email, _subject: 'Lead Magnet Download - Sports Injury Guide (EN)' })
+                    }).catch(function() {});
+
+                    // GA4 event
                     if (typeof gtag === 'function') {
-                        gtag('event', 'newsletter_signup', {
+                        gtag('event', 'lead_magnet_download', {
                             event_category: 'conversion',
-                            event_label: 'sports_injury_guide'
+                            event_label: 'sports_injury_guide_en'
                         });
                     }
+
+                    // Show success state
+                    btn.textContent = '✓ Guide Downloaded!';
+                    emailInput.value = '';
+                    setTimeout(function() {
+                        btn.textContent = 'Get Free Guide';
+                        btn.disabled = false;
+                    }, 3000);
                 });
             }
 
