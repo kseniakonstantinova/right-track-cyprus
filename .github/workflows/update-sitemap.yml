@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v4
@@ -57,11 +58,30 @@ jobs:
             echo "SITEMAP_CHANGED=false" >> $GITHUB_ENV
           fi
 
-      - name: Commit updated sitemap
+      - name: Create PR with updated sitemap
         if: env.SITEMAP_CHANGED == 'true'
         run: |
+          BRANCH="chore/update-sitemap-lastmod"
+
+          # Close existing sitemap PR if any
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --state open --json number -q '.[0].number' || true)
+          if [ -n "$EXISTING_PR" ]; then
+            gh pr close "$EXISTING_PR" --delete-branch || true
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
           git add sitemap.xml
           git commit -m "chore: auto-update sitemap lastmod dates"
-          git push
+          git push --force origin "$BRANCH"
+
+          PR_URL=$(gh pr create \
+            --title "chore: auto-update sitemap lastmod dates" \
+            --body "Automated update of \`<lastmod>\` dates in \`sitemap.xml\` based on git history." \
+            --base main \
+            --head "$BRANCH")
+
+          gh pr merge "$PR_URL" --squash --auto
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
