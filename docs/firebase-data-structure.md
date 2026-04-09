@@ -57,8 +57,8 @@ Each therapist document with bilingual support.
   name: "Antonis Petri",
   nameEl: "Αντώνης Πέτρη",
 
-  title: "Co-Founder & Lead Clinician",
-  titleEl: "Συνιδρυτής & Επικεφαλής Κλινικός",
+  title: "Founder & Lead Clinician",
+  titleEl: "Ιδρυτής & Επικεφαλής Κλινικός",
 
   bio: "Dedicated physiotherapy educator...",
   bioEl: "Αφοσιωμένος εκπαιδευτής φυσιοθεραπείας...",
