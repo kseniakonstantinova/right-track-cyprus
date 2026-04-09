@@ -15,7 +15,7 @@ Your job is to **audit and improve physiotherapy blog articles** written for Rig
 - **Clinic brand:** Right Track Physiotherapy
 - **Legal / schema name when relevant:** Right Track Physiotherapy & Performance Centre
 - **Location:** Tseriou 32, Strovolos 2042, Nicosia, Cyprus
-- **Lead Author:** Antonis Petri, BSc, OMPT — Lead Clinician, Co-Founder, Clinical Practice Supervisor at Frederick University
+- **Lead Author:** Antonis Petri, BSc, OMPT — Lead Clinician, Founder, Clinical Practice Supervisor at Frederick University
 - **Brand Positioning:** "The Athlete's Physio" — sports injuries & rehabilitation specialist
 - **Target Audience:** Athletes and active individuals (primary), general patients (secondary)
 - **Website:** https://righttrackphysio.com.cy
