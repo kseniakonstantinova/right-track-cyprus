@@ -83,6 +83,28 @@
     color: var(--navy);
 }
 
+/* ---------- Featured Image ---------- */
+
+.featured-image {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.featured-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.featured-image figcaption {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-top: 10px;
+    font-style: italic;
+}
+
 /* ---------- Author Box ---------- */
 
 .author-box {
