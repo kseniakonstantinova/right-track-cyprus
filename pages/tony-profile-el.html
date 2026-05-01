@@ -151,6 +151,16 @@
                     "name": "Stanford University / Stanford Health Communication Initiative"
                 },
                 "dateCreated": "2026"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "certificate",
+                "name": "Visual Media for Effective Healthcare Communication",
+                "recognizedBy": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Stanford University / Stanford Health Communication Initiative"
+                },
+                "dateCreated": "2026"
             }
         ],
         "knowsAbout": ["Αθλητική Φυσιοθεραπεία", "Αποκατάσταση ACL", "Επιστροφή Αθλητών στο Άθλημα", "Μυοσκελετική Αποκατάσταση", "Ορθοπεδική Χειροθεραπεία", "Επίβλεψη Κλινικής Πρακτικής", "Αξιολόγηση Αθλητικών Τραυματισμών", "Αποκατάσταση Γονάτου", "Θεραπεία Αυχενικού Πόνου", "Επικοινωνία Υγείας", "Εκπαίδευση Ασθενών"],
@@ -407,55 +417,97 @@
         }
 
         /* Certifications - Horizontal Scroll */
-        /* Featured Certificate - Stanford */
-        .cert-featured {
+        /* Stanford Series - Featured Block */
+        .cert-stanford-series {
             background: linear-gradient(135deg, #0A1628 0%, #1a2a3a 100%);
             border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
+            padding: 32px;
             margin-bottom: 24px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
         }
 
-        .cert-featured:hover {
-            transform: translateY(-4px);
+        .cert-stanford-header {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .cert-stanford-badge {
+            display: inline-block;
+            align-self: flex-start;
+            background: var(--orange);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cert-stanford-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin: 4px 0 0;
+        }
+
+        .cert-stanford-issuer {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .cert-stanford-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cert-stanford-card {
+            flex: 0 0 280px;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .cert-stanford-card:hover {
+            transform: translateY(-8px);
             box-shadow: 0 12px 40px rgba(255, 107, 53, 0.25);
             border-color: var(--orange);
         }
 
-        .cert-featured-inner {
+        .cert-stanford-card-image {
+            width: 100%;
+            aspect-ratio: 11 / 8.5;
+            background: var(--off-white);
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
-            gap: 32px;
-            padding: 24px;
+            justify-content: center;
+            padding: 10px;
         }
 
-        .cert-featured-image {
-            flex: 0 0 420px;
-            aspect-ratio: 11 / 8.5;
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            padding: 8px;
-        }
-
-        .cert-featured-image img {
+        .cert-stanford-card-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             transition: transform 0.3s ease;
         }
 
-        .cert-featured:hover .cert-featured-image img {
+        .cert-stanford-card:hover .cert-stanford-card-image img {
             transform: scale(1.02);
         }
 
-        .cert-featured-image .zoom-icon {
+        .cert-stanford-card-image .zoom-icon {
             position: absolute;
-            bottom: 16px;
-            right: 16px;
+            bottom: 12px;
+            right: 12px;
             width: 44px;
             height: 44px;
             background: rgba(255, 107, 53, 0.9);
@@ -469,57 +521,40 @@
             transition: opacity 0.3s ease;
         }
 
-        .cert-featured:hover .zoom-icon {
+        .cert-stanford-card:hover .zoom-icon {
             opacity: 1;
         }
 
-        .cert-featured-info {
-            flex: 1;
-            color: var(--white);
+        .cert-stanford-card-info {
+            padding: 16px 20px 20px;
+            text-align: center;
         }
 
-        .cert-featured-badge {
+        .cert-stanford-card-year {
             display: inline-block;
             background: var(--orange);
             color: var(--white);
-            padding: 6px 16px;
+            padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
-        .cert-featured-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 8px;
-            color: var(--white);
-        }
-
-        .cert-featured-issuer {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 16px;
-        }
-
-        .cert-featured-desc {
+        .cert-stanford-card-title {
+            color: var(--navy);
             font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.6;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0;
         }
 
         @media (max-width: 768px) {
-            .cert-featured-inner {
-                flex-direction: column;
-                gap: 20px;
+            .cert-stanford-series {
+                padding: 24px;
             }
-            .cert-featured-image {
-                flex: none;
-                width: 100%;
-                max-width: 400px;
+            .cert-stanford-card {
+                flex: 0 0 240px;
             }
         }
 
@@ -1305,18 +1340,33 @@
         <div class="section-content">
             <h2>Πιστοποιήσεις & <span>Εκπαίδευση</span></h2>
 
-            <!-- Featured: Stanford Certificate -->
-            <div class="cert-featured" onclick="openModal('stanford')">
-                <div class="cert-featured-inner">
-                    <div class="cert-featured-image">
-                        <img src="../assets/images/credentials/antonis/Stanford-Health-Communication.jpg" alt="Πιστοποιητικό Stanford Healthcare Ecosystems and Communication">
-                        <div class="zoom-icon">🔍</div>
+            <!-- Featured: Stanford Health Communication Series -->
+            <div class="cert-stanford-series">
+                <div class="cert-stanford-header">
+                    <span class="cert-stanford-badge">Stanford Online · 2026</span>
+                    <h3 class="cert-stanford-title">Σειρά Επικοινωνίας Υγείας</h3>
+                    <p class="cert-stanford-issuer">Stanford Health Communication Initiative</p>
+                </div>
+                <div class="cert-stanford-grid">
+                    <div class="cert-stanford-card" onclick="openModal('stanford1')">
+                        <div class="cert-stanford-card-image">
+                            <img src="../assets/images/credentials/antonis/Stanford-Health-Communication.jpg" alt="Πιστοποιητικό Stanford Healthcare Ecosystems and Communication">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-stanford-card-info">
+                            <span class="cert-stanford-card-year">2026</span>
+                            <h4 class="cert-stanford-card-title">Healthcare Ecosystems and Communication: Strategies to Examine Information</h4>
+                        </div>
                     </div>
-                    <div class="cert-featured-info">
-                        <span class="cert-featured-badge">2026 — Stanford Online</span>
-                        <h4 class="cert-featured-title">Healthcare Ecosystems and Communication: Strategies to Examine Information</h4>
-                        <p class="cert-featured-issuer">Stanford Online / Stanford Health Communication Initiative</p>
-                        <p class="cert-featured-desc">Τεκμηριωμένη επικοινωνία υγείας — χτίζοντας εμπιστοσύνη με τον ασθενή, μεταφράζοντας σύνθετες ιατρικές πληροφορίες σε πρακτική καθοδήγηση και βελτιώνοντας τα αποτελέσματα υγείας μέσω αποτελεσματικού διαλόγου κλινικού-ασθενούς.</p>
+                    <div class="cert-stanford-card" onclick="openModal('stanford2')">
+                        <div class="cert-stanford-card-image">
+                            <img src="../assets/images/credentials/antonis/Stanford-Health-Communication-2.png" alt="Πιστοποιητικό Stanford Visual Media for Effective Healthcare Communication">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                        <div class="cert-stanford-card-info">
+                            <span class="cert-stanford-card-year">2026</span>
+                            <h4 class="cert-stanford-card-title">Visual Media for Effective Healthcare Communication</h4>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1545,9 +1595,13 @@
             const diplomaImage = document.getElementById('diplomaImage');
 
             const content = {
-                stanford: {
+                stanford1: {
                     title: 'Healthcare Ecosystems and Communication: Strategies to Examine Information — Stanford Online',
                     image: '../assets/images/credentials/antonis/Stanford-Health-Communication.jpg'
+                },
+                stanford2: {
+                    title: 'Visual Media for Effective Healthcare Communication — Stanford Online',
+                    image: '../assets/images/credentials/antonis/Stanford-Health-Communication-2.png'
                 },
                 diplomas: {
                     title: 'Bachelor of Science in Physiotherapy',
