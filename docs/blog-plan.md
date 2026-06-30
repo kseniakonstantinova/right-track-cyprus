@@ -49,7 +49,7 @@
 - **Target keywords:** physiotherapy after car accident Cyprus, whiplash treatment Nicosia, road accident recovery
 - **Why:** Very common case in Cyprus, almost zero competition in search results
 - **Word count:** 1000+
-- **Status:** [ ] EN [ ] EL [ ] blog.html [ ] blog-el.html [ ] Sitemap
+- **Status:** [x] EN [x] EL [x] blog.html [x] blog-el.html [x] Sitemap — published 2026-06-29
 
 ---
 
