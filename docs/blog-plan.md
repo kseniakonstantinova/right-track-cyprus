@@ -60,7 +60,7 @@
 - **Category:** Behind the Science
 - **Target keywords:** neck pain physiotherapy Nicosia, tension headache treatment Cyprus, cervicogenic headache
 - **Word count:** 1200+
-- **Status:** [ ] EN [ ] EL [ ] blog.html [ ] blog-el.html [ ] Sitemap
+- **Status:** [x] EN [x] EL [x] blog.html [x] blog-el.html [x] Sitemap — published 2026-06-30
 
 #### 4. Frozen Shoulder: Why It Happens, How Long It Lasts, and What Speeds Recovery
 - **File:** `frozen-shoulder-treatment-cyprus.html`
