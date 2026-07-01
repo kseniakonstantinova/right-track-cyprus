@@ -15,8 +15,13 @@ admin/*.credentials.*
 # Personal / legal documents
 loan-agreement*
 
-# Internal docs (not for deploy)
+# Internal docs (not for deploy / not public)
 инфраструктурные/
+docs/
+tools/site-qa/README.md
+
+# Claude Code project instructions (local only, not public)
+CLAUDE.md
 
 # IDE
 .idea/
