@@ -85,7 +85,7 @@ const THERAPISTS = [
     {
         id: 'antonis',
         name: 'Antonis Petri',
-        nameEl: 'Αντώνης Πέτρη',
+        nameEl: 'Αντώνης Πετρή',
         title: 'Founder & Lead Clinician',
         titleEl: 'Ιδρυτής & Επικεφαλής Κλινικός',
         gesyCode: 'A2825',
