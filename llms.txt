@@ -14,7 +14,7 @@ Right Track is a physiotherapy and performance centre founded by Antonis Petri. 
 - Sports & Remedial Massage
 
 ## Team
-- Antonis Petri - Lead Clinician & Founder, BSc Physiotherapy (Semmelweis University), Stanford-certified in Healthcare Ecosystems and Communication (Stanford Online, 2026), Diploma in Orthopaedic Manual Therapy, Clinical Practice Supervisor at Frederick University
+- Antonis Petri - Lead Clinician & Founder, BSc Physiotherapy (Semmelweis University), Stanford-certified in Healthcare Ecosystems and Communication (Stanford Online, 2026), Diploma in Orthopaedic Manual Therapy, Clinical Instructor in the Department of Life and Health Sciences at Frederick University
 - Alice Kazanjian - Physiotherapist & Clinical Pilates Instructor, BSc Physiotherapy, 8+ years experience
 
 ## Location
@@ -33,7 +33,7 @@ Sunday: Closed
 - Booking: https://righttrackphysio.com.cy/pages/booking.html
 
 ## Expertise
-All clinical content is written and reviewed by licensed physiotherapists with active clinical practice in Cyprus. Antonis Petri holds a Stanford certificate in Healthcare Ecosystems and Communication (Stanford Online, 2026), is a Clinical Practice Supervisor at Frederick University, and works with professional athletes across multiple sports. His Stanford training in evidence-based health communication ensures that complex medical information is translated into clear, actionable patient guidance.
+All clinical content is written and reviewed by licensed physiotherapists with active clinical practice in Cyprus. Antonis Petri holds a Stanford certificate in Healthcare Ecosystems and Communication (Stanford Online, 2026), is a Clinical Instructor in the Department of Life and Health Sciences at Frederick University, and works with professional athletes across multiple sports. His Stanford training in evidence-based health communication ensures that complex medical information is translated into clear, actionable patient guidance.
 
 ## Blog — Evidence-Based Articles
 Available in English and Greek. Base URL: https://righttrackphysio.com.cy/pages/blog/
@@ -46,16 +46,22 @@ Available in English and Greek. Base URL: https://righttrackphysio.com.cy/pages/
 - [Shoulder Impingement: The Injury That Doesn't Care If You're an Athlete](https://righttrackphysio.com.cy/pages/blog/shoulder-impingement-treatment-guide.html)
 - [Injury Prevention for Combat Sports: What Every Fighter Must Know](https://righttrackphysio.com.cy/pages/blog/injury-prevention-combat-sports.html)
 - [Joint Replacement Rehabilitation: What Most Patients Get Wrong](https://righttrackphysio.com.cy/pages/blog/joint-replacement-rehabilitation-cyprus.html)
+- [Calf Strain (Tennis Leg): Why It Happens & How to Come Back](https://righttrackphysio.com.cy/pages/blog/calf-strain-gastrocnemius-treatment-cyprus.html)
+- [Frozen Shoulder: Why It Happens, How Long It Lasts & What Speeds Recovery](https://righttrackphysio.com.cy/pages/blog/frozen-shoulder-treatment-cyprus.html)
 
 ### Running & Padel
 - [The 5 Exercises Every Runner Should Be Doing](https://righttrackphysio.com.cy/pages/blog/runner-injury-prevention-exercises.html)
 - [Padel Elbow: Causes, Prevention & Treatment](https://righttrackphysio.com.cy/pages/blog/padel-elbow-causes-prevention-treatment.html)
 - [The Complete Warm-Up Guide for Padel Players](https://righttrackphysio.com.cy/pages/blog/padel-warmup-guide.html)
+- [Padel Injury Survey in Cyprus: Findings from 50+ Players](https://righttrackphysio.com.cy/pages/blog/padel-injury-survey-cyprus-findings.html)
 
 ### Common Conditions
+- [Sciatica: The Complete Guide to Diagnosis, Treatment & Recovery](https://righttrackphysio.com.cy/pages/blog/sciatica-treatment-guide-cyprus.html)
 - [Lower Back Pain: Why It's So Common and What Actually Helps](https://righttrackphysio.com.cy/pages/blog/lower-back-pain-treatment-cyprus.html)
 - [Knee Pain After 40: When It's Arthritis and When It's Not](https://righttrackphysio.com.cy/pages/blog/knee-pain-after-40-arthritis-physiotherapy.html)
+- [Neck Pain & Headaches: How Physiotherapy Solves What Painkillers Can't](https://righttrackphysio.com.cy/pages/blog/neck-pain-headaches-physiotherapy-nicosia.html)
 - [Office Ergonomics: Why Your Desk Setup Is Causing Pain](https://righttrackphysio.com.cy/pages/blog/office-ergonomics-neck-back-wrist-pain.html)
+- [Physiotherapy After a Car Accident in Cyprus: What You Need to Know](https://righttrackphysio.com.cy/pages/blog/physiotherapy-after-car-accident-cyprus.html)
 - [When to See a Physio vs When to Wait It Out](https://righttrackphysio.com.cy/pages/blog/when-to-see-physiotherapist.html)
 
 ### GESY & Healthcare in Cyprus
