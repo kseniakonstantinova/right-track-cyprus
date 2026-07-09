@@ -91,7 +91,7 @@
             "@type": "Country",
             "name": "Cyprus"
         },
-        "qualifications": "Licensed or eligible to practise physiotherapy in Cyprus",
+        "qualifications": "Licensed or eligible to practise physiotherapy in Cyprus. Good knowledge of Greek is required: applicants qualified in another EU Member State must provide a certificate of good knowledge of the Greek language in order to register with the Cyprus Physiotherapists Registration Council.",
         "directApply": true,
         "industry": "Physiotherapy, Healthcare, Sports Rehabilitation",
         "identifier": {
@@ -131,6 +131,14 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "You need to be licensed or eligible to practise physiotherapy in Cyprus. GESY registration is a plus but can be arranged after hiring if you meet the licensing requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to speak Greek?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You will treat patients in Greek every day, and it is also a registration requirement. If you qualified in another EU Member State, the Cyprus Physiotherapists Registration Council requires a certificate of good knowledge of the Greek language — for example, a pass in the Greek language examinations of the University of Cyprus or the Cyprus University of Technology. Without meeting the registration requirements you cannot legally practise as a physiotherapist in Cyprus. If you are fluent but not yet certified, apply and tell us where you are in the process."
                 }
             },
             {
@@ -787,7 +795,7 @@
         <div class="vacancy-hero-content">
             <div class="vacancy-badge">Physiotherapist Wanted — Nicosia</div>
             <h1>Physiotherapist Job in <span>Nicosia</span></h1>
-            <p class="vacancy-hero-subtitle"><strong style="color:var(--white);">Change lives. Build your career.</strong> Right Track is a boutique Nicosia clinic focused on sports &amp; performance rehabilitation, alongside meaningful neurological and home-based care — where you're known by name, not a shift number. A guaranteed base salary that grows with every patient you treat — plus paid home visits, fuel support, and real room to grow.</p>
+            <p class="vacancy-hero-subtitle"><strong style="color:var(--white);">Change lives. Build your career.</strong> A guaranteed base salary that grows with every patient you treat — plus paid home visits, fuel support, and real room to grow.</p>
             <div class="vacancy-hero-ctas">
                 <a href="#apply" class="btn-book-hero">Apply for This Role →</a>
                 <a href="#income-calculator" class="btn-hero-secondary">Calculate Your Income</a>
@@ -976,6 +984,7 @@
                 <div class="fit-card">
                     <h3>This role is for you if...</h3>
                     <ul class="fit-list">
+                        <li>You speak Greek — and, if you qualified in another EU country, you hold or can obtain the Greek language certificate required for registration in Cyprus</li>
                         <li>You are comfortable treating a mixed caseload — athletes, elderly, post-surgical, neurological</li>
                         <li>You are willing to do homecare visits and work independently outside the clinic</li>
                         <li>You want to grow into sports rehab and performance, and you're willing to earn that growth</li>
@@ -987,6 +996,7 @@
                 <div class="filter-section">
                     <h3>This role is not for you if...</h3>
                     <ul class="filter-list">
+                        <li>You do not speak Greek — our patients are treated in Greek, and proof of Greek is required to register and practise here</li>
                         <li>You only want to treat athletes and will not engage with elderly or homecare patients</li>
                         <li>You prefer passive treatment approaches — ultrasound, hot packs, minimal patient engagement</li>
                         <li>You want a low-responsibility position where you clock in and clock out</li>
@@ -1160,6 +1170,18 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="greek">Greek language level *</label>
+                    <select id="greek" name="greek" required>
+                        <option value="">Select...</option>
+                        <option value="native">Native speaker</option>
+                        <option value="certified">Fluent — I hold a recognised Greek language certificate</option>
+                        <option value="fluent-uncertified">Fluent — but not certified yet</option>
+                        <option value="basic">Basic / conversational</option>
+                        <option value="none">I do not speak Greek</option>
+                    </select>
+                    <small>Patients are treated in Greek. If you qualified in another EU Member State, registration in Cyprus also requires a certificate of good knowledge of Greek — for example, the Greek language examinations of the University of Cyprus or the Cyprus University of Technology.</small>
+                </div>
+                <div class="form-group">
                     <label for="start-date">Earliest Start Date</label>
                     <input type="text" id="start-date" name="start_date" placeholder="e.g., Immediately, May 2026, etc.">
                 </div>
@@ -1203,6 +1225,10 @@
                 <details>
                     <summary>Do I need to be GESY-registered to apply?</summary>
                     <div class="faq-answer">You need to be licensed or eligible to practise physiotherapy in Cyprus. GESY registration is a plus but can be arranged after hiring if you meet the licensing requirements.</div>
+                </details>
+                <details>
+                    <summary>Do I need to speak Greek?</summary>
+                    <div class="faq-answer">Yes. You'll treat patients in Greek every day, and it's also a registration requirement. If you qualified in another EU Member State, the Cyprus Physiotherapists Registration Council requires a certificate of good knowledge of Greek — for example, a pass in the Greek language examinations of the University of Cyprus or the Cyprus University of Technology. Without meeting the registration requirements you cannot legally practise as a physiotherapist in Cyprus. If you're fluent but not yet certified, apply anyway and tell us where you are in the process.</div>
                 </details>
                 <details>
                     <summary>What kind of growth can I expect?</summary>
@@ -1301,6 +1327,7 @@
                     '📍 Location: ' + f('location') + '\n\n' +
                     '🏥 Licensed in Cyprus: ' + s('licence') + '\n' +
                     '📊 Experience: ' + s('experience') + '\n' +
+                    '🗣 Greek: ' + s('greek') + '\n' +
                     '🏠 Homecare: ' + s('homecare') + '\n' +
                     '🚗 Transport: ' + s('transport') + '\n' +
                     '📅 Start date: ' + (f('start-date') || 'Not specified') + '\n' +
